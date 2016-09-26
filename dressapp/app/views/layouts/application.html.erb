@@ -12,10 +12,10 @@
 <body id="body">
   <div class = "menu-bar">
       <span id = "logo">
-        <%= link_to image_tag("logo.png"), wardrobes_path %>
+        <%= link_to image_tag("dress.jpeg"), wardrobes_path %>
       </span>
       <span class = "userinfo">
-          <% if @current_user %>
+          <% if current_user %>
             <span id = "welcome-message"> Signed in as <%= link_to "#{current_user.name}", user_path(current_user) %></span> |
             <span id = "log-out-button"><%= link_to "Log out", session_path("current"), :method => :delete %></span>
           <% else %>
@@ -25,6 +25,27 @@
       </span>
   </div>
 
+  <% if flash[:notice] %>
+    <p id="notice"><%= flash[:notice] %></p>
+  <% end %>
+  <% if flash[:alert] %>
+    <p id="alert"><%= flash[:alert] %></p>
+  <% end %>
+
+  <%= yield %>
+
+  <div class="footer">
+    <div class="left">
+      <!-- <p>T: 416-567-7890</p>
+      <p>E: dressapp@dress.com</p> -->
+    </div>
+    <span class="center">
+
+    </span>
+    <div class="right">
+      <p>www.dressapp.com</p>
+      <p>Copyright DressApp 2016</p>
+    </div>
   </div>
 </body>
 </div>
