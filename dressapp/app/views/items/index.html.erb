@@ -4,10 +4,11 @@
 <div>
   <% @items.each do |item| %>
     <ul>
-      <li><%#= image_tag item.image.url %></li>
+      <li><%= image_tag item.image.url %></li>
       <li><%= item.name %></li>
       <li><%= item.description %></li>
       <li><%= item.category.category %></li>
+
     </ul>
   <% end %>
 </div>
