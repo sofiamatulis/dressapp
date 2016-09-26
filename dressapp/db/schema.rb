@@ -28,6 +28,11 @@ ActiveRecord::Schema.define(version: 20160926170833) do
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 
+  create_table "itemssuitcases", force: :cascade do |t|
+    t.integer "suitcase_id"
+    t.integer "item_id"
+  end
+
   create_table "suitcases", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
