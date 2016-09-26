@@ -1,2 +1,12 @@
-<h1>Wardrobes#new</h1>
-<p>Find me in app/views/wardrobes/new.html.erb</p>
+<h1>Create a new wardrobe</h1>
+
+
+<%= form_for @wardrobe do |f| %>
+<div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<%= f.submit %>
+
+<% end %>
