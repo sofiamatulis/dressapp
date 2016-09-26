@@ -29,7 +29,7 @@
 
   <div class="field">
     <%= f.label :category_id %>
-    <%= collection_select(:gallery, :category_id, Category.all, :id, :name ) %>
+    <%= collection_select(:gallery, :category_id, Category.all, :id, :category ) %>
   </div>
 
   <%= f.submit %>
