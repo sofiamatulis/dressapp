@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to wardrobes_url, notice: "Account created"
     else
       render "new"
@@ -36,6 +37,6 @@ class UsersController < ApplicationController
 
   def user_edit_params
     params.require(:user).permit(:name, :image)
-  end 
+  end
 
 end

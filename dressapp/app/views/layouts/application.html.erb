@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Dressapp</title>
-    <%= csrf_meta_tags %>
+<div id="container">
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Bungee|Muli|Playfair+Display' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <title>DressApp</title>
+</head>
+<body id="body">
+  <div class = "menu-bar">
+      <span id = "logo">
+        <%= link_to image_tag("dress.jpeg"), wardrobes_path %>
+      </span>
+      <span class = "userinfo">
+          <% if current_user %>
+            <span id = "welcome-message"> Signed in as <%= link_to "#{current_user.name}", user_path(current_user) %></span> |
+            <span id = "log-out-button"><%= link_to "Log out", session_path("current"), :method => :delete %></span>
+          <% else %>
+            <span id = "log-in-button"><%= link_to "Log In", new_session_path %></span> |
+            <span id = "sign-up-button"><%= link_to "Sign Up", new_user_path %></span>
+          <% end %>
+      </span>
+  </div>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <% if flash[:notice] %>
+    <p id="notice"><%= flash[:notice] %></p>
+  <% end %>
+  <% if flash[:alert] %>
+    <p id="alert"><%= flash[:alert] %></p>
+  <% end %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= yield %>
+
+  <div class="footer">
+    <div class="left">
+      <!-- <p>T: 416-567-7890</p>
+      <p>E: dressapp@dress.com</p> -->
+    </div>
+    <span class="center">
+
+    </span>
+    <div class="right">
+      <p>www.dressapp.com</p>
+      <p>Copyright DressApp 2016</p>
+    </div>
+  </div>
+</body>
+</div>
 </html>
