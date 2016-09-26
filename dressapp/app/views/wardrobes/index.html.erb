@@ -1,2 +1,10 @@
-<h1>Wardrobes#index</h1>
-<p>Find me in app/views/wardrobes/index.html.erb</p>
+<h1>Welcome to your wardrobe</h1>
+<% if @wardrobes.empty? %>
+<h3>You don't have a wardrobe right now</h3>
+<%= link_to "Click here to create one", new_wardrobe_path %>
+<% else %>
+<% @wardrobes.each do |wardrobe| %>
+<%= wardrobe.name %>
+<%= wardrobe.items.name %>
+<% end %>
+<% end %>
