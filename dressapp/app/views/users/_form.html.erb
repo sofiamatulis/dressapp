@@ -1,5 +1,6 @@
-<h1>Edit Information</h1>
-<div id="user-form">
+
+<body class="image">
+
 <%= form_for @user do |f| %>
 
   <% if @user.errors.any? %>
@@ -14,17 +15,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br/>
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :image %><br/>
+    <%= f.label :image %>
     <%= f.text_field :image %>
   </div>
-
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirm Password"%>
+    <%= f.password_field :password_confirmation %>
+  </div>
   <div class="actions"><%= f.submit %></div>
 <% end %>
-  <div class="actions">
-    <%= link_to 'Back', user_path(@user) %>
-  </div>
-</div>
+
+</body>
