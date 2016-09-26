@@ -17,6 +17,9 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    # @category_id = item_params[:category_id]
+    # @category = Category.find(item_params[:category_id])
+    # @item.category = @category
     if @item.save
       redirect_to items_path
     else
@@ -29,6 +32,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :image, :category)
+    params.require(:item).permit(:name, :description, :image, :category_id)
   end
 end
