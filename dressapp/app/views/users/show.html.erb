@@ -1,7 +1,5 @@
 
-    <%= image_tag "photo.jpg" %><br />
     <h1><%= @user.name %></h1>
-    <%= image_tag user.image.url %>
 
     <div class="button"><%= link_to "Edit Profile", edit_user_path(@user) %>
   </div>
@@ -11,6 +9,7 @@
 <div class="info">
   <h4>
     E-mail: <%= @user.email %><br />
-    Photo: <%= @user.image %><br />
+    <%= image_tag @user.image.url %>
+
   </h4>
 </div>
