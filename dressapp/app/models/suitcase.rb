@@ -1,0 +1,2 @@
+class Suitcase < ApplicationRecord
+end

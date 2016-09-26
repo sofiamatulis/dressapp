@@ -1,0 +1,2 @@
+class ItemssuitcasesController < ApplicationController
+end
