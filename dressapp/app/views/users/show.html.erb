@@ -1,32 +1,30 @@
-
-    <h1><%= @user.name %></h1>
-
-    <div class="button"><%= link_to "Edit Profile", edit_user_path(@user) %>
+<div class="profile">
+  <h1>Hello, <%= @user.name %>!</h1>
+  <div class="button"><%= link_to "Edit Profile", edit_user_path(@user) %>
   </div>
-</div>
 
 
-<div class="info">
-  <h4>
-    E-mail: <%= @user.email %><br />
-    <%= image_tag @user.image.url %>
+  <div class="info">
+    <h4>
+      E-mail: <%= @user.email %><br />
+      <%= image_tag @user.image.url %>
 
-  </h4>
-</div>
+    </h4>
+  </div>
 
 
-<h1>Welcome to your wardrobes</h1>
-<% if @user.wardrobes.empty? %>
-<h3>You don't have a wardrobe right now</h3>
-<%= link_to "Create new wardrobe", new_wardrobe_path(:user => @user.id) %>
+  <h1>Your wardrobes!</h1>
+    <% if @user.wardrobes.empty? %>
+      <h3>You don't have a wardrobe right now</h3>
+      <%= link_to "Create new wardrobe", new_wardrobe_path(:user => @user.id) %>
 
-<% else %>
-<%= link_to "Create new wardrobe", new_wardrobe_path(:user => @user.id) %>
-<% @user.wardrobes.each do |wardrobe| %>
-<%= wardrobe.name %>
-<%= wardrobe.items.name %>
- <% end %>
-<% end %>
+    <% else %>
+      <% @user.wardrobes.each do |wardrobe| %>
+        <%= wardrobe.name %><br>
+        <% end %>
+      <p><%= link_to "Create new wardrobe", new_wardrobe_path(:user => @user.id) %><br>
+      </p>
+    <% end %>
 
 
 <div class="wardrobelist">
@@ -73,3 +71,4 @@
     </div>
     <br><br>
     <% end %>
+</div>
