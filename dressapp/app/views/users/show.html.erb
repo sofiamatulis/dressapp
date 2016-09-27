@@ -23,7 +23,7 @@
 <% @user.wardrobes.each do |wardrobe| %>
 <%= wardrobe.name %>
 <%= wardrobe.items.name %>
- <% end %> 
+ <% end %>
 <% end %>
 
 
@@ -39,3 +39,18 @@
 <%= f.submit %>
 
 <% end %>
+
+
+<div class="wardrobelist">
+  <% @user.wardrobes.each do |wardrobe| %>
+  <div class="wardrobe">
+    <p id="wardrobe-info">
+       Wardrobe: <%= Wardrobe.find(wardrobe).name %><br>
+
+       <div class="button">
+
+       </div>
+    </p>
+  </div>
+  <br><br>
+  <% end %>
