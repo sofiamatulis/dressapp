@@ -13,3 +13,29 @@
 
   </h4>
 </div>
+
+
+<h1>Welcome to your wardrobe</h1>
+<% if @user.wardrobes.empty? %>
+<h3>You don't have a wardrobe right now</h3>
+<%= link_to "Click here to create one", new_wardrobe_path %>
+<% else %>
+<% @user.wardrobes.each do |wardrobe| %>
+<%= wardrobe.name %>
+<%= wardrobe.items.name %>
+ <% end %> 
+<% end %>
+
+
+<h1>Create a new wardrobe</h1>
+
+
+<%= form_for wardrobe_url do |f| %>
+<div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<%= f.submit %>
+
+<% end %>
