@@ -18,7 +18,7 @@
 <h1>Welcome to your wardrobe</h1>
 <% if @user.wardrobes.empty? %>
 <h3>You don't have a wardrobe right now</h3>
-<%= link_to "Click here to create one", new_wardrobe_path %>
+<%= link_to "Click here to create one",   @user_wardrobes_path %>
 <% else %>
 <% @user.wardrobes.each do |wardrobe| %>
 <%= wardrobe.name %>

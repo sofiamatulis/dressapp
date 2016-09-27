@@ -35,4 +35,5 @@ class WardrobesController < ApplicationController
   def wardrobe_params
     params.require(:wardrobe).permit(:name)
   end
+  
 end

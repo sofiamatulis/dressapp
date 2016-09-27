@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @user_wardrobes = @user.wardrobes
+
+     wardrobes = Wardrobe.all
   end
 
   def create
