@@ -8,7 +8,8 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    @item = Item.new(:wardrobe_id => params[:wardrobe])
+
   end
 
   def edit
@@ -32,6 +33,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :image, :category_id)
+    params.require(:item).permit(:name, :description, :image, :category_id, :wardrobe_id)
   end
 end

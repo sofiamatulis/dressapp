@@ -32,6 +32,10 @@
     <%= collection_select(:item, :category_id, Category.all, :id, :category ) %>
   </div>
 
+  <div class="field">
+    <%= f.hidden_field :wardrobe_id %>
+  </div>
+
   <%= f.submit %>
 
 
