@@ -1,8 +1,10 @@
 <head>
 
   <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
     <script src="users.js" charset="utf-8"></script>
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
 
 </head>
 
@@ -20,6 +22,7 @@
   </div>
 
 <div class="wardrobe_list">
+  <div class="modal">
   <h1>Your wardrobes!</h1>
     <% if @user.wardrobes.empty? %>
       <h3>You don't have a wardrobe right now</h3>
@@ -32,6 +35,7 @@
       <p><%= link_to "Create new wardrobe", new_wardrobe_path(:user => @user.id) %><br>
       </p>
     <% end %>
+  </div>
   </div>
 
 

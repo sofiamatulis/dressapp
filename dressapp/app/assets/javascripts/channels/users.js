@@ -1,22 +1,16 @@
 $(function(){
 
-$('.wardrobebutton').on('click',function(event){
+$('.wardrobebutton').click( function(){ addWardrobe() });
+$('.modal').click( function(){close()});
 
-  //prevents the default from happening which is going to a new page
 
-  event.preventDefault();
+function addWardrobe(){
 
-  $.ajax({
-    url:'/wardrobes/new',
-    method: 'POST',
-    data:{},
-    dataType: 'html'
+    $('.modal').fadeIn('slow');
 
-  }).done(function(data){
-    console.log(data);
-  });
 
-});
+  }
+
 
 
 });
