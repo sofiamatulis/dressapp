@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  def home
+    render "home"
+  end
+
   def show
     @user = User.find(params[:id])
     @user_wardrobes = @user.wardrobes

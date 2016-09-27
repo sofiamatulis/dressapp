@@ -1,5 +1,5 @@
 
-<h1>Welcome <%="#{current_user.name}"%>!</h1>
+<h1>Your Wardrobes</h1>
   <% if @wardrobes.empty? %>
     <h3>You don't have a wardrobe right now</h3>
     <%= link_to "Click here to create one", new_wardrobe_path %>

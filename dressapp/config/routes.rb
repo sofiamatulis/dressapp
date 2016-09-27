@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-root 'wardrobes#index'
+root 'users#home'
 
 
   resources :sessions, only: [:new, :create, :destroy]
