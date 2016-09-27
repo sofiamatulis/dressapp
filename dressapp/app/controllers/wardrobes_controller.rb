@@ -23,11 +23,14 @@ class WardrobesController < ApplicationController
   end
 
   def edit
-
+    @wardrobe = Wardrobe.find(params[:id])
   end
 
 
   def destroy
+    @wardrobe = Wardrobe.find(params[:id])
+    @wardrobe.destroy
+    redirect_to wardrobe_path
   end
 
   private
