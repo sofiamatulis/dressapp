@@ -1,15 +1,16 @@
-<h1>Welcome to your wardrobe</h1>
-<% if @wardrobes.empty? %>
-<h3>You don't have a wardrobe right now</h3>
-<%= link_to "Click here to create one", new_wardrobe_path %>
-<% else %>
-<p><%= link_to "Add another wardrobe", new_wardrobe_path %></p>
-<% @wardrobes.each do |wardrobe| %>
-<p><%= link_to wardrobe.name, wardrobe %></p>
-<% wardrobe.items.each do |item| %>
-<p><%= link_to image_tag(item.image), items_path(item) %></p>
-<p><%= item.name %></p>
-<p><%= item.description %></p>
-<% end %>
-<% end %>
-<% end %>
+
+<h1>Welcome <%="#{current_user.name}"%>!</h1>
+  <% if @wardrobes.empty? %>
+    <h3>You don't have a wardrobe right now</h3>
+    <%= link_to "Click here to create one", new_wardrobe_path %>
+  <% else %>
+    <p><%= link_to "Add another wardrobe", new_wardrobe_path %></p>
+    <% @wardrobes.each do |wardrobe| %>
+      <p><%= link_to wardrobe.name, wardrobe %></p>
+        <% wardrobe.items.each do |item| %>
+          <p><%= link_to image_tag(item.image), items_path(item) %></p>
+          <p><%= item.name %></p>
+          <p><%= item.description %></p>
+      <% end %>
+    <% end %>
+  <% end %>

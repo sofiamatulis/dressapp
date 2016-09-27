@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+ .menu-bar{
+   padding: 20px;
+   background-color: grey;
+   overflow: hidden;
+   height: 50px;
+ }
+
+ #logo img{
+   height: 50px;
+   width: auto;
+   position: relative;
+   line-height: 50px;
+ }
+
+ .userinfo{
+   float:right;
+   letter-spacing: 2px;
+   padding: 12px;
+   text-align: center;
+ }
