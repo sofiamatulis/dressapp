@@ -12,7 +12,7 @@
     </h4>
   </div>
 
-
+<div class="wardrobe_list">
   <h1>Your wardrobes!</h1>
     <% if @user.wardrobes.empty? %>
       <h3>You don't have a wardrobe right now</h3>
@@ -20,26 +20,13 @@
 
     <% else %>
       <% @user.wardrobes.each do |wardrobe| %>
-        <%= wardrobe.name %><br>
+        <%= link_to wardrobe.name, wardrobe_path(wardrobe) %><br>
         <% end %>
       <p><%= link_to "Create new wardrobe", new_wardrobe_path(:user => @user.id) %><br>
       </p>
     <% end %>
-
-
-<div class="wardrobelist">
-  <% @user.wardrobes.each do |wardrobe| %>
-  <div class="wardrobe">
-    <p id="wardrobe-info">
-       Wardrobe: <%= Wardrobe.find(wardrobe).name %><br>
-
-       <div class="button">
-
-       </div>
-    </p>
   </div>
-  <br><br>
-  <% end %>
+
 
 <!-- access the suitcases from user -->
   <h1>Welcome to your suitcases</h1>
