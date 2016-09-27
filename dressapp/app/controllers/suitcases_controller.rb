@@ -9,6 +9,7 @@ class SuitcasesController < ApplicationController
   end
 
   def new
+    @suitcase = Suitcase.new(:user_id => params[:user])
   end
 
   def create

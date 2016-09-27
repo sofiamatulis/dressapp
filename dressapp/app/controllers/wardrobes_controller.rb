@@ -1,6 +1,6 @@
 class WardrobesController < ApplicationController
   def new
-    @wardrobe = Wardrobe.new
+    @wardrobe = Wardrobe.new(:user_id => params[:user])
   end
 
   def create
@@ -36,7 +36,7 @@ class WardrobesController < ApplicationController
   private
 
   def wardrobe_params
-    params.require(:wardrobe).permit(:name)
+    params.require(:wardrobe).permit(:name, :user_id)
   end
 
 end
