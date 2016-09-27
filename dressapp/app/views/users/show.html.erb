@@ -1,6 +1,14 @@
-<div class="profile">
-  <h1>Hello, <%= @user.name %>!</h1>
-  <div class="button"><%= link_to "Edit Profile", edit_user_path(@user) %>
+<head>
+
+  <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="users.js" charset="utf-8"></script>
+
+</head>
+
+  <div class="profile">
+    <h1>Hello, <%= @user.name %>!</h1>
+    <div class="button"><%= link_to "Edit Profile", edit_user_path(@user) %>
   </div>
 
 
@@ -8,7 +16,6 @@
     <h4>
       E-mail: <%= @user.email %><br />
       <%= image_tag @user.image.url %>
-
     </h4>
   </div>
 
