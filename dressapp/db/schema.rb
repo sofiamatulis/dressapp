@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927192341) do
+ActiveRecord::Schema.define(version: 20160927200541) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "category"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160927192341) do
     t.index ["wardrobe_id"], name: "index_items_on_wardrobe_id"
   end
 
-  create_table "itemssuitcases", force: :cascade do |t|
+  create_table "items_suitcases", force: :cascade do |t|
     t.integer "suitcase_id"
     t.integer "item_id"
   end

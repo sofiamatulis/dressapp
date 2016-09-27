@@ -51,7 +51,9 @@
   <% else %>
   <% @user.suitcases.each do |suitcase| %>
   <%= suitcase.name %>
-  <%= suitcase.items.name %>
+  <%= suitcase.items.each do |item| %>
+  <%= item.name %>
+  <% end %>
    <% end %>
   <% end %>
 
