@@ -4,6 +4,13 @@ class UsersController < ApplicationController
     @user_wardrobes = @user.wardrobes
 
      wardrobes = Wardrobe.all
+
+     unless session[:user_id] == @user.id
+      flash[:notice] = "You don't have access to this!"
+      redirect_to user_path(session[:user_id])
+      return
+    end
+
   end
 
   def create

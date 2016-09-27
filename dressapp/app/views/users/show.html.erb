@@ -21,6 +21,7 @@
 <%= link_to "Create new wardrobe", new_wardrobe_path(:user => @user.id) %>
 
 <% else %>
+<%= link_to "Create new wardrobe", new_wardrobe_path(:user => @user.id) %>
 <% @user.wardrobes.each do |wardrobe| %>
 <%= wardrobe.name %>
 <%= wardrobe.items.name %>
@@ -49,6 +50,7 @@
   <%= link_to "Create new suitcase", new_suitcase_path(:user => @user.id) %>
 
   <% else %>
+  <%= link_to "Create new suitcase", new_suitcase_path(:user => @user.id) %>
   <% @user.suitcases.each do |suitcase| %>
   <%= suitcase.name %>
   <%= suitcase.items.each do |item| %>
