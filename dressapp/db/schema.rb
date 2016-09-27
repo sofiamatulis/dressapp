@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160926214148) do
     t.text     "description"
     t.string   "image"
     t.integer  "category_id"
+    t.integer  "wardrobe_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160926214148) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["wardrobe_id"], name: "index_items_on_wardrobe_id"
   end
 
   create_table "itemssuitcases", force: :cascade do |t|

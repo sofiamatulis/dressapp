@@ -5,6 +5,7 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.text :description
       t.string :image
       t.references :category, foreign_key: true
+      t.references :wardrobe, foreign_key: true
 
       t.timestamps
     end

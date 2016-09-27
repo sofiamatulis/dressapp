@@ -1,2 +1,12 @@
-<h1>Wardrobes#show</h1>
-<p>Find me in app/views/wardrobes/show.html.erb</p>
+<h1>Welcome to your wardrobe</h1>
+<% if @wardrobe.nil? %>
+<h3>You don't have any clothes in this wardrobe right now</h3>
+<%= link_to "Click here to create add some", new_item_path, :wardrobe => @wardrobe.id %>
+<% else %>
+<% @wardrobe.items.each do |item| %>
+<p><%= item.name %></p>
+<p><%= item.description %></p>
+<a><%= image_tag item.image %></a>
+<% end %>
+<%= link_to "Add more items", new_item_path(:wardrobe => @wardrobe.id) %>
+<% end %>

@@ -3,8 +3,9 @@
 <h3>You don't have a wardrobe right now</h3>
 <%= link_to "Click here to create one", new_wardrobe_path %>
 <% else %>
+<p><%= link_to "Add another wardrobe", new_wardrobe_path %></p>
 <% @wardrobes.each do |wardrobe| %>
-<%= wardrobe.name %>
-<%= wardrobe.items.name %>
+<p><%= link_to wardrobe.name, wardrobe %></p>
+<p><%= link_to wardrobe.items.name %></p>
 <% end %>
 <% end %>
