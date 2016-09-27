@@ -4,11 +4,13 @@
 <%= link_to "Click here to create add some", new_item_path, :wardrobe => @wardrobe.id %>
 <!--  Create redirect back to wardrobe in JS -->
 <% else %>
+<ul class="wardrobe">
 <% @wardrobe.items.each do |item| %>
-<p><%= item.name %></p>
-<p><%= item.description %></p>
-<a><%= image_tag item.image %></a>
+<li class="items"><%= item.name %></li>
+<li class="items"><%= item.description %></li>
+<li class="items"><%= image_tag item.image %></li>
 <% end %>
+</ul>
 <%= link_to "Add more items", new_item_path(:wardrobe => @wardrobe.id) %>
 <!--  Create redirect back to wardrobe in JS -->
 <% end %>
