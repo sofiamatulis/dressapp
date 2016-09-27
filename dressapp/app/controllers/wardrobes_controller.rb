@@ -20,6 +20,11 @@ class WardrobesController < ApplicationController
 
   def show
     @wardrobe = Wardrobe.find(params[:id])
+    unless session[:user_id] == @wardrobe.user_id
+     flash[:notice] = "You don't have access to that wardrobe!"
+     redirect_to user_path(session[:user_id])
+     return
+   end
   end
 
   def edit
