@@ -1,4 +1,4 @@
 class Suitcase < ApplicationRecord
-  has_many :items, through: :itemssuitcases
-  has_many :itemssuitcases
+  has_and_belongs_to_many :items
+  belongs_to :user
 end

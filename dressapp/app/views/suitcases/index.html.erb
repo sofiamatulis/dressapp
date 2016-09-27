@@ -1,2 +1,12 @@
-<h1>Suitcases#index</h1>
-<p>Find me in app/views/suitcases/index.html.erb</p>
+<h1>Suitcases</h1>
+
+<p>
+  <% @suitcases.each do |suitcase| %>
+    <ul>
+      <li><%= link_to suitcase.name, suitcase %></li>
+      <li><%= suitcase.description %></li>
+      <li>Duration: <%= suitcase.duration %> days</li>
+      <li>Destination: <%= suitcase.destination %></li>
+    </ul>
+  <% end %>
+</p>

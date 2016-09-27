@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :wardrobe, optional: true
   belongs_to :suitcase, optional: true
+  has_and_belongs_to_many :suitcases
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
