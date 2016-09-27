@@ -1,3 +1,16 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.header-image {
+  height: 500px;
+  background-image: url('http://slashmobility.com/wp-content/uploads/2014/06/img_ampliada_dressapp_3_1280.png');
+  width:100%;
+  text-align: center;
+  padding-top: 3px;
+  // padding-top: 15px;
+  position: absolute;
+  filter: brightness(98%);
+  -webkit-filter: brightness(98%);
+  -moz-filter: brightness(98%);
+  -ms-filter: brightness(98%);
+}
