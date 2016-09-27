@@ -1,0 +1,21 @@
+<%= form_for(@suitcase) do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :duration %><br>
+    <%= f.number_field :duration %>
+  </p>
+  <p>
+    <%= f.label :destination %><br>
+    <%= f.text_field :destination %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
