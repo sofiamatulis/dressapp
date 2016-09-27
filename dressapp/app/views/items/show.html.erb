@@ -1,2 +1,13 @@
 <h1>Items#show</h1>
 <p>Find me in app/views/items/show.html.erb</p>
+
+<div>
+    <ul>
+      <li><%= image_tag @item.image.url %></li>
+      <li><%= @item.name %></li>
+      <li><%= @item.description %></li>
+      <li><%= @item.category.category %></li>
+    </ul>
+</div>
+
+<%= link_to "Back to Wardrobe", wardrobe_path %>
