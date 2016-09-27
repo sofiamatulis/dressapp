@@ -1,4 +1,4 @@
-<h1>Welcome to your wardrobe</h1>
+<h1><%= @wardrobe.name %></h1>
 <% if @wardrobe.nil? %>
 <h3>You don't have any clothes in this wardrobe right now</h3>
 <%= link_to "Click here to create add some", new_item_path, :wardrobe => @wardrobe.id %>
