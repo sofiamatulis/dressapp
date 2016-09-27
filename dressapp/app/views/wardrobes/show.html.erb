@@ -1,4 +1,12 @@
 <h1>Welcome to your wardrobe</h1>
+
+<div>
+  <%= form_tag(items_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search for Items" %>
+  <%= submit_tag "Search" %>
+  <% end %>
+</div>
+
 <% if @wardrobe.nil? %>
 <h3>You don't have any clothes in this wardrobe right now</h3>
 <%= link_to "Click here to create add some", new_item_path, :wardrobe => @wardrobe.id %>
