@@ -13,6 +13,8 @@ class SuitcasesController < ApplicationController
 
   def create
     @suitcase = Suitcase.new(suitcase_params)
+    @suitcase.user_id = current_user.id
+
 
     if @suitcase.save
       redirect_to suitcases_url
@@ -43,6 +45,6 @@ class SuitcasesController < ApplicationController
 
   private
   def suitcase_params
-    params.require(:suitcase).permit(:name, :description, :duration, :destination)
+    params.require(:suitcase).permit(:name, :description, :duration, :destination, :user_id)
   end
 end
