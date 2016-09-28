@@ -26,28 +26,17 @@
       <h3>You don't have a wardrobe right now</h3>
       <%= link_to "Create new wardrobe", new_wardrobe_path(:user => @user.id) %>
       <button class="wardrobebutton">New Wardrobe</button>
-      <!-- <h1 class="hello">Welcome</h1> -->
-
-      <!-- <div class="modal">
-          <form class="getstarted">
-              <button type="button" class="close">x</button>
-              <input type="text" name="name" placeholder="Name">
-              <button type="button" class="submit">submit</button>
-          </form>
-      </div> -->
-
-      <!-- <script src="js/vendor/jquery-1.11.3.min.js"></script> -->
-
 
 
     <% else %>
-      <% @user.wardrobes.each do |wardrobe| %>
+      <div class="wardrobe"><% @user.wardrobes.each do |wardrobe| %>
         <%= link_to wardrobe.name, wardrobe_path(wardrobe) %><br>
         <% end %>
+         </div>
       <p><%= link_to "Create new wardrobe", new_wardrobe_path(:user => @user.id)%><br>    </p>
         <button class="wardrobebutton">New Wardrobe</button>
 
-        
+
         <h1 class="hello">New Wardrobe</h1>
 
 
@@ -56,6 +45,7 @@
                 <button type="button" class="close">x</button>
                 <input type="text" name="name" placeholder="Name">
                 <button type="button" class="submit">submit</button>
+
             </form>
         </div>
 

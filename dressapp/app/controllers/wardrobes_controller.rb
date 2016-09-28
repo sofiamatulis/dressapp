@@ -12,6 +12,11 @@ class WardrobesController < ApplicationController
       render :new
     end
 
+    respond_to do |format|
+    format.html {render html: }
+    format.json {render json: }
+    end
+
   end
 
   def index

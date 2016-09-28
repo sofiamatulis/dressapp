@@ -2,8 +2,8 @@ $(function(){
 
 $('.wardrobebutton').click( function(){ addWardrobe() });
 $('.close').click( function(){close()});
-  // $('.submit').click( function(event) { error(event) });
-  // $('input').click( function(event){notError(event)});
+$('.submit').click( function(){ submit() });
+
 
 
 function addWardrobe(){
@@ -16,6 +16,18 @@ function addWardrobe(){
   function close(){
 
       $('.modal').fadeOut('slow');
+    }
+
+    function submit(){
+      $.ajax({
+          url:'/user',
+          method:'POST',
+          dataType: "html",
+          data:  $(this).serialize(),
+          success: function(data) {
+            $('.wardrobe_list').prepend("<li class='wardrobe'"+ data.name +"</a>");
+        }
+       });
     }
 
 
