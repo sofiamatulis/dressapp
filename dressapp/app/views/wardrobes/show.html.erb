@@ -16,3 +16,5 @@
    <p class="button add-item"><%= link_to "Add more items", new_item_path(:wardrobe => @wardrobe.id) %></p>
 <!--  Create redirect back to wardrobe in JS -->
 <% end %>
+
+<p class="back-button"><%= link_to "Back", user_path(current_user) %></p>

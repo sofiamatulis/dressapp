@@ -68,18 +68,19 @@
 
 
 <!-- access the suitcases from user -->
-  <h1>Welcome to your suitcases</h1>
+  <h1>Your Suitcases!</h1>
   <% if @user.suitcases.empty? %>
     <h3>You don't have a suitcase right now</h3>
     <%= link_to "Create new suitcase", new_suitcase_path(:user => @user.id) %>
 
   <% else %>
   <div class="suitcase">
+    <%= link_to "View All", suitcases_path %><br>
     <%= link_to "Create new suitcase", new_suitcase_path(:user => @user.id) %>
     <div class="suitcaselist">
     <% @user.suitcases.each do |suitcase| %>
       <%= link_to suitcase.name, suitcase_path(suitcase) %><br>
-      
+
     <% end %>
     </div>
   </div>
