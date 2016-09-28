@@ -3,10 +3,10 @@
 <p>
   <% @suitcases.each do |suitcase| %>
     <ul>
-      <li><%= link_to suitcase.name, suitcase %></li>
-      <li><%= suitcase.description %></li>
-      <li>Duration: <%= suitcase.duration %> days</li>
-      <li>Destination: <%= suitcase.destination %></li>
+      <li class="suitcase-details"><%= link_to suitcase.name, suitcase %></li>
+      <li class="suitcase-details"><%= suitcase.description %></li>
+      <li class="suitcase-details">Duration: <%= suitcase.duration %> days</li>
+      <li class="suitcase-details">Destination: <%= suitcase.destination %></li>
     </ul>
   <% end %>
 </p>
