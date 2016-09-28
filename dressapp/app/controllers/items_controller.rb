@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   def index
     @items = Item.all
   end
@@ -32,7 +33,8 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-    redirect_to items_path
+    @wardrobe = @item.wardrobe
+    redirect_to wardrobe_path(@wardrobe)
   end
 
   private

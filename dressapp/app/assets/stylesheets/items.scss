@@ -1,12 +1,16 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.items-details img {
+.item-details img {
   height: 200px;
   width: auto;
 }
 
 .item-details {
   list-style-type: none;
+  text-align: center;
+}
+
+h1 {
   text-align: center;
 }
