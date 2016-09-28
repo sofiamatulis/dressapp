@@ -3,14 +3,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Page</title>
-        <meta name="description" content="Example of jQuery events.">
-        <meta name="viewport" content="width=device-width">
 
-        <!-- <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/users.css"> -->
-
-        <!-- <script src="js/vendor/modernizr-2.6.2.min.js"></script> -->
     </head>
 
 
@@ -28,24 +21,22 @@
   </div>
 
 <div class="wardrobe_list">
-  <div class="modal">
   <h1>Your wardrobes!</h1>
     <% if @user.wardrobes.empty? %>
       <h3>You don't have a wardrobe right now</h3>
       <%= link_to "Create new wardrobe", new_wardrobe_path(:user => @user.id) %>
       <button class="wardrobebutton">New Wardrobe</button>
-      <h1 class="hello">Welcome</h1>
+      <!-- <h1 class="hello">Welcome</h1> -->
 
-      <div class="modal">
+      <!-- <div class="modal">
           <form class="getstarted">
               <button type="button" class="close">x</button>
               <input type="text" name="name" placeholder="Name">
               <button type="button" class="submit">submit</button>
           </form>
-      </div>
+      </div> -->
 
       <!-- <script src="js/vendor/jquery-1.11.3.min.js"></script> -->
-      <script src="users.js"></script>
 
 
 
@@ -53,9 +44,12 @@
       <% @user.wardrobes.each do |wardrobe| %>
         <%= link_to wardrobe.name, wardrobe_path(wardrobe) %><br>
         <% end %>
-      <p><%= link_to "Create new wardrobe", new_wardrobe_path(:user => @user.id)%><br>
+      <p><%= link_to "Create new wardrobe", new_wardrobe_path(:user => @user.id)%><br>    </p>
         <button class="wardrobebutton">New Wardrobe</button>
-        <h1 class="hello">Welcome</h1>
+
+        
+        <h1 class="hello">New Wardrobe</h1>
+
 
         <div class="modal">
             <form class="getstarted">
@@ -65,10 +59,9 @@
             </form>
         </div>
 
-        <script src="js/vendor/jquery-1.11.3.min.js"></script>
-        <script src="js/users.js"></script>
 
-      </p>
+
+
     <% end %>
   </div>
   </div>
