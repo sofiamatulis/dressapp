@@ -47,7 +47,7 @@
       <p><%= link_to "Create new wardrobe", new_wardrobe_path(:user => @user.id)%><br>    </p>
         <button class="wardrobebutton">New Wardrobe</button>
 
-        
+
         <h1 class="hello">New Wardrobe</h1>
 
 
@@ -70,34 +70,20 @@
 <!-- access the suitcases from user -->
   <h1>Welcome to your suitcases</h1>
   <% if @user.suitcases.empty? %>
-  <h3>You don't have a suitcase right now</h3>
-  <%= link_to "Create new suitcase", new_suitcase_path(:user => @user.id) %>
+    <h3>You don't have a suitcase right now</h3>
+    <%= link_to "Create new suitcase", new_suitcase_path(:user => @user.id) %>
 
   <% else %>
-  <%= link_to "Create new suitcase", new_suitcase_path(:user => @user.id) %>
-  <% @user.suitcases.each do |suitcase| %>
-  <%= suitcase.name %>
-  <%= suitcase.items.each do |item| %>
-  <%= item.name %>
-  <% end %>
-   <% end %>
-  <% end %>
-
-
-  <div class="suitcaselist">
+  <div class="suitcase">
+    <%= link_to "Create new suitcase", new_suitcase_path(:user => @user.id) %>
+    <div class="suitcaselist">
     <% @user.suitcases.each do |suitcase| %>
-    <div class="suitcase">
-      <p id="suitcase-info">
-         Suitcase: <%= Suitcase.find(suitcase).name %><br>
-
-         <div class="button">
-
-         </div>
-      </p>
-    </div>
-    <br><br>
+      <%= link_to suitcase.name, suitcase_path(suitcase) %><br>
+      
     <% end %>
-</div>
+    </div>
+  </div>
+  <% end %>
 
 
 <html>
