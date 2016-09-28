@@ -1,9 +1,11 @@
-<h1><%= @suitcase.name %></h1>
-<ul>
-  <li><%= @suitcase.description %></li>
-  <li>Duration: <%= @suitcase.duration %> days</li>
-  <li>Destination: <%= @suitcase.destination %></li>
+<h1 class="suitcase-title"><%= @suitcase.name %></h1>
+<ul class="suitcase">
+  <li class="suitcase-details"><%= @suitcase.description %></li>
+  <li class="suitcase-details">Duration: <%= @suitcase.duration %> days</li>
+  <li class="suitcase-details">Destination: <%= @suitcase.destination %></li>
 </ul>
-<p><%= link_to 'Back', suitcases_url %></p>
-<p><%= link_to 'Edit Suitcase', edit_suitcase_url(@suitcase) %></p>
-<p><%= link_to 'Delete Suitcase', @suitcase, method: :delete, data: {confirm: "Are you sure?"} %></p>
+<div class="links">
+  <p><%= link_to 'Back', suitcases_url %></p>
+  <p><%= link_to 'Edit Suitcase', edit_suitcase_url(@suitcase) %></p>
+  <p><%= link_to 'Delete Suitcase', @suitcase, method: :delete, data: {confirm: "Are you sure?"} %></p>
+</div>

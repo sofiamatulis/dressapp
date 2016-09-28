@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   def index
     @items = Item.all
   end
@@ -18,11 +19,10 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    # @category_id = item_params[:category_id]
     # @category = Category.find(item_params[:category_id])
-    # @item.category = @category
+    @wardrobe = @item.wardrobe
     if @item.save
-      redirect_to items_path
+      redirect_to wardrobe_path(@wardrobe)
     else
       render "new"
     end
@@ -31,7 +31,8 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-    redirect_to items_path
+    @wardrobe = @item.wardrobe
+    redirect_to wardrobe_path(@wardrobe)
   end
 
   private

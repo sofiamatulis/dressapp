@@ -1,16 +1,18 @@
 <h1><%= @wardrobe.name %></h1>
-  <% if @wardrobe.nil? %>
-    <h3>You don't have any clothes in this wardrobe right now</h3>
-    <%= link_to "Click here to create add some", new_item_path, :wardrobe => @wardrobe.id %>
+  <% if @wardrobe.items.length == 0 %>
+    <h3 class="item-details">You don't have any clothes in this wardrobe right now</h3>
+    <p class="button add-item"><%= link_to "Click here to add some", new_item_path(:wardrobe => @wardrobe.id) %></p>
 <!--  Create redirect back to wardrobe in JS -->
   <% else %>
-  <ul class="wardrobe">
-    <% @wardrobe.items.each do |item| %>
-    <li class="items"><%= item.name %></li>
-    <li class="items"><%= item.description %></li>
-    <li class="items"><%= link_to image_tag(item.image), item_path(item) %></li>
-  <% end %>
-  </ul>
-  <%= link_to "Add more items", new_item_path(:wardrobe => @wardrobe.id) %>
+  <div class="wardrobe-item-container">
+    <ul class="wardrobe-item">
+      <% @wardrobe.items.each do |item| %>
+      <li class="item-details"><%= item.name %></li>
+      <li class="item-details"><%= item.description %></li>
+      <li class="item-details"><%= link_to image_tag(item.image), item_path(item) %></li>
+    <% end %>
+    </ul>
+   </div>
+   <p class="button add-item"><%= link_to "Add more items", new_item_path(:wardrobe => @wardrobe.id) %></p>
 <!--  Create redirect back to wardrobe in JS -->
 <% end %>
