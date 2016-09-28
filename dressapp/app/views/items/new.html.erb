@@ -1,4 +1,5 @@
 <div class="add-new-item">
   <h1>Add a new item</h1>
   <%= render 'form' %>
+  <%= link_to "Back to Wardrobe", wardrobe_path(@item.wardrobe) %>
 </div>
