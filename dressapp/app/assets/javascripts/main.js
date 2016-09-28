@@ -18,14 +18,17 @@ function addWardrobe(){
       $('.modal').fadeOut('slow');
     }
 
+
+
     function submit(){
       $.ajax({
-          url:'/user',
+          url:'/wardrobes',
+          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
           method:'POST',
-          dataType: "html",
-          data:  $(this).serialize(),
+          dataType: "json",
+          data:  $('.getstarted').serialize(),
           success: function(data) {
-            $('.wardrobe_list').prepend("<li class='wardrobe'"+ data.name +"</a>");
+            $('.wardrobe_list').prepend("<div class='wardrobe'"+ data.name +"</div>");
         }
        });
     }

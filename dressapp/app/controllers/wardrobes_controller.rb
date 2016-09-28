@@ -1,4 +1,7 @@
 class WardrobesController < ApplicationController
+  # skip_before_action :verify_authenticity_token
+
+
   def new
     @wardrobe = Wardrobe.new(:user_id => params[:user])
   end
@@ -6,15 +9,15 @@ class WardrobesController < ApplicationController
   def create
     @wardrobe = Wardrobe.new(wardrobe_params)
     @wardrobe.user_id = current_user.id
-    if @wardrobe.save
-      redirect_to @wardrobe
-    else
-      render :new
-    end
+    # if @wardrobe.save
+    #   redirect_to @wardrobe
+    # else
+    #   render :new
+    # end
 
     respond_to do |format|
-    format.html {render html: }
-    format.json {render json: }
+    # format.html {render html: @wardrobe}
+    format.json {render json: @wardrobe.to_json}
     end
 
   end
