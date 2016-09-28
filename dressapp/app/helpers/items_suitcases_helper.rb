@@ -1,0 +1,2 @@
+module ItemsSuitcasesHelper
+end
