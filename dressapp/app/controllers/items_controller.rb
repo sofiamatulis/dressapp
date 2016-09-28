@@ -6,6 +6,8 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @suitcases = current_user.suitcases
+
   end
 
   def new
@@ -43,6 +45,7 @@ class ItemsController < ApplicationController
     @wardrobe = @item.wardrobe
     redirect_to wardrobe_path(@wardrobe)
   end
+
 
   private
   def item_params
