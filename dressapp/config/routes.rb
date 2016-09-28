@@ -4,6 +4,7 @@ root 'wardrobes#index'
 
 
   resources :sessions, only: [:new, :create, :destroy]
+  resources :items_suitcases, only: [:create, :new]
 
   resources :users
   resources :wardrobes

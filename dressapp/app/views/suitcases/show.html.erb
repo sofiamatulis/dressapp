@@ -3,6 +3,9 @@
   <li><%= @suitcase.description %></li>
   <li>Duration: <%= @suitcase.duration %> days</li>
   <li>Destination: <%= @suitcase.destination %></li>
+  <% @suitcase.items.each do |item| %>
+  <li><%= link_to item.name, item_path(item) %></li>
+  <% end %>
 </ul>
 <p><%= link_to 'Back', suitcases_url %></p>
 <p><%= link_to 'Edit Suitcase', edit_suitcase_url(@suitcase) %></p>

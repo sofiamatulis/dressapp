@@ -1,2 +1,0 @@
-class ItemssuitcasesController < ApplicationController
-end
