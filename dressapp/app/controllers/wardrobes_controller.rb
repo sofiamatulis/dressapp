@@ -31,6 +31,15 @@ class WardrobesController < ApplicationController
     @wardrobe = Wardrobe.find(params[:id])
   end
 
+  def update
+    @wardrobe = Wardrobe.find(params[:id])
+    if @wardrobe.update_attributes(wardrobe_edit_params)
+      redirect_to wardrobe_path(@wardrobe)
+    else
+      render :edit
+    end
+  end
+
 
   def destroy
     @wardrobe = Wardrobe.find(params[:id])
@@ -43,5 +52,9 @@ class WardrobesController < ApplicationController
   def wardrobe_params
     params.require(:wardrobe).permit(:name, :user_id)
   end
+
+  # def wardrobe_edit_params
+  #   params.require(:wardrobe).permit(:name)
+  # end
 
 end

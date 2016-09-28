@@ -1,4 +1,5 @@
 <h1><%= @wardrobe.name %></h1>
+
   <% if @wardrobe.items.length == 0 %>
     <h3 class="item-details">You don't have any clothes in this wardrobe right now</h3>
     <p class="button add-item"><%= link_to "Click here to add some", new_item_path(:wardrobe => @wardrobe.id) %></p>
