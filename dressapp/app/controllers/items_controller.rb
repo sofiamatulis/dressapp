@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @suitcases = current_user.suitcases
+
   end
 
   def new
@@ -34,6 +35,7 @@ class ItemsController < ApplicationController
     @item.destroy
     redirect_to items_path
   end
+
 
   private
   def item_params

@@ -10,7 +10,7 @@
       <li><%= link_to "Delete Item", item_path, method: :delete, data: {confirm: "Are you sure you want to delete this item? "} %>
         <div>
       <% @suitcases.each do |suitcase| %>
-      <li><%= suitcase.name %></li>
+      <li><%= link_to "Add to #{suitcase.name}", items_suitcases_path(:item => @item.id, :suitcase => suitcase.id), :method => :post %></li>
       <% end %>
 
       </div>
