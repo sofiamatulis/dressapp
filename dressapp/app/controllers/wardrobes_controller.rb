@@ -25,6 +25,7 @@ class WardrobesController < ApplicationController
      redirect_to user_path(session[:user_id])
      return
    end
+   @item = Item.new(:wardrobe_id => params[:wardrobe])
   end
 
   def edit

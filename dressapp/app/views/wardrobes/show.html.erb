@@ -26,7 +26,10 @@
     <% end %>
     </ul>
    </div>
-   <p class="button add-item"><%= link_to "Add more items", new_item_path(:wardrobe => @wardrobe.id) %></p>
+   <p class="button add-item"><%= link_to "Add more items", new_item_path(:wardrobe => @wardrobe.id), :class => "add-item" %></p>
+   <div class="modal-item">
+     <%= render 'items/form'%>
+ </div>
 <!--  Create redirect back to wardrobe in JS -->
 <% end %>
 
