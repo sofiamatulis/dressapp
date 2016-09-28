@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     # @category = Category.find(item_params[:category_id])
-    @wardrobe = @item.wardrobe_id
+    @wardrobe = @item.wardrobe
     if @item.save
       redirect_to wardrobe_path(@wardrobe)
     else
