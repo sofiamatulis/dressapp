@@ -18,11 +18,12 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @wardrobe = @item.wardrobe
     # @category_id = item_params[:category_id]
     # @category = Category.find(item_params[:category_id])
     # @item.category = @category
     if @item.save
-      redirect_to items_path
+      redirect_to wardrobe_path(@wardrobe)
     else
       render "new"
     end
