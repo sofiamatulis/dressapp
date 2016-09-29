@@ -6,7 +6,7 @@
     <li class="suitcase-details">Destination: <%= @suitcase.destination %></li>
     <div>
       <% @suitcase.items.each do |item| %>
-      <li><%= link_to item.name, item_path(item) %></li>
+      <%= link_to item.name, item_path(item) %>
       <% end %>
     </div>
   </ul>
@@ -20,6 +20,7 @@
 </div>
 
 <div id="suitcase-side-nav" class="sideNav">
+  <p id="close-nav">X</p>
   <p>Accessories</p>
   <p>Tops</p>
   <p>Bottoms</p>
