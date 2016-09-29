@@ -21,12 +21,21 @@
       <p>Tops</p>
       <div class="clothes-images">
         <% @suitcase.items.each do |item| %>
-        <%= link_to image_tag(item.image), item_path(item) %>
+          <% if item.category.category == "Top" %>
+            <%= link_to image_tag(item.image), item_path(item) %>
+          <% end %>
         <% end %>
       </div>
     </div>
     <div id="bottoms" class="clothes-container">
       <p>Bottoms</p>
+      <div class="clothes-images">
+        <% @suitcase.items.each do |item| %>
+          <% if item.category.category == "Bottom" %>
+            <%= link_to image_tag(item.image), item_path(item) %>
+            <% end %>
+        <% end %>
+      </div>
     </div>
     <div id="shoes" class="clothes-container">
       <p>Shoes</p>

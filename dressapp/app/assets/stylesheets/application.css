@@ -13,9 +13,13 @@
  *= require_tree .
  *= require_self
  */
+html {
+  height: 100%;
+}
 
 body {
   margin: 0px;
+  bottom: 0;
 }
 
  .menu-bar{
