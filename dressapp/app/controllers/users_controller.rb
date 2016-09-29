@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to wardrobes_url, notice: "Account created"
+      redirect_to user_url(@user), notice: "Account created"
     else
       render "new"
     end
