@@ -16,6 +16,8 @@ class UsersController < ApplicationController
       return
     end
 
+    @wardrobe = Wardrobe.new
+
   end
 
   def create

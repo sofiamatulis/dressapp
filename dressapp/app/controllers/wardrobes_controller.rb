@@ -9,14 +9,14 @@ class WardrobesController < ApplicationController
   def create
     @wardrobe = Wardrobe.new(wardrobe_params)
     @wardrobe.user_id = current_user.id
-    # if @wardrobe.save
-    #   redirect_to @wardrobe
+     @wardrobe.save
+    # if  redirect_to @wardrobe
     # else
     #   render :new
     # end
 
     respond_to do |format|
-    # format.html {render html: @wardrobe}
+    format.html {render html: @wardrobe}
     format.json {render json: @wardrobe.to_json}
     end
 

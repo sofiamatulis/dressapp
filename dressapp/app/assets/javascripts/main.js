@@ -6,6 +6,7 @@ $('.submit').click( function(){ submit() });
 
 
 
+
 function addWardrobe(){
 
     $('.modal').fadeIn('slow');
@@ -28,10 +29,33 @@ function addWardrobe(){
           dataType: "json",
           data:  $('.getstarted').serialize(),
           success: function(wardrobe) {
-            $('.allwardrobe').prepend("<div class='mywardrobe'"+ wardrobe.name +"</div>");
+            $('.allwardrobe').prepend("<li class='mywardrobe'<p>"+ wardrobe.name +"</p></li>");
         }
        });
     }
+
+
+    $('#new_wardrobe').on('submit',function(event){
+
+
+    event.preventDefault();
+    $.ajax({
+
+    url:'/wardrobes',
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    method:'POST',
+    dataType: "json",
+    data:  $('#new_wardrobe').serialize()
+
+
+  }).done(function(wardrobe){
+      $('.allwardrobe').prepend("<li class='mywardrobe'<p>"+ wardrobe.name +"</p></li>");
+
+    $("form")[0].reset();
+    });
+
+    });
+
 
 
 
