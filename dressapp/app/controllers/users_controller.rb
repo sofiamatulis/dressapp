@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     end
 
     @wardrobe = Wardrobe.new
+    @suitcase = Suitcase.new
 
   end
 

@@ -1,38 +1,5 @@
 $(function(){
 
-$('.wardrobebutton').click( function(){ addWardrobe() });
-$('.close').click( function(){close()});
-$('.submit').click( function(){ submit() });
-
-
-
-
-function addWardrobe(){
-
-    $('.modal').fadeIn('slow');
-
-
-  }
-
-  function close(){
-
-      $('.modal').fadeOut('slow');
-    }
-
-
-
-    function submit(){
-      $.ajax({
-          url:'/wardrobes',
-          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-          method:'POST',
-          dataType: "json",
-          data:  $('.getstarted').serialize(),
-          success: function(wardrobe) {
-            $('.allwardrobe').prepend("<li class='mywardrobe'<p>"+ wardrobe.name +"</p></li>");
-        }
-       });
-    }
 
 
     $('#new_wardrobe').on('submit',function(event){
@@ -49,12 +16,45 @@ function addWardrobe(){
 
 
   }).done(function(wardrobe){
-      $('.allwardrobe').prepend("<li class='mywardrobe'<p>"+ wardrobe.name +"</p></li>");
+    var link = $('<a href="http://localhost:3000/wardrobes/' + wardrobe.id +  '" >' + wardrobe.name + '</a>');
+    var name = $ ('.allwardrobe').append("<li class='mywardrobe'>").append(link);
 
-    $("form")[0].reset();
+
+
+
+    $("#new_wardrobe")[0].reset();
     });
 
     });
+
+
+
+
+        $('#new_suitcase').on('submit',function(event){
+
+
+        event.preventDefault();
+        $.ajax({
+
+        url:'/suitcases',
+        beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+        method:'POST',
+        dataType: "json",
+        data:  $('#new_suitcase').serialize()
+
+
+      }).done(function(suitcase){
+        var one = $('<a href="http://localhost:3000/suitcases/' + suitcase.id +  '" >' + suitcase.name + '</a>');
+        var two = $ ('.allsuitcase').append("<li class='mysuitcase'>").append(one);
+
+
+
+
+        $("#new_suitcase")[0].reset();
+        });
+
+      });
+
 
 
 
