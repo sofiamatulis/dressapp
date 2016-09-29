@@ -25,9 +25,9 @@
 
         <h1 class="hello">My wardrobes</h1>
 
-          <button class="wardrobebutton">New Wardrobe</button>
+          <!-- <button class="wardrobebutton">New Wardrobe</button> -->
 
-
+<!--
         <div class="modal">
 
 
@@ -39,14 +39,14 @@
 
             </form>
 
-        </div>
+        </div> -->
 
 
 
-       <!-- <ul class="allwardrobe">
+       <ul class="allwardrobe">
           <li class="mywardrobe">
             <p></p> </li>
-        </ul> -->
+        </ul>
 
 
 
@@ -58,12 +58,10 @@
   <% end %>
 </ul>
 
-<% @user.wardrobes.each do |wardrobe| %>
-<%= form_for wardrobe do |f| %>
+<%= form_for wardrobe_url do |f| %>
   <%= f.text_area :name, placeholder: "Wardrobe name" %>
   <%= f.submit "New Wardrobe", id: "create-wardrobe" %>
 <% end %>
-<%end %>
 
 
 
