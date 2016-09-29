@@ -59,11 +59,15 @@ h1 {
 #close-nav {
   position: absolute;
   top: 0;
-  right: 25px;
+  right: 10px;
   font-size: 36px;
-  margin-left: 50px;
+  margin: 0;
 }
 
 .clothes-container {
-  height: 100px;
+  height: 200px;
+}
+
+.clothes-container p {
+  text-align: center;
 }
