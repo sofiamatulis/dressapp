@@ -18,27 +18,16 @@
   <div id="suitcase-side-nav" class="sideNav">
     <p id="close-nav">X</p>
     <div id="tops" class="clothes-container">
-      <p>Tops</p>
-      <div class="clothes-images">
-        <% @suitcase.items.each do |item| %>
-          <% if item.category.category == "Top" %>
-            <%= link_to image_tag(item.image), item_path(item) %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-    <div id="bottoms" class="clothes-container">
-      <p>Bottoms</p>
-      <div class="clothes-images">
-        <% @suitcase.items.each do |item| %>
-          <% if item.category.category == "Bottom" %>
-            <%= link_to image_tag(item.image), item_path(item) %>
+      <h4>Tops</h4>
+      <p class="arrow-left"><</p>
+        <div class="clothes-container inner">
+          <% @suitcase.items.each_with_index do |item, index| %>
+            <% if item.category.category == "Top" %>
+                <span class="clothes-item <%= active_if_first(index) %>"><%= image_tag(item.image) %></span>
             <% end %>
-        <% end %>
+          <% end %>
+        </div>
+        <p class="arrow-right">></p>
       </div>
     </div>
-    <div id="shoes" class="clothes-container">
-      <p>Shoes</p>
-    </div>
-  </div>
 </div>
