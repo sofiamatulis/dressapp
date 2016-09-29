@@ -15,5 +15,12 @@ $(function(){
         $('.clothes-item').removeClass('active').addClass('inactive');
         $('.clothes-item').next().removeClass('inactive').addClass('active');
       }
-  });
+    });
+
+  $(".arrow-left").on('click', function() {
+      if ($('.clothes-item').hasClass('active')) {
+        $('.clothes-item').removeClass('active').addClass('inactive');
+        $('.clothes-item').prev().removeClass('inactive').addClass('active');
+      }
+    }); 
 });
