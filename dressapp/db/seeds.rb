@@ -8,3 +8,23 @@
 
 Category.create(category: "Top")
 Category.create(category: "Bottom")
+
+5.times do
+  Item.create(
+    name: "Shirt",
+    description: "My favourite (insert colour) shirt!",
+    image: "https://www.wpclipart.com/clothes/shirt/tee_shirt/red_t_shirt_T.png",
+    category_id: 1,
+    wardrobe_id: 1
+  )
+end
+
+5.times do
+  Item.create(
+    name: "Pants",
+    description: "My 2nd favourite pair of (insert colour) pants!",
+    image: "http://www.clipartkid.com/images/20/free-blue-pants-clip-art-EEo7kP-clipart.png",
+    category_id: 2,
+    wardrobe_id: 1
+  )
+end
