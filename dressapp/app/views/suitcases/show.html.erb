@@ -5,11 +5,6 @@
     <ul class="suitcase">
       <li class="suitcase-details">Duration: <%= @suitcase.duration %> days</li>
       <li class="suitcase-details">Details: <%= @suitcase.description %></li>
-      <div>
-        <% @suitcase.items.each do |item| %>
-        <%= link_to item.name, item_path(item) %>
-        <% end %>
-      </div>
     </ul>
 
     <div class="links">
@@ -24,6 +19,11 @@
     <p id="close-nav">X</p>
     <div id="tops" class="clothes-container">
       <p>Tops</p>
+      <div class="clothes-images">
+        <% @suitcase.items.each do |item| %>
+        <%= link_to image_tag(item.image), item_path(item) %>
+        <% end %>
+      </div>
     </div>
     <div id="bottoms" class="clothes-container">
       <p>Bottoms</p>
