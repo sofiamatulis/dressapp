@@ -10,8 +10,10 @@ $(function(){
     document.getElementById("suitcase-main").style.marginLeft= "0";
   });
 
-  $('.clothes-images').on('click', function() {
-    document.getElementsByClass('.clothes-images').carousel()
+  $(".arrow-right").on('click', function() {
+      if ($('.clothes-item').hasClass('active')) {
+        $('.clothes-item').removeClass('active').addClass('inactive');
+        $('.clothes-item').next().removeClass('inactive').addClass('active');
+      }
   });
-
 });

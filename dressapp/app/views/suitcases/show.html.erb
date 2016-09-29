@@ -19,7 +19,7 @@
     <p id="close-nav">X</p>
     <div id="tops" class="clothes-container">
       <h4>Tops</h4>
-      <p class="arrow-left"><</p>
+      <span class="arrow-left"><</span>
         <div class="clothes-container inner">
           <% @suitcase.items.each_with_index do |item, index| %>
             <% if item.category.category == "Top" %>
@@ -27,7 +27,7 @@
             <% end %>
           <% end %>
         </div>
-        <p class="arrow-right">></p>
+        <span class="arrow-right">></span>
       </div>
     </div>
 </div>
