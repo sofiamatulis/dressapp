@@ -36,7 +36,8 @@ class WardrobesController < ApplicationController
    @item = Item.new(:wardrobe_id => params[:id])
    respond_to do |format|
      format.html
-     format.json { render json: {items: @items, users: @users,category: @category, wardrobe: @wardrobes,suitcase: @suitcases }}
+     format.json { render json: {item: @item.to_json, users: @users,category: @category, wardrobe: @wardrobes.to_json ,suitcase: @suitcases }}
+
    end
   end
 
