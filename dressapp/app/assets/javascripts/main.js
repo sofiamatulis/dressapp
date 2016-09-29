@@ -35,7 +35,7 @@ function addWardrobe(){
     }
 
 
-    $('.getstarted').on('submit',function(event){
+    $('#new_wardrobe').on('submit',function(event){
 
 
     event.preventDefault();
@@ -45,7 +45,7 @@ function addWardrobe(){
     beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
     method:'POST',
     dataType: "json",
-    data:  $('.getstarted').serialize()
+    data:  $('#new_wardrobe').serialize()
 
 
   }).done(function(wardrobe){

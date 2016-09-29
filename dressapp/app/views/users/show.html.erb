@@ -50,7 +50,7 @@
 
 
 
-        <ul class="allwardrobe">
+<ul class="allwardrobe">
   <% @user.wardrobes.each do |wardrobe| %>
     <li class="mywardrobe">
     <p>  <%= link_to wardrobe.name, wardrobe_path(wardrobe) %></p><br>
@@ -58,7 +58,7 @@
   <% end %>
 </ul>
 
-<%= form_for wardrobe_url do |f| %>
+<%= form_for @wardrobe do |f| %>
   <%= f.text_area :name, placeholder: "Wardrobe name" %>
   <%= f.submit "New Wardrobe", id: "create-wardrobe" %>
 <% end %>

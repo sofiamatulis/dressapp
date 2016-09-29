@@ -16,7 +16,7 @@ class WardrobesController < ApplicationController
     # end
 
     respond_to do |format|
-    # format.html {render html: @wardrobe}
+    format.html {render html: @wardrobe}
     format.json {render json: @wardrobe.to_json}
     end
 
