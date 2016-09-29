@@ -43,8 +43,8 @@ $(function(){
         data:  $('#new_suitcase').serialize()
 
 
-      }).done(function(wardrobe){
-        var one = $('<a href="http://localhost:3000/suitcase/' + suitcase.id +  '" >' + suitcase.name + '</a>');
+      }).done(function(suitcase){
+        var one = $('<a href="http://localhost:3000/suitcases/' + suitcase.id +  '" >' + suitcase.name + '</a>');
         var two = $ ('.allsuitcase').append("<li class='mysuitcase'>").append(one);
 
 
