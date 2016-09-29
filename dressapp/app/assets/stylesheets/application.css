@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ *,
+ *:before,
+ *:after {
+   box-sizing: border-box;
+ }
+
 html {
   height: 100%;
 }
@@ -24,9 +31,10 @@ body {
 
  .menu-bar{
    padding: 10px;
-   background-color: grey;
+   background-color: white;
    overflow: hidden;
-   height: 30px;
+   height: 50px;
+   position: relative;
  }
 
  #logo img{
@@ -41,6 +49,7 @@ body {
    letter-spacing: 2px;
    padding: 12px;
    text-align: center;
+   position: relative;
  }
 
  .footer .right {
