@@ -19,17 +19,17 @@ body {
 }
 
  .menu-bar{
-   padding: 20px;
+   padding: 10px;
    background-color: grey;
    overflow: hidden;
-   height: 50px;
+   height: 30px;
  }
 
  #logo img{
-   height: 50px;
+   height: 30px;
    width: auto;
    position: relative;
-   line-height: 50px;
+   line-height: 30px;
  }
 
  .userinfo{

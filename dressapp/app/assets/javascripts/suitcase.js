@@ -1,8 +1,8 @@
 $(function(){
 
   $("#open-nav").on('click', function() {
-    document.getElementById("suitcase-side-nav").style.width = "400px";
-    document.getElementById("suitcase-main").style.marginLeft = "400px";
+    document.getElementById("suitcase-side-nav").style.width = "50%";
+    document.getElementById("suitcase-main").style.marginLeft = "50%";
   });
 
   $("#close-nav").on('click', function() {
