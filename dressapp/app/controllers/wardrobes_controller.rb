@@ -9,8 +9,8 @@ class WardrobesController < ApplicationController
   def create
     @wardrobe = Wardrobe.new(wardrobe_params)
     @wardrobe.user_id = current_user.id
-    # if @wardrobe.save
-    #   redirect_to @wardrobe
+     @wardrobe.save
+    # if  redirect_to @wardrobe
     # else
     #   render :new
     # end
