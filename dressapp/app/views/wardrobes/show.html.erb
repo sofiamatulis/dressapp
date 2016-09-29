@@ -1,7 +1,16 @@
 <h1><%= @wardrobe.name %></h1>
+
   <% if @wardrobe.items.length == 0 %>
     <h3 class="item-details">You don't have any clothes in this wardrobe right now</h3>
     <p class="button add-item"><%= link_to "Click here to add some", new_item_path(:wardrobe => @wardrobe.id) %></p>
+
+<div>
+  <%= form_tag(items_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search for Items" %>
+  <%= submit_tag "Search" %>
+  <% end %>
+</div>
+
 <!--  Create redirect back to wardrobe in JS -->
   <% else %>
   <div class="wardrobe-item-container">
@@ -13,6 +22,11 @@
     <% end %>
     </ul>
    </div>
-   <p class="button add-item"><%= link_to "Add more items", new_item_path(:wardrobe => @wardrobe.id) %></p>
+   <p class="button add-item"><%= link_to "Add more items", new_item_path(:wardrobe => @wardrobe.id), :class => "add-item" %></p>
+   <div class="modal-item">
+     <%= render 'items/form'%>
+ </div>
 <!--  Create redirect back to wardrobe in JS -->
 <% end %>
+
+<p class="back-button"><%= link_to "Back", user_path(current_user) %></p>

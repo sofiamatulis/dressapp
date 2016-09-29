@@ -1,11 +1,17 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.all
+    if params[:search]
+      @items = Item.search(params[:search])
+    else
+      @items = Item.all
+    end
   end
 
   def show
     @item = Item.find(params[:id])
+    @suitcases = current_user.suitcases
+
   end
 
   def new
@@ -15,6 +21,15 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update_attributes(item_edit_params)
+      redirect_to item_path(@item)
+    else
+      render :edit
+    end
   end
 
   def create
@@ -35,8 +50,13 @@ class ItemsController < ApplicationController
     redirect_to wardrobe_path(@wardrobe)
   end
 
+
   private
   def item_params
     params.require(:item).permit(:name, :description, :image, :category_id, :wardrobe_id)
+  end
+
+  def item_edit_params
+    params.require(:item).permit(:name, :description, :image, :category_id)
   end
 end
