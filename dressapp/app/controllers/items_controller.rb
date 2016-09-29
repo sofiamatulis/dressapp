@@ -37,7 +37,14 @@ class ItemsController < ApplicationController
     # @category = Category.find(item_params[:category_id])
     @wardrobe = @item.wardrobe
     if @item.save
-      redirect_to wardrobe_path(@wardrobe)
+      if request.xhr?
+        respond_to do |format|
+          format.html
+          format.json { render json: @item.to_json }
+        end
+      else
+        redirect_to wardrobe_path(@wardrobe)
+      end
     else
       render "new"
     end
