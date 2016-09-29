@@ -1,28 +1,38 @@
-<div id="suitcase-main">
-  <h1 class="suitcase-title"><%= @suitcase.name %></h1>
-  <ul class="suitcase">
-    <li class="suitcase-details"><%= @suitcase.description %></li>
-    <li class="suitcase-details">Duration: <%= @suitcase.duration %> days</li>
-    <li class="suitcase-details">Destination: <%= @suitcase.destination %></li>
-    <div>
-      <% @suitcase.items.each do |item| %>
-      <%= link_to item.name, item_path(item) %>
-      <% end %>
+<div id="suitcase-show-body">
+  <div id="suitcase-main">
+    <h1 class="suitcase-title"><%= @suitcase.name %></h1>
+    <ul class="suitcase">
+      <li class="suitcase-details"><%= @suitcase.description %></li>
+      <li class="suitcase-details">Duration: <%= @suitcase.duration %> days</li>
+      <li class="suitcase-details">Destination: <%= @suitcase.destination %></li>
+      <div>
+        <% @suitcase.items.each do |item| %>
+        <%= link_to item.name, item_path(item) %>
+        <% end %>
+      </div>
+    </ul>
+
+    <div class="links">
+      <p><%= link_to 'Back', user_path(current_user) %></p>
+      <p><%= link_to 'Edit Suitcase', edit_suitcase_url(@suitcase) %></p>
+      <p><%= link_to 'Delete Suitcase', @suitcase, method: :delete, data: {confirm: "Are you sure?"} %></p>
+      <span id="open-nav">Open Suitcase</span>
     </div>
-  </ul>
-
-  <div class="links">
-    <p><%= link_to 'Back', user_path(current_user) %></p>
-    <p><%= link_to 'Edit Suitcase', edit_suitcase_url(@suitcase) %></p>
-    <p><%= link_to 'Delete Suitcase', @suitcase, method: :delete, data: {confirm: "Are you sure?"} %></p>
-    <span id="open-nav">Open Suitcase</span>
   </div>
-</div>
 
-<div id="suitcase-side-nav" class="sideNav">
-  <p id="close-nav">X</p>
-  <p>Accessories</p>
-  <p>Tops</p>
-  <p>Bottoms</p>
-  <p>Shoes</p>
-</div>
+  <div id="suitcase-side-nav" class="sideNav">
+    <p id="close-nav">X</p>
+    <div id="accessories" class="clothes-container">
+      <p>Accessories</p>
+    </div>
+    <div id="tops" class="clothes-container">
+      <p>Tops</p>
+    </div>
+    <div id="bottoms" class="clothes-container">
+      <p>Bottoms</p>
+    </div>
+    <div id="shoes" class="clothes-container">
+      <p>Shoes</p>
+    </div>
+  </div>
+</div>  

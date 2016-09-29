@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#suitcase-show-body {
+  position: relative;
+  overflow: hidden;
+}
+
 .suitcase-details {
   list-style-type: none;
   text-align: center;
@@ -41,15 +46,15 @@ h1 {
 #suitcase-side-nav {
   height: 100%;
   width: 0;
-  position: fixed;
+  position: absolute;
   z-index: 1;
-  top: 50px;
+  top: 5px;
   left: 0;
   background-color: white;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
 }
+
 
 #close-nav {
   position: absolute;
@@ -57,4 +62,8 @@ h1 {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+}
+
+.clothes-container {
+  height: 100px;
 }
