@@ -35,22 +35,26 @@ function addWardrobe(){
     }
 
 
-    $('form').on('submit',function(event){
+    $('#new_wardrobe').on('submit',function(event){
 
 
     event.preventDefault();
     $.ajax({
 
     url:'/wardrobes',
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
     method:'POST',
-    dataType: "html"
-    data:  $('.getstarted').serialize()
+    dataType: "json",
+    data:  $('#new_wardrobe').serialize()
 
 
-    }).done(function(returnedData){
-    $('.allwardrobe').prepend(returnedData);
+  }).done(function(wardrobe){
+      $('.allwardrobe').prepend("<li class='mywardrobe'<p>"+ wardrobe.name +"</p></li>");
 
     $("form")[0].reset();
+    });
+
+    });
 
 
 
