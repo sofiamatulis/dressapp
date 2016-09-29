@@ -1,4 +1,7 @@
 class WardrobesController < ApplicationController
+  # skip_before_action :verify_authenticity_token
+
+
   def new
     @wardrobe = Wardrobe.new(:user_id => params[:user])
   end
@@ -6,10 +9,15 @@ class WardrobesController < ApplicationController
   def create
     @wardrobe = Wardrobe.new(wardrobe_params)
     @wardrobe.user_id = current_user.id
-    if @wardrobe.save
-      redirect_to @wardrobe
-    else
-      render :new
+    # if @wardrobe.save
+    #   redirect_to @wardrobe
+    # else
+    #   render :new
+    # end
+
+    respond_to do |format|
+    # format.html {render html: @wardrobe}
+    format.json {render json: @wardrobe.to_json}
     end
 
   end
@@ -25,7 +33,11 @@ class WardrobesController < ApplicationController
      redirect_to user_path(session[:user_id])
      return
    end
-   @item = Item.new(:wardrobe_id => params[:wardrobe])
+   @item = Item.new(:wardrobe_id => params[:id])
+   respond_to do |format|
+     format.html
+     format.json { render json: {items: @items, users: @users,category: @category, wardrobe: @wardrobes,suitcase: @suitcases }}
+   end
   end
 
   def edit
