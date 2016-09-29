@@ -31,6 +31,11 @@ h1 {
 #suitcase-main {
   position: relative;
   overflow: hidden;
+  background-image: url("http://www.walldevil.com/wallpapers/a40/vector-wallpapers-postcard-beach-media.jpg");
+  height: 570px;
+  transition: margin-left .5s;
+  padding: 16px;
+  left:0px;
 }
 
 #suitcase-side-nav {
@@ -40,7 +45,7 @@ h1 {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: white;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
