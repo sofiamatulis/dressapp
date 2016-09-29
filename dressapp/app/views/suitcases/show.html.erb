@@ -1,10 +1,10 @@
 <div id="suitcase-show-body">
   <div id="suitcase-main">
-    <h1 class="suitcase-title"><%= @suitcase.name %></h1>
+    <h1 class="suitcase-destination"><%= @suitcase.destination %></h1>
+    <h3 class="suitcase-title"><%= @suitcase.name %></h3>
     <ul class="suitcase">
-      <li class="suitcase-details"><%= @suitcase.description %></li>
       <li class="suitcase-details">Duration: <%= @suitcase.duration %> days</li>
-      <li class="suitcase-details">Destination: <%= @suitcase.destination %></li>
+      <li class="suitcase-details">Details: <%= @suitcase.description %></li>
       <div>
         <% @suitcase.items.each do |item| %>
         <%= link_to item.name, item_path(item) %>

@@ -14,6 +14,13 @@
 
 h1 {
   text-align: center;
+  font-family: 'Satisfy', cursive;
+  font-size: 50px;
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 .links {
@@ -36,7 +43,7 @@ h1 {
 #suitcase-main {
   position: relative;
   overflow: hidden;
-  background-image: url("http://www.walldevil.com/wallpapers/a40/vector-wallpapers-postcard-beach-media.jpg");
+  background-image: url("http://feelgrafix.com/data/china/China-4.jpg");
   height: 570px;
   transition: margin-left .5s;
   padding: 16px;
@@ -70,4 +77,5 @@ h1 {
 
 .clothes-container p {
   text-align: center;
+  font-family: 'Satisfy', cursive;
 }
