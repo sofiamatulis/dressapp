@@ -28,7 +28,7 @@ function addWardrobe(){
           dataType: "json",
           data:  $('.getstarted').serialize(),
           success: function(wardrobe) {
-            $('.allwardrobe').prepend("<div class='mywardrobe'"+ wardrobe.name +"</div>");
+            $('.allwardrobe').prepend("<li class='mywardrobe'<p>"+ wardrobe.name +"</p></li>");
         }
        });
     }
