@@ -9,8 +9,6 @@ $(function(){
       event.preventDefault();
       $('.modal-item').fadeOut('slow');
 
-
-console.log($('.modal-form').serialize());
       $.ajax({
         url: '/items',
         method: 'post',
