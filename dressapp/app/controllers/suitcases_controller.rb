@@ -16,11 +16,11 @@ class SuitcasesController < ApplicationController
     @suitcase.user_id = current_user.id
 
 
-    if @suitcase.save
-      redirect_to suitcases_url
-    else
-      render :new
-    end
+     @suitcase.save
+    #if   redirect_to suitcases_url
+    # else
+    #   render :new
+    # end
   end
 
   def edit
