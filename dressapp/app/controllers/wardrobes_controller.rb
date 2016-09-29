@@ -25,7 +25,11 @@ class WardrobesController < ApplicationController
      redirect_to user_path(session[:user_id])
      return
    end
-   @item = Item.new(:wardrobe_id => params[:wardrobe])
+   @item = Item.new(:wardrobe_id => params[:id])
+   respond_to do |format|
+     format.html
+     format.json { render json: {items: @items, users: @users,category: @category, wardrobe: @wardrobes,suitcase: @suitcases }}
+   end
   end
 
   def edit

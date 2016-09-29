@@ -1,5 +1,5 @@
-<div class="modal-form">
-<%= form_for @item do |f| %>
+
+<%= form_for @item, :html => {:class => "modal-form"} do |f| %>
 
 <%if @item.errors.any? %>
   <div id="error explanation">
@@ -41,4 +41,3 @@
 
 
 <% end %>
-</div>
