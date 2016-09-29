@@ -1,17 +1,2 @@
 <h1>Create a new wardrobe</h1>
-
-<%= form_for @wardrobe do |f| %>
-<div class="field">
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-</div>
-
-<div class="field">
-  <%= f.hidden_field :user_id %>
-</div>
-
-<%= f.submit  %>
-
-<% end %>
-
-<p><%= link_to 'Back', user_path(current_user) %></p>
+<%= render 'form' %>
