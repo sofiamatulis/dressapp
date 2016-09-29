@@ -30,26 +30,46 @@
 
         <div class="modal">
 
+
+
              <form class="getstarted">
                 <button type="button" class="close">x</button>
                 <input type="text" name="wardrobe[name]" placeholder="Name">
                 <button type="button" class="submit">submit</button>
 
             </form>
+
         </div>
 
 
 
-        <ul class="allwardrobe">
+       <!-- <ul class="allwardrobe">
           <li class="mywardrobe">
             <p></p> </li>
-        </ul>
+        </ul> -->
+
+
+
+        <ul class="allwardrobe">
+  <% @user.wardrobes.each do |wardrobe| %>
+    <li class="mywardrobe">
+    <p>  <%= link_to wardrobe.name, wardrobe_path(wardrobe) %></p><br>
+    </li>
+  <% end %>
+</ul>
+
+<% @user.wardrobes.each do |wardrobe| %>
+<%= form_for wardrobe do |f| %>
+  <%= f.text_area :name, placeholder: "Wardrobe name" %>
+  <%= f.submit "New Wardrobe", id: "create-wardrobe" %>
+<% end %>
+<%end %>
 
 
 
 
-  </div>
-  </div>
+
+
 
 
 <!-- access the suitcases from user -->

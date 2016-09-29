@@ -6,6 +6,7 @@ $('.submit').click( function(){ submit() });
 
 
 
+
 function addWardrobe(){
 
     $('.modal').fadeIn('slow');
@@ -32,6 +33,25 @@ function addWardrobe(){
         }
        });
     }
+
+
+    $('form').on('submit',function(event){
+
+
+    event.preventDefault();
+    $.ajax({
+
+    url:'/wardrobes',
+    method:'POST',
+    dataType: "html"
+    data:  $('.getstarted').serialize()
+
+
+    }).done(function(returnedData){
+    $('.allwardrobe').prepend(returnedData);
+
+    $("form")[0].reset();
+
 
 
 
