@@ -23,30 +23,7 @@
 
 
 
-        <h1 class="hello">My wardrobes</h1>
-
-          <!-- <button class="wardrobebutton">New Wardrobe</button> -->
-
-<!--
-        <div class="modal">
-
-
-
-             <form class="getstarted">
-                <button type="button" class="close">x</button>
-                <input type="text" name="wardrobe[name]" placeholder="Name">
-                <button type="button" class="submit">submit</button>
-
-            </form>
-
-        </div> -->
-
-
-
-       <!-- <ul class="allwardrobe">
-          <li class="mywardrobe">
-            <p></p> </li>
-        </ul> -->
+  <h1 class="hello">My wardrobes</h1>
 
 
 
@@ -59,7 +36,7 @@
 </ul>
 
 <%= form_for @wardrobe do |f| %>
-  <%= f.text_area :name, placeholder: "Wardrobe name" %>
+  <%= f.text_field :name, placeholder: "Wardrobe name" %>
   <%= f.submit "New Wardrobe", id: "create-wardrobe" %>
 <% end %>
 
@@ -69,25 +46,25 @@
 
 
 
+  <h1 class="bye">My suitcases</h1>
 
-<!-- access the suitcases from user -->
-  <h1>Your Suitcases!</h1>
-  <% if @user.suitcases.empty? %>
-    <h3>You don't have a suitcase right now</h3>
-    <%= link_to "Create new suitcase", new_suitcase_path(:user => @user.id) %>
-
-  <% else %>
-  <div class="suitcase">
-    <%= link_to "View All", suitcases_path %><br>
-    <%= link_to "Create new suitcase", new_suitcase_path(:user => @user.id) %>
-    <div class="suitcaselist">
-    <% @user.suitcases.each do |suitcase| %>
-      <%= link_to suitcase.name, suitcase_path(suitcase) %><br>
-
-    <% end %>
-    </div>
-  </div>
+<ul class="allsuitcase">
+  <% @user.suitcases.each do |suitcase| %>
+    <li class="mysuitcase">
+    <p>  <%= link_to suitcase.name, suitcase_path(suitcase) %></p><br>
+    </li>
   <% end %>
+</ul>
+
+<%= form_for @suitcase do |f| %>
+  <%= f.text_field :name, placeholder: "Suitcase name" %>
+  <%= f.text_area :description, placeholder: "Description" %>
+  <%= f.number_field :duration, placeholder: "Duration" %>
+  <%= f.text_field :destination, placeholder: "Destination" %>
+
+
+  <%= f.submit "New Suitcase", id: "create-suitcase"%>
+<% end %>
 
 
 </html>

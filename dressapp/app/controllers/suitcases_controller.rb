@@ -14,13 +14,18 @@ class SuitcasesController < ApplicationController
   def create
     @suitcase = Suitcase.new(suitcase_params)
     @suitcase.user_id = current_user.id
+    @suitcase.save
+    #if   redirect_to suitcases_url
+    # else
+    #   render :new
+    # end
 
-
-    if @suitcase.save
-      redirect_to suitcases_url
-    else
-      render :new
+    respond_to do |format|
+    format.html {render html: @suitcase}
+    format.json {render json: @suitcase.to_json}
     end
+
+
   end
 
   def edit
