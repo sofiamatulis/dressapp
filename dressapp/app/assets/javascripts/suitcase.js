@@ -26,14 +26,13 @@ $(function(){
 
 
     $('.tops-container').slick( {
-      centerMode: true,
-      // prevArrow: $('.arrow-left'),
-      // nextArrow: $('.arrow-right'),
+      prevArrow: '<span class="arrow-left"><</span>',
+      nextArrow: '<span class="arrow-right">></span>',
     });
 
     $('.bottoms-container').slick( {
-      // prevArrow: '<button class="arrow-left">PREV</button>',
-      // nextArrow: '<button class="arrow-right">NEXT</button>',
+      prevArrow: '<span class="arrow-left"><</span>',
+      nextArrow: '<span class="arrow-right">></span>',
     });
 
 

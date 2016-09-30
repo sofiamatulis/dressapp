@@ -114,6 +114,7 @@ h4 {
 }
 
 .arrow-left {
+  display: inline-block;
   width: 20%;
   float: left;
   text-align: right;
@@ -123,6 +124,7 @@ h4 {
 }
 
 .arrow-right {
+  display: inline-block;
   width: 20%;
   text-align: left;
   float: right;
@@ -148,5 +150,14 @@ h4 {
 }
 
 .draggable {
-  width: 100%;
+  display: inline-block;
+  width: 60%;
+}
+
+.slick-arrow {
+  display: none;
+}
+
+.slick-next:before {
+  display: none;
 }
