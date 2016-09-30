@@ -22,8 +22,6 @@ $(function(){
 
 
 
-
-
     $("#new_wardrobe")[0].reset();
     });
 
@@ -53,16 +51,7 @@ $(function(){
 
 
 
-
-
-
-
         $("#new_suitcase")[0].reset();
-
-
-
-
-
 
 
 
@@ -70,6 +59,34 @@ $(function(){
         });
 
       });
+
+
+//       $('#imageUploadForm').on('submit',(function(event) {
+//       event.preventDefault();
+//       var formData = new FormData(this);
+//
+//       $.ajax({
+//           type:'POST',
+//           url: $(this).attr('action'),
+//           data:formData,
+//           cache:false,
+//           contentType: false,
+//           processData: false,
+//           success:function(data){
+//               console.log("success");
+//               console.log(data);
+//           },
+//           error: function(data){
+//               console.log("error");
+//               console.log(data);
+//           }
+//       });
+//   }));
+//
+//   $("#ImageBrowse").on("change", function() {
+//       $("#imageUploadForm").submit();
+//   });
+// });
 
 
 

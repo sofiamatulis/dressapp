@@ -14,18 +14,34 @@
  *= require_self
  */
 
+ *,
+ *:before,
+ *:after {
+   box-sizing: border-box;
+ }
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  bottom: 0;
+}
+
  .menu-bar{
-   padding: 20px;
-   background-color: grey;
+   padding: 10px;
+   background-color: white;
    overflow: hidden;
    height: 50px;
+   position: relative;
  }
 
  #logo img{
-   height: 50px;
+   height: 30px;
    width: auto;
    position: relative;
-   line-height: 50px;
+   line-height: 30px;
  }
 
  .userinfo{
@@ -33,6 +49,7 @@
    letter-spacing: 2px;
    padding: 12px;
    text-align: center;
+   position: relative;
  }
 
  .footer .right {
