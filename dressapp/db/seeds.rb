@@ -8,6 +8,7 @@
 
 Category.create(category: "Top")
 Category.create(category: "Bottom")
+Category.create(category: "Shoes")
 
 5.times do
   Item.create(

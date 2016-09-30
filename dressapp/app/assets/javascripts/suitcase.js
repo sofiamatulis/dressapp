@@ -35,7 +35,10 @@ $(function(){
       nextArrow: '<span class="arrow-right">></span>',
     });
 
-
+    $('.shoes-container').slick( {
+      prevArrow: '<span class="arrow-left"><</span>',
+      nextArrow: '<span class="arrow-right">></span>',
+    });
 
 
 
