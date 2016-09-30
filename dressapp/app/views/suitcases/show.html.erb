@@ -19,15 +19,25 @@
     <p id="close-nav">X</p>
     <div id="tops" class="clothes-container">
       <h4>Tops</h4>
-      <span class="arrow-left"><</span>
-        <div class="clothes-container inner">
+        <div class="tops-container">
           <% @suitcase.items.each_with_index do |item, index| %>
             <% if item.category.category == "Top" %>
-                <span class="clothes-item <%= active_if_first(index) %>"><%= image_tag(item.image) %></span>
+                <span class="clothes-item"><%= image_tag(item.image) %></span>
             <% end %>
           <% end %>
         </div>
-        <span class="arrow-right">></span>
       </div>
+
+
+      <div id="bottoms" class="clothes-container">
+        <h4>Bottoms</h4>
+          <div class="bottoms-container">
+            <% @suitcase.items.each_with_index do |item, index| %>
+              <% if item.category.category == "Bottom" %>
+                  <span class="clothes-item"><%= image_tag(item.image) %></span>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
     </div>
 </div>
