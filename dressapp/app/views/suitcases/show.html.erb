@@ -16,9 +16,11 @@
   </div>
 
   <div id="suitcase-side-nav" class="sideNav">
-    <p id="close-nav">X</p>
+    <button id="other-items">Other Items</button>
+    <button id="view-all">View All</button>
+    <button id="add-items">Add More Items</button>
+    </span><h4>Outfit checker</h4><p id="close-nav">X</p>
     <div id="tops" class="clothes-container">
-      <h4>Tops</h4>
         <div class="tops-container">
           <% @suitcase.items.each_with_index do |item, index| %>
             <% if item.category.category == "Top" %>
@@ -30,7 +32,7 @@
 
 
       <div id="bottoms" class="clothes-container">
-        <h4>Bottoms</h4>
+        <!-- <h4>Bottoms</h4> -->
           <div class="bottoms-container">
             <% @suitcase.items.each_with_index do |item, index| %>
               <% if item.category.category == "Bottom" %>
@@ -39,5 +41,15 @@
             <% end %>
           </div>
         </div>
+
+        <div id="shoes" class="clothes-container">
+            <div class="shoes-container">
+              <% @suitcase.items.each_with_index do |item, index| %>
+                <% if item.category.category == "Shoes" %>
+                    <span class="clothes-item"><%= image_tag(item.image) %></span>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
     </div>
 </div>
