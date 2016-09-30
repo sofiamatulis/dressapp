@@ -50,6 +50,6 @@ class SuitcasesController < ApplicationController
 
   private
   def suitcase_params
-    params.require(:suitcase).permit(:name, :description, :duration, :destination, :user_id)
+    params.require(:suitcase).permit(:name, :description, :duration, :destination, :user_id, :item_ids)
   end
 end

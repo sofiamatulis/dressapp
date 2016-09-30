@@ -1,12 +1,11 @@
 $(function(){
-
+// function to get modal and form to add item
   $('.add-item').click(function(e){
     e.preventDefault();
     console.log("clicked");
     $('.modal-item').fadeIn('fast');
 
     $('.modal-form').on('submit', function(event){
-      $('.item-create').prop('disabled', false);
       event.preventDefault();
       $('.modal-item').fadeOut('slow');
 
@@ -26,8 +25,20 @@ $(function(){
 
 
       });
+      $('#item-create').prop("disabled", false);
     });
 
 
   })
+
+
+//  function to get modal and form to add to suitcase
+$('.add-to-suitcase').click(function(){
+  $('.item-link').removeAttr("href");
+  $('.item-link').click(function(){
+    $(this).find('img').toggleClass("item-selected");
+  })
+
+});
+
 })
