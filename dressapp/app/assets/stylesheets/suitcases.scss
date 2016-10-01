@@ -43,7 +43,7 @@ h3 {
 #suitcase-main {
   position: relative;
   overflow: hidden;
-  background-image: url("http://feelgrafix.com/data/china/China-4.jpg");
+  background-color: #f79279;
   height: 570px;
   transition: margin-left .5s;
   padding: 16px;
@@ -195,6 +195,12 @@ h4 {
 }
 
 #add-items {
+  position: absolute;
+  right: 22%;
+}
+
+#outfit-checker-button {
+  display: none;
   position: absolute;
   right: 22%;
 }

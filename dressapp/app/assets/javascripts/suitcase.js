@@ -44,7 +44,8 @@ $(function(){
       document.getElementById("suitcase-side-nav").style.width = "60%";
       document.getElementById("suitcase-main").style.marginLeft = "60%";
       $(".outfit-checker").css("display", "none");
-      $("#add-items").html("Outfit Checker");
+      $("#add-items").css("display", "none");
+      $("#outfit-checker-button").css("display", "block");
 
       $.ajax( {
         url: '/items',
@@ -61,13 +62,16 @@ $(function(){
                   $('<img>').attr('src', item.image).appendTo(itemContainer);
                   $(itemContainer).appendTo(itemsContainer);
               });
-
         $('#items-grid-container').html(itemsContainer);
-
-
-
       });
 
     });
+
+    $('#outfit-checker-button').on('click', function() {
+      $("#items-grid-container" ).empty();
+      $(".outfit-checker").css("display", "block");
+      $("#outfit-checker-button").css("display", "none");
+      $("#add-items").css("display", "block");
+    })
 
 });

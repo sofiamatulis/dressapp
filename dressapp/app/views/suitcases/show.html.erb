@@ -16,13 +16,15 @@
       <span id="open-nav">Open Suitcase</span>
     </div>
   </div>
-
+<!-- side nav pops out when clicking suitcase  -->
   <div id="suitcase-side-nav" class="sideNav">
     <button id="other-items">Other Items</button>
     <button id="view-all">View All</button>
     <button id="add-items">Add More Items</button>
+    <button id="outfit-checker-button">Outfit Checker</button>
+    <button id="close-nav">X</button>
   <div class="outfit-checker">
-    </span><h4>Outfit checker</h4><p id="close-nav">X</p>
+    </span><h4>Outfit checker</h4>
     <div id="tops" class="clothes-container">
         <div class="tops-container">
           <% @suitcase.items.each_with_index do |item, index| %>
@@ -57,6 +59,6 @@
         </div>
 
         <div id="items-grid-container">
-        </div> 
+        </div>
     </div>
 </div>
