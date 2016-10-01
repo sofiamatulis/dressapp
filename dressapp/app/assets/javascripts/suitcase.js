@@ -45,7 +45,18 @@ $(function(){
       document.getElementById("suitcase-main").style.marginLeft = "60%";
       $(".outfit-checker").css("display", "none");
       $("#add-items").html("Outfit Checker");
-      
+
+      $.ajax( {
+        url: '/items',
+        method: 'GET',
+        data: {},
+        dataType: 'html'
+      }).done(function(response) {
+        console.log(response);
+
+        var itemsGridContainer = $('<div>');
+      });
+
     });
 
 });
