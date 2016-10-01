@@ -57,7 +57,7 @@ $(function(){
 //iterating through each item and adding the name and photo to its own container
               $.each(response, function(i, item) {
                 var itemContainer = $('<div class="suitcase-item-container">');
-                  $('<h4>').html(item.name).appendTo(itemContainer);
+                  // $('<h4>').html(item.name).appendTo(itemContainer);
                   $('<img>').attr('src', item.image).appendTo(itemContainer);
                   $(itemContainer).appendTo(itemsContainer);
               });

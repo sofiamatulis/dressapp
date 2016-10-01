@@ -204,9 +204,12 @@ h4 {
 #items-grid-container img {
   width: 100px;
   height: auto;
+  margin: auto;
+  display: block;
 }
 
 .suitcase-item-container {
   display: inline-block;
-  width: 33%;
+  width: 25%;
+  margin: 40px 0;
 }
