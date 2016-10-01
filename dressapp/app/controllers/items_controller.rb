@@ -6,6 +6,14 @@ class ItemsController < ApplicationController
     else
       @items = Item.all
     end
+
+    respond_to do |format|
+          format.html
+
+          format.json do
+            render json: @items
+            end
+          end
   end
 
   def show

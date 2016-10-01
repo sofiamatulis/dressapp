@@ -50,11 +50,23 @@ $(function(){
         url: '/items',
         method: 'GET',
         data: {},
-        dataType: 'html'
+        dataType: 'JSON'
       }).done(function(response) {
         console.log(response);
+        var itemsContainer = $('<div>');
 
-        var itemsGridContainer = $('<div>');
+              $.each(response, function(i, item) {
+                for (var i in item) {
+                  console.log(item.name);
+                }
+                  $('<h1>').html(item.name).appendTo(itemsContainer);
+                  $('<img>').attr('src', item.image).appendTo(itemsContainer);
+              });
+
+        $('#items-grid-container').html(itemsContainer);
+
+
+
       });
 
     });
