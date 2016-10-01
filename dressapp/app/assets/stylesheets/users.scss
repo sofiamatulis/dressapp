@@ -19,8 +19,6 @@
   text-align: center;
 }
 
-
-
 .modal {
     display: none;
     position: fixed;
@@ -29,4 +27,37 @@
     width: 100%;
     height: 100%;
     background-color: rgba(30,30,30,0.8);
+}
+
+
+#imageUploadForm {
+  height:25%;
+  width:25%;
+}
+
+.mywardrobe {
+  font-family: 'Satisfy', cursive;
+
+}
+
+.mysuitcase {
+  font-family: 'Satisfy', cursive;
+
+}
+
+
+#create-wardrobe, #wardrobe_name, #suitcase_name, #suitcase_duration, #suitcase_destination, #suitcase_description, #create-suitcase {
+  font-family: 'Satisfy', cursive;
+  width: 300px;
+  height:50px;
+  font-size:30px;
+  text-align: center;
+
+}
+
+#create-wardrobe, #create-suitcase {
+  border: 2px solid #4CAF50;
+  width: 20%;
+  height:70%;
+  font-size:20px;
 }

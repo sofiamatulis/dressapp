@@ -36,7 +36,7 @@
 </ul>
 
 <%= form_for @wardrobe do |f| %>
-  <%= f.text_field :name, placeholder: "Wardrobe name" %>
+  <%= f.text_field :name, placeholder: "Wardrobe name" %> <br>
   <%= f.submit "New Wardrobe", id: "create-wardrobe" %>
 <% end %>
 
@@ -57,10 +57,10 @@
 </ul>
 
 <%= form_for @suitcase do |f| %>
-  <%= f.text_field :name, placeholder: "Suitcase name" %>
-  <%= f.text_area :description, placeholder: "Description" %>
-  <%= f.number_field :duration, placeholder: "Duration" %>
-  <%= f.text_field :destination, placeholder: "Destination" %>
+  <%= f.text_field :name, placeholder: "Suitcase name" %> <br>
+  <%= f.text_area :description, placeholder: "Description" %> <br>
+  <%= f.number_field :duration, placeholder: "Duration" %> <br>
+  <%= f.text_field :destination, placeholder: "Destination" %> <br>
 
 
   <%= f.submit "New Suitcase", id: "create-suitcase"%>
