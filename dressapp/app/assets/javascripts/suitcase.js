@@ -8,6 +8,12 @@ $(function(){
   $("#close-nav").on('click', function() {
     document.getElementById("suitcase-side-nav").style.width = "0";
     document.getElementById("suitcase-main").style.marginLeft= "0";
+    setTimeout( function() {
+      $("#items-grid-container" ).empty();
+      $(".outfit-checker").css("display", "block");
+      $("#outfit-checker-button").css("display", "none");
+      $("#add-items").css("display", "block");
+    }, 1000 );
   });
   //the original carousel method from scratch:
   // $(".arrow-right").on('click', function() {
@@ -72,6 +78,6 @@ $(function(){
       $(".outfit-checker").css("display", "block");
       $("#outfit-checker-button").css("display", "none");
       $("#add-items").css("display", "block");
-    })
+    });
 
 });
