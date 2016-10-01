@@ -198,3 +198,15 @@ h4 {
   position: absolute;
   right: 22%;
 }
+
+// styling for "add more items" in the suitcase show side nav
+
+#items-grid-container img {
+  width: 100px;
+  height: auto;
+}
+
+.suitcase-item-container {
+  display: inline-block;
+  width: 33%;
+}

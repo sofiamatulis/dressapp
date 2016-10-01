@@ -53,14 +53,13 @@ $(function(){
         dataType: 'JSON'
       }).done(function(response) {
         console.log(response);
-        var itemsContainer = $('<div>');
-
+        var itemsContainer = $('<div class="suitcase-items-container">');
+//iterating through each item and adding the name and photo to its own container
               $.each(response, function(i, item) {
-                for (var i in item) {
-                  console.log(item.name);
-                }
-                  $('<h1>').html(item.name).appendTo(itemsContainer);
-                  $('<img>').attr('src', item.image).appendTo(itemsContainer);
+                var itemContainer = $('<div class="suitcase-item-container">');
+                  $('<h4>').html(item.name).appendTo(itemContainer);
+                  $('<img>').attr('src', item.image).appendTo(itemContainer);
+                  $(itemContainer).appendTo(itemsContainer);
               });
 
         $('#items-grid-container').html(itemsContainer);
