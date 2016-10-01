@@ -9,7 +9,7 @@ $(function(){
     document.getElementById("suitcase-side-nav").style.width = "0";
     document.getElementById("suitcase-main").style.marginLeft= "0";
   });
-  //
+  //the original carousel method from scratch:
   // $(".arrow-right").on('click', function() {
   //     if ($('.clothes-item').hasClass('active')) {
   //       $('.clothes-item').removeClass('active').addClass('inactive');
@@ -40,12 +40,12 @@ $(function(){
       nextArrow: '<span class="arrow-right">></span>',
     });
 
+    $('#add-items').on('click', function() {
+      document.getElementById("suitcase-side-nav").style.width = "60%";
+      document.getElementById("suitcase-main").style.marginLeft = "60%";
+      $(".outfit-checker").css("display", "none");
+      $("#add-items").html("Outfit Checker");
+      
+    });
 
-
-    var slideWidth = $('.clothes-item span').width();
-    //
-    // function moveLeft() {
-    //     $('.clothes-item img').animate({
-    //         left: + slideWidth
-    //     }
 });
