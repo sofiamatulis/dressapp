@@ -8,7 +8,7 @@
 
 
   <div class="profile">
-    <h1>Hello, <%= @user.name %>!</h1>
+    <class = "form_edit"><h1>Hello, <%= @user.name %>!</h1></class>
     <div class="button"><%= link_to "Edit Profile", edit_user_path(@user) %>
   </div>
 
@@ -21,10 +21,7 @@
   </div>
 
 
-
-
   <h1 class="hello">My wardrobes</h1>
-
 
 
 <ul class="allwardrobe">
@@ -65,6 +62,9 @@
 
   <%= f.submit "New Suitcase", id: "create-suitcase"%>
 <% end %>
+
+
+
 
 
 </html>
