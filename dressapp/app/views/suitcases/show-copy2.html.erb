@@ -1,0 +1,54 @@
+<div id="suitcase-show-body">
+  <div id="suitcase-main">
+    <h1 class="suitcase-destination"><%= @suitcase.destination %></h1>
+    <h3 class="suitcase-title"><%= @suitcase.name %></h3>
+    <ul class="suitcase">
+      <li class="suitcase-details">Duration: <%= @suitcase.duration %> days</li>
+      <li class="suitcase-details">Details: <%= @suitcase.description %></li>
+    </ul>
+
+    <div class="links">
+      <p><%= link_to 'Back', user_path(current_user) %></p>
+      <p><%= link_to 'Edit Suitcase', edit_suitcase_url(@suitcase) %></p>
+      <p><%= link_to 'Delete Suitcase', @suitcase, method: :delete, data: {confirm: "Are you sure?"} %></p>
+      <span id="open-nav">Open Suitcase</span>
+    </div>
+  </div>
+
+  <div id="suitcase-side-nav" class="sideNav">
+    <p id="close-nav">X</p>
+    <div id="tops" class="clothes-container carousel slide" data-ride="carousel">
+      <p>Tops</p>
+      <div class="clothes-images carousel-inner" role="listbox">
+
+        <% @suitcase.items.each_with_index do |item, index| %>
+          <% if item.category.category == "Top" %>
+            <div class="clothes-item item <%= active_if_first(index) %>">
+              <%= image_tag(item.image) %>
+            </div>
+          <% end %>
+        <% end %>
+        <a class="left carousel-control" href="#tops" role="button" data-slide="prev">
+          <p>Previous</p>
+        </a>
+        <a class="right carousel-control" href="#tops" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <p>Next</p>
+        </a>
+      </div>
+    </div>
+    <div id="bottoms" class="clothes-container">
+      <p>Bottoms</p>
+      <div class="clothes-images">
+        <% @suitcase.items.each do |item| %>
+          <% if item.category.category == "Bottom" %>
+            <div class="clothes-item"><%= link_to image_tag(item.image), item_path(item) %></div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="shoes" class="clothes-container">
+      <p>Shoes</p>
+    </div>
+  </div>
+</div>

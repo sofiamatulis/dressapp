@@ -37,8 +37,8 @@ class WardrobesController < ApplicationController
    respond_to do |format|
      format.html
      format.json { render json: {item: @item.to_json, users: @users,category: @category, wardrobe: @wardrobes.to_json ,suitcase: @suitcases }}
-
    end
+   @suitcases = Suitcase.all
   end
 
   def edit

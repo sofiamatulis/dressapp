@@ -24,7 +24,8 @@
       <% @wardrobe.items.each do |item| %>
       <li class="item-details"><%= item.name %></li>
       <li class="item-details"><%= item.description %></li>
-      <li class="item-details"><%= link_to image_tag(item.image), item_path(item) %></li>
+      <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
+      <li class="item-details"><%= check_box_tag("add item", value="1", checked = false) %>
     <% end %>
     </ul>
    </div>
@@ -34,5 +35,14 @@
    </div>
 <!--  Create redirect back to wardrobe in JS -->
 <% end %>
+
+<div class="dropdown">
+  <button class="add-to-suitcase">Add to suitcase</button>
+  <ul class="category-dropdown">
+    <% @suitcases.each do |suitcase| %>
+    <li><%= link_to "Add to #{suitcase.name}", items_suitcases_path(:item => @item.id, :suitcase => suitcase.id), :method => :post, :class => "category-menu" %></li>
+    <% end %>
+  </ul>
+</div>
 
 <p class="back-button"><%= link_to "Back", user_path(current_user) %></p>

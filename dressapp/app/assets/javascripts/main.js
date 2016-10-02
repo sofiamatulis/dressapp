@@ -18,7 +18,7 @@ $(function(){
   }).done(function(wardrobe){
     var link = $('<a href="http://localhost:3000/wardrobes/' + wardrobe.id +  '" >' + wardrobe.name + '</a>');
     var name = $ ('.allwardrobe').append("<li class='mywardrobe'>").append(link);
-
+    $( "#create-wardrobe").prop( "disabled", false );
 
 
 
@@ -43,17 +43,28 @@ $(function(){
         data:  $('#new_suitcase').serialize()
 
 
+
       }).done(function(suitcase){
         var one = $('<a href="http://localhost:3000/suitcases/' + suitcase.id +  '" >' + suitcase.name + '</a>');
         var two = $ ('.allsuitcase').append("<li class='mysuitcase'>").append(one);
-
+        $( "#create-suitcase").prop( "disabled", false );
 
 
 
         $("#new_suitcase")[0].reset();
+
+
+
+
         });
 
       });
+
+
+
+
+
+
 
 
 

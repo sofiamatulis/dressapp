@@ -16,13 +16,13 @@
   <div class="info">
     <h4>
       E-mail: <%= @user.email %><br />
-      <%= image_tag @user.image.url %>
+      <%= image_tag @user.image.url, id: "imageUploadForm"%>
     </h4>
   </div>
 
 
 
-
+ <div class="w">
   <h1 class="hello">My wardrobes</h1>
 
 
@@ -36,16 +36,15 @@
 </ul>
 
 <%= form_for @wardrobe do |f| %>
-  <%= f.text_field :name, placeholder: "Wardrobe name" %>
+  <%= f.text_field :name, placeholder: "Wardrobe name" %> <br>
   <%= f.submit "New Wardrobe", id: "create-wardrobe" %>
 <% end %>
 
+</div>
 
 
 
-
-
-
+  <div class="s">
   <h1 class="bye">My suitcases</h1>
 
 <ul class="allsuitcase">
@@ -57,14 +56,15 @@
 </ul>
 
 <%= form_for @suitcase do |f| %>
-  <%= f.text_field :name, placeholder: "Suitcase name" %>
-  <%= f.text_area :description, placeholder: "Description" %>
-  <%= f.number_field :duration, placeholder: "Duration" %>
-  <%= f.text_field :destination, placeholder: "Destination" %>
+  <%= f.text_field :name, placeholder: "Suitcase name" %> <br>
+  <%= f.text_area :description, placeholder: "Description" %> <br>
+  <%= f.number_field :duration, placeholder: "Duration" %> <br>
+  <%= f.text_field :destination, placeholder: "Destination" %> <br>
 
 
-  <%= f.submit "New Suitcase", id: "create-suitcase" %>
+  <%= f.submit "New Suitcase", id: "create-suitcase"%>
 <% end %>
+</div>
 
 
 </html>

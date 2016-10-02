@@ -1,10 +1,13 @@
 class SuitcasesController < ApplicationController
+require 'open_weather'
   def index
     @suitcases = Suitcase.all
   end
 
   def show
     @suitcase = Suitcase.find(params[:id])
+    # options = { units: "metric", APPID: Rails.application.secrets.open_weather_id }
+    # @weather = OpenWeather::Forecast.city("Toronto, CA", options)
   end
 
   def new
@@ -50,6 +53,6 @@ class SuitcasesController < ApplicationController
 
   private
   def suitcase_params
-    params.require(:suitcase).permit(:name, :description, :duration, :destination, :user_id)
+    params.require(:suitcase).permit(:name, :description, :duration, :destination, :user_id, :item_ids)
   end
 end

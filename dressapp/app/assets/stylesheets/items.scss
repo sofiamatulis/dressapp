@@ -22,3 +22,11 @@ h1 {
 ul {
   padding-left: 0;
 }
+
+.category-dropdown {
+  display: none;
+}
+
+.item-selected {
+  border: 10px solid lightgreen;
+}

@@ -1,16 +1,64 @@
-<h1 class="suitcase-title"><%= @suitcase.name %></h1>
-<ul class="suitcase">
-  <li class="suitcase-details"><%= @suitcase.description %></li>
-  <li class="suitcase-details">Duration: <%= @suitcase.duration %> days</li>
-  <li class="suitcase-details">Destination: <%= @suitcase.destination %></li>
-  <div>
-    <% @suitcase.items.each do |item| %>
-    <li><%= link_to item.name, item_path(item) %></li>
-    <% end %>
+<div id="suitcase-show-body">
+
+  <p><%= @weather %></p>
+  <div id="suitcase-main">
+    <h1 class="suitcase-destination"><%= @suitcase.destination %></h1>
+    <h3 class="suitcase-title"><%= @suitcase.name %></h3>
+    <ul class="suitcase">
+      <li class="suitcase-details">Duration: <%= @suitcase.duration %> days</li>
+      <li class="suitcase-details">Details: <%= @suitcase.description %></li>
+    </ul>
+
+    <div class="links">
+      <p><%= link_to 'Back', user_path(current_user) %></p>
+      <p><%= link_to 'Edit Suitcase', edit_suitcase_url(@suitcase) %></p>
+      <p><%= link_to 'Delete Suitcase', @suitcase, method: :delete, data: {confirm: "Are you sure?"} %></p>
+      <span id="open-nav">Open Suitcase</span>
+    </div>
   </div>
-</ul>
-<div class="links">
-  <p><%= link_to 'Back', user_path(current_user) %></p>
-  <p><%= link_to 'Edit Suitcase', edit_suitcase_url(@suitcase) %></p>
-  <p><%= link_to 'Delete Suitcase', @suitcase, method: :delete, data: {confirm: "Are you sure?"} %></p>
+<!-- side nav pops out when clicking suitcase  -->
+  <div id="suitcase-side-nav" class="sideNav">
+    <button id="other-items">Other Items</button>
+    <button id="view-all">View All</button>
+    <button id="add-items">Add More Items</button>
+    <button id="outfit-checker-button">Outfit Checker</button>
+    <button id="close-nav">X</button>
+  <div class="outfit-checker">
+    </span><h4>Outfit checker</h4>
+    <div id="tops" class="clothes-container">
+        <div class="tops-container">
+          <% @suitcase.items.each_with_index do |item, index| %>
+            <% if item.category.category == "Top" %>
+                <span class="clothes-item"><%= image_tag(item.image) %></span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+
+      <div id="bottoms" class="clothes-container">
+        <!-- <h4>Bottoms</h4> -->
+          <div class="bottoms-container">
+            <% @suitcase.items.each_with_index do |item, index| %>
+              <% if item.category.category == "Bottom" %>
+                  <span class="clothes-item"><%= image_tag(item.image) %></span>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+
+        <div id="shoes" class="clothes-container">
+            <div class="shoes-container">
+              <% @suitcase.items.each_with_index do |item, index| %>
+                <% if item.category.category == "Shoes" %>
+                    <span class="clothes-item"><%= image_tag(item.image) %></span>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div id="items-grid-container">
+        </div>
+    </div>
 </div>
