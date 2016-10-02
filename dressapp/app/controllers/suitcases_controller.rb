@@ -6,12 +6,13 @@ require 'open_weather'
 
   def show
     @suitcase = Suitcase.find(params[:id])
-    options = { units: "metric", APPID: Rails.application.secrets.open_weather_id }
-    @weather = OpenWeather::Forecast.city("Toronto, CA", options)
-    respond_to do |format|
-    format.html
-    format.json {render json: @weather.to_json}
-    end
+
+    # options = { units: "metric", APPID: Rails.application.secrets.open_weather_id }
+    # @weather = OpenWeather::Forecast.city("Toronto, CA", options)
+    # respond_to do |format|
+    # format.html
+    # format.json {render json: @weather.to_json}
+    # end
 
   end
 
