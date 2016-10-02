@@ -71,6 +71,7 @@ h3 {
   text-align: right;
   font-size: 20px;
   width: 20%;
+  display: inline-block;
 }
 
 .clothes-container {
@@ -138,6 +139,8 @@ h4 {
 }
 
 .arrow-left {
+  cursor:pointer;
+	cursor:hand;
   display: inline-block;
   width: 20%;
   float: left;
@@ -148,6 +151,8 @@ h4 {
 }
 
 .arrow-right {
+  cursor:pointer;
+	cursor:hand;
   display: inline-block;
   width: 20%;
   text-align: left;
@@ -189,20 +194,36 @@ h4 {
 .side-nav-buttons {
   padding-top: 10px;
   overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
 }
 
-#other-items, #view-all, #add-items {
+#other-items {
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  text-align: left;
+  padding-left: 15px;
+}
+
+#view-all {
   position: relative;
   display: inline-block;
   width: 25%;
   text-align: right;
 }
 
+#add-items {
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  text-align: left;
+}
+
 #outfit-checker-button {
   display: none;
   position: relative;
   width: 27%;
-  text-align: right;
+  text-align: left;
 }
 
 // styling for "add more items" in the suitcase show side nav

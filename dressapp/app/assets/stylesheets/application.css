@@ -30,6 +30,11 @@ body {
   bottom: 0;
 }
 
+a {
+  cursor:pointer;
+  cursor:hand;
+}
+
 #container {
   height: 100%;
 }
