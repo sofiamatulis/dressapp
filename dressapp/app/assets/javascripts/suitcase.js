@@ -31,20 +31,20 @@ $(function(){
   //   });
 
 
-    $('.tops-container').slick( {
-      prevArrow: '<span class="arrow-left"><</span>',
-      nextArrow: '<span class="arrow-right">></span>',
-    });
-
-    $('.bottoms-container').slick( {
-      prevArrow: '<span class="arrow-left"><</span>',
-      nextArrow: '<span class="arrow-right">></span>',
-    });
-
-    $('.shoes-container').slick( {
-      prevArrow: '<span class="arrow-left"><</span>',
-      nextArrow: '<span class="arrow-right">></span>',
-    });
+    // $('.tops-container').slick( {
+    //   prevArrow: '<span class="arrow-left"><</span>',
+    //   nextArrow: '<span class="arrow-right">></span>',
+    // });
+    //
+    // $('.bottoms-container').slick( {
+    //   prevArrow: '<span class="arrow-left"><</span>',
+    //   nextArrow: '<span class="arrow-right">></span>',
+    // });
+    //
+    // $('.shoes-container').slick( {
+    //   prevArrow: '<span class="arrow-left"><</span>',
+    //   nextArrow: '<span class="arrow-right">></span>',
+    // });
 
     $('#add-items').on('click', function() {
       document.getElementById("suitcase-side-nav").style.width = "60%";
@@ -79,5 +79,21 @@ $(function(){
       $("#outfit-checker-button").css("display", "none");
       $("#add-items").css("display", "block");
     });
+
+
+
+
+    $( function() {
+  $( "#sortable1, #sortable2" ).sortable({
+    connectWith: ".connectedSortable"
+  }).disableSelection();
+} );
+
+
+
+
+
+
+
 
 });

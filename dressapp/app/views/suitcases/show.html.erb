@@ -1,5 +1,35 @@
 <div id="suitcase-show-body">
 
+
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Sortable - Connect lists</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+      <ul id="sortable1" class="connectedSortable">
+  <li class="ui-state-default">Item 1</li>
+  <li class="ui-state-default">Item 2</li>
+  <li class="ui-state-default">Item 3</li>
+  <li class="ui-state-default">Item 4</li>
+  <li class="ui-state-default">Item 5</li>
+</ul>
+
+<ul id="sortable2" class="connectedSortable">
+  <li class="ui-state-highlight">Item 1</li>
+  <li class="ui-state-highlight">Item 2</li>
+  <li class="ui-state-highlight">Item 3</li>
+  <li class="ui-state-highlight">Item 4</li>
+  <li class="ui-state-highlight">Item 5</li>
+</ul>
+
+
+
+
+
   <p><%= @weather %></p>
   <div id="suitcase-main">
     <h1 class="suitcase-destination"><%= @suitcase.destination %></h1>
@@ -7,7 +37,13 @@
     <ul class="suitcase">
       <li class="suitcase-details">Duration: <%= @suitcase.duration %> days</li>
       <li class="suitcase-details">Details: <%= @suitcase.description %></li>
+
+
+
+
+
     </ul>
+
 
     <div class="links">
       <p><%= link_to 'Back', user_path(current_user) %></p>
@@ -59,6 +95,7 @@
         </div>
 
         <div id="items-grid-container">
+
         </div>
     </div>
 </div>
