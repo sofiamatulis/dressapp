@@ -1,6 +1,7 @@
 $(function(){
 
   $("#open-nav").on('click', function() {
+    $(".arrow-right").trigger("click");
     document.getElementById("suitcase-side-nav").style.width = "40%";
     document.getElementById("suitcase-main").style.marginLeft = "40%";
   });
@@ -30,6 +31,7 @@ $(function(){
   //     }
   //   });
 
+    //
 
     $('.tops-container').slick( {
       prevArrow: '<span class="arrow-left"><</span>',
@@ -78,6 +80,8 @@ $(function(){
       $(".outfit-checker").css("display", "block");
       $("#outfit-checker-button").css("display", "none");
       $("#add-items").css("display", "block");
+      document.getElementById("suitcase-side-nav").style.width = "40%";
+      document.getElementById("suitcase-main").style.marginLeft = "40%";
     });
 
 });
