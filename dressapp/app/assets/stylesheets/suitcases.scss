@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #suitcase-show-body {
+  height: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -41,13 +42,13 @@ h3 {
 }
 
 #suitcase-main {
+  height: 100%;
   position: relative;
   overflow: hidden;
   background-color: #f79279;
-  height: 570px;
   transition: margin-left .5s;
-  padding: 16px;
-  left:0px;
+  padding: 0px;
+  left: 0px;
 }
 
 #suitcase-side-nav {
@@ -55,20 +56,21 @@ h3 {
   width: 0;
   position: absolute;
   z-index: 1;
-  top: 5px;
+  top: 0;
   left: 0;
   background-color: white;
   overflow-x: hidden;
   transition: 0.5s;
+  -webkit-box-shadow: 7px 5px 7px -2px #ff9999;
 }
 
 
 #close-nav {
-  position: absolute;
+  position: relative;
   top: 0;
-  right: 10px;
-  font-size: 36px;
-  margin: 0;
+  text-align: right;
+  font-size: 20px;
+  width: 20%;
 }
 
 .clothes-container {
@@ -184,25 +186,23 @@ h4 {
   display: none;
 }
 
-#other-items {
-  position: absolute;
-  right: 60%;
+.side-nav-buttons {
+  padding-top: 10px;
+  overflow: hidden;
 }
 
-#view-all {
-  position: absolute;
-  right: 45%;
-}
-
-#add-items {
-  position: absolute;
-  right: 22%;
+#other-items, #view-all, #add-items {
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  text-align: right;
 }
 
 #outfit-checker-button {
   display: none;
-  position: absolute;
-  right: 22%;
+  position: relative;
+  width: 27%;
+  text-align: right;
 }
 
 // styling for "add more items" in the suitcase show side nav

@@ -25,13 +25,18 @@ html {
 }
 
 body {
-  margin: 0px;
+  height: 100%;
+  margin: 0;
   bottom: 0;
+}
+
+#container {
+  height: 100%;
 }
 
  .menu-bar{
    padding: 10px;
-   background-color: white;
+   background-color: #6699ff;
    overflow: hidden;
    height: 50px;
    position: relative;

@@ -13,7 +13,7 @@ $(function(){
       $("#items-grid-container" ).empty();
       $(".outfit-checker").css("display", "block");
       $("#outfit-checker-button").css("display", "none");
-      $("#add-items").css("display", "block");
+      $("#add-items").css("display", "inline-block");
     }, 1000 );
   });
   //the original carousel method from scratch:
@@ -53,7 +53,7 @@ $(function(){
       document.getElementById("suitcase-main").style.marginLeft = "60%";
       $(".outfit-checker").css("display", "none");
       $("#add-items").css("display", "none");
-      $("#outfit-checker-button").css("display", "block");
+      $("#outfit-checker-button").css("display", "inline-block");
 
       $.ajax( {
         url: '/items',
@@ -79,7 +79,7 @@ $(function(){
       $("#items-grid-container" ).empty();
       $(".outfit-checker").css("display", "block");
       $("#outfit-checker-button").css("display", "none");
-      $("#add-items").css("display", "block");
+      $("#add-items").css("display", "inline-block");
       document.getElementById("suitcase-side-nav").style.width = "40%";
       document.getElementById("suitcase-main").style.marginLeft = "40%";
     });
