@@ -9,13 +9,23 @@ $(function(){
     data:{},
     dataType: 'json'
   }).done(function(data){
+    // sets variables to get and format the date given by the weather api
+    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
     var dt = new Date(data.list[0].dt * 1000);
+    var day = days[dt.getDay()];
+    var month = months[dt.getMonth()];
+    var date = dt.getDate();
+
+    // sets variable to get the weather from the api (temp, icon, description)
+    var temp = Math.floor(data.list[0].temp.day - 273.15) + "\xB0 C";
     var iconCode = data.list[0].weather[0].icon;
     var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
-    var temp = Math.floor(data.list[0].temp.day - 273.15) + "\xB0 C";
     var main = data.list[0].weather[0].main;
     var desc = data.list[0].weather[0].description;
-    var weather = $('.suitcase').append('<li>').append(dt);
+
+    // puts the weather below the suitcase class
+    var weather = $('.suitcase').append('<li>').append(day + " " + month + " " + date);
     var weather2 = $('.suitcase').append('<li>').append(temp).append("<img src='" + iconUrl + "'>");
     var weather3 = $('.suitcase').append('<li>').append(main);
     var weather4 = $('.suitcase').append('<li>').append(desc);
