@@ -13,14 +13,32 @@
   <% else %>
   <div class="wardrobe-item-container">
     <ul class="wardrobe-item">
+      <!-- sets the items as a form to add to suitcase -->
       <% @wardrobe.items.each do |item| %>
       <li class="item-details"><%= item.name %></li>
       <li class="item-details"><%= item.description %></li>
       <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
-      <li class="item-details"><%= check_box_tag("add item", value="1", checked = false) %>
-    <% end %>
+
+      <!--  each checkbox will contain the item's id and is defaulted to unchecked-->
+      <!-- attempt to add checkbox to submit items to suitcase -->
+      <!-- <%= form_for items_suitcases_path do %>
+      <li class="item-details"><%= check_box_tag "suitcase[item_ids][]", item.id, false, class: "add-item-suitcase" %></li>
+
+      <li><%= submit_tag "Add to:", :item => item.id, :suitcase => "1", :remote => true %></li>
+      <% end %> -->
+        <% end %>
     </ul>
+
    </div>
+   <div class="dropdown">
+     <button class="add-to-suitcase">Add to suitcase</button>
+     <ul class="category-dropdown">
+       <% @suitcases.each do |suitcase| %>
+       <li><%= link_to "Add to #{suitcase.name}", items_suitcases_path(:item => @item.id, :suitcase => suitcase.id), :method => :post, :class => "category-menu" %></li>
+       <% end %>
+     </ul>
+   </div>
+
    <p class="button add-item"><%= link_to "Add more items", new_item_path(:wardrobe => @wardrobe.id) %></p>
    <div class="modal-item">
      <%= render 'items/form' %>
@@ -28,13 +46,5 @@
 <!--  Create redirect back to wardrobe in JS -->
 <% end %>
 
-<div class="dropdown">
-  <button class="add-to-suitcase">Add to suitcase</button>
-  <ul class="category-dropdown">
-    <% @suitcases.each do |suitcase| %>
-    <li><%= link_to "Add to #{suitcase.name}", items_suitcases_path(:item => @item.id, :suitcase => suitcase.id), :method => :post, :class => "category-menu" %></li>
-    <% end %>
-  </ul>
-</div>
 
 <p class="back-button"><%= link_to "Back", user_path(current_user) %></p>
