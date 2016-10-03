@@ -25,6 +25,8 @@
 
 
   <p><%= @weather %></p>
+
+  <!-- <p class="weather"><%= @weather %></p> -->
   <div id="suitcase-main">
     <h1 class="suitcase-destination"><%= @suitcase.destination %></h1>
     <h3 class="suitcase-title"><%= @suitcase.name %></h3>
@@ -71,7 +73,6 @@
 
 
       <div id="bottoms" class="clothes-container">
-        <!-- <h4>Bottoms</h4> -->
           <div class="bottoms-container">
             <ul id="sortable2" class="connectedSortable">
             <% @suitcase.items.each_with_index do |item, index| %>
