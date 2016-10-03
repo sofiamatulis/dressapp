@@ -10,21 +10,15 @@
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
-      <ul id="sortable1" class="connectedSortable">
-  <li class="ui-state-default">Item 1</li>
-  <li class="ui-state-default">Item 2</li>
-  <li class="ui-state-default">Item 3</li>
-  <li class="ui-state-default">Item 4</li>
-  <li class="ui-state-default">Item 5</li>
-</ul>
 
-<ul id="sortable2" class="connectedSortable">
+
+<!-- <ul id="sortable2" class="connectedSortable">
   <li class="ui-state-highlight">Item 1</li>
   <li class="ui-state-highlight">Item 2</li>
   <li class="ui-state-highlight">Item 3</li>
   <li class="ui-state-highlight">Item 4</li>
   <li class="ui-state-highlight">Item 5</li>
-</ul>
+</ul> -->
 
 
 
@@ -37,12 +31,16 @@
     <ul class="suitcase">
       <li class="suitcase-details">Duration: <%= @suitcase.duration %> days</li>
       <li class="suitcase-details">Details: <%= @suitcase.description %></li>
-
-
-
-
-
     </ul>
+
+
+    <ul id="sortable1" class="connectedSortable"> <div> Suitcase</div>
+<li class="ui-state-default">Suitcase photo</li>
+<!-- <li class="ui-state-default">Item 2</li>
+<li class="ui-state-default">Item 3</li>
+<li class="ui-state-default">Item 4</li>
+<li class="ui-state-default">Item 5</li> -->
+</ul>
 
 
     <div class="links">
@@ -75,11 +73,14 @@
       <div id="bottoms" class="clothes-container">
         <!-- <h4>Bottoms</h4> -->
           <div class="bottoms-container">
+            <ul id="sortable2" class="connectedSortable">
             <% @suitcase.items.each_with_index do |item, index| %>
               <% if item.category.category == "Bottom" %>
-                  <span class="clothes-item"><%= image_tag(item.image) %></span>
+              <li class="ui-state-highlight">
+<span class="clothes-item"><%= image_tag(item.image) %></span></li>
               <% end %>
             <% end %>
+          </ul>
           </div>
         </div>
 
@@ -94,8 +95,12 @@
           </div>
         </div>
 
+        <ul id="sortable2" class="connectedSortable">
         <div id="items-grid-container">
+          <li class="ui-state-highlight">Item 1</li>
+          <li class="ui-state-highlight">Item 2</li>
 
         </div>
+      </ul>
     </div>
 </div>
