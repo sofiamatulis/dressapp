@@ -7,6 +7,10 @@
       <li class="suitcase-details"><%= suitcase.description %></li>
       <li class="suitcase-details">Duration: <%= suitcase.duration %> days</li>
       <li class="suitcase-details">Destination: <%= suitcase.destination %></li>
+      <% suitcase.items.each do |item| %>
+      <li class="suitcase-item"> <%= item.name %></li>
+      <li class="suitcase-item"> <%= item.image %></li>
+      <% end %>
     </ul>
   <% end %>
 </p>
