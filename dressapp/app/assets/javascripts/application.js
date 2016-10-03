@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.easy-autocomplete.min
+//= require jquery.city-autocomplete.min
 //= require_tree .
