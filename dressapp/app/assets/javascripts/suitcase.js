@@ -47,10 +47,10 @@ $(function(){
         dataType: 'JSON'
       }).done(function(response) {
         console.log(response);
-        var itemsContainer = $('<ul id="sortable2" class="connectedSortable">');
+        var itemsContainer = $('<div id="sortable2" class="connectedSortable">');
 //iterating through each item and adding the name and photo to its own container
               $.each(response, function(i, item) {
-                var itemContainer = $('<li class="ui-state-highlight">');
+                var itemContainer = $('<div class="ui-state-highlight">');
                   // $('<h4>').html(item.name).appendTo(itemContainer);
                   $('<img>').attr('src', item.image).appendTo(itemContainer);
                   $(itemContainer).appendTo(itemsContainer);
@@ -62,7 +62,7 @@ $(function(){
           $( "#sortable1, #sortable2" ).sortable({
             connectWith: ".connectedSortable"
           }).disableSelection();
-        
+
       });
 
     });
