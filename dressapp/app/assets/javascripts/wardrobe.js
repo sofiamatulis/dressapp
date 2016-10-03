@@ -41,4 +41,33 @@ $('.add-to-suitcase').click(function(){
 
 });
 
+  $( "#all-items" ).click(function() {
+    $( ".wardrobe-item" ).css('display', 'initial');
+    $( ".filtered-tops" ).css('display', 'none');
+    $( ".filtered-bottoms" ).css('display', 'inline');
+    $( ".filtered-shoes" ).css('display', 'none');
+  });
+
+  $("#top-filter").click(function() {
+    $( ".wardrobe-item" ).css('display', 'none');
+    $( ".filtered-tops" ).css('display', 'inline');
+    $( ".filtered-bottoms" ).css('display', 'none');
+    $( ".filtered-shoes" ).css('display', 'none');
+  });
+
+  $("#bottom-filter").click(function() {
+    $( ".wardrobe-item" ).css('display', 'none');
+    $( ".filtered-bottoms" ).css('display', 'inline');
+    $( ".filtered-tops" ).css('display', 'none');
+    $( ".filtered-shoes" ).css('display', 'none');
+  });
+
+  $("#shoe-filter").click(function() {
+    $( ".wardrobe-item" ).css('display', 'none');
+    $( ".filtered-shoes" ).css('display', 'inline');
+    $( ".filtered-bottoms" ).css('display', 'none');
+    $( ".filtered-tops" ).css('display', 'none');
+
+  });
+
 })

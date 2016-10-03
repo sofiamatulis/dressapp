@@ -2,10 +2,10 @@ class ItemsController < ApplicationController
   before_action :load_items, only: [:index]
 
   def index
-    respond_to do |format|
-      format.html { render 'index' }
-      format.json { render json: @items }
-    end
+    # respond_to do |format|
+    #   format.html { render 'index' }
+    #   format.json { render json: @items }
+    # end
   end
 
   def show
