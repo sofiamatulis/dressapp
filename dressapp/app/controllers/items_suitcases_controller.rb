@@ -1,4 +1,8 @@
 class ItemsSuitcasesController < ApplicationController
+
+  before_action :ensure_logged_in
+
+
   def create
     @item = Item.find(params[:item])
     # @item_id = Item.find(params[:suitcase][:item_ids])

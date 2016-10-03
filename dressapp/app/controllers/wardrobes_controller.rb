@@ -1,4 +1,6 @@
 class WardrobesController < ApplicationController
+  before_action :ensure_logged_in
+
   # skip_before_action :verify_authenticity_token
 
 

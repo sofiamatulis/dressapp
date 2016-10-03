@@ -1,4 +1,7 @@
 class SuitcasesController < ApplicationController
+
+  before_action :ensure_logged_in
+
 require 'open_weather'
   def index
     @suitcases = Suitcase.all

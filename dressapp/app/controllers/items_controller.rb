@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
 
+  before_action :ensure_logged_in
+
+
   def index
     if params[:search]
       @items = Item.search(params[:search])
