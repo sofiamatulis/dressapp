@@ -16,37 +16,22 @@ $(function(){
       $("#add-items").css("display", "block");
     }, 1000 );
   });
-  //the original carousel method from scratch:
-  // $(".arrow-right").on('click', function() {
-  //     if ($('.clothes-item').hasClass('active')) {
-  //       $('.clothes-item').removeClass('active').addClass('inactive');
-  //       $('.clothes-item').next().removeClass('inactive').addClass('active');
-  //     }
-  //   });
-  //
-  // $(".arrow-left").on('click', function() {
-  //     if ($('.clothes-item').hasClass('active')) {
-  //       $('.clothes-item').removeClass('active').addClass('inactive');
-  //       $('.clothes-item').prev().removeClass('inactive').addClass('active');
-  //     }
-  //   });
 
-    //
 
-    // $('.tops-container').slick( {
-    //   prevArrow: '<span class="arrow-left"><</span>',
-    //   nextArrow: '<span class="arrow-right">></span>',
-    // });
-    //
-    // $('.bottoms-container').slick( {
-    //   prevArrow: '<span class="arrow-left"><</span>',
-    //   nextArrow: '<span class="arrow-right">></span>',
-    // });
-    //
-    // $('.shoes-container').slick( {
-    //   prevArrow: '<span class="arrow-left"><</span>',
-    //   nextArrow: '<span class="arrow-right">></span>',
-    // });
+    $('.tops-container').slick( {
+      prevArrow: '<span class="arrow-left"><</span>',
+      nextArrow: '<span class="arrow-right">></span>',
+    });
+
+    $('.bottoms-container').slick( {
+      prevArrow: '<span class="arrow-left"><</span>',
+      nextArrow: '<span class="arrow-right">></span>',
+    });
+
+    $('.shoes-container').slick( {
+      prevArrow: '<span class="arrow-left"><</span>',
+      nextArrow: '<span class="arrow-right">></span>',
+    });
 
     $('#add-items').on('click', function() {
       document.getElementById("suitcase-side-nav").style.width = "60%";
@@ -62,15 +47,22 @@ $(function(){
         dataType: 'JSON'
       }).done(function(response) {
         console.log(response);
-        var itemsContainer = $('<div class="suitcase-items-container">');
+        var itemsContainer = $('<ul id="sortable2" class="connectedSortable">');
 //iterating through each item and adding the name and photo to its own container
               $.each(response, function(i, item) {
-                var itemContainer = $('<div class="suitcase-item-container">');
+                var itemContainer = $('<li class="ui-state-highlight">');
                   // $('<h4>').html(item.name).appendTo(itemContainer);
                   $('<img>').attr('src', item.image).appendTo(itemContainer);
                   $(itemContainer).appendTo(itemsContainer);
               });
         $('#items-grid-container').html(itemsContainer);
+
+
+        //drag and drop function to add items to suitcase
+          $( "#sortable1, #sortable2" ).sortable({
+            connectWith: ".connectedSortable"
+          }).disableSelection();
+        
       });
 
     });
@@ -84,14 +76,6 @@ $(function(){
       document.getElementById("suitcase-main").style.marginLeft = "40%";
     });
 
-
-
-
-    $( function() {
-  $( "#sortable1, #sortable2" ).sortable({
-    connectWith: ".connectedSortable"
-  }).disableSelection();
-} );
 
 
 

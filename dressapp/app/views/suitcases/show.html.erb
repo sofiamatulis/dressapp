@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery UI Sortable - Connect lists</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -61,6 +60,7 @@
     <button id="close-nav">X</button>
   <div class="outfit-checker">
     </span><h4>Outfit checker</h4>
+
     <div id="tops" class="clothes-container">
         <div class="tops-container">
           <% @suitcase.items.each_with_index do |item, index| %>
@@ -74,14 +74,14 @@
 
       <div id="bottoms" class="clothes-container">
           <div class="bottoms-container">
-            <ul id="sortable2" class="connectedSortable">
             <% @suitcase.items.each_with_index do |item, index| %>
               <% if item.category.category == "Bottom" %>
-              <li class="ui-state-highlight">
-<span class="clothes-item"><%= image_tag(item.image) %></span></li>
+                <span class="clothes-item"><%= image_tag(item.image) %></span>
+
+
               <% end %>
             <% end %>
-          </ul>
+
           </div>
         </div>
 
@@ -96,12 +96,11 @@
           </div>
         </div>
 
-        <!-- <ul id="sortable2" class="connectedSortable">
-        <div id="items-grid-container">
-          <li class="ui-state-highlight">Item 1</li>
-          <li class="ui-state-highlight">Item 2</li>
+
+       <div id="items-grid-container">
 
         </div>
-      </ul> -->
+
+
     </div>
 </div>
