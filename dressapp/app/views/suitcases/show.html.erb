@@ -11,21 +11,11 @@
 
 
 
-<!-- <ul id="sortable2" class="connectedSortable">
-  <li class="ui-state-highlight">Item 1</li>
-  <li class="ui-state-highlight">Item 2</li>
-  <li class="ui-state-highlight">Item 3</li>
-  <li class="ui-state-highlight">Item 4</li>
-  <li class="ui-state-highlight">Item 5</li>
-</ul> -->
-
-
-
-
 
   <p><%= @weather %></p>
 
   <!-- <p class="weather"><%= @weather %></p> -->
+
   <div id="suitcase-main">
     <h1 class="suitcase-destination"><%= @suitcase.destination %></h1>
     <h3 class="suitcase-title"><%= @suitcase.name %></h3>
@@ -37,10 +27,7 @@
 
     <ul id="sortable1" class="connectedSortable"> <div> Suitcase</div>
 <li class="ui-state-default">Suitcase photo</li>
-<!-- <li class="ui-state-default">Item 2</li>
-<li class="ui-state-default">Item 3</li>
-<li class="ui-state-default">Item 4</li>
-<li class="ui-state-default">Item 5</li> -->
+
 </ul>
 
 
@@ -48,16 +35,18 @@
       <p><%= link_to 'Back', user_path(current_user) %></p>
       <p><%= link_to 'Edit Suitcase', edit_suitcase_url(@suitcase) %></p>
       <p><%= link_to 'Delete Suitcase', @suitcase, method: :delete, data: {confirm: "Are you sure?"} %></p>
-      <span id="open-nav">Open Suitcase</span>
     </div>
+    <a id="open-nav">Open Suitcase</a>
   </div>
 <!-- side nav pops out when clicking suitcase  -->
   <div id="suitcase-side-nav" class="sideNav">
-    <button id="other-items">Other Items</button>
-    <button id="view-all">View All</button>
-    <button id="add-items">Add More Items</button>
-    <button id="outfit-checker-button">Outfit Checker</button>
-    <button id="close-nav">X</button>
+    <div class="side-nav-buttons">
+      <a id="other-items">Other Items</a>
+      <a id="view-all">View All &nbsp;&nbsp;&nbsp;|</a>
+      <a id="add-items">&nbsp;&nbsp; Add Items</a>
+      <a id="outfit-checker-button">&nbsp;&nbsp; Outfit Checker</a>
+      <a id="close-nav">X</a>
+    </div>
   <div class="outfit-checker">
     </span><h4>Outfit checker</h4>
 
