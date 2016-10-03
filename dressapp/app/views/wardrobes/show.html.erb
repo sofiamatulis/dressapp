@@ -2,14 +2,6 @@
 <p class="edit-delete"><%= link_to 'Edit', edit_wardrobe_url(@wardrobe) %> |
    <%= link_to 'Delete', @wardrobe, method: :delete, data: {confirm: "Are you sure?"} %></p>
 
-
-<div class="search-bar">
-  <%= form_tag(items_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
-  <%= submit_tag "Search", :name => nil %>
-  <% end %>
-</div>
-
 <% if @wardrobe.items.length == 0 %>
 <h3 class="item-details">You don't have any clothes in this wardrobe right now</h3>
 <p class="button add-item"><%= link_to "Click here to add some", new_item_path(:wardrobe => @wardrobe.id) %></p>

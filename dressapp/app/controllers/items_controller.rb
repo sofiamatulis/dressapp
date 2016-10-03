@@ -1,19 +1,11 @@
 class ItemsController < ApplicationController
+  before_action :load_items, only: [:index]
 
   def index
-    if params[:search]
-      @items = Item.search(params[:search])
-    else
-      @items = Item.all
-    end
-
     respond_to do |format|
-          format.html
-
-          format.json do
-            render json: @items
-            end
-          end
+      format.html { render 'index' }
+      format.json { render json: @items }
+    end
   end
 
   def show
@@ -45,14 +37,7 @@ class ItemsController < ApplicationController
     # @category = Category.find(item_params[:category_id])
     @wardrobe = @item.wardrobe
     if @item.save
-      if request.xhr?
-        respond_to do |format|
-          format.html
-          format.json { render json: @item.to_json }
-        end
-      else
-        redirect_to wardrobe_path(@wardrobe)
-      end
+      redirect_to wardrobe_path(@wardrobe)
     else
       render "new"
     end
@@ -73,5 +58,15 @@ class ItemsController < ApplicationController
 
   def item_edit_params
     params.require(:item).permit(:name, :description, :image, :category_id)
+  end
+
+  def load_items
+    if params[:search]
+      @items = Item.search(params[:search])
+    elsif params[:category_id]
+      @items = Item.where(:category_id => params[:category_id])
+    else
+    @items = Item.all
+    end
   end
 end
