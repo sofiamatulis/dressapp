@@ -44,7 +44,6 @@
   color:#ffffff;
   text-align: center;
   padding-bottom: 10px;
-  text-transform:uppercase;
 }
 
 
@@ -52,4 +51,31 @@
   text-align: center;
   font-family: 'Satisfy', cursive;
 
+}
+
+
+
+.sign-up-form {
+  font-family: 'Satisfy', cursive;
+  margin:auto;
+  margin-top: 8%;
+  margin-bottom: 70px;
+  width: 300px;
+  padding: 50px 30px;
+  background-color:#FFB6C1;
+  opacity: 0.8;
+
+}
+
+.sign-up{
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+
+}
+
+
+#user_image {
+  width: 87px;
 }
