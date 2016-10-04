@@ -33,12 +33,14 @@ $(function(){
 
 
 //  function to get modal and form to add to suitcase
-$('.add-to-suitcase').click(function(){
+document.getElementById('add-to-suitcase').addEventListener('click', function(event){
+  console.log("it's working");
   $('.item-link').removeAttr("href");
   $('.item-link').click(function(){
     $(this).find('img').toggleClass("item-selected");
   })
 
+  event.preventDefault();
 });
 
 })

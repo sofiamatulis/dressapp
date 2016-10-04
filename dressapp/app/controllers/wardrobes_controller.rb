@@ -36,10 +36,10 @@ class WardrobesController < ApplicationController
    @item = Item.new(:wardrobe_id => params[:id])
    respond_to do |format|
      format.html
-     format.json { render json: {item: @item.to_json, users: @users,category: @category, wardrobe: @wardrobes.to_json ,suitcase: @suitcases }}
+     format.json { render json: {item: @item.to_json, users: @users,category: @category, wardrobe: @wardrobes.to_json }}
    end
    @suitcases = current_user.suitcases
-   @suitcase = Suitcase.find(params[:id])
+
   end
 
   def edit

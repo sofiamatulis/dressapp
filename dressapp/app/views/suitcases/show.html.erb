@@ -8,7 +8,8 @@
       <li class="suitcase-details">Duration: <%= @suitcase.duration %> days</li>
       <li class="suitcase-details">Details: <%= @suitcase.description %></li>
     </ul>
-
+    <ul class ="weather-details">
+    </ul>
     <div class="links">
       <p><%= link_to 'Back', user_path(current_user) %></p>
       <p><%= link_to 'Edit Suitcase', edit_suitcase_url(@suitcase) %></p>
