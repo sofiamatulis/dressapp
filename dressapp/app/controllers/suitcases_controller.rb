@@ -59,6 +59,6 @@ require 'open_weather'
 
   private
   def suitcase_params
-    params.require(:suitcase).permit(:name, :description, :duration, :destination, :user_id, :item_ids, item:[])
+    params.require(:suitcase).permit(:name, :description, :destination, :duration, :user_id, :item_ids, item:[])
   end
 end

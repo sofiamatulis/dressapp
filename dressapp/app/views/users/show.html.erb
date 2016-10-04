@@ -61,12 +61,13 @@
     <%= f.number_field :duration, placeholder: "Duration" %> <br>
     <%#= f.text_field :destination, placeholder: "Destination" %> <br>
     <%= f.hidden_field :destination, :id => "destination" %>
-    <form id="countryForm">
-      <input id="country" name="country" autocomplete="on"><br>
-      <input id="city" name="city" autocomplete="on" data-country=""><br>
-    </form>
     <%= f.submit "New Suitcase", id: "create-suitcase"%>
   <% end %>
+
+  <form id="countryForm">
+    <input id="country" name="country" autocomplete="on"><br>
+    <input id="city" name="city" autocomplete="on" data-country=""><br>
+  </form>
 <br>
 <br>
 

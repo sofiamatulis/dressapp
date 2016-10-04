@@ -32,28 +32,43 @@ $(function() {
 // calling the function for the city drop down.
   $('#city').cityAutocomplete();
 
-// method to take destination inputs and compile them
-  $('#new_suitcase').on('submit', function(event) {
+
+  // $('#new_suitcase').on('submit', function(event) {
     //  event.preventDefault();
-     var cityChoice = $("#city").val();
-     var cityCountryChoice = cityChoice + ',' + destination
-     console.log(cityCountryChoice);
-     $('#destination').val(cityCountryChoice);
+    // method to take destination inputs and compile them
+    //  var cityChoice = $("#city").val();
+    //  var cityCountryChoice = cityChoice + ',' + destination
+    //  console.log(cityCountryChoice);
+    //  $('#destination').val(cityCountryChoice);
+
+    // });
+
+    $('#new_suitcase').on('submit',function(event){
+
       event.preventDefault();
+
+      var cityChoice = $("#city").val();
+      var cityCountryChoice = cityChoice + ',' + destination
+      console.log(cityCountryChoice);
+      $('#destination').val(cityCountryChoice);
+
       $.ajax({
-          url:'/suitcases',
-          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-          method:'POST',
-          dataType: "json",
-          data:  $('#new_suitcase').serialize()
-        }).done(function(suitcase){
+
+        url:'/suitcases',
+        beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+        method:'POST',
+        dataType: "json",
+        data:  $('#new_suitcase').serialize()
+
+      }).done(function(suitcase){
           var one = $('<a href="http://localhost:3000/suitcases/' + suitcase.id +  '" >' + suitcase.name + '</a>');
           var two = $ ('.allsuitcase').append("<li class='mysuitcase'>").append(one);
           $( "#create-suitcase").prop( "disabled", false );
 
-     $("#new_suitcase")[0].reset();
+          $("#new_suitcase")[0].reset();
 
-    });
+      });
   });
+
 
 });
