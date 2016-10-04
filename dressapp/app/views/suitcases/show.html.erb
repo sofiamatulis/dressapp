@@ -12,15 +12,12 @@
       <li class="suitcase-details">Details: <%= @suitcase.description %></li>
     </ul>
 
-
-    <ul id="sortable1" data-suitcase-id='<%=@suitcase.id%>' class="connectedSortable"> <div>Suitcase</div>
-  <li class="ui-state-default">"Suitcase photo</li>
-
+  <ul id="sortable1" data-suitcase-id='<%=@suitcase.id%>' class="connectedSortable"> <div>Suitcase</div>
+    <li class="ui-state-default">"Suitcase photo</li>
   </ul>
 
-
-
-
+  <ul class ="weather-details">
+  </ul>
 
     <div class="links">
       <p><%= link_to 'Back', user_path(current_user) %></p>
@@ -86,10 +83,9 @@
           </div>
         </div>
 
+      <div id="items-grid-container">
 
-       <div id="items-grid-container">
-
-        </div>
+      </div>
 
 
 
