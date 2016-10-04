@@ -33,14 +33,23 @@ $(function(){
 
 
 //  function to get modal and form to add to suitcase
-document.getElementById('add-to-suitcase').addEventListener('click', function(event){
-  console.log("it's working");
-  $('.item-link').removeAttr("href");
-  $('.item-link').click(function(){
-    $(this).find('img').toggleClass("item-selected");
-  })
+// $('#add-to-suitcase').on('click', function(event){
+//     event.preventDefault();
+  $('#drop-down-show').on('click', function(e){
 
-  event.preventDefault();
-});
+    $('.category-dropdown').fadeIn();
+    $('.item-link').removeAttr('href');
+
+    $('.item-select').on('click', function(event){
+
+      $(this).find('img').toggleClass("item-selected");
+    });
+  });
+
+// });
+
+// $('.item-link').on('click', function(event){
+//   $(this).toggleClass("item-selected");
+// });
 
 })

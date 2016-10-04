@@ -16,6 +16,6 @@ class ItemsSuitcasesController < ApplicationController
       @suitcase.items << Item.find(item)
     end
     # @item.suitcases << @suitcase
-    redirect_to item_path(@item)
+    redirect_to suitcase_path(@suitcase)
   end
 end
