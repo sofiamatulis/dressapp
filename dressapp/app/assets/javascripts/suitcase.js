@@ -59,10 +59,15 @@ $(function(){
         $('#items-grid-container').html(itemsContainer);
 
 
-        //drag and drop function to add items to suitcase
           $( "#sortable1, #sortable2" ).sortable({
-            connectWith: ".connectedSortable"
+            connectWith: ".connectedSortable",
+            receive: function(event,ui){
+              alert("Dropped");
+              //ajax!
+            }
           }).disableSelection();
+
+
 
 
       });

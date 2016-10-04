@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html>
-<div id="container">
-<head>
-  <link href='http://fonts.googleapis.com/css?family=Bungee|Muli|Playfair+Display' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Roboto|Satisfy" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <title>DressApp</title>
-</head>
-<body id="body">
-  <%= csrf_meta_tag %>
-  <div class = "menu-bar">
-      <span id = "logo">
-        <%= link_to image_tag("dress.jpeg"), root_path %>
-      </span>
-      <span class = "userinfo">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DressApp</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Bungee|Muli|Playfair+Display' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body id="body">
+    <%= csrf_meta_tag %>
+
+    <div id="container">
+      <div class = "menu-bar">
+        <span id = "logo">
+          <%= link_to image_tag("dress.jpeg"), root_path %>
+        </span>
+        <span class = "userinfo">
           <% if current_user %>
             <span id = "welcome-message"> Signed in as <%= link_to "#{current_user.name}", user_path(current_user) %></span> |
             <span id = "log-out-button"><%= link_to "Log out", session_path("current"), :method => :delete %></span>
@@ -27,22 +38,21 @@
             <span id = "log-in-button"><%= link_to "Log In", new_session_path %></span> |
             <span id = "sign-up-button"><%= link_to "Sign Up", new_user_path %></span>
           <% end %>
-      </span>
-  </div>
+        </span>
+      </div>
 
-  <% if flash[:notice] %>
-    <p id="notice"><%= flash[:notice] %></p>
-  <% end %>
-  <% if flash[:alert] %>
-    <p id="alert"><%= flash[:alert] %></p>
-  <% end %>
+      <% if flash[:notice] %>
+        <p id="notice"><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:alert] %>
+        <p id="alert"><%= flash[:alert] %></p>
+      <% end %>
 
-  <%= yield %>
+      <%= yield %>
 
-    <!-- <div class="right">
-      <p id="website">www.dressapp.com   Copyright DressApp 2016</p>
-    </div> -->
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-</body>
-</div>
+      <!-- <div class="right">
+        <p id="website">www.dressapp.com   Copyright DressApp 2016</p>
+      </div> -->
+    </div>
+  </body>
 </html>

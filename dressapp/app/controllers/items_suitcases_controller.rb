@@ -12,16 +12,11 @@ class ItemsSuitcasesController < ApplicationController
     redirect_to item_path(@item)
 
 
-    # add items to suitcases from suitcase page
+    # add items to suitcases from suitcase page user eh item, team eh suitcase
+
+  
 
 
-    # @suitcases = current_user.suitcases
-    # @item = Item.find(params[:item])
-    # @suitcase = Item.find(params[:suitcase])
-    # @suitcase.items << @item
-    # redirect_to suitcase_path(@suitcase)
-    #
-    #
 
   end
 end
