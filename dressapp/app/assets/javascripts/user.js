@@ -1,17 +1,6 @@
 
 $(function() {
 
-  $('input#city').cityAutocomplete();
-
-  // $.ajax( {
-  //   url: 'http://easyautocomplete.com/resources/countries.json',
-  //   method: 'GET',
-  //   data: {},
-  //   dataType: 'JSON'
-  // }).done(function() {
-  //
-  // });
-
   var options = {
     url: '/resources/countries.json',
     getValue: "name",
@@ -32,7 +21,26 @@ $(function() {
   };
 
   window.options = options;
-
+// calling the function for the country drop down
   $("#country").easyAutocomplete(options);
+
+
+// submitting the country
+document.getElementById('countryForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  console.log("The form was not submitted");
+});
+
+function countrySubmit() {
+    console.log("submit");
+  };
+
+document.getElementById('countryForm').onsubmit = function() { countrySubmit() };
+
+
+
+// calling the function for the city drop down.
+  $('#city').cityAutocomplete();
+
 
 });
