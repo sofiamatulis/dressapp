@@ -1,15 +1,21 @@
 
 $(function() {
-
+  // var countryCode = ""
+  var countriesList = ""
   var options = {
     url: '/resources/countries.json',
-    getValue: "code",
+    getValue: function(country) {
+      countriesList = country
+      // console.log(country.name);
+      return country.name;
+    },
     list: {
       match: {
         enabled: true
       },
       maxNumberOfElements: 8
     },
+
 
     template: {
       type: "custom",
@@ -32,15 +38,19 @@ $(function() {
 // });
 
 function countrySubmit() {
-    var country = document.getElementById("country");
-    console.log(country);
-    // $('#city[data-country="'+country+'"]');
-    document.getElementById("city").setAttribute('data-country', country.value);
+    var selectedCountry = document.getElementById("country").value;
+    console.log(selectedCountry.name);
+      for(var selectedCountry in countriesList){
+        // console.log(countriesList[country]);
+        document.getElementById("city").setAttribute('data-country', countriesList[selectedCountry]);
+      }
 
 
   };
 
+// this is not assigning the selected element to the variable
 document.getElementById('countryForm').onchange = countrySubmit;
+
 
 
 
