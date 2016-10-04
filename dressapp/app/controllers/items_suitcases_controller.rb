@@ -7,4 +7,6 @@ class ItemsSuitcasesController < ApplicationController
     @item.suitcases << @suitcase
     redirect_to item_path(@item)
   end
+
+
 end
