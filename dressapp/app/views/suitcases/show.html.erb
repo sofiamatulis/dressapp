@@ -1,12 +1,5 @@
 <div id="suitcase-show-body">
 
-
-
-
-
-
-
-
   <p><%= @weather %></p>
 
   <!-- <p class="weather"><%= @weather %></p> -->
@@ -20,7 +13,7 @@
     </ul>
 
 
-    <ul id="sortable1" class="connectedSortable"> <div> Suitcase</div>
+    <ul id="sortable1" data-suitcase-id='<%=@suitcase.id%>' class="connectedSortable"> <div> Suitcase</div>
 <li class="ui-state-default">Suitcase photo</li>
 
 </ul>
@@ -84,6 +77,8 @@
        <div id="items-grid-container">
 
         </div>
+
+    
 
 
     </div>

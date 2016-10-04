@@ -8,15 +8,19 @@ class ItemsSuitcasesController < ApplicationController
     # @item_id = Item.find(params[:suitcase][:item_ids])
     @suitcases = current_user.suitcases
     @suitcase = Suitcase.find(params[:suitcase])
-    @item.suitcases << @suitcase
-    redirect_to item_path(@item)
+    # redirect_to item_path(@item)
 
-
-    # add items to suitcases from suitcase page user eh item, team eh suitcase
-
-  
-
-
+# adding an item at a time to the suitcase:
 
   end
+
+
+  def update
+    @item = Item.find(params[:item_id])
+    @suitcase = Suitcase.find(params[:id])
+    @suitcase.items << @item
+  end
+
+
+
 end

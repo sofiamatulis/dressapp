@@ -53,7 +53,8 @@ $(function(){
               $.each(response, function(i, item) {
                 var itemContainer = $('<div class="ui-state-highlight">');
                   // $('<h4>').html(item.name).appendTo(itemContainer);
-                  $('<img>').attr('src', item.image).appendTo(itemContainer);
+                  // added data type to each object
+                  $('<img>').attr('src', item.image).attr('data-item-id', item.id).appendTo(itemContainer);
                   $(itemContainer).appendTo(itemsContainer);
               });
         $('#items-grid-container').html(itemsContainer);
@@ -62,8 +63,18 @@ $(function(){
           $( "#sortable1, #sortable2" ).sortable({
             connectWith: ".connectedSortable",
             receive: function(event,ui){
-              alert("Dropped");
-              //ajax!
+              // console.log(ui.item);
+              // console.log(ui.item.find('img').attr('data-item-id'));
+              // console.log($(event.target).attr('data-suitcase-id'));
+              //ajax! data attributes
+              $.ajax( {
+                url: '/items_suitcases/', // this specific url
+                beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+                method: 'POST',
+                data: {item_id : ui.item.find('img').attr('data-item-id'), suitcase_id : $(event.target).attr('data-suitcase-id') }, // 1) figure out data type for input/output 2) how to add the item you are trying to add into the collection of the suitcase
+                dataType: 'json'
+
+              })
             }
           }).disableSelection();
 
