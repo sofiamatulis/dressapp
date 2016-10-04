@@ -65,10 +65,10 @@
   <%= f.submit "New Suitcase", id: "create-suitcase"%>
 <% end %>
 
-  <form id="countryForm" onsubmit="countrySubmit()">
-    <input id="country" name="country" autocomplete="on"><input class="submit" type="submit" value="Submit"><br>
+  <form id="countryForm" onchange="countrySubmit()">
+    <input id="country" name="country" autocomplete="on"><br>
+    <input id="city" name="city" autocomplete="on" data-country=""><input type="submit" value="Submit"><br>
   </form>
-    <input id="city" name="city" autocomplete="on" data-country="ca"><input type="submit" value="Submit"><br><br>
 
 
 </div>

@@ -3,7 +3,7 @@ $(function() {
 
   var options = {
     url: '/resources/countries.json',
-    getValue: "name",
+    getValue: "code",
     list: {
       match: {
         enabled: true
@@ -26,16 +26,21 @@ $(function() {
 
 
 // submitting the country
-document.getElementById('countryForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  console.log("The form was not submitted");
-});
+// document.getElementById('countryForm').addEventListener('submit', function(event) {
+//   event.preventDefault();
+//   console.log("The form was not submitted");
+// });
 
 function countrySubmit() {
-    console.log("submit");
+    var country = document.getElementById("country");
+    console.log(country);
+    // $('#city[data-country="'+country+'"]');
+    document.getElementById("city").setAttribute('data-country', country.value);
+
+
   };
 
-document.getElementById('countryForm').onsubmit = function() { countrySubmit() };
+document.getElementById('countryForm').onchange = countrySubmit;
 
 
 
