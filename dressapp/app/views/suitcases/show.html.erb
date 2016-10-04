@@ -13,10 +13,13 @@
     </ul>
 
 
-    <ul id="sortable1" data-suitcase-id='<%=@suitcase.id%>' class="connectedSortable"> <div> Suitcase</div>
-<li class="ui-state-default">Suitcase photo</li>
+    <ul id="sortable1" data-suitcase-id='<%=@suitcase.id%>' class="connectedSortable"> <div>Suitcase</div>
+  <li class="ui-state-default">"Suitcase photo</li>
 
-</ul>
+  </ul>
+
+
+
 
 
     <div class="links">
@@ -24,8 +27,15 @@
       <p><%= link_to 'Edit Suitcase', edit_suitcase_url(@suitcase) %></p>
       <p><%= link_to 'Delete Suitcase', @suitcase, method: :delete, data: {confirm: "Are you sure?"} %></p>
     </div>
+
+
+
+
+
     <a id="open-nav">Open Suitcase</a>
   </div>
+
+
 <!-- side nav pops out when clicking suitcase  -->
   <div id="suitcase-side-nav" class="sideNav">
     <div class="side-nav-buttons">
@@ -35,6 +45,9 @@
       <a id="outfit-checker-button">&nbsp;&nbsp; Outfit Checker</a>
       <a id="close-nav">X</a>
     </div>
+
+
+
   <div class="outfit-checker">
     </span><h4>Outfit checker</h4>
 
@@ -78,7 +91,7 @@
 
         </div>
 
-    
+
 
 
     </div>

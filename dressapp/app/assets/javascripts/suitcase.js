@@ -51,7 +51,7 @@ $(function(){
         var itemsContainer = $('<div id="sortable2" class="connectedSortable">');
 //iterating through each item and adding the name and photo to its own container
               $.each(response, function(i, item) {
-                var itemContainer = $('<div class="ui-state-highlight">');
+                var itemContainer = $('<div class="style-one">');
                   // $('<h4>').html(item.name).appendTo(itemContainer);
                   // added data type to each object
                   $('<img>').attr('src', item.image).attr('data-item-id', item.id).appendTo(itemContainer);
