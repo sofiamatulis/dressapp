@@ -33,11 +33,27 @@ $(function() {
   $('#city').cityAutocomplete();
 
 // method to take destination inputs and compile them
-  $("#create-suitcase").on('click', function(event){
-     event.preventDefault();
+  $('#new_suitcase').on('submit', function(event) {
+    //  event.preventDefault();
      var cityChoice = $("#city").val();
      var cityCountryChoice = cityChoice + ',' + destination
      console.log(cityCountryChoice);
+     $('#destination').val(cityCountryChoice);
+      event.preventDefault();
+      $.ajax({
+          url:'/suitcases',
+          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+          method:'POST',
+          dataType: "json",
+          data:  $('#new_suitcase').serialize()
+        }).done(function(suitcase){
+          var one = $('<a href="http://localhost:3000/suitcases/' + suitcase.id +  '" >' + suitcase.name + '</a>');
+          var two = $ ('.allsuitcase').append("<li class='mysuitcase'>").append(one);
+          $( "#create-suitcase").prop( "disabled", false );
+
+     $("#new_suitcase")[0].reset();
+
+    });
   });
 
 });
