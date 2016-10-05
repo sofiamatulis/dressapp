@@ -22,34 +22,15 @@ $(function(){
         var imagelink = $('<a href="http://localhost:3000/items/' + response.id + '">').append(image);
         var imageappend = $('<li class="item-details">').append(imagelink);
         $('.wardrobe-item').append(name, description, imageappend);
-
-
       });
       $('#item-create').prop("disabled", false);
     });
-
-
   })
-
-
-//  function to get modal and form to add to suitcase
-// $('#add-to-suitcase').on('click', function(event){
-//     event.preventDefault();
   $('#drop-down-show').on('click', function(e){
-
     $('.category-dropdown').fadeIn();
     $('.item-link').removeAttr('href');
-
     $('.item-select').on('click', function(event){
-
       $(this).find('img').toggleClass("item-selected");
     });
   });
-
-// });
-
-// $('.item-link').on('click', function(event){
-//   $(this).toggleClass("item-selected");
-// });
-
 })
