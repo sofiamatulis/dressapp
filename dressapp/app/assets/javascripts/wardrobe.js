@@ -26,11 +26,12 @@ $(function(){
       $('#item-create').prop("disabled", false);
     });
   })
-  $('#drop-down-show').on('click', function(e){
+
+  $('#drop-down-show').on('click', function(){
     $('.category-dropdown').fadeIn();
     $('.item-link').removeAttr('href');
-    $('.item-select').on('click', function(event){
-      $(this).find('img').toggleClass("item-selected");
-    });
-  });
+    $('.selectd-item').find('img').click(function(){
+      $(this).toggleClass('item-selected');
+    })
+  })
 })
