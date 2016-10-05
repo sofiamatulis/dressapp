@@ -43,17 +43,18 @@ a {
 
  .menu-bar{
    padding: 10px;
-   background-color: #6699ff;
+   background-color: oldlace;
    overflow: hidden;
    height: 50px;
    position: relative;
  }
 
  #logo img{
-   height: 30px;
+   height: 100px;
    width: auto;
    position: relative;
-   line-height: 30px;
+   line-height: 10px;
+   bottom:30px;
  }
 
  .userinfo{
@@ -67,4 +68,11 @@ a {
  .footer .right {
    margin-top: 200px;
    text-align: center;
+ }
+
+ .text-logo {
+   content:url('logopackapp.png');
+   margin-left:400px;
+   margin-top:200px;
+
  }

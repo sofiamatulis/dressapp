@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .header-image {
   height: 500px;
-  background-image: url('http://slashmobility.com/wp-content/uploads/2014/06/img_ampliada_dressapp_3_1280.png');
+  background-image: url('packapp.png'), no-repeat;
   width:100%;
   text-align: center;
   padding-top: 3px;
@@ -97,9 +97,7 @@ ul, li {
  }
 
  .parallax_image{
-  background-image: url("http://slashmobility.com/wp-content/uploads/2014/06/img_ampliada_dressapp_3_1280.png");
-
-
+  background-image: url("bag.jpg");
  }
 
 .parallax_image_2{
