@@ -247,6 +247,9 @@ h4 {
 }
 
 // styling for "add more items" in the suitcase show side nav
+#sortable2 {
+  max-width: 100%;
+}
 
 #items-grid-container img {
   width: 100px;
@@ -255,7 +258,7 @@ h4 {
   display: block;
 }
 
-.suitcase-item-container {
+.style-one {
   display: inline-block;
   width: 25%;
   margin: 40px 0;

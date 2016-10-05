@@ -1,11 +1,12 @@
 $( document ).on('ready turbolinks:load', function() {
 
+// opening suitcase
   $("#open-nav").on('click', function() {
     $(".arrow-right").trigger("click");
     document.getElementById("suitcase-side-nav").style.width = "40%";
     document.getElementById("suitcase-main").style.marginLeft = "40%";
   });
-
+// closing nav
   $("#close-nav").on('click', function() {
     document.getElementById("suitcase-side-nav").style.width = "0";
     document.getElementById("suitcase-main").style.marginLeft= "0";
@@ -17,6 +18,7 @@ $( document ).on('ready turbolinks:load', function() {
     }, 1000 );
   });
 
+// creates the carousel
 function createSlider() {
     $('.tops-container').slick( {
       prevArrow: '<span class="arrow-left"><</span>',
@@ -35,6 +37,7 @@ function createSlider() {
   }
 
   createSlider();
+
 
   $('#add-items').on('click', function() {
     document.getElementById("suitcase-side-nav").style.width = "60%";
@@ -62,6 +65,7 @@ function createSlider() {
       $('#items-grid-container').html(itemsContainer);
       $( "#sortable1, #sortable2" ).sortable({
         connectWith: ".connectedSortable",
+        scroll: false,
         receive: function(event,ui){
           $.ajax( {
             url: '/items_suitcases/', // this specific url
@@ -78,6 +82,7 @@ function createSlider() {
     });
   });
 
+// resets the outfit checker when you click "outfit checker" button
   $('#outfit-checker-button').on('click', function() {
     $(".arrow-right").trigger("click");
     $("#items-grid-container" ).empty();
@@ -87,4 +92,13 @@ function createSlider() {
     document.getElementById("suitcase-side-nav").style.width = "40%";
     document.getElementById("suitcase-main").style.marginLeft = "40%";
   });
+
+  //view all button
+  $('#view-all').on('click', function() {
+    $("#items-grid-container" ).empty();
+    $(".outfit-checker").css("display", "none");
+
+
+  });
+
 });
