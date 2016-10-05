@@ -76,3 +76,8 @@ a {
    margin-top:200px;
 
  }
+
+ .animation {
+   content:url('packapp2.png');
+   margin-top:-150px;
+ }
