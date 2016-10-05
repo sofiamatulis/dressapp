@@ -3,15 +3,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Page</title>
-
     </head>
-
 
   <div class="profile">
     <h1>Hello, <%= @user.name %>!</h1>
     <div class="button"><%= link_to "Edit Profile", edit_user_path(@user) %>
   </div>
-
 
   <div class="info">
     <h4>
@@ -20,51 +17,42 @@
     </h4>
   </div>
 
-
-
- <div class="w">
-  <h1 class="hello">My wardrobes</h1>
-
-
-
-<ul class="allwardrobe">
-  <% @user.wardrobes.each do |wardrobe| %>
-    <li class="mywardrobe">
-    <p>  <%= link_to wardrobe.name, wardrobe_path(wardrobe) %></p><br>
-    </li>
-  <% end %>
-</ul>
-
-<%= form_for @wardrobe do |f| %>
-  <%= f.text_field :name, placeholder: "Wardrobe name" %> <br>
-  <%= f.submit "New Wardrobe", id: "create-wardrobe" %>
-<% end %>
-
-</div>
-
-
+  <div class="w">
+    <h1 class="hello">My wardrobes</h1>
+    <ul class="allwardrobe">
+      <% @user.wardrobes.each do |wardrobe| %>
+        <li class="mywardrobe">
+        <p><%= link_to wardrobe.name, wardrobe_path(wardrobe) %></p><br>
+        </li>
+      <% end %>
+    </ul>
+    <button id="new-wardrobe">Create New Wardrobe</button>
+    <div class="modal-wardrobe">
+      <%= form_for @wardrobe, :id => "wardrobe-from" do |f| %>
+        <%= f.text_field :name, placeholder: "Wardrobe name" %> <br>
+        <%= f.submit "New Wardrobe", id: "create-wardrobe" %>
+        <% end %>
+      </div>
+  </div>
 
   <div class="s">
-  <h1 class="bye">My suitcases</h1>
-
-<ul class="allsuitcase">
-  <% @user.suitcases.each do |suitcase| %>
-    <li class="mysuitcase">
-    <p>  <%= link_to suitcase.name, suitcase_path(suitcase) %></p><br>
-    </li>
-  <% end %>
-</ul>
-
-<%= form_for @suitcase do |f| %>
-  <%= f.text_field :name, placeholder: "Suitcase name" %> <br>
-  <%= f.text_area :description, placeholder: "Description" %> <br>
-  <%= f.number_field :duration, placeholder: "Duration" %> <br>
-  <%= f.text_field :destination, placeholder: "Destination" %> <br>
-
-
-  <%= f.submit "New Suitcase", id: "create-suitcase"%>
-<% end %>
-</div>
-
-
+    <h1 class="bye">My suitcases</h1>
+    <ul class="allsuitcase">
+      <% @user.suitcases.each do |suitcase| %>
+        <li class="mysuitcase">
+        <p>  <%= link_to suitcase.name, suitcase_path(suitcase) %></p><br>
+        </li>
+      <% end %>
+    </ul>
+    <button id="new-suitcase">Create New Suitcase</button>
+    <div class="modal-suitcase">
+      <%= form_for @suitcase, :id => "suitcase-form" do |f| %>
+      <%= f.text_field :name, placeholder: "Suitcase name" %> <br>
+      <%= f.text_area :description, placeholder: "Description" %> <br>
+      <%= f.number_field :duration, placeholder: "Duration" %> <br>
+      <%= f.text_field :destination, placeholder: "Destination" %> <br>
+      <%= f.submit "New Suitcase", id: "create-suitcase"%>
+      <% end %>
+    </div>
+  </div>
 </html>

@@ -54,6 +54,7 @@ $(function(){
         $('<img>').attr('src', item.image).attr('data-item-id', item.id).appendTo(itemContainer);
         $(itemContainer).appendTo(itemsContainer);
         });
+        
       $('#items-grid-container').html(itemsContainer);
       $( "#sortable1, #sortable2" ).sortable({
         connectWith: ".connectedSortable",
