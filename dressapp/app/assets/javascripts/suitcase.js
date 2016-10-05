@@ -1,5 +1,5 @@
-$(function(){
-
+$( document ).on('ready turbolinks:load', function() {
+  
   $("#open-nav").on('click', function() {
     $(".arrow-right").trigger("click");
     document.getElementById("suitcase-side-nav").style.width = "40%";
@@ -17,20 +17,24 @@ $(function(){
     }, 1000 );
   });
 
-  $('.tops-container').slick( {
-    prevArrow: '<span class="arrow-left"><</span>',
-    nextArrow: '<span class="arrow-right">></span>',
-  });
+function createSlider() {
+    $('.tops-container').slick( {
+      prevArrow: '<span class="arrow-left"><</span>',
+      nextArrow: '<span class="arrow-right">></span>',
+    });
 
-  $('.bottoms-container').slick( {
-    prevArrow: '<span class="arrow-left"><</span>',
-    nextArrow: '<span class="arrow-right">></span>',
-  });
+    $('.bottoms-container').slick( {
+      prevArrow: '<span class="arrow-left"><</span>',
+      nextArrow: '<span class="arrow-right">></span>',
+    });
 
-  $('.shoes-container').slick( {
-    prevArrow: '<span class="arrow-left"><</span>',
-    nextArrow: '<span class="arrow-right">></span>',
-  });
+    $('.shoes-container').slick( {
+      prevArrow: '<span class="arrow-left"><</span>',
+      nextArrow: '<span class="arrow-right">></span>',
+    });
+  }
+
+  createSlider();
 
   $('#add-items').on('click', function() {
     document.getElementById("suitcase-side-nav").style.width = "60%";
@@ -51,32 +55,38 @@ $(function(){
         var itemContainer = $('<div class="style-one">');
                   // $('<h4>').html(item.name).appendTo(itemContainer);
                   // added data type to each object
-        $('<img>').attr('src', item.image).attr('data-item-id', item.id).appendTo(itemContainer);
+        $('<img>').attr('src', item.image).attr('data-item-id', item.id).attr('data-item-category', item.category_id).appendTo(itemContainer);
         $(itemContainer).appendTo(itemsContainer);
         });
-        
+
       $('#items-grid-container').html(itemsContainer);
       $( "#sortable1, #sortable2" ).sortable({
         connectWith: ".connectedSortable",
         receive: function(event,ui){
-              // console.log(ui.item);
-              // console.log(ui.item.find('img').attr('data-item-id'));
-              // console.log($(event.target).attr('data-suitcase-id'));
-              //ajax! data attributes
           $.ajax( {
             url: '/items_suitcases/', // this specific url
             beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
             method: 'POST',
-            data: {item_id : ui.item.find('img').attr('data-item-id'), suitcase_id : $(event.target).attr('data-suitcase-id') }, // 1) figure out data type for input/output 2) how to add the item you are trying to add into the collection of the suitcase
-            dataType: 'json'
-
-          })
+            data: {item_id : ui.item.find('img').attr('data-item-id'), suitcase_id : $(event.target).attr('data-suitcase-id'), category_id: ui.item.find('img').attr('data-item-category') }, // 1) figure out data type for input/output 2) how to add the item you are trying to add into the collection of the suitcase
+            dataType: 'html'
+          }).done(function(response) {
+              $(".outfit-checker-container").html(response);
+              createSlider();
+          });
         }
       }).disableSelection();
     });
   });
 
   $('#outfit-checker-button').on('click', function() {
+    // $.ajax({
+    //   url: '$(this).attr('href')',
+    //   method: 'GET',
+    //   data: {},
+    //   dataType: 'JSON'
+    // }).done(function(response) {
+    //   console.log(response)
+    // })
     $("#items-grid-container" ).empty();
     $(".outfit-checker").css("display", "block");
     $("#outfit-checker-button").css("display", "none");
