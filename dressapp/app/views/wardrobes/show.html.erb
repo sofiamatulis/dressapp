@@ -20,7 +20,7 @@
 
 
 <% else %>
-  <%= form_tag items_suitcases_path, :id => "submit-multi" do %>
+  <%= form_tag multi_path, :id => "submit-multi" do %>
   <div class="wardrobe-item-container">
     <ul class="wardrobe-item">
       <% @wardrobe.items.each do |item| %>
