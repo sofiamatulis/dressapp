@@ -8,40 +8,39 @@
 </div>
 
 <% if @wardrobe.items.length == 0 %>
-<h3 class="item-details">You don't have any clothes in this wardrobe right now</h3>
-<p class="button add-item"><%= link_to "Click here to add some", new_item_path(:wardrobe => @wardrobe.id) %></p>
-<div class="wardrobe-item-container">
-  <ul class="wardrobe-item">
-  </ul>
-</div>
-<div class="modal-item">
-  <%= render 'items/form' %>
-</div>
-
-
-  <% else %>
-<%= form_tag items_suitcases_path, :id => "submit-multi" do %>
+  <h3 class="item-details">You don't have any clothes in this wardrobe right now</h3>
+  <p class="button add-item"><%= link_to "Click here to add some", new_item_path(:wardrobe => @wardrobe.id) %></p>
   <div class="wardrobe-item-container">
     <ul class="wardrobe-item">
+    </ul>
+  </div>
+  <div class="modal-item">
+    <%= render 'items/form' %>
+  </div>
 
-        <% @wardrobe.items.each do |item| %>
-          <li class="item-details"><%= item.name %></li>
-          <li class="item-details"><%= item.description %></li>
-          <label class ="item-select">
-          <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
-          <li class="item-details"><%#= image_tag item.image, :class => "item-click"%></li>
-          <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
-        </label>
-        <% end %>
+
+<% else %>
+  <%= form_tag items_suitcases_path, :id => "submit-multi" do %>
+  <div class="wardrobe-item-container">
+    <ul class="wardrobe-item">
+      <% @wardrobe.items.each do |item| %>
+      <li class="item-details"><%= item.name %></li>
+      <li class="item-details"><%= item.description %></li>
+      <label class ="item-select">
+      <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
+      <li class="item-details"><%#= image_tag item.image, :class => "item-click"%></li>
+      <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
+      </label>
+      <% end %>
     </ul>
   </div>
 
   <div class="dropdown">
     <ul class="category-dropdown">
       <% @suitcases.each do |suitcase| %>
-        <%= button_tag(type: 'submit', :name => 'suitcase_id', value: suitcase.id) do %>
-        <%= suitcase.name %>
-          <% end %>
+      <%= button_tag(type: 'submit', :name => 'suitcase_id', value: suitcase.id) do %>
+      <%= suitcase.name %>
+      <% end %>
       <% end %>
     </ul>
   </div>
