@@ -55,6 +55,10 @@
     <% end %>
   </ul>
 
+  <form id="countryForm">
+    <input id="country" name="country" autocomplete="on" placeholder="Destination Country"><br>
+    <input id="city" name="city" autocomplete="on" placeholder="Destination City" data-country=""><br>
+  </form>
   <%= form_for @suitcase do |f| %>
     <%= f.text_field :name, placeholder: "Suitcase name" %> <br>
     <%= f.text_area :description, placeholder: "Description" %> <br>
@@ -64,10 +68,6 @@
     <%= f.submit "New Suitcase", id: "create-suitcase"%>
   <% end %>
 
-  <form id="countryForm">
-    <input id="country" name="country" autocomplete="on"><br>
-    <input id="city" name="city" autocomplete="on" data-country=""><br>
-  </form>
 <br>
 <br>
 
