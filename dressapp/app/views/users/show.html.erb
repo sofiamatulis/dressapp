@@ -47,23 +47,30 @@
   <div class="s">
   <h1 class="bye">My suitcases</h1>
 
-<ul class="allsuitcase">
-  <% @user.suitcases.each do |suitcase| %>
-    <li class="mysuitcase">
-    <p>  <%= link_to suitcase.name, suitcase_path(suitcase) %></p><br>
-    </li>
+  <ul class="allsuitcase">
+    <% @user.suitcases.each do |suitcase| %>
+      <li class="mysuitcase">
+      <p>  <%= link_to suitcase.name, suitcase_path(suitcase) %></p><br>
+      </li>
+    <% end %>
+  </ul>
+
+  <form id="countryForm">
+    <input id="country" name="country" autocomplete="on" placeholder="Destination Country"><br>
+    <input id="city" name="city" autocomplete="on" placeholder="Destination City" data-country=""><br>
+  </form>
+  <%= form_for @suitcase do |f| %>
+    <%= f.text_field :name, placeholder: "Suitcase name" %> <br>
+    <%= f.text_area :description, placeholder: "Description" %> <br>
+    <%= f.number_field :duration, placeholder: "Duration" %> <br>
+    <%#= f.text_field :destination, placeholder: "Destination" %> <br>
+    <%= f.hidden_field :destination, :id => "destination" %>
+    <%= f.submit "New Suitcase", id: "create-suitcase"%>
   <% end %>
-</ul>
 
-<%= form_for @suitcase do |f| %>
-  <%= f.text_field :name, placeholder: "Suitcase name" %> <br>
-  <%= f.text_area :description, placeholder: "Description" %> <br>
-  <%= f.number_field :duration, placeholder: "Duration" %> <br>
-  <%= f.text_field :destination, placeholder: "Destination" %> <br>
+<br>
+<br>
 
-
-  <%= f.submit "New Suitcase", id: "create-suitcase"%>
-<% end %>
 </div>
 
 

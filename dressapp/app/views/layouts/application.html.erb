@@ -16,6 +16,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEmJ_uxarY1GFaiWbHvyX-AEkOK90rdyU&libraries=places"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 
@@ -50,9 +51,6 @@
 
       <%= yield %>
 
-      <!-- <div class="right">
-        <p id="website">www.dressapp.com   Copyright DressApp 2016</p>
-      </div> -->
     </div>
-  </body>
+</body>
 </html>

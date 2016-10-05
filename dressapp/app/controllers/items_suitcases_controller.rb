@@ -21,8 +21,6 @@ class ItemsSuitcasesController < ApplicationController
     #   items_ary << Item.find(item)
     # end
 
-
-
     # @item = Item.find(params[:id])
 
     @suitcases = current_user.suitcases
@@ -34,9 +32,5 @@ class ItemsSuitcasesController < ApplicationController
     redirect_to suitcase_path(@suitcase)
 
   end
-
-
-
-
 
 end
