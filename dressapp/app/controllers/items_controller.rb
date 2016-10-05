@@ -1,11 +1,16 @@
 class ItemsController < ApplicationController
-  before_action :load_items, only: [:index]
+  # before_action :load_items, only: [:index]
 
   def index
-    # respond_to do |format|
-    #   format.html { render 'index' }
-    #   format.json { render json: @items }
-    # end
+    # def load_items
+      if params[:search]
+        @items = Item.search(params[:search])
+      # elsif params[:category_id]
+      #   @items = Item.where(:category_id => params[:category_id])
+      else
+        @items = Item.all
+      # end
+    end
   end
 
   def show
@@ -33,14 +38,20 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    # @category = Category.find(item_params[:category_id])
-    @wardrobe = @item.wardrobe
-    if @item.save
-      redirect_to wardrobe_path(@wardrobe)
-    else
-      render "new"
+      @item = Item.new(item_params)
+      @wardrobe = @item.wardrobe
+      @item.save
+      respond_to do |format|
+        # format.html {redirect_to wardrobe_path(@wardrobe)}
+        # format.html do
+        #   {redirect_to itempath(@item)}
+        # end
+        format.json do
+          render json: @item
+        end
     end
+    # end
+    # @item = Item.create(item_params)
   end
 
   def destroy
@@ -60,13 +71,4 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :description, :image, :category_id)
   end
 
-  def load_items
-    if params[:search]
-      @items = Item.search(params[:search])
-    elsif params[:category_id]
-      @items = Item.where(:category_id => params[:category_id])
-    else
-    @items = Item.all
-    end
-  end
 end

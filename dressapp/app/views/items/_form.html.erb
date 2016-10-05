@@ -1,4 +1,3 @@
-
 <%= form_for @item, :html => {:class => "modal-form"} do |f| %>
 
 <%if @item.errors.any? %>
@@ -25,7 +24,7 @@
 
   <div class="field">
     <%= f.label :image %>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, id: 'fileupload' %>
   </div>
 
   <div class="field">
