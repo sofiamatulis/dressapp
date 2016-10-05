@@ -32,6 +32,8 @@ $(function(){
     nextArrow: '<span class="arrow-right">></span>',
   });
 
+
+
   $('#add-items').on('click', function() {
     document.getElementById("suitcase-side-nav").style.width = "60%";
     document.getElementById("suitcase-main").style.marginLeft = "60%";

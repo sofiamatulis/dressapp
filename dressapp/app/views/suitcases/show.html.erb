@@ -1,6 +1,6 @@
 <div id="suitcase-show-body">
 
-  <p><%= @weather %></p>
+  <!-- <p><%= @weather %></p> -->
 
   <!-- <p class="weather"><%= @weather %></p> -->
 
@@ -13,12 +13,14 @@
       <li class="suitcase-details">Details: <%= @suitcase.description %></li>
     </ul>
 
+    <div class="weather">
+
+    </div>
+
   <ul id="sortable1" data-suitcase-id='<%=@suitcase.id%>' class="connectedSortable"> <div>Suitcase</div>
     <li class="ui-state-default">"Suitcase photo</li>
   </ul>
 
-  <ul class ="weather-details">
-  </ul>
 
     <div class="links">
       <p><%= link_to 'Back', user_path(current_user) %></p>

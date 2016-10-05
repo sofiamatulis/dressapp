@@ -24,11 +24,21 @@ $(function(){
       var main = data.list[i].weather[0].main;
       var desc = data.list[i].weather[0].description;
       // puts the weather below the suitcase class
-      var weather = $('.weather-details').append('<li class="weather-date">').append(day + " " + month + " " + date);
-      var weather2 = $('.weather-details').append('<li class="weather-temp">').append(temp);
-      var weathericon = $('.weather-details').append('<li class="weather-icon">').append("<img src='" + iconUrl + "'>");
-      var weather3 = $('.weather-details').append('<li class="weather-main">').append(main);
-      var weather4 = $('.weather-details').append('<li class="weather-description">').append(desc);
+      var weather1 = $('<span= class="weather-date">').append(day + " " + month + " " + date).append(temp).append("<img src='" + iconUrl + "'>").append(desc);
+      var weather = $('<div class="weather-' + i + '">').append(weather1);
+      var final = $('.weather').append(weather);
+
+
     };
+
+    $('.weather').slick( {
+      prevArrow: '<span class="arrow-left"><</span>',
+      nextArrow: '<span class="arrow-right">></span>',
+    });
+    
   });
+
+
+
+
 });
