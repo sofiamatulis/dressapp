@@ -30,8 +30,14 @@ class ItemsSuitcasesController < ApplicationController
     @suitcases = current_user.suitcases
     @suitcase = Suitcase.find(params[:suitcase_id])
     @suitcase.items << @item
+<<<<<<< HEAD
+=======
+    # params['items'].each do |item|
+    #   @suitcase.items << Item.find(item)
+    # end
+>>>>>>> suitcase_show_finalize
     # @item.suitcases << @suitcase
-    redirect_to suitcase_path(@suitcase)
+    render partial: 'suitcases/outfitchecker'
 
   end
 
