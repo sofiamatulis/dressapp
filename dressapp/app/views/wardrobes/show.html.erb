@@ -49,7 +49,10 @@
 <%= "Add to suitcase" %>
 <% end %>
 
-<p class="button add-item"><%= link_to "Add more items", new_item_path(:wardrobe => @wardrobe.id) %></p>
+<!-- <button class="button add-item" id="new-item"><%= link_to "Add more items", new_item_path(:wardrobe => @wardrobe.id) %></button> -->
+<%= button_tag(:id => "new-item", :class => "button add-item", :name => 'wardrobe_id', value: @wardrobe.id) do %>
+<%= "Add item" %>
+<% end %>
 <div class="modal-item">
   <%= render 'items/form' %>
 </div>

@@ -1,14 +1,11 @@
 $(function(){
+  console.log('wardrobe.js loaded!');
 // function to get modal and form to add item
-  $('.add-item').click(function(e){
-    e.preventDefault();
+  $('#new-item').on('click', function(e){
     console.log("clicked");
-    $('.modal-item').fadeIn('fast');
-
-    $('.modal-form').on('submit', function(event){
-      event.preventDefault();
-      $('.modal-item').fadeOut('slow');
-
+    $('.modal-item').fadeIn();
+    $('#new_item').on('submit', function(e){
+      $('.modal-item').fadeOut();
       $.ajax({
         url: '/items',
         method: 'post',
@@ -25,13 +22,14 @@ $(function(){
       });
       $('#item-create').prop("disabled", false);
     });
-  })
+  });
+
 
   $('#drop-down-show').on('click', function(){
     $('.category-dropdown').fadeIn();
     $('.item-link').removeAttr('href');
     $('.selectd-item').find('img').click(function(){
       $(this).toggleClass('item-selected');
-    })
-  })
+    });
+  });
 })

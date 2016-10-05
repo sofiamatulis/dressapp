@@ -38,7 +38,7 @@ $(function(){
     $(".outfit-checker").css("display", "none");
     $("#add-items").css("display", "none");
     $("#outfit-checker-button").css("display", "inline-block");
-    $.ajax( {
+    $.ajax({
       url: '/items',
       method: 'GET',
       data: {},
@@ -54,7 +54,7 @@ $(function(){
         $('<img>').attr('src', item.image).attr('data-item-id', item.id).appendTo(itemContainer);
         $(itemContainer).appendTo(itemsContainer);
         });
-        
+
       $('#items-grid-container').html(itemsContainer);
       $( "#sortable1, #sortable2" ).sortable({
         connectWith: ".connectedSortable",
@@ -70,7 +70,7 @@ $(function(){
             data: {item_id : ui.item.find('img').attr('data-item-id'), suitcase_id : $(event.target).attr('data-suitcase-id') }, // 1) figure out data type for input/output 2) how to add the item you are trying to add into the collection of the suitcase
             dataType: 'json'
 
-          })
+          });
         }
       }).disableSelection();
     });

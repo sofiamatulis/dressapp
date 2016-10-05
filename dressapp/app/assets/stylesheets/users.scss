@@ -105,12 +105,12 @@ ul, li {
 
 }
 
-#new-wardrobe, #new-suitcase {
+#new-wardrobe, #new-suitcase, #new-item {
     border: 2px solid pink;
     font-size:20px;
 }
 
-.modal-wardrobe, .modal-suitcase {
+.modal-wardrobe, .modal-suitcase, .modal-item {
   display: none;
   position: fixed;
   top: 0;
@@ -119,7 +119,7 @@ ul, li {
   height: 100%;
   background-color: rgba(30,30,30,0.8);
 }
- #new_wardrobe, #new_suitcase {
+ #new_wardrobe, #new_suitcase, #new_item {
   display: block;
   width: 400px;
   height: 18em;

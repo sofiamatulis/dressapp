@@ -1,56 +1,56 @@
-$(function() {
-//js for working with modals
-$('#new-wardrobe').on('click', function(){
-  $('.modal-wardrobe').fadeIn();
-  $('#new_wardrobe').on('submit', function(){
-    $('.modal-wardrobe').fadeOut();
+$(function(){
+  //js for working with modals
+  $('#new-wardrobe').on('click', function(){
+    $('.modal-wardrobe').fadeIn();
+    $('#new_wardrobe').on('submit', function(){
+      $('.modal-wardrobe').fadeOut();
+    });
+  })
+
+  $('#new-suitcase').on('click', function(){
+    $('.modal-suitcase').fadeIn();
+    $('#new_suitcase').on('submit', function(){
+      $('.modal-suitcase').fadeOut();
+    });
   });
-});
 
-$('#new-suitcase').on('click', function(){
-  $('.modal-suitcase').fadeIn();
-  $('#new_suitcase').on('submit', function(){
-    $('.modal-suitcase').fadeOut();
-  });
-});
-
-//js for suitcase form
-var destination = ""
-var options = {
-  url: '/resources/countries.json',
-  getValue: "name",
-  list: {
-    onSelectItemEvent: function() {
-      var value = $("#country").getSelectedItemData().code;
-      $("#city").attr('data-country', value);
-      destination = value
+  //js for suitcase form
+  var destination = ""
+  var options = {
+    url: '/resources/countries.json',
+    getValue: "name",
+    list: {
+      onSelectItemEvent: function() {
+        var value = $("#country").getSelectedItemData().code;
+        $("#city").attr('data-country', value);
+        destination = value
+      },
+      match: {
+        enabled: true
+      },
+      maxNumberOfElements: 8
     },
-    match: {
-      enabled: true
+
+    template: {
+      type: "custom",
+      method: function(value, item) {
+        return "<span class='flag flag-" + (item.code).toLowerCase() + "' ></span>" + value;
+      }
     },
-    maxNumberOfElements: 8
-  },
+    theme: "round"
+  };
+  window.options = options;
+  // calling the function for the country drop down
+  $("#country").easyAutocomplete(options);
 
-  template: {
-    type: "custom",
-    method: function(value, item) {
-      return "<span class='flag flag-" + (item.code).toLowerCase() + "' ></span>" + value;
-    }
-  },
-  theme: "round"
-};
+  // calling the function for the city drop down.
+  $('#city').cityAutocomplete();
+  console.log('this still works');
 
-window.options = options;
-// calling the function for the country drop down
-$("#country").easyAutocomplete(options);
-
-// calling the function for the city drop down.
-$('#city').cityAutocomplete();
-
-$('#new_suitcase').on('submit',function(event){
+  $('#new_suitcase').on('submit',function(event){
     event.preventDefault();
     var cityChoice = $("#city").val();
-    var cityCountryChoice = cityChoice + ',' + destination
+    var cityCountryChoice = cityChoice + ',' + destination;
     console.log(cityCountryChoice);
     $('#destination').val(cityCountryChoice);
     // making ajax call for post after city/country choice is defined
@@ -63,7 +63,7 @@ $('#new_suitcase').on('submit',function(event){
     }).done(function(suitcase){
       var one = $('<a href="http://localhost:3000/suitcases/' + suitcase.id +  '" >' + suitcase.name + '</a>');
       var two = $ ('.allsuitcase').append("<li class='mysuitcase'>").append(one);
-      $( "#create-suitcase").prop( "disabled", false );
+      $("#create-suitcase").prop( "disabled", false );
       $("#new_suitcase")[0].reset();
       $("#countryForm")[0].reset();
       $("#city").attr("data-country", "");
