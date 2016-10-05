@@ -1,5 +1,5 @@
 $( document ).on('ready turbolinks:load', function() {
-  
+
   $("#open-nav").on('click', function() {
     $(".arrow-right").trigger("click");
     document.getElementById("suitcase-side-nav").style.width = "40%";
@@ -70,7 +70,7 @@ function createSlider() {
             data: {item_id : ui.item.find('img').attr('data-item-id'), suitcase_id : $(event.target).attr('data-suitcase-id'), category_id: ui.item.find('img').attr('data-item-category') }, // 1) figure out data type for input/output 2) how to add the item you are trying to add into the collection of the suitcase
             dataType: 'html'
           }).done(function(response) {
-              $(".outfit-checker-container").html(response);
+              $(".outfit-checker").html(response);
               createSlider();
           });
         }
@@ -79,14 +79,7 @@ function createSlider() {
   });
 
   $('#outfit-checker-button').on('click', function() {
-    // $.ajax({
-    //   url: '$(this).attr('href')',
-    //   method: 'GET',
-    //   data: {},
-    //   dataType: 'JSON'
-    // }).done(function(response) {
-    //   console.log(response)
-    // })
+    $(".arrow-right").trigger("click");
     $("#items-grid-container" ).empty();
     $(".outfit-checker").css("display", "block");
     $("#outfit-checker-button").css("display", "none");
