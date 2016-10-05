@@ -1,6 +1,22 @@
-
 $(function() {
   if($('body').is('.user-show')) {
+
+    //js for working with modals
+    $('#new-wardrobe').on('click', function(){
+      $('.modal-wardrobe').fadeIn();
+      $('#new_wardrobe').on('submit', function(){
+        $('.modal-wardrobe').fadeOut();
+      });
+    });
+
+    $('#new-suitcase').on('click', function(){
+      $('.modal-suitcase').fadeIn();
+      $('#new_suitcase').on('submit', function(){
+        $('.modal-suitcase').fadeOut();
+      });
+    });
+
+    // js for suitcase form
     var destination = ""
     var options = {
       url: '/resources/countries.json',
@@ -34,9 +50,7 @@ $(function() {
     $('#city').cityAutocomplete();
 
     $('#new_suitcase').on('submit',function(event){
-
         event.preventDefault();
-
         var cityChoice = $("#city").val();
         var cityCountryChoice = cityChoice + ',' + destination
         console.log(cityCountryChoice);
@@ -50,7 +64,7 @@ $(function() {
           dataType: "json",
           data:  $('#new_suitcase').serialize()
 
-        }).done(function(suitcase){
+          }).done(function(suitcase){
             var one = $('<a href="http://localhost:3000/suitcases/' + suitcase.id +  '" >' + suitcase.name + '</a>');
             var two = $ ('.allsuitcase').append("<li class='mysuitcase'>").append(one);
             $( "#create-suitcase").prop( "disabled", false );
@@ -58,8 +72,7 @@ $(function() {
             $("#new_suitcase")[0].reset();
             $("#countryForm")[0].reset();
             $("#city").attr("data-country", "");
-
+          });
         });
-    });
   }
 });
