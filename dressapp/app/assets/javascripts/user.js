@@ -1,65 +1,65 @@
 
 $(function() {
-  var destination = ""
-  var options = {
-    url: '/resources/countries.json',
-    getValue: "name",
-    list: {
-      onSelectItemEvent: function() {
-        var value = $("#country").getSelectedItemData().code;
-        $("#city").attr('data-country', value);
-        destination = value
+  if($('body').is('.user-show')) {
+    var destination = ""
+    var options = {
+      url: '/resources/countries.json',
+      getValue: "name",
+      list: {
+        onSelectItemEvent: function() {
+          var value = $("#country").getSelectedItemData().code;
+          $("#city").attr('data-country', value);
+          destination = value
+        },
+        match: {
+          enabled: true
+        },
+        maxNumberOfElements: 8
       },
-      match: {
-        enabled: true
+
+      template: {
+        type: "custom",
+        method: function(value, item) {
+          return "<span class='flag flag-" + (item.code).toLowerCase() + "' ></span>" + value;
+        }
       },
-      maxNumberOfElements: 8
-    },
+      theme: "round"
+    };
 
-    template: {
-      type: "custom",
-      method: function(value, item) {
-        return "<span class='flag flag-" + (item.code).toLowerCase() + "' ></span>" + value;
-      }
-    },
-    theme: "round"
-  };
+    window.options = options;
+  // calling the function for the country drop down
+    $("#country").easyAutocomplete(options);
 
-  window.options = options;
-// calling the function for the country drop down
-  $("#country").easyAutocomplete(options);
+  // calling the function for the city drop down.
+    $('#city').cityAutocomplete();
 
-// calling the function for the city drop down.
-  $('#city').cityAutocomplete();
+    $('#new_suitcase').on('submit',function(event){
 
-  $('#new_suitcase').on('submit',function(event){
+        event.preventDefault();
 
-      event.preventDefault();
+        var cityChoice = $("#city").val();
+        var cityCountryChoice = cityChoice + ',' + destination
+        console.log(cityCountryChoice);
+        $('#destination').val(cityCountryChoice);
+  // making ajax call for post after city/country choice is defined
+        $.ajax({
 
-      var cityChoice = $("#city").val();
-      var cityCountryChoice = cityChoice + ',' + destination
-      console.log(cityCountryChoice);
-      $('#destination').val(cityCountryChoice);
-// making ajax call for post after city/country choice is defined
-      $.ajax({
+          url:'/suitcases',
+          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+          method:'POST',
+          dataType: "json",
+          data:  $('#new_suitcase').serialize()
 
-        url:'/suitcases',
-        beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-        method:'POST',
-        dataType: "json",
-        data:  $('#new_suitcase').serialize()
+        }).done(function(suitcase){
+            var one = $('<a href="http://localhost:3000/suitcases/' + suitcase.id +  '" >' + suitcase.name + '</a>');
+            var two = $ ('.allsuitcase').append("<li class='mysuitcase'>").append(one);
+            $( "#create-suitcase").prop( "disabled", false );
 
-      }).done(function(suitcase){
-          var one = $('<a href="http://localhost:3000/suitcases/' + suitcase.id +  '" >' + suitcase.name + '</a>');
-          var two = $ ('.allsuitcase').append("<li class='mysuitcase'>").append(one);
-          $( "#create-suitcase").prop( "disabled", false );
+            $("#new_suitcase")[0].reset();
+            $("#countryForm")[0].reset();
+            $("#city").attr("data-country", "");
 
-          $("#new_suitcase")[0].reset();
-          $("#countryForm")[0].reset();
-          $("#city").attr("data-country", "");
-
-      });
-  });
-
-
+        });
+    });
+  }
 });
