@@ -97,8 +97,12 @@ ul, li {
  }
 
  .parallax_image{
-  background-image: url("bag.jpg");
+  // background-image: url("http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg");
+  background:linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                rgba(0,0,0,0.55) url('http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg') no-repeat center;
+
  }
+
 
 .parallax_image_2{
   background-image: url("http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg");
