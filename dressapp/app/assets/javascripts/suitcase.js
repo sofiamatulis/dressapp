@@ -8,6 +8,7 @@ $( document ).on('ready turbolinks:load', function() {
   });
 // closing nav
   $("#close-nav").on('click', function() {
+    $('#suitcase-side-nav').css("overflow-x", "hidden");
     document.getElementById("suitcase-side-nav").style.width = "0";
     document.getElementById("suitcase-main").style.marginLeft= "0";
     setTimeout( function() {
@@ -42,6 +43,7 @@ function createSlider() {
   $('#add-items').on('click', function() {
     document.getElementById("suitcase-side-nav").style.width = "60%";
     document.getElementById("suitcase-main").style.marginLeft = "60%";
+    $('#suitcase-side-nav').css("overflow-x", "visible");
     $(".outfit-checker").css("display", "none");
     $("#add-items").css("display", "none");
     $("#outfit-checker-button").css("display", "inline-block");
