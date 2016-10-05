@@ -4,7 +4,7 @@ root 'users#home'
 
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :items_suitcases, only: [:create]
+  resources :items_suitcases, :collection => {:create_multi => :post}
 
   resources :users
   resources :wardrobes

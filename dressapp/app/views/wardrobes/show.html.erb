@@ -20,7 +20,7 @@
 
 
 <% else %>
-  <%= form_tag items_suitcases_path, :id => "submit-multi" do %>
+  <%= form_tag items_suitcases_path, :url => {:action => :create_multi}, :id => "submit-multi" do %>
   <div class="wardrobe-item-container">
     <ul class="wardrobe-item">
       <% @wardrobe.items.each do |item| %>
@@ -37,7 +37,7 @@
   <div class="dropdown">
     <ul class="category-dropdown">
       <% @suitcases.each do |suitcase| %>
-      <%= button_tag(type: 'submit', :name => 'suitcase_id', value: suitcase.id) do %>
+      <%= button_tag(type: 'submit', :url => {:action => :create_multi}, :name => 'suitcase_id', value: suitcase.id) do %>
       <%= suitcase.name %>
       <% end %>
       <% end %>

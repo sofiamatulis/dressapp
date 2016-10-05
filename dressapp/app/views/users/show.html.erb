@@ -46,16 +46,16 @@
     </ul>
     <button id="new-suitcase">Create New Suitcase</button>
     <div class="modal-suitcase">
-      <form id="countryForm">
-        <input id="country" name="country" autocomplete="on" placeholder="Destination Country"><br>
-        <input id="city" name="city" autocomplete="on" placeholder="Destination City" data-country=""><br>
-      </form>
       <%= form_for @suitcase, :id => "suitcase-form" do |f| %>
       <%= f.text_field :name, placeholder: "Suitcase name" %> <br>
       <%= f.text_area :description, placeholder: "Description" %> <br>
       <%= f.number_field :duration, placeholder: "Duration" %> <br>
     <%#= f.text_field :destination, placeholder: "Destination" %> <br>
       <%= f.hidden_field :destination, :id => "destination" %>
+      <form id="countryForm">
+        <input id="country" name="country" autocomplete="on" placeholder="Destination Country"><br>
+        <input id="city" name="city" autocomplete="on" placeholder="Destination City" data-country=""><br>
+      </form>
       <%= f.submit "New Suitcase", id: "create-suitcase"%>
       <% end %>
     </div>
