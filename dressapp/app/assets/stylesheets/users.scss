@@ -20,15 +20,6 @@
   text-align: center;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(30,30,30,0.8);
-}
 
 
 #imageUploadForm {
@@ -114,4 +105,32 @@ ul, li {
   font-family: 'Satisfy', cursive;
   text-align:center;
 
+}
+
+#new-wardrobe, #new-suitcase, #new-item {
+    border: 2px solid pink;
+    font-size:20px;
+}
+
+.modal-wardrobe, .modal-suitcase, .modal-item {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30,30,30,0.8);
+}
+ #new_wardrobe, #new_suitcase, #new_item {
+  display: block;
+  width: 400px;
+  height: 18em;
+  padding: 2em;
+  background-color: grey;
+  position: absolute;
+  margin: auto;
+  top: 2rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

@@ -5,6 +5,7 @@
   <!-- <p class="weather"><%= @weather %></p> -->
 
   <div id="suitcase-main">
+
     <h1 class="suitcase-destination"><%= @suitcase.destination %></h1>
     <h3 class="suitcase-title"><%= @suitcase.name %></h3>
     <ul class="suitcase">
@@ -24,9 +25,6 @@
       <p><%= link_to 'Edit Suitcase', edit_suitcase_url(@suitcase) %></p>
       <p><%= link_to 'Delete Suitcase', @suitcase, method: :delete, data: {confirm: "Are you sure?"} %></p>
     </div>
-
-
-
 
 
     <a id="open-nav">Open Suitcase</a>

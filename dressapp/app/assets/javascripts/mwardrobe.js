@@ -1,14 +1,11 @@
 $(function(){
+  console.log('wardrobe.js loaded!');
 // function to get modal and form to add item
-  $('.add-item').click(function(e){
-    e.preventDefault();
+  $('#new-item').on('click', function(e){
     console.log("clicked");
-    $('.modal-item').fadeIn('fast');
-
-    $('.modal-form').on('submit', function(event){
-      event.preventDefault();
-      $('.modal-item').fadeOut('slow');
-
+    $('.modal-item').fadeIn();
+    $('#new_item').on('submit', function(e){
+      $('.modal-item').fadeOut();
       $.ajax({
         url: '/items',
         method: 'post',
@@ -22,34 +19,17 @@ $(function(){
         var imagelink = $('<a href="http://localhost:3000/items/' + response.id + '">').append(image);
         var imageappend = $('<li class="item-details">').append(imagelink);
         $('.wardrobe-item').append(name, description, imageappend);
-
-
       });
       $('#item-create').prop("disabled", false);
     });
-
-
-  })
-
-
-//  function to get modal and form to add to suitcase
-// $('#add-to-suitcase').on('click', function(event){
-//     event.preventDefault();
-  $('#drop-down-show').on('click', function(e){
-
-    $('.category-dropdown').fadeIn();
-    $('.item-link').removeAttr('href');
-
-    $('.item-select').on('click', function(event){
-
-      $(this).find('img').toggleClass("item-selected");
-    });
   });
 
-// });
 
-// $('.item-link').on('click', function(event){
-//   $(this).toggleClass("item-selected");
-// });
-
+  $('#drop-down-show').on('click', function(){
+    $('.category-dropdown').fadeIn();
+    $('.item-link').removeAttr('href');
+    $('.selectd-item').find('img').click(function(){
+      $(this).toggleClass('item-selected');
+    });
+  });
 })

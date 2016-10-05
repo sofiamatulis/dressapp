@@ -17,14 +17,12 @@ $(function(){
       var day = days[dt.getDay()];
       var month = months[dt.getMonth()];
       var date = dt.getDate();
-
       // sets variable to get the weather from the api (temp, icon, description)
       var temp = Math.floor(data.list[i].temp.day - 273.15) + "\xB0 C";
       var iconCode = data.list[i].weather[0].icon;
       var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
       var main = data.list[i].weather[0].main;
       var desc = data.list[i].weather[0].description;
-
       // puts the weather below the suitcase class
       var weather = $('.weather-details').append('<li class="weather-date">').append(day + " " + month + " " + date);
       var weather2 = $('.weather-details').append('<li class="weather-temp">').append(temp);
@@ -32,6 +30,5 @@ $(function(){
       var weather3 = $('.weather-details').append('<li class="weather-main">').append(main);
       var weather4 = $('.weather-details').append('<li class="weather-description">').append(desc);
     };
-      console.log(data);
   });
 });
