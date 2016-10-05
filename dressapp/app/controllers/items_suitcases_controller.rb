@@ -19,10 +19,12 @@ class ItemsSuitcasesController < ApplicationController
   def create_multi
     @suitcases = current_user.suitcases
     @suitcase = Suitcase.find(params[:suitcase_id])
-    @suitcase.items << @item
+
     params['items'].each do |item|
       @suitcase.items << Item.find(item)
-    end
   end
+  redirect_to suitcase_path(@suitcase)
+end
+
 
 end
