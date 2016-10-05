@@ -7,7 +7,7 @@ $(function() {
     list: {
       onSelectItemEvent: function() {
         var value = $("#country").getSelectedItemData().code;
-        document.getElementById("city").setAttribute('data-country', value);
+        $("#city").attr('data-country', value);
         destination = value
       },
       match: {
@@ -32,18 +32,7 @@ $(function() {
 // calling the function for the city drop down.
   $('#city').cityAutocomplete();
 
-
-  // $('#new_suitcase').on('submit', function(event) {
-    //  event.preventDefault();
-    // method to take destination inputs and compile them
-    //  var cityChoice = $("#city").val();
-    //  var cityCountryChoice = cityChoice + ',' + destination
-    //  console.log(cityCountryChoice);
-    //  $('#destination').val(cityCountryChoice);
-
-    // });
-
-    $('#new_suitcase').on('submit',function(event){
+  $('#new_suitcase').on('submit',function(event){
 
       event.preventDefault();
 
@@ -51,7 +40,7 @@ $(function() {
       var cityCountryChoice = cityChoice + ',' + destination
       console.log(cityCountryChoice);
       $('#destination').val(cityCountryChoice);
-
+// making ajax call for post after city/country choice is defined
       $.ajax({
 
         url:'/suitcases',
@@ -66,6 +55,8 @@ $(function() {
           $( "#create-suitcase").prop( "disabled", false );
 
           $("#new_suitcase")[0].reset();
+          $("#countryForm")[0].reset();
+          $("#city").attr("data-country", "");
 
       });
   });

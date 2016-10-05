@@ -1,9 +1,6 @@
 $(function(){
 
-
-
     $('#new_wardrobe').on('submit',function(event){
-
 
       event.preventDefault();
 
