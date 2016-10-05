@@ -106,8 +106,8 @@ function createSlider() {
   $('#view-all').on('click', function() {
     $("#items-grid-container" ).empty();
     $(".outfit-checker").css("display", "none");
-
-
+    document.getElementById("suitcase-side-nav").style.width = "60%";
+    document.getElementById("suitcase-main").style.marginLeft = "60%";
   });
 
 
