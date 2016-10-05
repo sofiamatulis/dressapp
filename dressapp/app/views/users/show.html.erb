@@ -27,14 +27,14 @@
       </li>
     <% end %>
   </ul>
-
-  <%= form_for @wardrobe do |f| %>
+ <button id="new-wardrobe">Create New Wardrobe</button>
+ <div class="modal-wardrobe">
+  <%= form_for @wardrobe, :id => "wardrobe-from" do |f| %>
     <%= f.text_field :name, placeholder: "Wardrobe name" %> <br>
     <%= f.submit "New Wardrobe", id: "create-wardrobe" %>
   <% end %>
-
+</div>
   </div>
-
 
 
     <div class="s">
@@ -57,7 +57,7 @@
       <%= form_for @suitcase, :id => "suitcase-form" do |f| %>
       <%= f.text_field :name, placeholder: "Suitcase name" %> <br>
       <%= f.text_area :description, placeholder: "Description" %> <br>
-      <%= f.number_field :duration, placeholder: "Duration" %> <br>      
+      <%= f.number_field :duration, placeholder: "Duration" %> <br>
       <%= f.hidden_field :destination, :id => "destination" %>
       <%= f.submit "New Suitcase", id: "create-suitcase"%>
     <% end %>
