@@ -5,17 +5,20 @@ class SuitcasesController < ApplicationController
 require 'open_weather'
   def index
     @suitcases = Suitcase.all
+    respond_to do |format|
+    format.html
+    format.json {render json: @suitcase.to_json}
+    end
   end
 
   def show
     @suitcase = Suitcase.find(params[:id])
-
     # options = { units: "metric", APPID: Rails.application.secrets.open_weather_id }
     # @weather = OpenWeather::Forecast.city("Toronto, CA", options)
-    # respond_to do |format|
-    # format.html
-    # format.json {render json: @weather.to_json}
-    # end
+     respond_to do |format|
+     format.html
+     format.json {render json: @suitcase.to_json}
+     end
 
   end
 

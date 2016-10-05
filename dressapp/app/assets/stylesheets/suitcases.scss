@@ -265,7 +265,9 @@ h4 {
 // .data-item {
 //   width:50%;
 // }
-
-.weather-details > li {
-  display: inline-block;
+.weather {
+  display: inline;
+}
+.weather-details {
+  display: inline;
 }

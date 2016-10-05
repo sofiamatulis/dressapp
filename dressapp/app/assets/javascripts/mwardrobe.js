@@ -1,7 +1,7 @@
 $(function(){
   console.log('wardrobe.js loaded!');
 // function to get modal and form to add item
-  $('#new-item').on('click', function(e){
+  $('.add-item').on('click', function(e){
     console.log("clicked");
     $('.modal-item').fadeIn();
     $('#new_item').on('submit', function(e){
@@ -12,6 +12,7 @@ $(function(){
         data: $(this).serialize(),
         dataType: 'json'
       }).done(function(response){
+
         $(".modal-form")[0].reset();
         var name = $('<li class="item-details">').append(response.name);
         var description = $('<li class="item-details">').append(response.description);

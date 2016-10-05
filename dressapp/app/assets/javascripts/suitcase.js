@@ -84,4 +84,9 @@ $(function(){
     document.getElementById("suitcase-side-nav").style.width = "40%";
     document.getElementById("suitcase-main").style.marginLeft = "40%";
   });
+
+  $('.weather-details').slick( {
+    prevArrow: '<span class="arrow-left"><</span>',
+    nextArrow: '<span class="arrow-right">></span>',
+  });
 });

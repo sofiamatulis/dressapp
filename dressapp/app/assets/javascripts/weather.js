@@ -3,8 +3,16 @@ $(function(){
 //change toronto to city you want to request
 // change ca to country code you want to request
 // change cnt=5 where 5 is the days forecast you want
+$.ajax({
+    url: window.location.href,
+    method: 'GET',
+    data:{},
+    dataType: 'json'
+
+}).done(function(data1){
+  console.log(data1);
   $.ajax({
-    url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q=toronto,ca&cnt=5&appid=fd4c9c44f9db3eeec386cb22cff8a5a3',
+    url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q=' + data1.destination + '&cnt=5&appid=fd4c9c44f9db3eeec386cb22cff8a5a3',
     method: 'GET',
     data:{},
     dataType: 'json'
@@ -21,14 +29,13 @@ $(function(){
       var temp = Math.floor(data.list[i].temp.day - 273.15) + "\xB0 C";
       var iconCode = data.list[i].weather[0].icon;
       var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
-      var main = data.list[i].weather[0].main;
       var desc = data.list[i].weather[0].description;
       // puts the weather below the suitcase class
-      var weather = $('.weather-details').append('<li class="weather-date">').append(day + " " + month + " " + date);
-      var weather2 = $('.weather-details').append('<li class="weather-temp">').append(temp);
-      var weathericon = $('.weather-details').append('<li class="weather-icon">').append("<img src='" + iconUrl + "'>");
-      var weather3 = $('.weather-details').append('<li class="weather-main">').append(main);
-      var weather4 = $('.weather-details').append('<li class="weather-description">').append(desc);
+      var weather = $('.weather-details').append('<span class="weather-date">').append(day + " " + month + " " + date);
+      var weather2 = $('.weather-details').append('<span class="weather-temp">').append(temp);
+      var weathericon = $('.weather-details').append('<span class="weather-icon">').append("<img src='" + iconUrl + "'>");
+      var weather4 = $('.weather-details').append('<span class="weather-description">').append(desc);
     };
   });
+});
 });
