@@ -58,11 +58,17 @@ a {
  }
 
  .userinfo{
+   display: inline-block;
+   padding: 0;
+   margin: auto;
    float:right;
    letter-spacing: 2px;
-   padding: 12px;
    text-align: center;
    position: relative;
+ }
+
+ #welcome-message {
+   line-height: 30px;
  }
 
  .footer .right {
