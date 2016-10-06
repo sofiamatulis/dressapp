@@ -1,7 +1,5 @@
 <div id="suitcase-show-body">
 
-
-
   <div id="suitcase-main">
 
     <h1 class="suitcase-destination"><%= @suitcase.destination %></h1>
@@ -19,7 +17,7 @@
     <li class="ui-state-default">"Suitcase photo</li>
   </ul>
 
-
+  <p><%= @weather %></p>
 
     <div class="links">
       <p><%= link_to 'Back', user_path(current_user) %></p>
@@ -27,19 +25,21 @@
       <p><%= link_to 'Delete Suitcase', @suitcase, method: :delete, data: {confirm: "Are you sure?"} %></p>
     </div>
 
-
     <a id="open-nav">Open Suitcase</a>
   </div>
-
-
 <!-- side nav pops out when clicking suitcase  -->
   <div id="suitcase-side-nav" class="sideNav">
     <div class="side-nav-buttons">
-      <a id="other-items">Other Items</a>
-      <a id="view-all">View All &nbsp;&nbsp;&nbsp;|</a>
-      <a id="add-items">&nbsp;&nbsp; Add Items</a>
-      <a id="outfit-checker-button">&nbsp;&nbsp; Outfit Checker</a>
-      <a id="close-nav">X</a>
+      <div class="clothes-types">
+        <a class="dress-button">Dresses/Onesies</a>
+        <a class="tops-bottoms">Tops/Bottoms</a>
+      </div>
+      <div class="main-buttons">
+        <a id="view-all">View All &nbsp;&nbsp;&nbsp;|</a>
+        <a id="add-items">&nbsp;&nbsp; Add&nbsp;Items</a>
+        <a id="outfit-checker-button">&nbsp;&nbsp; Outfit&nbsp;Checker</a>
+        <a id="close-nav">X</a>
+      </div>
     </div>
 
     <div class="outfit-checker-container">
@@ -49,6 +49,10 @@
     <div id="items-grid-container">
     </div>
 
-
+    <div id="view-all-in-suitcase-container">
+        <% @suitcase.items.each_with_index do |item, index| %>
+          <span class="clothes-item"><%= image_tag(item.image) %></span>
+        <% end %>
     </div>
+  </div>
 </div>
