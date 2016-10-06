@@ -3,11 +3,11 @@
 }
 
 .weather .arrow-left {
-  width: 44%;
+  width: 13%;
 }
 
 .weather .arrow-right {
-  width: 44%;
+  width: 10%;
 }
 
 .weather .draggable {
@@ -22,4 +22,10 @@
 
 .weather-date img {
   margin: auto;
+}
+
+.weather {
+  bottom: 200px;
+  float: right;
+  margin: 20px;
 }
