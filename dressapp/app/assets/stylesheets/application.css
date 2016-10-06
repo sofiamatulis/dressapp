@@ -28,7 +28,7 @@ body {
   height: 100%;
   margin: 0;
   bottom: 0;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 a {

@@ -28,18 +28,18 @@
 }
 
 .mywardrobe {
-  font-family: 'Satisfy', cursive;
+  font-family: 'Open Sans', sans-serif;
 
 }
 
 .mysuitcase {
-  font-family: 'Satisfy', cursive;
+  font-family: 'Open Sans', sans-serif;
 
 }
 
 
 #create-wardrobe, #wardrobe_name, #suitcase_name, #suitcase_duration, #suitcase_destination, #suitcase_description, #create-suitcase {
-  font-family: 'Satisfy', cursive;
+  font-family: 'Open Sans', sans-serif;
   width: 300px;
   height:50px;
   font-size:30px;
@@ -77,34 +77,9 @@ ul, li {
  }
 
 
- .parallax_section{
-   height: 600px;
-     background-repeat: no-repeat;
-     background-attachment: fixed;
-     background-size: cover;
-     background-position: 100% auto;
-     position:relative;
-     scroll-behavior: smooth;
-
- }
-
- .parallax_image{
-  // background-image: url("http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg");
-  background:linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-                rgba(0,0,0,0.55) url('http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg') no-repeat center;
-
- }
-
-
-.parallax_image_2{
-  background-image: url("http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg");
-}
-
-
-
 .about {
   height:500px;
-  font-family: 'Satisfy', cursive;
+  font-family: 'Open Sans', sans-serif;
   text-align:center;
 
 }
@@ -153,4 +128,27 @@ ul, li {
 
 .easy-autocomplete .eac-round input {
   position: relative !important;
+}
+
+
+.edit {
+  background-image: url('http://notable.ca/wp-content/uploads/2016/04/packing.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+
+.user-show {
+  background-image: url('https://static.pexels.com/photos/4103/sky-sunny-flying-clouds.jpeg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+
+#editing {
+font-size:20px;
 }
