@@ -1,9 +1,5 @@
 <div id="suitcase-show-body">
 
-  <p><%= @weather %></p>
-
-  <!-- <p class="weather"><%= @weather %></p> -->
-
   <div id="suitcase-main">
 
     <h1 class="suitcase-destination"><%= @suitcase.destination %></h1>
@@ -21,7 +17,7 @@
     <li class="ui-state-default">"Suitcase photo</li>
   </ul>
 
-
+  <p><%= @weather %></p>
 
     <div class="links">
       <p><%= link_to 'Back', user_path(current_user) %></p>
@@ -29,11 +25,8 @@
       <p><%= link_to 'Delete Suitcase', @suitcase, method: :delete, data: {confirm: "Are you sure?"} %></p>
     </div>
 
-
     <a id="open-nav">Open Suitcase</a>
   </div>
-
-
 <!-- side nav pops out when clicking suitcase  -->
   <div id="suitcase-side-nav" class="sideNav">
     <div class="side-nav-buttons">

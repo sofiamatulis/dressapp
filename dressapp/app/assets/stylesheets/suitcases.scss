@@ -60,7 +60,8 @@ p, li, a {
   height: 100%;
   position: relative;
   overflow: hidden;
-  background-color: #f79279;
+  background-color: grey;
+  background-size: 100%;
   transition: margin-left .5s;
   padding: 0px;
   left: 0px;
@@ -80,7 +81,7 @@ p, li, a {
   background-color: white;
   overflow-x: hidden;
   transition: 0.5s;
-  -webkit-box-shadow: 7px 5px 7px -2px #ff9999;
+  -webkit-box-shadow: 2px 3px 15px -4px black;
 
   &.is-dragging {
     overflow: visible;
