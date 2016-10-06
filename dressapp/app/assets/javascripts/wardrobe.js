@@ -1,13 +1,11 @@
-$(function(){
+$( document ).on('turbolinks:load', function() {
   console.log('wardrobe.js loaded!');
 // function to get modal and form to add item
   $('.add-item').on('click', function(e){
-    console.log("clicked");
     $('.modal-item').fadeIn();
-    $('#modal-form').on('submit', function(e){
+    $('#new_item').on('submit', function(e){
       e.preventDefault();
       $('.modal-item').fadeOut();
-    })
       $('#fileupload').fileupload({
         dataType: 'json',
         // data: $( this ).serialize(),
@@ -31,7 +29,9 @@ $(function(){
           var checkBoxTag = $('<li class="item-details check-box">').append(checkBox);
           $('.wardrobe-item').append(name, description, imageappend, checkBoxTag);
         }
-      }),
+      });
+});
+});
 
     $('#drop-down-show').on('click', function(){
       $('.category-dropdown').fadeIn();
@@ -39,16 +39,8 @@ $(function(){
       $('.selectd-item').find('img').click(function(){
         $(this).toggleClass('item-selected');
       });
+  });
 
-    //  function to get modal and form to add to suitcase
-    $('.add-to-suitcase').click(function(){
-      $('.item-link').removeAttr("href");
-      $('.item-link').click(function(){
-        $(this).find('img').toggleClass("item-selected");
-      });
-    });
-  })
-})
 
   // Filter items on wardrobe show view
   $( "#all-items" ).click(function() {

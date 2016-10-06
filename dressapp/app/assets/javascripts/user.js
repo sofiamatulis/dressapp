@@ -1,4 +1,4 @@
-$(function() {
+$( document ).on('turbolinks:load', function() {
   if($('body').is('.user-show')) {
 
     //js for working with modals

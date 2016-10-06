@@ -12,8 +12,15 @@ class ItemsController < ApplicationController
       #   @items = Item.where(:category_id => params[:category_id])
       else
         @items = Item.all
+      end
+        respond_to do |format|
+          format.html
+          format.json do
+            render json: @items
+          end
+          end
       # end
-    end
+
   end
 
   def show
