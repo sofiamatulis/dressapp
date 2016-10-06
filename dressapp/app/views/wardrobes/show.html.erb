@@ -86,15 +86,6 @@
     <% end %>
   </ul>
 
-   <div class="dropdown">
-     <button class="add-to-suitcase">Add to suitcase</button>
-     <ul class="category-dropdown">
-       <% @suitcases.each do |suitcase| %>
-       <li><%= link_to "Add to #{suitcase.name}", items_suitcases_path(:item => @item.id, :suitcase => suitcase.id), :method => :post, :class => "category-menu" %></li>
-       <% end %>
-     </ul>
-   </div>
-
   <div class="dropdown">
     <ul class="category-dropdown">
       <% @suitcases.each do |suitcase| %>
