@@ -44,7 +44,7 @@ function createSlider() {
   $('#add-items').on('click', function() {
     document.getElementById("suitcase-side-nav").style.width = "60%";
     document.getElementById("suitcase-main").style.marginLeft = "60%";
-    $('#suitcase-side-nav').css("overflow-x", "visible");
+    // $('#suitcase-side-nav').css("overflow-x", "visible");
     $(".outfit-checker-container").css("display", "none");
     $("#add-items").css("display", "none");
     $("#outfit-checker-button").css("display", "inline-block");
@@ -69,7 +69,7 @@ function createSlider() {
       $('#items-grid-container').html(itemsContainer);
       $( "#sortable1, #sortable2" ).sortable({
         connectWith: ".connectedSortable",
-        scroll: true,
+        scroll: false,
         receive: function(event,ui){
           $.ajax( {
             url: '/items_suitcases/', // this specific url
@@ -80,13 +80,18 @@ function createSlider() {
           }).done(function(response) {
             console.log(response);
             // appending the response to the outfit checker page
-              $(".outfit-checker").html(response);
-              createSlider();
+            $(".outfit-checker").html(response);
+            createSlider();
+            var itemsAdded = $(response).find('.clothes-item');
+            console.log(itemsAdded.length);
+            $("#view-all-in-suitcase-container").html(itemsAdded);
           });
         }
       }).disableSelection();
     });
   });
+
+
 
 // resets the outfit checker when you click "outfit checker" button
   $('#outfit-checker-button').on('click', function() {
@@ -108,14 +113,14 @@ function createSlider() {
     document.getElementById("suitcase-side-nav").style.width = "60%";
     document.getElementById("suitcase-main").style.marginLeft = "60%";
     $("#view-all-in-suitcase-container").css("display", "inline-block");
-    // $.ajax({
-    //   url: window.location.href,
-    //   method: 'GET',
-    //   data: {},
-    //   dataType: 'JSON'
-    // }).done(function(response){
-    //
-    // });
+      $.ajax({
+        url: window.location.href,
+        method: 'GET',
+        data: {},
+        dataType: 'JSON'
+      }).done(function(response){
+
+      });
   });
 
 
