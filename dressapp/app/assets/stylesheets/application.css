@@ -25,23 +25,36 @@ html {
 }
 
 body {
-  margin: 0px;
+  height: 100%;
+  margin: 0;
   bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor:pointer;
+  cursor:hand;
+}
+
+
+#container {
+  height: 100%;
 }
 
  .menu-bar{
    padding: 10px;
-   background-color: white;
+   background-color: oldlace;
    overflow: hidden;
    height: 50px;
    position: relative;
  }
 
  #logo img{
-   height: 30px;
+   height: 100px;
    width: auto;
    position: relative;
-   line-height: 30px;
+   line-height: 10px;
+   bottom:30px;
  }
 
  .userinfo{
@@ -55,4 +68,16 @@ body {
  .footer .right {
    margin-top: 200px;
    text-align: center;
+ }
+
+ .text-logo {
+   content:url('logopackapp.png');
+   margin-left:400px;
+   margin-top:200px;
+
+ }
+
+ .animation {
+   content:url('packapp2.png');
+   margin-top:-150px;
  }

@@ -1,58 +1,54 @@
 $(function(){
+  console.log('wardrobe.js loaded!');
 // function to get modal and form to add item
-  $('.add-item').click(function(e){
-    e.preventDefault();
-
-    $('.modal-item').fadeIn('fast');
-    $('.modal-form').on('submit', function(event){
-      event.preventDefault();
-      $('.modal-item').fadeOut('slow');
-    });
-  })
-
+  $('.add-item').on('click', function(e){
+    console.log("clicked");
+    $('.modal-item').fadeIn();
+    $('.modal-form').on('submit', function(e){
+      e.preventDefault();
+      $('.modal-item').fadeOut();
+    })
       $('#fileupload').fileupload({
         dataType: 'json',
+        // data: $( this ).serialize(),
         add: function (e, data) {
-          data.context = $('<button/>').text('Upload')
-            .appendTo('.modal-item').click(function () {
-              // data.context = $('<p/>').text('Uploading...').replaceAll($(this));
-              data.submit();
-            });
+          console.log(data);
+          data.context = $('<button/>').attr('class', 'upload-button').text('Upload').appendTo('.modal-form').click(function() {
+            data.submit();
+          });
         },
         done: function (e, data) {
-            data.context.text('Upload finished.');
-      }
-    })
-    //   $.ajax({
-    //     url: '/items',
-    //     method: 'post',
-    //     data: $(this).serialize(),
-    //     dataType: 'json'
-    //   }).done(function(response){
-    //     $(".modal-form")[0].reset();
-    //     var name = $('<li class="item-details">').append(response.name);
-    //     var description = $('<li class="item-details">').append(response.description);
-    //     var image = $('<img>').attr("src", response.image);
-    //     var imagelink = $('<a href="http://localhost:3000/items/' + response.id + '">').append(image);
-    //     var imageappend = $('<li class="item-details">').append(imagelink);
-    //     $('.wardrobe-item').append(name, description, imageappend);
-    //
-    //
-    //   });
-    //   $('#item-create').prop("disabled", false);
-    // });
-    //
+          // console.log("INSIDE FILE UPLOADED 'DONE'");
+          var responseData = data._response.result;
+          // console.log(responseData);
+          var name = $('<li class="item-details">').append(responseData.name);
+          var description = $('<li class="item-details">').append(responseData.description);
+          var image = $('<img>').attr("src", responseData.image);
+          var imagelink = $('<a href="http://localhost:3000/items/' + responseData.id + '">').append(image);
+          var imageappend = $('<li class="item-details">').append(imagelink);
+          var label = $('<label class="selectd-item">').append(imageappend);
+          var checkBox = $('<input type="checkbox">').attr('name', 'items[' + responseData.id + ']');
+          var checkBoxTag = $('<li class="item-details check-box">').append(checkBox);
+          $('.wardrobe-item').append(name, description, imageappend, checkBoxTag);
+        }
+      }),
 
-  // })
+    $('#drop-down-show').on('click', function(){
+      $('.category-dropdown').fadeIn();
+      $('.item-link').removeAttr('href');
+      $('.selectd-item').find('img').click(function(){
+        $(this).toggleClass('item-selected');
+      });
 
-
-  //  function to get modal and form to add to suitcase
-  $('.add-to-suitcase').click(function(){
-    $('.item-link').removeAttr("href");
-    $('.item-link').click(function(){
-      $(this).find('img').toggleClass("item-selected");
+    //  function to get modal and form to add to suitcase
+    $('.add-to-suitcase').click(function(){
+      $('.item-link').removeAttr("href");
+      $('.item-link').click(function(){
+        $(this).find('img').toggleClass("item-selected");
+      });
     });
-  });
+  })
+})
 
   // Filter items on wardrobe show view
   $( "#all-items" ).click(function() {

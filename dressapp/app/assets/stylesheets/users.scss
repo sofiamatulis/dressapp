@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .header-image {
   height: 500px;
-  background-image: url('http://slashmobility.com/wp-content/uploads/2014/06/img_ampliada_dressapp_3_1280.png');
+  background-image: url('packapp.png'), no-repeat;
   width:100%;
   text-align: center;
   padding-top: 3px;
@@ -15,19 +15,11 @@
   -ms-filter: brightness(98%);
 }
 
+
 .profile {
   text-align: center;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(30,30,30,0.8);
-}
 
 
 #imageUploadForm {
@@ -56,7 +48,7 @@
 }
 
 #create-wardrobe, #create-suitcase {
-  border: 2px solid pink;
+  border: 2px solid oldlace;
   font-size:20px;
 }
 
@@ -82,3 +74,63 @@ ul, li {
    left:500px;
    position:absolute;
  }
+
+
+ .parallax_section{
+   height: 600px;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+     background-position: 100% auto;
+     position:relative;
+     scroll-behavior: smooth;
+
+ }
+
+ .parallax_image{
+  // background-image: url("http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg");
+  background:linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                rgba(0,0,0,0.55) url('http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg') no-repeat center;
+
+ }
+
+
+.parallax_image_2{
+  background-image: url("http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg");
+}
+
+
+.about {
+  height:500px;
+  font-family: 'Satisfy', cursive;
+  text-align:center;
+
+}
+
+#new-wardrobe, #new-suitcase, #new-item {
+    border: 2px solid pink;
+    font-size:20px;
+}
+
+.modal-wardrobe, .modal-suitcase, .modal-item {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30,30,30,0.8);
+}
+ #new_wardrobe, #new_suitcase, #new_item {
+  display: block;
+  width: 400px;
+  height: 18em;
+  padding: 2em;
+  background-color: grey;
+  position: absolute;
+  margin: auto;
+  top: 2rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

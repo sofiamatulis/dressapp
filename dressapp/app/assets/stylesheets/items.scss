@@ -23,10 +23,13 @@ ul {
   padding-left: 0;
 }
 
+.check-box {
+  // display: none;
+}
 .category-dropdown {
   display: none;
 }
 
 .item-selected {
-  border: 10px solid lightgreen;
+  border: 5px solid lightgreen;
 }

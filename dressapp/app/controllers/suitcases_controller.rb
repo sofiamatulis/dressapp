@@ -1,4 +1,7 @@
 class SuitcasesController < ApplicationController
+
+  before_action :ensure_logged_in
+
 require 'open_weather'
   def index
     @suitcases = Suitcase.all
@@ -59,6 +62,6 @@ require 'open_weather'
 
   private
   def suitcase_params
-    params.require(:suitcase).permit(:name, :description, :duration, :destination, :user_id, :item_ids, item:[])
+    params.require(:suitcase).permit(:name, :description, :destination, :duration, :user_id, :item_ids, item:[])
   end
 end

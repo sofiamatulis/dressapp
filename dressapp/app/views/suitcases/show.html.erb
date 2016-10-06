@@ -1,7 +1,11 @@
 <div id="suitcase-show-body">
 
+  <p><%= @weather %></p>
+
   <!-- <p class="weather"><%= @weather %></p> -->
+
   <div id="suitcase-main">
+
     <h1 class="suitcase-destination"><%= @suitcase.destination %></h1>
     <h3 class="suitcase-title"><%= @suitcase.name %></h3>
     <ul class="suitcase">
@@ -9,56 +13,80 @@
       <li class="suitcase-details">Details: <%= @suitcase.description %></li>
     </ul>
 
+  <ul id="sortable1" data-suitcase-id='<%=@suitcase.id%>' class="connectedSortable"> <div>Suitcase</div>
+    <li class="ui-state-default">"Suitcase photo</li>
+  </ul>
+
+  <ul class ="weather-details">
+  </ul>
+
     <div class="links">
       <p><%= link_to 'Back', user_path(current_user) %></p>
       <p><%= link_to 'Edit Suitcase', edit_suitcase_url(@suitcase) %></p>
       <p><%= link_to 'Delete Suitcase', @suitcase, method: :delete, data: {confirm: "Are you sure?"} %></p>
-      <span id="open-nav">Open Suitcase</span>
     </div>
+
+
+    <a id="open-nav">Open Suitcase</a>
   </div>
 
-  <!-- side nav pops out when clicking suitcase  -->
-    <div id="suitcase-side-nav" class="sideNav">
-      <button id="other-items">Other Items</button>
-      <button id="view-all">View All</button>
-      <button id="add-items">Add More Items</button>
-      <button id="outfit-checker-button">Outfit Checker</button>
-      <button id="close-nav">X</button>
-    <div class="outfit-checker">
-      </span><h4>Outfit checker</h4>
-      <div id="tops" class="clothes-container">
-          <div class="tops-container">
+
+<!-- side nav pops out when clicking suitcase  -->
+  <div id="suitcase-side-nav" class="sideNav">
+    <div class="side-nav-buttons">
+      <a id="other-items">Other Items</a>
+      <a id="view-all">View All &nbsp;&nbsp;&nbsp;|</a>
+      <a id="add-items">&nbsp;&nbsp; Add Items</a>
+      <a id="outfit-checker-button">&nbsp;&nbsp; Outfit Checker</a>
+      <a id="close-nav">X</a>
+    </div>
+
+
+
+  <div class="outfit-checker">
+    </span><h4>Outfit checker</h4>
+
+    <div id="tops" class="clothes-container">
+        <div class="tops-container">
+          <% @suitcase.items.each_with_index do |item, index| %>
+            <% if item.category.category == "Top" %>
+                <span class="clothes-item"><%= image_tag(item.image) %></span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+
+      <div id="bottoms" class="clothes-container">
+          <div class="bottoms-container">
             <% @suitcase.items.each_with_index do |item, index| %>
-              <% if item.category.category == "Top" %>
-                  <span class="clothes-item"><%= image_tag(item.image) %></span>
+              <% if item.category.category == "Bottom" %>
+                <span class="clothes-item"><%= image_tag(item.image) %></span>
+
+
               <% end %>
             <% end %>
+
           </div>
         </div>
 
-
-        <div id="bottoms" class="clothes-container">
-            <div class="bottoms-container">
+        <div id="shoes" class="clothes-container">
+            <div class="shoes-container">
               <% @suitcase.items.each_with_index do |item, index| %>
-                <% if item.category.category == "Bottom" %>
+                <% if item.category.category == "Shoes" %>
                     <span class="clothes-item"><%= image_tag(item.image) %></span>
                 <% end %>
               <% end %>
             </div>
           </div>
+        </div>
 
-          <div id="shoes" class="clothes-container">
-              <div class="shoes-container">
-                <% @suitcase.items.each_with_index do |item, index| %>
-                  <% if item.category.category == "Shoes" %>
-                      <span class="clothes-item"><%= image_tag(item.image) %></span>
-                  <% end %>
-                <% end %>
-              </div>
-            </div>
-          </div>
+      <div id="items-grid-container">
 
-          <div id="items-grid-container">
-          </div>
       </div>
-  </div>
+
+
+
+
+    </div>
+</div>

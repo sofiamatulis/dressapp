@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
   # before_action :load_items, only: [:index]
 
+  before_action :ensure_logged_in
+
+
   def index
     # def load_items
       if params[:search]
@@ -37,21 +40,39 @@ class ItemsController < ApplicationController
     end
   end
 
+  # def create
+  #     @item = Item.new(item_params)
+  #     @wardrobe = @item.wardrobe
+  #     @item.save
+  #     respond_to do |format|
+  #       # format.html {redirect_to wardrobe_path(@wardrobe)}
+  #       # format.html do
+  #       #   {redirect_to itempath(@item)}
+  #       # end
+  #       format.json do
+  #         render json: @item
+  #       end
+  #   end
+  #   # end
+  #   # @item = Item.create(item_params)
+  # end
+
   def create
       @item = Item.new(item_params)
+      # @category = Category.find(item_params[:category_id])
       @wardrobe = @item.wardrobe
-      @item.save
-      respond_to do |format|
-        # format.html {redirect_to wardrobe_path(@wardrobe)}
-        # format.html do
-        #   {redirect_to itempath(@item)}
-        # end
-        format.json do
-          render json: @item
+      if @item.save
+        if request.xhr?
+          respond_to do |format|
+            format.html
+            format.json { render json: @item.to_json }
+          end
+        else
+          redirect_to wardrobe_path(@wardrobe)
         end
-    end
-    # end
-    # @item = Item.create(item_params)
+      else
+        render "new"
+      end
   end
 
   def destroy

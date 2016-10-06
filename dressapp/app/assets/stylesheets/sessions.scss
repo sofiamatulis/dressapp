@@ -1,3 +1,81 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+  .log-in-form, #user-form {
+    font-family: 'Open Sans', sans-serif;
+    margin:auto;
+    margin-top: 8%;
+    margin-bottom: 70px;
+    width: 300px;
+    padding: 50px 30px;
+    background-color:oldlace;
+    opacity: 0.8;
+
+  }
+
+  .log-in{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+
+
+.field input{
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.field {
+  text-align:center;
+}
+
+
+.header{
+  font-size: 30px;
+  color:gray;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+
+.actions {
+  text-align: center;
+  font-family: 'Satisfy', cursive;
+
+}
+
+
+
+.sign-up-form {
+  font-family: 'Open Sans', sans-serif;
+  margin:auto;
+  margin-top: 8%;
+  margin-bottom: 70px;
+  width: 300px;
+  padding: 50px 30px;
+  background-color:oldlace;
+  opacity: 0.8;
+
+}
+
+.sign-up{
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+
+}
+
+
+#user_image {
+  width: 87px;
+}
