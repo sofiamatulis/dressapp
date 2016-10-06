@@ -5,14 +5,15 @@ $( document ).on('turbolinks:load', function() {
 
     $('.modal-item').fadeIn();
     $('#modal-form').on('submit', function(e){
-
+e.preventDefault();
       $('.modal-item').fadeOut();
+    });
       $('#fileupload').fileupload({
         dataType: 'json',
         // data: $( this ).serialize(),
         add: function (e, data) {
           console.log(data);
-          data.context = $('<button/>').attr('class', 'upload-button').text('Upload').appendTo('.new_item').click(function() {
+          data.context = $('<button/>').attr('class', 'upload-button').text('Upload').appendTo('#modal-form').click(function() {
             data.submit();
           });
         },
@@ -31,7 +32,6 @@ $( document ).on('turbolinks:load', function() {
           $('.wardrobe-item').append(name, description, imageappend, checkBoxTag);
         }
       });
-});
 });
 
   $('#drop-down-show').on('click', function(){

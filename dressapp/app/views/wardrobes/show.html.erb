@@ -6,22 +6,24 @@
    <div class="search-bar">
      <%= form_tag(items_path, :method => "get", id: "search-form") do %>
      <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
-     <%= submit_tag "Search", :name => nil %>
+     <%= submit_tag "Search", :name => nil, :id => "search-button"%>
      <% end %>
    </div>
 
    <!-- Filter items -->
    <div class="filter-nav">
-     <h3>Filter Items by Category:</h3>
-     <button id="all-items">All</button>
-     <button id="top-filter">Top</button>
-     <button id="bottom-filter">Bottom</button>
-     <button id="shoe-filter">Shoes</button>
+     <h3 class="filter-header">Filter Items by Category:</h3>
+     <button id="all-items" class="filter-buttons">All</button>
+     <button id="top-filter" class="filter-buttons">Top</button>
+     <button id="bottom-filter" class="filter-buttons">Bottom</button>
+     <button id="shoe-filter" class="filter-buttons">Shoes</button>
    </div>
 
 <% if @wardrobe.items.length == 0 %>
   <h3 class="item-details">You don't have any clothes in this wardrobe right now</h3>
-  <p class="button add-item"><%= link_to "Click here to add some", new_item_path(:wardrobe => @wardrobe.id) %></p>
+  <%= button_tag :name => 'wardrobe_id', value: @wardrobe.id, :class => 'button add-item' do %>
+    <%= "Add more items" %>
+  <% end %>
   <div class="wardrobe-item-container">
     <ul class="wardrobe-item">
     </ul>
