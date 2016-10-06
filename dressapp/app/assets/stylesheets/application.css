@@ -168,3 +168,14 @@ background-image: url('http://i1.wp.com/8list.ph/wp-content/uploads/2016/01/7-Pl
   content:url('ready.png');
   text-align: center;
 }
+
+
+.t{
+  background: rgba(1, 1, 1,0.1);
+
+}
+
+.center {
+  background: rgba(1, 1, 1,0.1);
+
+}
