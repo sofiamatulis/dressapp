@@ -1,8 +1,7 @@
-// $(function(){
-//   console.log('wardrobe.js loaded!');
+// $( document ).on('turbolinks:load', function() {
+//
 // // function to get modal and form to add item
 //   $('#new-item').on('click', function(e){
-//     console.log("clicked");
 //     $('.modal-item').fadeIn();
 //     $('#new_item').on('submit', function(e){
 //       $('.modal-item').fadeOut();

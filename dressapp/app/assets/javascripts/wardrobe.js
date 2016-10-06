@@ -2,16 +2,17 @@ $( document ).on('turbolinks:load', function() {
   console.log('wardrobe.js loaded!');
 // function to get modal and form to add item
   $('.add-item').on('click', function(e){
+
     $('.modal-item').fadeIn();
-    $('#new_item').on('submit', function(e){
-      e.preventDefault();
+    $('#modal-form').on('submit', function(e){
+
       $('.modal-item').fadeOut();
       $('#fileupload').fileupload({
         dataType: 'json',
         // data: $( this ).serialize(),
         add: function (e, data) {
           console.log(data);
-          data.context = $('<button/>').attr('class', 'upload-button').text('Upload').appendTo('.modal-form').click(function() {
+          data.context = $('<button/>').attr('class', 'upload-button').text('Upload').appendTo('.new_item').click(function() {
             data.submit();
           });
         },
@@ -33,12 +34,12 @@ $( document ).on('turbolinks:load', function() {
 });
 });
 
-    $('#drop-down-show').on('click', function(){
-      $('.category-dropdown').fadeIn();
-      $('.item-link').removeAttr('href');
-      $('.selectd-item').find('img').click(function(){
-        $(this).toggleClass('item-selected');
-      });
+  $('#drop-down-show').on('click', function(){
+    $('.category-dropdown').fadeIn();
+    $('.item-link').removeAttr('href');
+    $('.selectd-item').find('img').click(function(){
+      $(this).toggleClass('item-selected');
+    });
   });
 
 
