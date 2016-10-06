@@ -1,5 +1,5 @@
-$( document ).on('ready turbolinks:load', function() {
-
+$(document).on('turbolinks:load', function() {
+console.log('the problem is here');
 // opening suitcase
   $("#open-nav").on('click', function() {
     $(".arrow-right").trigger("click");
@@ -68,7 +68,7 @@ function createSlider() {
       $('#items-grid-container').html(itemsContainer);
       $( "#sortable1, #sortable2" ).sortable({
         connectWith: ".connectedSortable",
-        scroll: false,
+
         receive: function(event,ui){
           $.ajax( {
             url: '/items_suitcases/', // this specific url
@@ -97,11 +97,6 @@ function createSlider() {
     document.getElementById("suitcase-main").style.marginLeft = "40%";
   });
 
-
-  $('.weather-details').slick( {
-    prevArrow: '<span class="arrow-left"><</span>',
-    nextArrow: '<span class="arrow-right">></span>',
-  });
 
   //view all button
   $('#view-all').on('click', function() {

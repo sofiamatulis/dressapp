@@ -49,7 +49,7 @@ class WardrobesController < ApplicationController
 
   def update
     @wardrobe = Wardrobe.find(params[:id])
-    if @wardrobe.update_attributes(wardrobe_edit_params)
+    if @wardrobe.update_attributes(wardrobe_params)
       redirect_to wardrobe_path(@wardrobe)
     else
       render :edit

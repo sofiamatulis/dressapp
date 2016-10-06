@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927200541) do
+ActiveRecord::Schema.define(version: 20160930181438) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "category"
@@ -24,12 +24,13 @@ ActiveRecord::Schema.define(version: 20160927200541) do
     t.string   "image"
     t.integer  "category_id"
     t.integer  "wardrobe_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.boolean  "favorited",          default: false
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["wardrobe_id"], name: "index_items_on_wardrobe_id"
   end

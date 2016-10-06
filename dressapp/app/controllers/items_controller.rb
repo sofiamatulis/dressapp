@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-
+  # before_action :load_items, only: [:index]
   before_action :ensure_logged_in
 
 
@@ -9,25 +9,21 @@ class ItemsController < ApplicationController
     else
       @items = Item.all
     end
-
     respond_to do |format|
-          format.html
-
-          format.json do
-            render json: @items
-            end
-          end
+      format.html
+      format.json do
+        render json: @items
+      end
+    end
   end
 
   def show
     @item = Item.find(params[:id])
     @suitcases = current_user.suitcases
-
   end
 
   def new
     @item = Item.new(:wardrobe_id => params[:wardrobe])
-
   end
 
   def edit
@@ -44,21 +40,20 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    # @category = Category.find(item_params[:category_id])
-    @wardrobe = @item.wardrobe
-    if @item.save
-      if request.xhr?
-        respond_to do |format|
-          format.html
-          format.json { render json: @item.to_json }
+      @item = Item.new(item_params)
+      @wardrobe = @item.wardrobe
+      if @item.save
+        if request.xhr?
+          respond_to do |format|
+            format.html
+            format.json { render json: @item.to_json }
+          end
+        else
+          redirect_to wardrobe_path(@wardrobe)
         end
       else
-        redirect_to wardrobe_path(@wardrobe)
+        render "new"
       end
-    else
-      render "new"
-    end
   end
 
   def destroy
@@ -67,7 +62,6 @@ class ItemsController < ApplicationController
     @wardrobe = @item.wardrobe
     redirect_to wardrobe_path(@wardrobe)
   end
-
 
   private
   def item_params

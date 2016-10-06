@@ -1,7 +1,5 @@
 <div class="modal-user">
 
-<h1>Create a new wardrobe</h1>
-
 <%= form_for @wardrobe do |f| %>
 <div class="field">
   <%= f.label :name %>
@@ -17,4 +15,5 @@
 <% end %>
 
 <p><%= link_to 'Back', user_path(current_user) %></p>
+
 </div>

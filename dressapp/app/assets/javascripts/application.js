@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-fileupload/basic
 //= require turbolinks
 //= require jquery.easy-autocomplete.min
 //= require jquery.city-autocomplete.min

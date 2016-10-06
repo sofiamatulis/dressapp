@@ -1,4 +1,3 @@
-
 <%= form_for @item, :html => {:id => "modal-form"} do |f| %>
 
 <%if @item.errors.any? %>
@@ -25,7 +24,7 @@
 
   <div class="field">
     <%= f.label :image %>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, id: 'fileupload' %>
   </div>
 
   <div class="field">
@@ -37,7 +36,6 @@
     <%= f.hidden_field :wardrobe_id %>
   </div>
 
-  <%= f.submit "New Item", id: "create-item" %>
-
-
+  <%#= f.submit "New Item", id: "item-create" %>
+  <%#= f.submit "Add Item", id: "create-item" %>
 <% end %>
