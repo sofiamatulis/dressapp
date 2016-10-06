@@ -1,0 +1,5 @@
+<div class="view-all">
+  <% @suitcase.items.each_with_index do |item, index| %>
+    <span class="clothes-item"><%= image_tag(item.image) %></span>
+  <% end %>
+</div>
