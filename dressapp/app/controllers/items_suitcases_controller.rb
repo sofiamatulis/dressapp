@@ -3,40 +3,10 @@ class ItemsSuitcasesController < ApplicationController
   before_action :ensure_logged_in
 
   def create
-#
-#
-    # adding an item at a time to the suitcase from the suitcase page :
-    @item = Item.find(params[:item_id])
-    @suitcase = Suitcase.find(params[:suitcase_id])
-    @suitcase.items << @item
-#
-#
-#
-#
-    items_ary = []
-    #
-    # params['items'].each do |item|
-    #   items_ary << Item.find(item)
-    # end
-
-
-
-    # @item = Item.find(params[:id])
-
-
-
-    # adding an item at a time to the suitcase from the suitcase page :
     @item = Item.find(params[:item_id])
     @suitcases = current_user.suitcases
     @suitcase = Suitcase.find(params[:suitcase_id])
     @suitcase.items << @item
-<<<<<<< HEAD
-=======
-    # params['items'].each do |item|
-    #   @suitcase.items << Item.find(item)
-    # end
->>>>>>> suitcase_show_finalize
-    # @item.suitcases << @suitcase
     render partial: 'suitcases/outfitchecker'
 
   end

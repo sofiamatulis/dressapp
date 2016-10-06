@@ -13,7 +13,7 @@ $(function(){
         // data: $( this ).serialize(),
         add: function (e, data) {
           console.log(data);
-          data.context = $('<button/>').attr('class', 'upload-button').text('Upload').appendTo('.modal-form').click(function() {
+          data.context = $('<button/>').attr('class', 'upload-button').text('Upload').appendTo('#modal-form').click(function() {
             data.submit();
           });
         },
@@ -29,7 +29,7 @@ $(function(){
           var label = $('<label class="selectd-item">').append(imageappend);
           var checkBox = $('<input type="checkbox">').attr('name', 'items[' + responseData.id + ']');
           var checkBoxTag = $('<li class="item-details check-box">').append(checkBox);
-          $('.wardrobe-item').append(name, description, imageappend, checkBoxTag);
+          $('.wardrobe-item').append(imageappend, checkBoxTag, name, description);
         }
       }),
 
@@ -40,13 +40,6 @@ $(function(){
         $(this).toggleClass('item-selected');
       });
 
-    //  function to get modal and form to add to suitcase
-    $('.add-to-suitcase').click(function(){
-      $('.item-link').removeAttr("href");
-      $('.item-link').click(function(){
-        $(this).find('img').toggleClass("item-selected");
-      });
-    });
   })
 })
 
