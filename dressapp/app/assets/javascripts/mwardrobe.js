@@ -5,7 +5,7 @@ $(function(){
     console.log("clicked");
     $('.modal-item').fadeIn();
     $('#new_item').on('submit', function(e){
-      $('.modal-item').fadeOut();
+      e.preventDefault();
       $.ajax({
         url: '/items',
         method: 'post',
@@ -13,6 +13,7 @@ $(function(){
         dataType: 'json'
       }).done(function(response){
 
+        $('.modal-item').fadeOut();
         $(".modal-form")[0].reset();
         var name = $('<li class="item-details">').append(response.name);
         var description = $('<li class="item-details">').append(response.description);

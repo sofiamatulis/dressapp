@@ -4,13 +4,20 @@ $(function() {
     //js for working with modals
     $('#new-wardrobe').on('click', function(){
       $('.modal-wardrobe').fadeIn();
+      $('.close').on('click', function(){
+        $('.modal-wardrobe').fadeOut();
+      })
       $('#new_wardrobe').on('submit', function(){
         $('.modal-wardrobe').fadeOut();
+
       });
     });
 
     $('#new-suitcase').on('click', function(){
       $('.modal-suitcase').fadeIn();
+      $('.close').on('click', function(){
+        $('.modal-suitcase').fadeOut();
+      })
       $('#new_suitcase').on('submit', function(){
         $('.modal-suitcase').fadeOut();
       });

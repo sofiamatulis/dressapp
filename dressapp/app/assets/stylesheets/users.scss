@@ -121,7 +121,7 @@ ul, li {
   height: 100%;
   background-color: rgba(30,30,30,0.8);
 }
- #new_wardrobe, #new_suitcase, #new_item {
+ #new_wardrobe, #new_suitcase, #modal-form {
   display: block;
   width: 400px;
   height: 18em;
@@ -133,4 +133,15 @@ ul, li {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.close {
+  display: block;
+  border: none;
+  width: 1em;
+  height: 1em;
+  background-color: white;
+  color: black;
+  border-radius: 0.5em;
+  line-height: 0;
 }
