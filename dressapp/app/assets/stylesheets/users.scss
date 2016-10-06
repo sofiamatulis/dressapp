@@ -145,3 +145,13 @@ ul, li {
   border-radius: 0.5em;
   line-height: 0;
 }
+
+.easy-autocomplete .eac-round {
+  left: 300px !important;
+  overflow:hidden !important;
+  width: 336px !important;
+}
+
+.easy-autocomplete .eac-round input {
+  position: relative !important;
+}
