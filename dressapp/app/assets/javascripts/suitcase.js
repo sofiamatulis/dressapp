@@ -42,14 +42,13 @@ function createSlider() {
       nextArrow: '<span class="arrow-right">></span>',
     });
   }
-
+// calls the carousel
   createSlider();
 
-
+// when you click add-items button
   $('#add-items').on('click', function() {
     document.getElementById("suitcase-side-nav").style.width = "60%";
     document.getElementById("suitcase-main").style.marginLeft = "60%";
-    // $('#suitcase-side-nav').css("overflow-x", "visible");
     $(".outfit-checker-container").css("display", "none");
     $("#add-items").css("display", "none");
     $("#outfit-checker-button").css("display", "inline-block");
@@ -65,7 +64,6 @@ function createSlider() {
 //iterating through each item and adding the photo to its own container
       $.each(response, function(i, item) {
         var itemContainer = $('<div class="style-one">');
-                  // $('<h4>').html(item.name).appendTo(itemContainer);
                   // added data type to each object
         $('<img>').attr('src', item.image).attr('data-item-id', item.id).attr('data-item-category', item.category_id).appendTo(itemContainer);
         $(itemContainer).appendTo(itemsContainer);
@@ -75,6 +73,14 @@ function createSlider() {
       $( "#sortable1, #sortable2" ).sortable({
         connectWith: ".connectedSortable",
         scroll: false,
+        activate: function () {
+          // alert("sorting!");
+          console.log("sorting");
+          $("#suitcase-side-nav").addClass("is-dragging");
+        },
+        deactivate: function() {
+          $("#suitcase-side-nav").removeClass("is-dragging");
+        },
         receive: function(event,ui){
           $.ajax( {
             url: '/items_suitcases/', // this specific url
@@ -118,21 +124,27 @@ function createSlider() {
     document.getElementById("suitcase-side-nav").style.width = "60%";
     document.getElementById("suitcase-main").style.marginLeft = "60%";
     $("#view-all-in-suitcase-container").css("display", "inline-block");
-      // $.ajax({
-      //   url: window.location.href,
-      //   method: 'GET',
-      //   data: {},
-      //   dataType: 'JSON'
-      // }).done(function(response){
+
 
     });
 
-    // other items button
-    $("#other-items").on('click', function() {
-      $("#dresses").css("display", "block");
+    // dresses/onesies button
+    $(".dress-button").on('click', function() {
       $("#tops").css("display", "none");
       $("#bottoms").css("display", "none");
-      $("#other-items").html("Tops/Bottoms").addClass("topsBottoms");
+      $("#dresses").css("display", "block");
+      $(".arrow-right").trigger("click");
+      // $(this).hide();
+      // $(".tops-bottoms").show();
+    });
+// tops/bottoms button
+    $(".tops-bottoms").on('click', function() {
+      $(".arrow-right").trigger("click");
+      $("#dresses").css("display", "none");
+      $("#tops").css("display", "block");
+      $("#bottoms").css("display", "block");
+      // $(this).hide();
+      // $(".dress-button").show();
     });
 
 

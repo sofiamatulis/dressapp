@@ -30,7 +30,7 @@
             <div class="dresses-container">
               <%= image_tag "white-square.jpg" %>
               <% @suitcase.items.each_with_index do |item, index| %>
-                <% if item.category.category == "Dress" %>
+                <% if item.category.category == "Dresses" %>
                   <span class="clothes-item"><%= image_tag(item.image) %></span>
                   <% end %>
                 <% end %>
