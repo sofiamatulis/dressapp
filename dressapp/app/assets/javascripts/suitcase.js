@@ -37,7 +37,7 @@ function createSlider() {
     });
   }
 
-
+createSlider();
 
 
 

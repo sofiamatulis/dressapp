@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 h1 {
-  text-align: left;
+  text-align: center;
 }
 
 .item-details img {
@@ -56,21 +56,17 @@ h1 {
   display: none;
 }
 
-.wardrobe-item-container {
+.wardrobe-item {
   // display: inline-block;
   width: 25%;
   float: left;
   padding-top: 25px;
-
-#search, #search-button {
-  float: right;
 }
 
+.category-dropdown {
 
-.filter-nav{
-  text-align: center;
 }
 
-.filter-header{
-  text-align: center;
-}
+// #search, #search-button {
+//   float: right;
+// }

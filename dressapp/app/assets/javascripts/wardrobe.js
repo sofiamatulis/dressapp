@@ -1,13 +1,13 @@
-$( document ).on('turbolinks:load', function() {
+$(function(){
   console.log('wardrobe.js loaded!');
 // function to get modal and form to add item
   $('.add-item').on('click', function(e){
-
+    console.log("clicked");
     $('.modal-item').fadeIn();
     $('#modal-form').on('submit', function(e){
-e.preventDefault();
+      e.preventDefault();
       $('.modal-item').fadeOut();
-    });
+    })
       $('#fileupload').fileupload({
         dataType: 'json',
         // data: $( this ).serialize(),
@@ -28,25 +28,21 @@ e.preventDefault();
           var imageappend = $('<li class="item-details">').append(imagelink);
           var label = $('<label class="selectd-item">').append(imageappend);
           var checkBox = $('<input type="checkbox">').attr('name', 'items[' + responseData.id + ']');
-          var checkBoxTag = $('<li class="item-details check-box">').append(checkBox);
-          $('.wardrobe-item').append(imageappend, checkBoxTag, name, description);
+          var checkBoxTag = $('<li class="item-details check-box">').appendTo(label);
+          var itemContainer = $('<div class="wardrobe-item">').append(label, name, description);
+          $(itemContainer).appendTo('.wardrobe-item-container');
         }
       });
-});
 
-<<<<<<< HEAD
+
   })
-})
-=======
   $('#drop-down-show').on('click', function(){
-    $('.category-dropdown').fadeIn();
+    $('.category-dropdown').fadeIn().appendTo('.back-button');
     $('.item-link').removeAttr('href');
     $('.selectd-item').find('img').click(function(){
       $(this).toggleClass('item-selected');
     });
-  });
-
->>>>>>> master
+})
 
   // Filter items on wardrobe show view
   $( "#all-items" ).click(function() {

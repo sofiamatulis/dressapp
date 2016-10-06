@@ -33,9 +33,9 @@
 <% else %>
   <%= form_tag multi_path, :id => "submit-multi" do %>
 
-  <div class="wardrobe-item">
+  <ul class="wardrobe-item-container">
     <% @wardrobe.items.each do |item| %>
-    <div class="wardrobe-item-container">
+    <div class="wardrobe-item">
       <label class="selectd-item">
         <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
         <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
@@ -44,7 +44,7 @@
       <li class="item-details"><%= item.description %></li>
     </div>
     <% end %>
-  </div>
+  </ul>
 
   <ul class="filtered-tops">
     <% @wardrobe.items.each do |item| %>
@@ -100,15 +100,8 @@
       <% end %>
     </ul>
   </div>
-
-<% end %>
-<%= button_tag :id => 'drop-down-show' do %>
-  <%= "Add to suitcase" %>
 <% end %>
 
-<%= button_tag :name => 'wardrobe_id', value: @wardrobe.id, :class => 'button add-item' do %>
-  <%= "Add more items" %>
-<% end %>
 
 <div class="modal-item">
   <%= render 'items/form' %>
@@ -116,3 +109,9 @@
 <% end %>
 <p class="back-button"><%= link_to "Back", user_path(current_user) %> | <%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe) %> |
   <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"} %></p>
+  <%= button_tag :name => 'wardrobe_id', value: @wardrobe.id, :class => 'button add-item' do %>
+    <%= "Add more items" %>
+    <% end %>
+  <%= button_tag :id => 'drop-down-show' do %>
+    <%= "Add to suitcase" %>
+  <% end %>
