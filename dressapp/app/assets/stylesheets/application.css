@@ -72,7 +72,7 @@ a {
 
  .text-logo {
    content:url('logopackapp.png');
-   margin-left:400px;
+   margin-left:350px;
    margin-top:200px;
 
  }
@@ -81,6 +81,7 @@ a {
    content:url('packapp2.png');
    height:15%;
    width:15%;
+   margin-left:600px;
 
  }
 
@@ -88,45 +89,61 @@ a {
   font-family: 'Open Sans', sans-serif;
   font-size:40px;
   text-align:center;
-  color: darkgray;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+
 }
 
 
 .upload-your-wardrobe {
   font-family: 'Open Sans', sans-serif;
   font-size:40px;
-  text-align:center
+  text-align:center;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+
 }
 
 .plan-your-suitcase {
   font-family: 'Open Sans', sans-serif;
   font-size:40px;
   text-align:center;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+
 }
 
 .ready {
   font-family: 'Open Sans', sans-serif;
   font-size:40px;
   text-align: center;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+
 }
 
 .t {
   font-size:40px;
   text-align:center;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+
+
 
 }
 
 
 .parallax_image_3 {
-background-image: url('https://www.quercusliving.co.uk/media/catalog/product/cache/1/image/2500x1103/9df78eab33525d08d6e5fb8d27136e95/r/u/rustic-oak-wood-grain_28.jpg');
+background-image: url('http://i1.wp.com/8list.ph/wp-content/uploads/2016/01/7-Plan-Your-Travel-Budget-2015.jpg');
 }
 
 .arrow-left{
+  color:oldlace;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+
 
 }
 
 .arrow-right {
   color:oldlace;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
 }
 
 
