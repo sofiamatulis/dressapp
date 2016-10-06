@@ -1,8 +1,6 @@
 <div id="suitcase-show-body">
 
-  <p><%= @weather %></p>
 
-  <!-- <p class="weather"><%= @weather %></p> -->
 
   <div id="suitcase-main">
 
@@ -12,13 +10,20 @@
       <li class="suitcase-details">Duration: <%= @suitcase.duration %> days</li>
       <li class="suitcase-details">Details: <%= @suitcase.description %></li>
     </ul>
+    <div class ="weather">
+      <div class="weather-details">
+      </div>
+    </div>
+
+    <div class="weather">
+
+    </div>
 
   <ul id="sortable1" data-suitcase-id='<%=@suitcase.id%>' class="connectedSortable"> <div>Suitcase</div>
     <li class="ui-state-default">"Suitcase photo</li>
   </ul>
 
-  <ul class ="weather-details">
-  </ul>
+
 
     <div class="links">
       <p><%= link_to 'Back', user_path(current_user) %></p>
@@ -41,51 +46,12 @@
       <a id="close-nav">X</a>
     </div>
 
+    <div class="outfit-checker-container">
+      <%= render 'outfitchecker' %>
+    </div>
 
-
-  <div class="outfit-checker">
-    </span><h4>Outfit checker</h4>
-
-    <div id="tops" class="clothes-container">
-        <div class="tops-container">
-          <% @suitcase.items.each_with_index do |item, index| %>
-            <% if item.category.category == "Top" %>
-                <span class="clothes-item"><%= image_tag(item.image) %></span>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-
-
-      <div id="bottoms" class="clothes-container">
-          <div class="bottoms-container">
-            <% @suitcase.items.each_with_index do |item, index| %>
-              <% if item.category.category == "Bottom" %>
-                <span class="clothes-item"><%= image_tag(item.image) %></span>
-
-
-              <% end %>
-            <% end %>
-
-          </div>
-        </div>
-
-        <div id="shoes" class="clothes-container">
-            <div class="shoes-container">
-              <% @suitcase.items.each_with_index do |item, index| %>
-                <% if item.category.category == "Shoes" %>
-                    <span class="clothes-item"><%= image_tag(item.image) %></span>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-
-      <div id="items-grid-container">
-
-      </div>
-
-
+    <div id="items-grid-container">
+    </div>
 
 
     </div>

@@ -1,4 +1,4 @@
-<%= form_for @item, :html => {:class => "modal-form"} do |f| %>
+<%= form_for @item, :html => {:id => "modal-form"} do |f| %>
 
 <%if @item.errors.any? %>
   <div id="error explanation">
@@ -11,7 +11,7 @@
     </ul>
   </div>
   <% end %>
-
+  <button type="button" class="close">x</button>
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -37,6 +37,5 @@
   </div>
 
   <%#= f.submit "New Item", id: "item-create" %>
-
-
+  <%#= f.submit "New Item", id: "create-item" %>
 <% end %>

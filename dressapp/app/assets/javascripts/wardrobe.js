@@ -4,7 +4,7 @@ $(function(){
   $('.add-item').on('click', function(e){
     console.log("clicked");
     $('.modal-item').fadeIn();
-    $('.modal-form').on('submit', function(e){
+    $('#modal-form').on('submit', function(e){
       e.preventDefault();
       $('.modal-item').fadeOut();
     })
