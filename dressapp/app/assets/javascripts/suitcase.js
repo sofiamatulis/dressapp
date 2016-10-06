@@ -32,6 +32,11 @@ function createSlider() {
       nextArrow: '<span class="arrow-right">></span>',
     });
 
+    $('.dresses-container').slick( {
+      prevArrow: '<span class="arrow-left"><</span>',
+      nextArrow: '<span class="arrow-right">></span>',
+    });
+
     $('.shoes-container').slick( {
       prevArrow: '<span class="arrow-left"><</span>',
       nextArrow: '<span class="arrow-right">></span>',
@@ -113,15 +118,22 @@ function createSlider() {
     document.getElementById("suitcase-side-nav").style.width = "60%";
     document.getElementById("suitcase-main").style.marginLeft = "60%";
     $("#view-all-in-suitcase-container").css("display", "inline-block");
-      $.ajax({
-        url: window.location.href,
-        method: 'GET',
-        data: {},
-        dataType: 'JSON'
-      }).done(function(response){
+      // $.ajax({
+      //   url: window.location.href,
+      //   method: 'GET',
+      //   data: {},
+      //   dataType: 'JSON'
+      // }).done(function(response){
 
-      });
-  });
+    });
+
+    // other items button
+    $("#other-items").on('click', function() {
+      $("#dresses").css("display", "block");
+      $("#tops").css("display", "none");
+      $("#bottoms").css("display", "none");
+      $("#other-items").html("Tops/Bottoms").addClass("topsBottoms");
+    });
 
 
 });

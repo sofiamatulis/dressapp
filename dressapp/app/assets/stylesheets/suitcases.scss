@@ -74,7 +74,7 @@ p, li, a {
   top: 0;
   left: 0;
   background-color: white;
-  // overflow-x: hidden;
+  overflow-x: hidden;
   transition: 0.5s;
   -webkit-box-shadow: 7px 5px 7px -2px #ff9999;
 }
@@ -113,6 +113,12 @@ p, li, a {
   width: 100%;
   // overflow: hidden;
   transition: margin-left .5s;
+}
+
+// other items
+
+#dresses {
+  display: none;
 }
 
 
@@ -275,6 +281,7 @@ h4 {
   margin: 20px;
   display: inline-block;
 }
+
 
 .weather {
   display: inline;
