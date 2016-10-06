@@ -62,9 +62,9 @@
       <form id="countryForm">
         <input id="country" name="country" autocomplete="on" placeholder="Destination Country"><br>
         <input id="city" name="city" autocomplete="on" placeholder="Destination City" data-country=""><br>
+        <%= f.submit "New Suitcase", id: "create-suitcase"%>
       </form>
       <div class="destination-form">
-        <%= f.submit "New Suitcase", id: "create-suitcase"%>
     </div>
     <% end %>
 
