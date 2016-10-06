@@ -1,4 +1,5 @@
-$(function(){
+$( document ).on('turbolinks:load', function() {
+  console.log('check');
 // sends a request for 5 day weather for toronto.
 //change toronto to city you want to request
 // change ca to country code you want to request
@@ -36,7 +37,7 @@ $.ajax({
       var final = $('.weather').append(weather);
 
 
-    
+
     };
 
     $('.weather').slick( {
