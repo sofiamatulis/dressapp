@@ -4,7 +4,6 @@
 
 
 
-
   .log-in-form, #user-form {
     font-family: 'Open Sans', sans-serif;
     margin:auto;
@@ -17,12 +16,19 @@
 
   }
 
-  .log-in{
+  .log-in, .sign-up{
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  background-image: url('https://static.pexels.com/photos/6675/flight-mountains-sky-flying-large.jpeg');
 
+}
+
+.arrow {
+  content:url('arrow.png');
+  margin-left:500px;
+  margin-top:-300px;
 }
 
 
