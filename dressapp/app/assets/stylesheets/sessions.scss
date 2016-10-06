@@ -55,7 +55,17 @@
 
 .actions {
   text-align: center;
-  font-family: 'Satisfy', cursive;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+#user_image {
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+.field input {
+  font-family: 'Open Sans', sans-serif;
 
 }
 
@@ -82,6 +92,71 @@ background-size: cover;
 }
 
 
+.submitting {
+  border-radius: 1px;
+  font-size: 15px;
+  padding: 5px 8px;
+  cursor: pointer;
+  color: #fff;
+  background-color: lightblue;
+  font-family: 'Open Sans', sans-serif;
+  border: 0.2px solid #fff;
+  box-shadow: 2px 2px 5px #AFE9FF;
+  transition-duration: 0.5s;
+}
+
+.submitting:hover {
+  color: #006398;
+  border: 1px solid #006398;
+  box-shadow: 2px 2px 20px #AFE9FF;
+}
+
+
+input {
+  border-radius: 1px;
+  font-size: 15px;
+  padding: 5px 8px;
+  cursor: pointer;
+  color: #006398;
+  background-color: lightblue;
+  font-family: 'Open Sans', sans-serif;
+  border: 0.2px solid #fff;
+  box-shadow: 2px 2px 5px #AFE9FF;
+  transition-duration: 0.5s;
+}
+
+input:hover {
+  color: #006398;
+  border: 1px solid #006398;
+  box-shadow: 2px 2px 20px #AFE9FF;
+}
+
+
 #user_image {
-  width: 87px;
+opacity:0;
+position:absolute;
+margin-left:-150px;
+}
+
+.fakefield {
+  position:relative;
+  border-radius: 1px;
+  font-size: 15px;
+  padding: 5px 8px;
+  cursor: pointer;
+  color: #fff;
+  background-color: lightblue;
+  font-family: 'Open Sans', sans-serif;
+  border: 0.2px solid #fff;
+  box-shadow: 2px 2px 5px #AFE9FF;
+  transition-duration: 0.5s;
+  width:180px;
+  margin-left:28px;
+
+}
+
+.fakefield:hover {
+  color: #006398;
+  border: 1px solid #006398;
+  box-shadow: 2px 2px 20px #AFE9FF;
 }
