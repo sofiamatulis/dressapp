@@ -1,14 +1,17 @@
 $( document ).on('ready turbolinks:load', function() {
 
 
-  $('.center').slick( {
-    prevArrow: '<span class="arrow-left"><</span>',
-    nextArrow: '<span class="arrow-right">></span>',
-    autoplay: true,
-    autoplaySpeed: 1600,
-    speed: 1000,
-    fade: true,
-  });
+
+
+//hover function for the class box
+//add data called photo , it is called data-photo in the HTML file
+//when you hover it adds the class reveal (built in), it removes it when you don't hover 
+
+  $('.box').hover(function(){
+  $($(this).data('photo')).addClass('reveal');
+}, function(){
+  $($(this).data('photo')).removeClass('reveal');
+});
 
 
 });

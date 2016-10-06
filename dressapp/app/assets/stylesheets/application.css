@@ -47,6 +47,7 @@ a {
    overflow: hidden;
    height: 50px;
    position: relative;
+   z-index: 100;
  }
 
  #logo img{
@@ -73,7 +74,7 @@ a {
  .text-logo {
    content:url('logopackapp.png');
    margin-left:350px;
-   margin-top:200px;
+   margin-top:-50px;
 
  }
 
@@ -81,59 +82,13 @@ a {
    content:url('packapp2.png');
    height:15%;
    width:15%;
-   margin-left:600px;
 
  }
 
-.sign-up-home-page {
-  font-family: 'Open Sans', sans-serif;
-  font-size:40px;
-  text-align:center;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 
-}
-
-
-.upload-your-wardrobe {
-  font-family: 'Open Sans', sans-serif;
-  font-size:40px;
-  text-align:center;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-
-}
-
-.plan-your-suitcase {
-  font-family: 'Open Sans', sans-serif;
-  font-size:40px;
-  text-align:center;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-
-}
-
-.ready {
-  font-family: 'Open Sans', sans-serif;
-  font-size:40px;
-  text-align: center;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-
-}
-
-.t {
-  font-size:40px;
-  text-align:center;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-
-
-
-}
-
-
-.parallax_image_3 {
-background-image: url('http://i1.wp.com/8list.ph/wp-content/uploads/2016/01/7-Plan-Your-Travel-Budget-2015.jpg');
-}
 
 .arrow-left{
-  color:oldlace;
+  color:white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 
@@ -141,41 +96,77 @@ background-image: url('http://i1.wp.com/8list.ph/wp-content/uploads/2016/01/7-Pl
 }
 
 .arrow-right {
-  color:oldlace;
+  color:white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 }
 
 
 
-.sign-up-image {
-  content:url('signup.png');
-  text-align: center;
+body {
+  background:#ccc;
+  margin:0; }
+
+.photo {
+  /*pictures wont be moving, margin is 0 and 0 and it is as big as it can get*/
+  /*the z index is 1 because its behind the boxes*/
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-position:50% 50%;
+  background-size:cover;
+  z-index:1;
+}
+/*z- index is two here because it goes on top of the photo when it reveals it */
+.photo.reveal {
+  z-index:2;
 }
 
-.uploading {
-  content:url('upload.png');
-  text-align: center;
+/*all boxes are white and this side and z-index is higher because it goes on top of the photo */
+
+.box {
+  width:200px;
+  height:200px;
+  border:15px solid #fff;
+  position:relative;
+  z-index:10;
+  float:left;
+  line-height:200px;
+  text-align:center;
+  color:#fff;
+  font-size:20px;
+  text-transform:uppercase;
+  font-family:Tahoma;
+  letter-spacing:1px;
 }
 
-.suitcase-image-home {
-  content:url('suitcase.png');
-  text-align: center;
+/*each picture*/
+#photo1 {
+  background-image:url('http://i1.wp.com/8list.ph/wp-content/uploads/2016/01/7-Plan-Your-Travel-Budget-2015.jpg');
 }
 
-
-.ready-to-go {
-  content:url('ready.png');
-  text-align: center;
+#photo2 {
+  background-image:url('http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg');
 }
 
-
-.t{
-  background: rgba(1, 1, 1,0.1);
-
+#photo3 {
+  background-image:url('http://i1.wp.com/8list.ph/wp-content/uploads/2016/01/7-Plan-Your-Travel-Budget-2015.jpg');
 }
 
-.center {
-  background: rgba(1, 1, 1,0.1);
+/*position of the boxes*/
 
+#box1 {
+  left:100px;
+  margin-top:200px;
 }
+#box2 {
+  margin-left:250px;
+  margin-top:200px;
+ }
+#box3 {
+  margin-left:150px;
+  margin-top:200px;
+
+ }
