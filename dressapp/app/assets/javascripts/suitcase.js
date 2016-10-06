@@ -82,6 +82,7 @@ function createSlider() {
             // appending the response to the outfit checker page
             $(".outfit-checker").html(response);
             createSlider();
+            // appending the response to the view all page
             var itemsAdded = $(response).find('.clothes-item');
             console.log(itemsAdded.length);
             $("#view-all-in-suitcase-container").html(itemsAdded);
@@ -90,7 +91,6 @@ function createSlider() {
       }).disableSelection();
     });
   });
-
 
 
 // resets the outfit checker when you click "outfit checker" button
