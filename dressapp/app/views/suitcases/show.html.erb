@@ -51,6 +51,13 @@
     <div id="items-grid-container">
     </div>
 
+    <div id="view-all-in-suitcase-container">
+      <!-- <div id="view-all-in-suitcase"> -->
+        <% @suitcase.items.each_with_index do |item, index| %>
+          <span class="clothes-item"><%= image_tag(item.image) %></span>
+        <% end %>
+      <!-- </div> -->
+    </div>
 
     </div>
 </div>

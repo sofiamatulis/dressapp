@@ -16,6 +16,7 @@ $( document ).on('ready turbolinks:load', function() {
       $(".outfit-checker").css("display", "block");
       $("#outfit-checker-button").css("display", "none");
       $("#add-items").css("display", "inline-block");
+      $("#view-all-in-suitcase-container").css("display", "none");
     }, 1000 );
   });
 
@@ -47,6 +48,7 @@ function createSlider() {
     $(".outfit-checker").css("display", "none");
     $("#add-items").css("display", "none");
     $("#outfit-checker-button").css("display", "inline-block");
+    $("#view-all-in-suitcase-container").css("display", "none");
     $.ajax({
       url: '/items',
       method: 'GET',
@@ -55,7 +57,7 @@ function createSlider() {
     }).done(function(response) {
       console.log(response);
       var itemsContainer = $('<div id="sortable2" class="connectedSortable">');
-//iterating through each item and adding the name and photo to its own container
+//iterating through each item and adding the photo to its own container
       $.each(response, function(i, item) {
         var itemContainer = $('<div class="style-one">');
                   // $('<h4>').html(item.name).appendTo(itemContainer);
@@ -79,6 +81,7 @@ function createSlider() {
             // appending the response to the outfit checker page
               $(".outfit-checker").html(response);
               createSlider();
+              // $("#view-all-in-suitcase-container").html(response);
           });
         }
       }).disableSelection();
@@ -108,6 +111,15 @@ function createSlider() {
     $(".outfit-checker").css("display", "none");
     document.getElementById("suitcase-side-nav").style.width = "60%";
     document.getElementById("suitcase-main").style.marginLeft = "60%";
+    $("#view-all-in-suitcase-container").css("display", "inline-block");
+    // $.ajax({
+    //   url: window.location.href,
+    //   method: 'GET',
+    //   data: {},
+    //   dataType: 'JSON'
+    // }).done(function(response){
+    //
+    // });
   });
 
 
