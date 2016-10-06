@@ -1,8 +1,6 @@
 $(function(){
-  console.log('wardrobe.js loaded!');
 // function to get modal and form to add item
   $('.add-item').on('click', function(e){
-    console.log("clicked");
     $('.modal-item').fadeIn();
     $('#new_item').on('submit', function(e){
       e.preventDefault();
