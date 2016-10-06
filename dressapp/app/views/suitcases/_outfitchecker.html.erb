@@ -1,9 +1,10 @@
-
+<!--partial for displaying the outfit checker -->
   <div class="outfit-checker" id="outfit-checker">
     </span><h4>Outfit checker</h4>
 
     <div id="tops" class="clothes-container">
         <div class="tops-container">
+          <%= image_tag "white-square.jpg" %>
           <% @suitcase.items.each_with_index do |item, index| %>
             <% if item.category.category == "Top" %>
                 <span class="clothes-item"><%= image_tag(item.image) %></span>
@@ -15,19 +16,30 @@
 
       <div id="bottoms" class="clothes-container">
           <div class="bottoms-container">
+            <%= image_tag "white-square.jpg" %>
             <% @suitcase.items.each_with_index do |item, index| %>
               <% if item.category.category == "Bottom" %>
                 <span class="clothes-item"><%= image_tag(item.image) %></span>
-
-
+                <% end %>
               <% end %>
-            <% end %>
-
           </div>
         </div>
 
+
+        <div id="dresses" class="clothes-container">
+            <div class="dresses-container">
+              <%= image_tag "white-square.jpg" %>
+              <% @suitcase.items.each_with_index do |item, index| %>
+                <% if item.category.category == "Dresses" %>
+                  <span class="clothes-item"><%= image_tag(item.image) %></span>
+                  <% end %>
+                <% end %>
+            </div>
+          </div>
+
         <div id="shoes" class="clothes-container">
             <div class="shoes-container">
+              <%= image_tag "white-square.jpg" %>
               <% @suitcase.items.each_with_index do |item, index| %>
                 <% if item.category.category == "Shoes" %>
                     <span class="clothes-item"><%= image_tag(item.image) %></span>

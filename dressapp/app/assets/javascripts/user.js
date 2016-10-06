@@ -4,9 +4,14 @@ $( document ).on('turbolinks:load', function() {
     //js for working with modals
     $('#new-wardrobe').on('click', function(){
       $('.modal-wardrobe').fadeIn();
+      $(document).keyup(function(e){
+        if (e.which === 27){
+        $('.modal-wardrobe').fadeOut();
+        }
+      });
       $('.close').on('click', function(){
         $('.modal-wardrobe').fadeOut();
-      })
+      });
       $('#new_wardrobe').on('submit', function(){
         $('.modal-wardrobe').fadeOut();
 
@@ -15,6 +20,11 @@ $( document ).on('turbolinks:load', function() {
 
     $('#new-suitcase').on('click', function(){
       $('.modal-suitcase').fadeIn();
+      $(document).keyup(function(e){
+        if (e.which === 27){
+        $('.modal-suitcase').fadeOut();
+        }
+      });
       $('.close').on('click', function(){
         $('.modal-suitcase').fadeOut();
       })
@@ -55,6 +65,12 @@ $( document ).on('turbolinks:load', function() {
 
   // calling the function for the city drop down.
     $('#city').cityAutocomplete();
+    var left = $('#city').css('left')
+    var top = $('#city').css('top')
+    $('.city-autocomplete').css('left', left);
+    $('.city-autocomplete').css('top', top);
+    $('.easy-autocomplete').css('width', '')
+    $('.easy-autocomplete').css('right', '2px')
 
     $('#new_suitcase').on('submit',function(event){
         event.preventDefault();
