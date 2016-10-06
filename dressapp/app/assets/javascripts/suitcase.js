@@ -1,6 +1,5 @@
 $( document ).on('turbolinks:load', function() {
 
->>>>>>> view_all
 // opening suitcase
   $("#open-nav").on('click', function() {
     $(".arrow-right").trigger("click");

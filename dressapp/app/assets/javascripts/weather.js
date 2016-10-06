@@ -32,7 +32,7 @@ $.ajax({
       var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
       var desc = data.list[i].weather[0].description;
       // puts the weather below the suitcase class
-      var weather1 = $('<span= class="weather-date">').append(day + " " + month + " " + date).append(temp).append("<img src='" + iconUrl + "'>").append(desc);
+      var weather1 = $('<span= class="weather-date">').append(day + " " + month + " " + date + " ").append("<img src='" + iconUrl + "'>").append(temp + " | ").append(desc);
       var weather = $('<div class="weather-' + i + '">').append(weather1);
       var final = $('.weather').append(weather);
 
@@ -41,6 +41,7 @@ $.ajax({
     };
 
     $('.weather').slick( {
+      variableWidth: true,
       prevArrow: '<span class="arrow-left"><</span>',
       nextArrow: '<span class="arrow-right">></span>',
     });
