@@ -4,10 +4,19 @@ $( document ).on('turbolinks:load', function() {
   $('.add-item').on('click', function(e){
 
     $('.modal-item').fadeIn();
+    $(document).keyup(function(e){
+      if (e.which === 27){
+      $('.modal-item').fadeOut();
+      }
+    });
+    $('.close').on('click', function(){
+      $('.modal-item').fadeOut();
+    });
     $('#modal-form').on('submit', function(e){
 e.preventDefault();
       $('.modal-item').fadeOut();
     });
+
       $('#fileupload').fileupload({
         dataType: 'json',
         // data: $( this ).serialize(),
@@ -31,7 +40,7 @@ e.preventDefault();
           var checkBoxTag = $('<li class="item-details check-box">').append(checkBox);
           $('.wardrobe-item').append(name, description, imageappend, checkBoxTag);
         }
-      });
+  });
 });
 
   $('#drop-down-show').on('click', function(){
