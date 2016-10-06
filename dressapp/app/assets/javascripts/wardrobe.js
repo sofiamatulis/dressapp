@@ -1,13 +1,13 @@
-$(function(){
+$( document ).on('turbolinks:load', function() {
   console.log('wardrobe.js loaded!');
 // function to get modal and form to add item
   $('.add-item').on('click', function(e){
-    console.log("clicked");
+
     $('.modal-item').fadeIn();
     $('#modal-form').on('submit', function(e){
-      e.preventDefault();
+e.preventDefault();
       $('.modal-item').fadeOut();
-    })
+    });
       $('#fileupload').fileupload({
         dataType: 'json',
         // data: $( this ).serialize(),
@@ -31,17 +31,22 @@ $(function(){
           var checkBoxTag = $('<li class="item-details check-box">').append(checkBox);
           $('.wardrobe-item').append(imageappend, checkBoxTag, name, description);
         }
-      }),
-
-    $('#drop-down-show').on('click', function(){
-      $('.category-dropdown').fadeIn();
-      $('.item-link').removeAttr('href');
-      $('.selectd-item').find('img').click(function(){
-        $(this).toggleClass('item-selected');
       });
+});
 
+<<<<<<< HEAD
   })
 })
+=======
+  $('#drop-down-show').on('click', function(){
+    $('.category-dropdown').fadeIn();
+    $('.item-link').removeAttr('href');
+    $('.selectd-item').find('img').click(function(){
+      $(this).toggleClass('item-selected');
+    });
+  });
+
+>>>>>>> master
 
   // Filter items on wardrobe show view
   $( "#all-items" ).click(function() {

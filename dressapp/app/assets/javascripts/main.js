@@ -1,4 +1,4 @@
-$(function(){
+$( document ).on('turbolinks:load', function() {
 
     $('#new_wardrobe').on('submit',function(event){
       event.preventDefault();

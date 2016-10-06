@@ -1,12 +1,12 @@
 <h1><%= @wardrobe.name %></h1>
 
- <!-- Search items -->
- <div class="search-bar">
-   <%= form_tag(items_path, :method => "get", id: "search-form") do %>
-   <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
-   <%= submit_tag "Search", :name => nil %>
-   <% end %>
- </div>
+<!-- Search items -->
+<div class="search-bar">
+  <%= form_tag(items_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
+  <%= submit_tag "Search", :name => nil, :id => "search-button"%>
+  <% end %>
+</div>
 
  <!-- Filter items -->
  <div class="filter-nav">
@@ -20,7 +20,9 @@
 
 <% if @wardrobe.items.length == 0 %>
   <h3 class="item-details">You don't have any clothes in this wardrobe right now</h3>
-  <p class="button add-item"><%= link_to "Click here to add some", new_item_path(:wardrobe => @wardrobe.id) %></p>
+  <%= button_tag :name => 'wardrobe_id', value: @wardrobe.id, :class => 'button add-item' do %>
+    <%= "Add more items" %>
+  <% end %>
   <div class="wardrobe-item-container">
     <ul class="wardrobe-item">
     </ul>
@@ -89,15 +91,6 @@
     <% end %>
   </ul>
 
-   <div class="dropdown">
-     <button class="add-to-suitcase">Add to suitcase</button>
-     <ul class="category-dropdown">
-       <% @suitcases.each do |suitcase| %>
-       <li><%= link_to "Add to #{suitcase.name}", items_suitcases_path(:item => @item.id, :suitcase => suitcase.id), :method => :post, :class => "category-menu" %></li>
-       <% end %>
-     </ul>
-   </div>
-
   <div class="dropdown">
     <ul class="category-dropdown">
       <% @suitcases.each do |suitcase| %>
@@ -110,11 +103,11 @@
 
 <% end %>
 <%= button_tag :id => 'drop-down-show' do %>
-<%= "Add to suitcase" %>
+  <%= "Add to suitcase" %>
 <% end %>
 
 <%= button_tag :name => 'wardrobe_id', value: @wardrobe.id, :class => 'button add-item' do %>
-<%= "Add more items" %>
+  <%= "Add more items" %>
 <% end %>
 
 <div class="modal-item">
