@@ -4,18 +4,17 @@
 <div class="search-bar">
   <%= form_tag(items_path, :method => "get", id: "search-form") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
-  <%= submit_tag "Search", :name => nil, :id => "search-button"%>
+  <%= submit_tag "Search", :name => nil, :id => "search-button" %>
   <% end %>
 </div>
 
  <!-- Filter items -->
  <div class="filter-nav">
-   <!-- <p> -->
-    <a id="all-items">All</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-    <a id="top-filter">Top</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-    <a id="bottom-filter">Bottom</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-    <a id="shoe-filter">Shoes</a>
-   <!-- </p> -->
+  <a id="all-items">All</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+  <a id="top-filter">Tops</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+  <a id="bottom-filter">Bottoms</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+  <a id="shoe-filter">Shoes</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+  <a id="dress-filter">Dresses</a>
  </div>
 
 <% if @wardrobe.items.length == 0 %>
@@ -49,7 +48,7 @@
   <ul class="filtered-tops">
     <% @wardrobe.items.each do |item| %>
       <% if item.category.category == "Top" %>
-      <div class="wardrobe-item-container">
+      <div class="wardrobe-item">
         <label class="selectd-item">
         <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
         <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
@@ -64,7 +63,7 @@
   <ul class="filtered-bottoms">
     <% @wardrobe.items.each do |item| %>
       <% if item.category.category == "Bottom" %>
-      <div class="wardrobe-item-container">
+      <div class="wardrobe-item">
         <label class="selectd-item">
         <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
         <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
@@ -79,7 +78,22 @@
   <ul class="filtered-shoes">
     <% @wardrobe.items.each do |item| %>
       <% if item.category.category == "Shoes" %>
-      <div class="wardrobe-item-container">
+      <div class="wardrobe-item">
+        <label class="selectd-item">
+        <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
+        <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
+        </label>
+        <li class="item-details"><%= item.name %></li>
+        <li class="item-details"><%= item.description %></li>
+      </div>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <ul class="filtered-dresses">
+    <% @wardrobe.items.each do |item| %>
+      <% if item.category.category == "Dresses" %>
+      <div class="wardrobe-item">
         <label class="selectd-item">
         <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
         <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
@@ -95,19 +109,20 @@
     <ul class="category-dropdown">
       <% @suitcases.each do |suitcase| %>
       <%= button_tag(type: 'submit', :name => 'suitcase_id', value: suitcase.id) do %>
-      <%= suitcase.name %>
+        <%= suitcase.name %>
       <% end %>
       <% end %>
     </ul>
   </div>
+  <% end %>
+
+  <div class="modal-item">
+    <%= render 'items/form' %>
+  </div>
+
 <% end %>
 
-
-<div class="modal-item">
-  <%= render 'items/form' %>
-</div>
-<% end %>
-<p class="back-button"><%= link_to "Back", user_path(current_user) %> | <%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe) %> |
+<p class="back-button"><%= link_to "Back", user_path %> | <%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe) %> |
   <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"} %></p>
   <%= button_tag :name => 'wardrobe_id', value: @wardrobe.id, :class => 'button add-item' do %>
     <%= "Add more items" %>
