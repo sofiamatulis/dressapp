@@ -23,9 +23,11 @@
 
 
 #imageUploadForm {
-  height:25%;
-  width:25%;
+  height:9%;
+  width:9%;
   border-radius: 50%;
+  margin-left:-300px;
+  margin-top:-140px;
 
 }
 
@@ -178,7 +180,7 @@ ul, li {
 }
 
 .user-show {
-  background-image: url('http://i.huffpost.com/gen/1805046/images/o-ROAD-TRIP-facebook.jpg');
+  background-color: white;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
