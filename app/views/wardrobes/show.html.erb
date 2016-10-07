@@ -1,6 +1,24 @@
-<body class="edit">
+<body class="wardrobe-show">
 
-<h1 class="wardrobe-name"><%= @wardrobe.name %></h1>
+<div class="wardrobe-header-image">
+  <h1 class="wardrobe-name"><%= @wardrobe.name %></h1>
+</div>
+
+<!-- Back/edit/delete buttons -->
+<!-- Filter items -->
+<div class="filter-nav">
+  <div id="filter-left">
+    <p class="back-button"><%= link_to "Back", user_path %> | <%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe) %> |
+    <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"} %></p>
+  </div>
+  <div id="filter-right">
+   <a id="all-items">All</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+   <a id="top-filter">Tops</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+   <a id="bottom-filter">Bottoms</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+   <a id="shoe-filter">Shoes</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+   <a id="dress-filter">Dresses</a>
+ </div>
+</div>
 
 <!-- Search items -->
 <div class="search-bar">
@@ -10,14 +28,19 @@
   <% end %>
 </div>
 
- <!-- Filter items -->
- <div class="filter-nav">
-  <a id="all-items">All</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-  <a id="top-filter">Tops</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-  <a id="bottom-filter">Bottoms</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-  <a id="shoe-filter">Shoes</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-  <a id="dress-filter">Dresses</a>
+<div class="adding-items">
+  <div class="add-more-container">
+   <%= button_tag :name => 'wardrobe_id', value: @wardrobe.id, :class => 'button add-item' do %>
+     <%= "Add more items" %>
+     <% end %>
+  </div>
+  <div class="adding-to-suitcase">
+   <%= button_tag :id => 'drop-down-show' do %>
+     <%= "Add to suitcase" %>
+   <% end %>
  </div>
+</div>
+
 
 <% if @wardrobe.items.length == 0 %>
   <h3 class="item-details">You don't have any clothes in this wardrobe right now</h3>
@@ -125,13 +148,5 @@
 
 <% end %>
 
-<p class="back-button"><%= link_to "Back", user_path %> | <%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe) %> |
-  <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"} %></p>
-  <%= button_tag :name => 'wardrobe_id', value: @wardrobe.id, :class => 'button add-item' do %>
-    <%= "Add more items" %>
-    <% end %>
-  <%= button_tag :id => 'drop-down-show' do %>
-    <%= "Add to suitcase" %>
-  <% end %>
 
 </body>

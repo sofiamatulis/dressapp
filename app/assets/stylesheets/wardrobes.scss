@@ -1,6 +1,23 @@
 // Place all the styles related to the wardrobes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wardrobe-show {
+  background-color: white;
+}
+
+.wardrobe-header-image {
+  height: 500px;
+  background-image: url('http://notable.ca/wp-content/uploads/2016/04/packing.jpg');
+  background-repeat: no-repeat;
+  background-size: 1300px;
+  overflow: hidden;
+}
+
+#wardrobe-name {
+  position: relative;
+}
+
 .filtered-tops {
   display: inline;
 }
@@ -26,6 +43,12 @@ h1 {
 .back-button {
   text-align: center;
   clear: both;
+  border-radius: 10px;
+}
+
+.back-button a {
+  text-decoration: none;
+  color: black;
 }
 
 .new-item {
@@ -34,6 +57,14 @@ h1 {
 
 .edit-delete {
   text-align: center;
+}
+
+#search-form {
+  background-color: #ef766a;
+  border-radius: 20px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding: 30px 30px;
 }
 
 .search-bar {
@@ -45,9 +76,22 @@ h1 {
 .filter-nav {
   text-align: right;
   margin-right: 35px;
-  color: white;
+  color: black;
+  margin-top: 40px;
+  overflow: hidden;
+  position: relative;
 }
 
+#filter-right {
+  position: relative;
+  width: 50%;
+  float: right;
+}
+
+#filter-left {
+  width: 50%;
+  display: inline-block;
+}
 //
 // .filtered-bottoms {
 //   display: none;
@@ -77,5 +121,51 @@ h1 {
 }
 
 .item-details {
-  color: white;
+  color: black;
+}
+
+.button.add-item {
+  display: inline-block;
+  margin: auto;
+  float: right;
+}
+
+.drop-down-show {
+  display: inline-block;
+  margin: auto;
+  float: left;
+}
+
+#drop-down-show {
+  color: black;
+  border-radius: 10px;
+}
+
+#search, #search-button {
+  background-color: oldlace;
+}
+
+
+.adding-items {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.button.add-item {
+  color: black;
+  border-radius: 10px;
+}
+
+.add-more-container {
+  width: 48%;
+  display: inline-block;
+  position: relative;
+  float: left;
+}
+
+.adding-to-suitcase {
+  width: 50%;
+  display: inline-block;
+  position: relative;
 }
