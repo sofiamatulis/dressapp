@@ -28,7 +28,6 @@ body {
   height: 100%;
   margin: 0;
   bottom: 0;
-  /*overflow: hidden;*/
 }
 
 a {
@@ -48,6 +47,7 @@ a {
    overflow: hidden;
    height: 50px;
    position: relative;
+   z-index: 100;
  }
 
  #logo img{
@@ -80,8 +80,8 @@ a {
 
  .text-logo {
    content:url('logopackapp.png');
-   margin-left:400px;
-   margin-top:200px;
+   margin-left:350px;
+   margin-top:-50px;
 
  }
 
@@ -92,71 +92,88 @@ a {
 
  }
 
-.sign-up-home-page {
-  font-family: 'Open Sans', sans-serif;
-  font-size:40px;
-  text-align:center;
-  color: darkgray;
-}
 
-
-.upload-your-wardrobe {
-  font-family: 'Open Sans', sans-serif;
-  font-size:40px;
-  text-align:center
-}
-
-.plan-your-suitcase {
-  font-family: 'Open Sans', sans-serif;
-  font-size:40px;
-  text-align:center;
-}
-
-.ready {
-  font-family: 'Open Sans', sans-serif;
-  font-size:40px;
-  text-align: center;
-}
-
-.t {
-  font-size:40px;
-  text-align:center;
-
-}
-
-.dress {
-  content:url('dress.png');
-  /*margin-left:400px;*/
-  width:20%;
-  height:20%;
-  /*margin-top:-5000px*/
-
-}
-
-.cursor {
-  content:url('cursor.png');
-  height:20%;
-  width:20%;
-  /*margin-left:350px;*/
-  /*margin-top:-100px;*/
-}
-
-.camera {
-  content:url('camera.png');
-  height:20%;
-  width:20%;
-  /*margin-top:-75px;*/
-  /*margin-left:500px;*/
-}
-
-.parallax_image_3 {
-background-image: url('https://www.quercusliving.co.uk/media/catalog/product/cache/1/image/2500x1103/9df78eab33525d08d6e5fb8d27136e95/r/u/rustic-oak-wood-grain_28.jpg');
-}
 
 .arrow-left{
+  color:white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+
 
 }
 
 .arrow-right {
-  color:oldlace;
+  color:white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
 }
+
+
+
+body {
+  background:#ccc;
+  margin:0; }
+
+.photo {
+  /*pictures wont be moving, margin is 0 and 0 and it is as big as it can get*/
+  /*the z index is 1 because its behind the boxes*/
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-position:50% 50%;
+  background-size:cover;
+  z-index:1;
+}
+/*z- index is two here because it goes on top of the photo when it reveals it */
+.photo.reveal {
+  z-index:2;
+}
+
+/*all boxes are white and this side and z-index is higher because it goes on top of the photo */
+
+.box {
+  width:200px;
+  height:200px;
+  border:15px solid #fff;
+  position:relative;
+  z-index:10;
+  float:left;
+  line-height:200px;
+  text-align:center;
+  color:#fff;
+  font-size:20px;
+  text-transform:uppercase;
+  font-family:Tahoma;
+  letter-spacing:1px;
+}
+
+/*each picture*/
+#photo1 {
+  background-image:url('http://i1.wp.com/8list.ph/wp-content/uploads/2016/01/7-Plan-Your-Travel-Budget-2015.jpg');
+}
+
+#photo2 {
+  background-image:url('http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg');
+}
+
+#photo3 {
+  background-image:url('http://i1.wp.com/8list.ph/wp-content/uploads/2016/01/7-Plan-Your-Travel-Budget-2015.jpg');
+}
+
+/*position of the boxes*/
+
+#box1 {
+  left:450px;
+  margin-top:200px;
+}
+#box2 {
+  margin-left:500px;
+  margin-top:200px;
+ }
+#box3 {
+  margin-left:70px;
+  margin-top:200px;
+
+ }

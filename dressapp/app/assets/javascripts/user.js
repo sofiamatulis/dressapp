@@ -71,6 +71,8 @@ $( document ).on('turbolinks:load', function() {
     $('.city-autocomplete').css('top', top);
     $('.easy-autocomplete').css('width', '')
     $('.easy-autocomplete').css('right', '2px')
+    $('.easy-autocomplete').css('top', '6px')
+    $('#country').css('box-shadow', '2px 2px 5px #AFE9FF')
 
     $('#new_suitcase').on('submit',function(event){
         event.preventDefault();

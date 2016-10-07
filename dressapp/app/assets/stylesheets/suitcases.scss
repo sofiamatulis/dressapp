@@ -1,7 +1,6 @@
 // Place all the styles related to the suitcases controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 #suitcase-show-body {
   height: 100%;
   position: relative;
@@ -23,7 +22,7 @@
 
 h1 {
   text-align: center;
-  font-family: 'Satisfy', cursive;
+  font-family: 'Open Sans', sans-serif;
   font-size: 50px;
 }
 
@@ -34,6 +33,11 @@ h3 {
 
 p, li, a {
   font-family: 'Open Sans', sans-serif;
+}
+
+#email {
+  font-family: 'Open Sans', sans-serif;
+
 }
 
 .links {

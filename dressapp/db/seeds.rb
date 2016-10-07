@@ -6,12 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+<<<<<<< HEAD
 # Category.create(category: "Top")
 # Category.create(category: "Bottom")
 # Category.create(category: "Shoes")
+=======
+Category.create(category: "Top")
+Category.create(category: "Bottom")
+Category.create(category: "Shoes")
+>>>>>>> master
 Category.create(category: "Dresses")
 
-Item.create(name:"dress1", description:"a dress", image:"http://www.lindybop.co.uk/images/audrey-red-polka-dot-swing-dress-p41-15865_zoom.jpg", category_id: 8, wardrobe_id: 1)
 
 # 5.times do
 #   Item.create(

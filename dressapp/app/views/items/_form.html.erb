@@ -13,22 +13,20 @@
   <% end %>
   <button type="button" class="close">x</button>
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :placeholder => 'Name'%>
   </div>
 
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :placeholder => 'Description' %>
   </div>
 
+  <%= f.label :image, :class => "image-label"%>
   <div class="field">
-    <%= f.label :image %>
     <%= f.file_field :image, id: 'fileupload' %>
   </div>
 
+  <%= f.label :category_id, :class => 'category-label' %>
   <div class="field">
-    <%= f.label :category_id %>
     <%= collection_select(:item, :category_id, Category.all, :id, :category ) %>
   </div>
 

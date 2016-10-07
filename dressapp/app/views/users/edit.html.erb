@@ -1,5 +1,7 @@
-<h1>Edit Information</h1>
+<body class="edit">
 <div id="user-form">
+  <h1 id="editing">Edit Information</h1>
+
 <%= form_for @user do |f| %>
 
   <% if @user.errors.any? %>
@@ -28,3 +30,5 @@
     <%= link_to 'Back', user_path(@user) %>
   </div>
 </div>
+
+</body>

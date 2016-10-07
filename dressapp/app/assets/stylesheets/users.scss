@@ -25,24 +25,47 @@
 #imageUploadForm {
   height:25%;
   width:25%;
-}
-
-.mywardrobe {
-  font-family: 'Satisfy', cursive;
+  border-radius: 50%;
 
 }
 
-.mysuitcase {
-  font-family: 'Satisfy', cursive;
-
+.mywardrobe, .mysuitcase {
+  position:relative;
+  border-radius: 1px;
+  font-size: 30px;
+  padding: 5px 8px;
+  cursor: pointer;
+  color: #fff;
+  background-color: lightblue;
+  font-family: 'Open Sans', sans-serif;
+  border: 0.2px solid #fff;
+  box-shadow: 2px 2px 5px #AFE9FF;
+  transition-duration: 0.5s;
+  margin-left:28px;
+  width:auto;
+  height:90px;
 }
+
+.mywardrobe:hover, .mysuitcase:hover {
+  color: #006398;
+  border: 1px solid #006398;
+  box-shadow: 2px 2px 20px #AFE9FF;
+}
+
+
+
+
+
 
 
 #create-wardrobe, #wardrobe_name, #suitcase_name, #suitcase_duration, #suitcase_destination, #suitcase_description, #create-suitcase {
-  font-family: 'Satisfy', cursive;
+  font-family: 'Open Sans', sans-serif;
+}
+#suitcase_description {
+
   width: 300px;
   height:50px;
-  font-size:30px;
+  font-size:13px;
   text-align: center;
 
 }
@@ -77,42 +100,40 @@ ul, li {
  }
 
 
- .parallax_section{
-   height: 600px;
-     background-repeat: no-repeat;
-     background-attachment: fixed;
-     background-size: cover;
-     background-position: 100% auto;
-     position:relative;
-     scroll-behavior: smooth;
-
- }
-
- .parallax_image{
-  // background-image: url("http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg");
-  background:linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-                rgba(0,0,0,0.55) url('http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg') no-repeat center;
-
- }
-
-
-.parallax_image_2{
-  background-image: url("http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg");
-}
-
-
-
 .about {
   height:500px;
-  font-family: 'Satisfy', cursive;
+  font-family: 'Open Sans', sans-serif;
   text-align:center;
 
 }
 
+// HERE
 #new-wardrobe, #new-suitcase, #new-item {
-    border: 2px solid pink;
     font-size:20px;
+    border-radius: 1px;
+    font-size: 15px;
+    padding: 5px 8px;
+    cursor: pointer;
+    color: black;
+    background-color: lightblue;
+    font-family: 'Open Sans', sans-serif;
+    border: 0.2px solid #fff;
+    box-shadow: 2px 2px 5px #AFE9FF;
+    transition-duration: 0.5s;
 }
+
+
+#new-wardrobe:hover, #new-suitcase:hover, #new-item:hover {
+  color: #006398;
+  border: 1px solid #006398;
+  box-shadow: 2px 2px 20px #AFE9FF;
+}
+
+
+// #new-wardrobe, #new-suitcase, #new-item {
+//     border: 2px solid pink;
+//     font-size:20px;
+// }
 
 .modal-wardrobe, .modal-suitcase, .modal-item {
   display: none;
@@ -123,18 +144,22 @@ ul, li {
   height: 100%;
   background-color: rgba(30,30,30,0.8);
 }
- #new_wardrobe, #new_suitcase, #modal-form {
+ #modal-form {
   display: block;
   width: 400px;
-  height: 18em;
+  height: 14em;
   padding: 2em;
-  background-color: grey;
+  background-color: #F2EFE4;
   position: absolute;
   margin: auto;
   top: 2rem;
   bottom: 0;
   left: 0;
   right: 0;
+  text-align: center;
+}
+#modal-form {
+  border-radius: 10px;
 }
 
 .close {
@@ -148,9 +173,138 @@ ul, li {
   line-height: 0;
 }
 
-.easy-autocomplete .eac-round {
+
+//css for wardrobe modal
+#wardrobe_name {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
 }
 
-.easy-autocomplete .eac-round input {
-  position: relative !important;
+.edit {
+  background-image: url('http://notable.ca/wp-content/uploads/2016/04/packing.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
 }
+
+.user-show {
+  background-image: url('http://i.huffpost.com/gen/1805046/images/o-ROAD-TRIP-facebook.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+
+#editing {
+font-size:20px;
+}
+
+#myedit {
+  font-size:20px;
+}
+#create-wardrobe {
+
+  border-radius: 1px;
+  font-size: 15px;
+  padding: 5px 8px;
+  cursor: pointer;
+
+  color: black;
+
+  // color: #fff;
+
+  background-color: lightblue;
+  font-family: 'Open Sans', sans-serif;
+  border: 0.2px solid #fff;
+  box-shadow: 2px 2px 5px #AFE9FF;
+  transition-duration: 0.5s;
+
+
+}
+#myedit:hover{
+  color: #006398;
+  border: 1px solid #006398;
+  box-shadow: 2px 2px 20px #AFE9FF;
+}
+
+
+.hello, .bye{
+  font-size: 50px;
+text-align: center;
+padding-bottom: 10px;
+color: #AFE9FF;
+box-shadow: 2px 2px 20px #AFE9FF;
+}
+
+
+#greeting {
+
+  text-align: center;
+  padding-bottom: 10px;
+  color: #006398;
+
+}
+
+#new_wardrobe {
+ display: block;
+ width: 400px;
+ height: 12em;
+ padding: 2em;
+ background-color: #F2EFE4;
+ position: absolute;
+ margin: auto;
+ top: 0rem;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+
+// css for suitcase modal
+
+#new_suitcase {
+ display: block;
+ width: 400px;
+ height: 26em;
+ padding: 2em;
+ background-color: #F2EFE4;
+ position: absolute;
+ margin: auto;
+ top: 0rem;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+
+#new_suitcase input {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+#create-suitcase {
+    border-radius: 1px;
+    font-size: 15px !important;
+    padding: 5px 8px;
+    cursor: pointer;
+    color: #fff;
+    background-color: lightblue !important;
+    font-family: 'Open Sans', sans-serif;
+    border: 0.2px solid #fff !important;
+    box-shadow: 2px 2px 5px #AFE9FF;
+    transition-duration: 0.5s;
+  }
+  #city{
+    position: relative;
+    top: -6px;
+  }
