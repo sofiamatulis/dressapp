@@ -80,8 +80,8 @@ a {
 
  .text-logo {
    content:url('logopackapp.png');
-   margin-left:855px;
-   margin-top:-50px;
+   margin-left:455px;
+   margin-top:-100px;
 
  }
 
@@ -165,11 +165,11 @@ body {
 /*position of the boxes*/
 
 #box1 {
-  left:450px;
+  left:250px;
   margin-top:200px;
 }
 #box2 {
-  margin-left:500px;
+  margin-left:300px;
   margin-top:200px;
  }
 #box3 {
