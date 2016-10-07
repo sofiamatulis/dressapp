@@ -170,6 +170,20 @@ ul, li {
 #editing {
 font-size:20px;
 }
+#myedit {
+  text-align: center;
+  padding-bottom: 10px;
+  color: #AFE9FF;
+  border: 1px solid #006398;
+  box-shadow: 2px 2px 20px #AFE9FF;
+  width:100px;
+  margin:auto;
+}
+#myedit:hover{
+text-align: center;
+padding-bottom: 10px;
+color: #006398;
+}
 
 
 .hello, .bye{

@@ -2,7 +2,7 @@
 <body class="user-show">
     <div class="profile">
       <h1 id="greeting">Hello, <%= @user.name %>!</h1>
-      <div class="button"><%= link_to "Edit Profile", edit_user_path(@user) %>
+      <div class="editing"><%= link_to "Edit Profile", edit_user_path(@user), id: "myedit" %>
     </div>
 
 
