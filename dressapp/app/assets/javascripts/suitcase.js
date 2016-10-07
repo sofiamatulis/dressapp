@@ -2,15 +2,20 @@ $( document ).on('turbolinks:load', function() {
 
 // opening suitcase
   $("#open-nav").on('click', function() {
-    $(".arrow-right").trigger("click");
+    $(".outfit").trigger("click");
     document.getElementById("suitcase-side-nav").style.width = "40%";
     document.getElementById("suitcase-main").style.marginLeft = "40%";
+    $("#sortable1").addClass("is-open");
+    $(this).html("");
   });
 // closing nav
   $("#close-nav").on('click', function() {
+    $("#open-nav").html("Open Suitcase");
     $('#suitcase-side-nav').css("overflow-x", "hidden");
     document.getElementById("suitcase-side-nav").style.width = "0";
     document.getElementById("suitcase-main").style.marginLeft= "0";
+    $("#sortable1").removeClass("is-open");
+    $(".suitcase-destination").removeClass("small");
     setTimeout( function() {
       $("#items-grid-container" ).empty();
       $(".outfit-checker-container").css("display", "block");
@@ -23,28 +28,43 @@ $( document ).on('turbolinks:load', function() {
 // creates the carousel
 function createSlider() {
     $('.tops-container').slick( {
-      prevArrow: '<span class="arrow-left"><</span>',
-      nextArrow: '<span class="arrow-right">></span>',
+      centerMode: true,
+      prevArrow: '<span class="arrow-left outfit"><</span>',
+      nextArrow: '<span class="arrow-right outfit">></span>',
     });
 
     $('.bottoms-container').slick( {
-      prevArrow: '<span class="arrow-left"><</span>',
-      nextArrow: '<span class="arrow-right">></span>',
+      centerMode: true,
+      prevArrow: '<span class="arrow-left outfit"><</span>',
+      nextArrow: '<span class="arrow-right outfit">></span>',
     });
 
     $('.dresses-container').slick( {
-      prevArrow: '<span class="arrow-left"><</span>',
-      nextArrow: '<span class="arrow-right">></span>',
+      centerMode: true,
+      prevArrow: '<span class="arrow-left outfit"><</span>',
+      nextArrow: '<span class="arrow-right outfit">></span>',
     });
 
     $('.shoes-container').slick( {
-      prevArrow: '<span class="arrow-left"><</span>',
-      nextArrow: '<span class="arrow-right">></span>',
+      centerMode: true,
+      prevArrow: '<span class="arrow-left outfit"><</span>',
+      nextArrow: '<span class="arrow-right outfit">></span>',
     });
   }
 
 // calls the carousel
   createSlider();
+
+
+// function to make text appear when item is dragged and added
+  function itemAddedBubble() {
+    $('<p id="item-added-message">Item Added!</p>').appendTo('#sortable1');
+    setTimeout( function() {
+      $("#item-added-message").fadeOut();
+      $("#item-added-message").remove();
+  }, 2000 );
+
+}
 
 // when you click add-items button
   $('#add-items').on('click', function() {
@@ -54,6 +74,7 @@ function createSlider() {
     $("#add-items").css("display", "none");
     $("#outfit-checker-button").css("display", "inline-block");
     $("#view-all-in-suitcase-container").css("display", "none");
+    $(".suitcase-destination").addClass("small");
     $.ajax({
       url: '/items',
       method: 'GET',
@@ -91,6 +112,8 @@ function createSlider() {
             dataType: 'html'
           }).done(function(response) {
             console.log(response);
+            // item added text appears
+            itemAddedBubble();
             // appending the response to the outfit checker page
             $(".outfit-checker").html(response);
             createSlider();
@@ -107,12 +130,13 @@ function createSlider() {
 
 // resets the outfit checker when you click "outfit checker" button
   $('#outfit-checker-button').on('click', function() {
-    $(".arrow-right").trigger("click");
+    $(".outfit").trigger("click");
     $("#items-grid-container" ).empty();
     $(".outfit-checker-container").css("display", "block");
     $("#outfit-checker-button").css("display", "none");
     $("#add-items").css("display", "inline-block");
     $("#view-all-in-suitcase-container").css("display", "none");
+    $(".suitcase-destination").removeClass("small");
     document.getElementById("suitcase-side-nav").style.width = "40%";
     document.getElementById("suitcase-main").style.marginLeft = "40%";
   });
@@ -122,6 +146,7 @@ function createSlider() {
   $('#view-all').on('click', function() {
     $("#items-grid-container" ).empty();
     $(".outfit-checker-container").css("display", "none");
+    $(".suitcase-destination").addClass("small");
     document.getElementById("suitcase-side-nav").style.width = "60%";
     document.getElementById("suitcase-main").style.marginLeft = "60%";
     $("#view-all-in-suitcase-container").css("display", "inline-block");
@@ -134,13 +159,13 @@ function createSlider() {
       $("#tops").css("display", "none");
       $("#bottoms").css("display", "none");
       $("#dresses").css("display", "block");
-      $(".arrow-right").trigger("click");
+      $(".outfit").trigger("click");
       // $(this).hide();
       // $(".tops-bottoms").show();
     });
 // tops/bottoms button
     $(".tops-bottoms").on('click', function() {
-      $(".arrow-right").trigger("click");
+      $(".outfit").trigger("click");
       $("#dresses").css("display", "none");
       $("#tops").css("display", "block");
       $("#bottoms").css("display", "block");

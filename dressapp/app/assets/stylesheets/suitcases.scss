@@ -10,14 +10,22 @@
 .suitcase-details {
   list-style-type: none;
   text-align: center;
+  padding-right: 20px;
 }
 
 .suitcase-destination {
   margin-bottom: 0;
+
+    &.small {
+      font-size: 20px;
+      padding-bottom: 60px;
+      padding-right: 20px;
+    }
 }
 
 .suitcase-title {
   margin-top: 0;
+  padding-right: 20px;
 }
 
 h1 {
@@ -45,7 +53,18 @@ p, li, a {
   position: absolute;
   top: 0;
   left: 10px;
+  color: grey;
 }
+
+.links a {
+  color: black;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: #ef766a;
+}
+
 
 .suitcase-list {
   text-align: left;
@@ -64,12 +83,27 @@ p, li, a {
   height: 100%;
   position: relative;
   overflow: hidden;
-  background-color: grey;
+  background-color: #e7c6ba;
   background-size: 100%;
   transition: margin-left .5s;
   padding: 0px;
   left: 0px;
 }
+
+#sortable1 {
+  background-image: url('suitcase1.png');
+  background-size: 400px;
+  background-repeat: no-repeat;
+  height: 300px;
+  background-position-x: 50%;
+  border: none;
+
+    &.is-open {
+      background-image: url("suitcase2.png");
+      background-size: 600px;
+      height: 350px;
+    }
+  }
 
 #sortable1 img {
   display: none;
@@ -104,11 +138,29 @@ p, li, a {
 
 }
 
+#item-added-message {
+  display: block;
+  width: 100%;
+  margin: auto;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  position: absolute;
+  font-family: 'Satisfy', cursive;
+
+}
+
+#item-added-message p {
+  text-align: center;
+}
 
 #open-nav {
   display: block;
   text-align: center;
-  margin-top: 200px;
+}
+
+#open-nav a:hover {
+  color: #ef766a;
 }
 
 #close-nav {
@@ -118,6 +170,10 @@ p, li, a {
   font-size: 20px;
   display: inline-block;
   float: right;
+}
+
+.main-buttons a:hover {
+  color: #ef766a;
 }
 
 .clothes-container {
@@ -222,6 +278,7 @@ h4 {
   font-family: 'Sigmar One', cursive;
 }
 
+
 .inactive {
   // display: none;
   width: 0;
@@ -243,6 +300,11 @@ h4 {
   width: 60%;
 }
 
+// .connectedSortable > ul {
+//   background-color: none !important;
+//   border: none !important;
+// }
+
 .slick-arrow {
   display: none;
 }
@@ -258,14 +320,6 @@ h4 {
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
 }
-
-// #other-items {
-//   position: relative;
-//   display: inline-block;
-//   width: 25%;
-//   text-align: left;
-//   padding-left: 15px;
-// }
 
 #view-all {
   position: relative;
@@ -286,8 +340,14 @@ h4 {
   text-align: left;
 }
 
-// styling for "add more items" in the suitcase show side nav
 
+.dress-button a:hover {
+  color: #ef766a;
+}
+
+.tops-bottoms a:hover {
+  color: #ef766a;
+}
 
 
 #items-grid-container img {
@@ -316,13 +376,6 @@ h4 {
   display: inline-block;
 }
 
-
-.weather {
-  display: inline;
-}
-.weather-details {
-  display: inline;
-}
 
 .clothes-types {
   margin-left: 10px;

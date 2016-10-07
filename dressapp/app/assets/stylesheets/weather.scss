@@ -1,19 +1,38 @@
+.weather {
+  display: inline;
+}
+.weather-details {
+  display: inline;
+}
+
 .weather .slick-slide {
   width: 150px;
 }
 
 .weather .arrow-left {
-  width: 44%;
+  width: 15%;
 }
 
 .weather .arrow-right {
-  width: 44%;
+  width: 7%;
+}
+
+.arrow-left.white {
+  color: oldlace;
+}
+
+.arrow-right.white {
+  color: oldlace;
 }
 
 .weather .draggable {
   width: 150px;
   text-align: center;
-  background-color: cyan;
+  background-color: #cceeff;
+  border-radius: 25px;
+  padding-top: 18px;
+  font-family: 'Open Sans', 'sans-serif';
+  margin: 5px;
 }
 
 .weather-date {
@@ -22,4 +41,10 @@
 
 .weather-date img {
   margin: auto;
+}
+
+.weather {
+  bottom: 200px;
+  float: right;
+  margin: 20px;
 }
