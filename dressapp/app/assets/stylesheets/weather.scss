@@ -1,19 +1,30 @@
+.weather {
+  display: inline;
+}
+.weather-details {
+  display: inline;
+}
+
 .weather .slick-slide {
   width: 150px;
 }
 
 .weather .arrow-left {
-  width: 13%;
+  width: 15%;
 }
 
 .weather .arrow-right {
-  width: 10%;
+  width: 7%;
 }
 
 .weather .draggable {
   width: 150px;
   text-align: center;
-  background-color: cyan;
+  background-color: #cceeff;
+  border-radius: 25px;
+  padding-top: 18px;
+  font-family: 'Open Sans', 'sans-serif';
+  margin: 5px;
 }
 
 .weather-date {
