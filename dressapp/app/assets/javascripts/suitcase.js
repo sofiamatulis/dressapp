@@ -5,12 +5,15 @@ $( document ).on('turbolinks:load', function() {
     $(".arrow-right").trigger("click");
     document.getElementById("suitcase-side-nav").style.width = "40%";
     document.getElementById("suitcase-main").style.marginLeft = "40%";
+    $("#sortable1").addClass("is-open");
   });
 // closing nav
   $("#close-nav").on('click', function() {
     $('#suitcase-side-nav').css("overflow-x", "hidden");
     document.getElementById("suitcase-side-nav").style.width = "0";
     document.getElementById("suitcase-main").style.marginLeft= "0";
+    $("#sortable1").removeClass("is-open");
+    $(".suitcase-destination").removeClass("small");
     setTimeout( function() {
       $("#items-grid-container" ).empty();
       $(".outfit-checker-container").css("display", "block");
@@ -55,6 +58,7 @@ function createSlider() {
     $("#add-items").css("display", "none");
     $("#outfit-checker-button").css("display", "inline-block");
     $("#view-all-in-suitcase-container").css("display", "none");
+    $(".suitcase-destination").addClass("small");
     $.ajax({
       url: '/items',
       method: 'GET',
@@ -114,6 +118,7 @@ function createSlider() {
     $("#outfit-checker-button").css("display", "none");
     $("#add-items").css("display", "inline-block");
     $("#view-all-in-suitcase-container").css("display", "none");
+    $(".suitcase-destination").removeClass("small");
     document.getElementById("suitcase-side-nav").style.width = "40%";
     document.getElementById("suitcase-main").style.marginLeft = "40%";
   });
@@ -123,6 +128,7 @@ function createSlider() {
   $('#view-all').on('click', function() {
     $("#items-grid-container" ).empty();
     $(".outfit-checker-container").css("display", "none");
+    $(".suitcase-destination").addClass("small");
     document.getElementById("suitcase-side-nav").style.width = "60%";
     document.getElementById("suitcase-main").style.marginLeft = "60%";
     $("#view-all-in-suitcase-container").css("display", "inline-block");
