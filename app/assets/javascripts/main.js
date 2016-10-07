@@ -13,7 +13,9 @@ $( document ).on('turbolinks:load', function() {
         var name = $ ('.allwardrobe').append("<li class='mywardrobe'>").append(link);
 
             if($('.mywardrobe').length != 0) {
-                $('.link-text').css('font-size', '70px');
+                $('.link-text').css('color', 'oldlace');
+                $('.link-text').css('font-size', '50px');
+
 
         }
 
