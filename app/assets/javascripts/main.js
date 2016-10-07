@@ -9,11 +9,11 @@ $( document ).on('turbolinks:load', function() {
         dataType: "json",
         data:  $('#new_wardrobe').serialize()
       }).done(function(wardrobe){
-        var link = $('<a href="http://localhost:3000/wardrobes/' + wardrobe.id +  '" >' + wardrobe.name + '</a>');
+        var link = $('<a class="link-text" href="http://localhost:3000/wardrobes/' + wardrobe.id +  '" >' + wardrobe.name + '</a>');
         var name = $ ('.allwardrobe').append("<li class='mywardrobe'>").append(link);
 
             if($('.mywardrobe').length != 0) {
-                $('.mywardrobe').css('font-size', '70px');
+                $('.link-text').css('font-size', '70px');
 
         }
 

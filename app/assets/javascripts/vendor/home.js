@@ -15,11 +15,11 @@ $( document ).on('ready turbolinks:load', function() {
 
 
 //when document is complete loading
-$(document).ajaxComplete(function(){
-    if($('.mywardrobe').length != 0) {
-        $('.mywardrobe').css('font-size', '70px');
-    }
-});
+// $(document).ajaxComplete(function(){
+//     if($('.mywardrobe').length != 0) {
+//         $('.mywardrobe').css('font-size', '70px');
+//     }
+// });
 
 
 });
