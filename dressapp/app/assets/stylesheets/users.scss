@@ -206,7 +206,16 @@ font-size:20px;
 }
 
 #myedit {
-  font-size:20px;
+  border-radius: 1px;
+  font-size: 15px !important;
+  padding: 5px 8px;
+  cursor: pointer;
+  color: #fff;
+  background-color: lightblue !important;
+  font-family: 'Open Sans', sans-serif;
+  border: 0.2px solid #fff !important;
+  box-shadow: 2px 2px 5px #AFE9FF;
+  transition-duration: 0.5s;
 }
 #create-wardrobe {
 
@@ -214,19 +223,16 @@ font-size:20px;
   font-size: 15px;
   padding: 5px 8px;
   cursor: pointer;
-
   color: black;
-
-  // color: #fff;
-
   background-color: lightblue;
   font-family: 'Open Sans', sans-serif;
   border: 0.2px solid #fff;
   box-shadow: 2px 2px 5px #AFE9FF;
   transition-duration: 0.5s;
 
-
 }
+
+
 #myedit:hover{
   color: #006398;
   border: 1px solid #006398;
