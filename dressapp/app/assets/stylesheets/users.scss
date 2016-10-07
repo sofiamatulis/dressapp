@@ -40,11 +40,15 @@
 }
 
 
+
 #create-wardrobe, #wardrobe_name, #suitcase_name, #suitcase_duration, #suitcase_destination, #suitcase_description, #create-suitcase {
   font-family: 'Open Sans', sans-serif;
+}
+#suitcase_description {
+
   width: 300px;
   height:50px;
-  font-size:30px;
+  font-size:13px;
   text-align: center;
 
 }
@@ -85,6 +89,7 @@ ul, li {
   text-align:center;
 
 }
+
 // HERE
 #new-wardrobe, #new-suitcase, #new-item {
     font-size:20px;
@@ -107,6 +112,12 @@ ul, li {
   box-shadow: 2px 2px 20px #AFE9FF;
 }
 
+
+// #new-wardrobe, #new-suitcase, #new-item {
+//     border: 2px solid pink;
+//     font-size:20px;
+// }
+
 .modal-wardrobe, .modal-suitcase, .modal-item {
   display: none;
   position: fixed;
@@ -116,18 +127,22 @@ ul, li {
   height: 100%;
   background-color: rgba(30,30,30,0.8);
 }
- #new_wardrobe, #new_suitcase, #modal-form {
+ #modal-form {
   display: block;
   width: 400px;
-  height: 18em;
+  height: 14em;
   padding: 2em;
-  background-color: grey;
+  background-color: #F2EFE4;
   position: absolute;
   margin: auto;
   top: 2rem;
   bottom: 0;
   left: 0;
   right: 0;
+  text-align: center;
+}
+#modal-form {
+  border-radius: 10px;
 }
 
 .close {
@@ -141,13 +156,15 @@ ul, li {
   line-height: 0;
 }
 
-.easy-autocomplete .eac-round {
-}
 
-.easy-autocomplete .eac-round input {
-  position: relative !important;
+//css for wardrobe modal
+#wardrobe_name {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
 }
-
 
 .edit {
   background-image: url('http://notable.ca/wp-content/uploads/2016/04/packing.jpg');
@@ -173,16 +190,24 @@ font-size:20px;
 
 #myedit {
   font-size:20px;
+}
+#create-wardrobe {
+
   border-radius: 1px;
   font-size: 15px;
   padding: 5px 8px;
   cursor: pointer;
+
   color: black;
+
+  // color: #fff;
+
   background-color: lightblue;
   font-family: 'Open Sans', sans-serif;
   border: 0.2px solid #fff;
   box-shadow: 2px 2px 5px #AFE9FF;
   transition-duration: 0.5s;
+
 
 }
 #myedit:hover{
@@ -209,3 +234,63 @@ box-shadow: 2px 2px 20px #AFE9FF;
   color: #006398;
 
 }
+
+}
+
+#new_wardrobe {
+ display: block;
+ width: 400px;
+ height: 12em;
+ padding: 2em;
+ background-color: #F2EFE4;
+ position: absolute;
+ margin: auto;
+ top: 0rem;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+
+// css for suitcase modal
+
+#new_suitcase {
+ display: block;
+ width: 400px;
+ height: 26em;
+ padding: 2em;
+ background-color: #F2EFE4;
+ position: absolute;
+ margin: auto;
+ top: 0rem;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+
+#new_suitcase input {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+#create-suitcase {
+    border-radius: 1px;
+    font-size: 15px !important;
+    padding: 5px 8px;
+    cursor: pointer;
+    color: #fff;
+    background-color: lightblue !important;
+    font-family: 'Open Sans', sans-serif;
+    border: 0.2px solid #fff !important;
+    box-shadow: 2px 2px 5px #AFE9FF;
+    transition-duration: 0.5s;
+  }
+  #city{
+    position: relative;
+    top: -6px;
+  }
