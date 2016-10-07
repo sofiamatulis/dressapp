@@ -48,7 +48,18 @@ p, li, a {
   position: absolute;
   top: 0;
   left: 10px;
+  color: grey;
 }
+
+.links a {
+  color: black;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: #ef766a;
+}
+
 
 .suitcase-list {
   text-align: left;
@@ -67,7 +78,7 @@ p, li, a {
   height: 100%;
   position: relative;
   overflow: hidden;
-  background-color: grey;
+  background-color: #e7c6ba;
   background-size: 100%;
   transition: margin-left .5s;
   padding: 0px;
@@ -85,13 +96,13 @@ p, li, a {
     &.is-open {
       background-image: url("suitcase2.png");
       background-size: 600px;
-      height: 400px;
+      height: 350px;
     }
   }
 
-// #sortable1 img {
-//   display: none;
-// }
+#sortable1 img {
+  display: none;
+}
 
 #suitcase-side-nav {
   height: 100%;
@@ -122,10 +133,29 @@ p, li, a {
 
 }
 
+#item-added-message {
+  display: block;
+  width: 100%;
+  margin: auto;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  position: absolute;
+  font-family: 'Satisfy', cursive;
+
+}
+
+#item-added-message p {
+  text-align: center;
+}
 
 #open-nav {
   display: block;
   text-align: center;
+}
+
+#open-nav a:hover {
+  color: #ef766a;
 }
 
 #close-nav {
@@ -135,6 +165,10 @@ p, li, a {
   font-size: 20px;
   display: inline-block;
   float: right;
+}
+
+.main-buttons a:hover {
+  color: #ef766a;
 }
 
 .clothes-container {
@@ -239,6 +273,7 @@ h4 {
   font-family: 'Sigmar One', cursive;
 }
 
+
 .inactive {
   // display: none;
   width: 0;
@@ -300,8 +335,14 @@ h4 {
   text-align: left;
 }
 
-// styling for "add more items" in the suitcase show side nav
 
+.dress-button a:hover {
+  color: #ef766a;
+}
+
+.tops-bottoms a:hover {
+  color: #ef766a;
+}
 
 
 #items-grid-container img {

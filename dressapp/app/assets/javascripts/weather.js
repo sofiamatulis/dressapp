@@ -42,8 +42,8 @@ $.ajax({
 
     $('.weather').slick( {
       variableWidth: true,
-      prevArrow: '<span class="arrow-left"><</span>',
-      nextArrow: '<span class="arrow-right">></span>',
+      prevArrow: '<span class="arrow-left white"><</span>',
+      nextArrow: '<span class="arrow-right white">></span>',
     });
 
   });

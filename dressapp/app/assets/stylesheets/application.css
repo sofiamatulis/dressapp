@@ -95,7 +95,7 @@ a {
 
 
 .arrow-left{
-  color:white;
+  color: grey;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 
@@ -103,7 +103,7 @@ a {
 }
 
 .arrow-right {
-  color:white;
+  color: grey;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 }
