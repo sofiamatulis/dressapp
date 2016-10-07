@@ -1,9 +1,14 @@
 // Place all the styles related to the wardrobes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  text-align: center;
+}
+
 .item-details img {
-  height: 200px;
-  width: auto;
+  width: 200px;
+  height: auto;
 }
 
 .item-details {
@@ -15,40 +20,51 @@
   text-align: center;
 }
 
-
 .back-button {
   text-align: center;
+  clear: both;
 }
-
 
 .new-item {
   width: 100%;
-
 }
 
 .edit-delete {
   text-align: center;
 }
 
-.filtered-tops {
-  display: none;
+.search-bar {
+  text-align: right;
+  margin-right: 35px;
+  padding-bottom: 10px;
 }
 
-.filtered-bottoms {
-  display: none;
+.filter-nav {
+  text-align: right;
+  margin-right: 35px;
 }
 
-.filtered-shoes {
-  display: none;
+// .filtered-tops {
+//   display: none;
+// }
+//
+// .filtered-bottoms {
+//   display: none;
+// }
+//
+// .filtered-shoes {
+//   display: none;
+// }
+
+.wardrobe-item {
+  // display: inline-block;
+  width: 25%;
+  float: left;
+  padding-top: 25px;
 }
 
-#search, #search-button {
-  float: right;
-}
+.category-dropdown {
 
-
-.filter-nav{
-  text-align: center;
 }
 
 .filter-header{

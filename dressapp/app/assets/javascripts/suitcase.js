@@ -46,7 +46,6 @@ function createSlider() {
 // calls the carousel
   createSlider();
 
-
 // when you click add-items button
   $('#add-items').on('click', function() {
     document.getElementById("suitcase-side-nav").style.width = "60%";

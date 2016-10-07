@@ -6,9 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+<<<<<<< HEAD
+# Category.create(category: "Top")
+# Category.create(category: "Bottom")
+# Category.create(category: "Shoes")
+=======
 Category.create(category: "Top")
 Category.create(category: "Bottom")
 Category.create(category: "Shoes")
+>>>>>>> master
 Category.create(category: "Dresses")
 
 
