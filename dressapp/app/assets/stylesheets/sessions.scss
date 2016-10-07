@@ -4,7 +4,7 @@
 
 
 
-  .log-in-form, #user-form {
+  .log-in-form, #user-form, .wardrobe-name, #search-form {
     font-family: 'Open Sans', sans-serif;
     margin:auto;
     margin-top: 8%;
@@ -103,7 +103,7 @@ background-size: cover;
   border: 0.2px solid #fff;
   box-shadow: 2px 2px 5px #AFE9FF;
   transition-duration: 0.5s;
-  
+
 }
 
 .submitting:hover {
@@ -139,7 +139,11 @@ position:absolute;
 margin-left:-150px;
 }
 
-.fakefield {
+.back-button {
+  width:600px;
+}
+
+.fakefield, .add-item, #drop-down-show, .back-button {
   position:relative;
   border-radius: 1px;
   font-size: 15px;
@@ -156,7 +160,9 @@ margin-left:-150px;
 
 }
 
-.fakefield:hover {
+
+
+.fakefield:hover, .add-item:hover, #drop-down-show:hover, .back-button:hover {
   color: #006398;
   border: 1px solid #006398;
   box-shadow: 2px 2px 20px #AFE9FF;

@@ -23,7 +23,7 @@
   <ul class="allwardrobe">
     <% @user.wardrobes.each do |wardrobe| %>
       <li class="mywardrobe">
-      <p>  <%= link_to wardrobe.name, wardrobe_path(wardrobe) %></p><br>
+      <a>  <%= link_to wardrobe.name, wardrobe_path(wardrobe) %></a><br>
       </li>
     <% end %>
   </ul>
@@ -46,7 +46,7 @@
     <ul class="allsuitcase">
       <% @user.suitcases.each do |suitcase| %>
         <li class="mysuitcase">
-        <p>  <%= link_to suitcase.name, suitcase_path(suitcase) %></p><br>
+        <a>  <%= link_to suitcase.name, suitcase_path(suitcase) %></a><br>
         </li>
       <% end %>
     </ul>

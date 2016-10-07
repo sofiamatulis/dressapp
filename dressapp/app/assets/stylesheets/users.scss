@@ -130,10 +130,6 @@ ul, li {
 }
 
 
-// #new-wardrobe, #new-suitcase, #new-item {
-//     border: 2px solid pink;
-//     font-size:20px;
-// }
 
 .modal-wardrobe, .modal-suitcase, .modal-item {
   display: none;
@@ -201,7 +197,7 @@ ul, li {
 
 }
 
-#editing {
+#editing, #searching {
 font-size:20px;
 }
 

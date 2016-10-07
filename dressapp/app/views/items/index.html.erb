@@ -1,4 +1,9 @@
-<h1>Search Results</h1>
+<body class="edit">
+  <div id="search-form">
+
+
+<h1 id="searching">Search Results</h1>
+
 
 <ul class="wardrobe-item-container">
   <% @items.each do |item| %>
@@ -7,11 +12,13 @@
       <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
       <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
     </label>
-    <li class="item-details"><%= item.name %></li>
-    <li class="item-details"><%= item.description %></li>
+    <!-- <li class="item-details"><#%= item.name %></li> -->
+    <!-- <li class="item-details"><#%= item.description %></li> -->
   </div>
   <% end %>
 </ul>
 
 
 <p class="back-button"><%= link_to "Back", wardrobe_path(current_user) %></p>
+</div>
+</body>
