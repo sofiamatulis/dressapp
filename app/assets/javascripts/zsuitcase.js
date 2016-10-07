@@ -1,5 +1,5 @@
 $( document ).on('turbolinks:load', function() {
-  if($('body').is('#suitcase-show-body')){
+
 
 // opening suitcase
   $("#open-nav").on('click', function() {
@@ -174,5 +174,5 @@ function createSlider() {
       // $(".dress-button").show();
     });
 
-}
+
 });
