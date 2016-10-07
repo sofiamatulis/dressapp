@@ -11,6 +11,12 @@ $( document ).on('turbolinks:load', function() {
       }).done(function(wardrobe){
         var link = $('<a href="http://localhost:3000/wardrobes/' + wardrobe.id +  '" >' + wardrobe.name + '</a>');
         var name = $ ('.allwardrobe').append("<li class='mywardrobe'>").append(link);
+
+            if($('.mywardrobe').length != 0) {
+                $('.mywardrobe').css('font-size', '70px');
+
+        }
+
         $( "#create-wardrobe").prop( "disabled", false );
         $("#new_wardrobe")[0].reset();
       });
