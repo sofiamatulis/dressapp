@@ -72,6 +72,7 @@ p, li, a {
   background-repeat: no-repeat;
   height: 300px;
   background-position-x: 50%;
+  border: none;
 }
 
 // #sortable1 img {
@@ -243,6 +244,11 @@ h4 {
 .draggable {
   display: inline-block;
   width: 60%;
+}
+
+.connectedSortable > ul {
+  background-color: none !important;
+  border: none !important;
 }
 
 .slick-arrow {
