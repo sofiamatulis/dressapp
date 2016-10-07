@@ -1,6 +1,9 @@
 // Place all the styles related to the wardrobes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.filtered-tops {
+  display: inline;
+}
 
 h1 {
   text-align: center;
@@ -45,9 +48,6 @@ h1 {
   color: white;
 }
 
-// .filtered-tops {
-//   display: none;
-// }
 //
 // .filtered-bottoms {
 //   display: none;

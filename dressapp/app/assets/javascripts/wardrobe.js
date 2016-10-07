@@ -56,7 +56,7 @@ $( document ).on('turbolinks:load', function() {
 
   // Filter items on wardrobe show view
   $( "#all-items" ).click(function() {
-    $( ".wardrobe-item" ).css('display', 'initial');
+    $( ".wardrobe-item-container" ).css('display', 'initial');
     $( ".filtered-tops" ).css('display', 'none');
     $( ".filtered-bottoms" ).css('display', 'none');
     $( ".filtered-shoes" ).css('display', 'none');
@@ -64,7 +64,7 @@ $( document ).on('turbolinks:load', function() {
   });
 
   $("#top-filter").click(function() {
-    $( ".wardrobe-item" ).css('display', 'none');
+    $( ".wardrobe-item-container" ).css('display', 'none');
     $( ".filtered-tops" ).css('display', 'inline');
     $( ".filtered-bottoms" ).css('display', 'none');
     $( ".filtered-shoes" ).css('display', 'none');
@@ -72,7 +72,7 @@ $( document ).on('turbolinks:load', function() {
   });
 
   $("#bottom-filter").click(function() {
-    $( ".wardrobe-item" ).css('display', 'none');
+    $( ".wardrobe-item-container" ).css('display', 'none');
     $( ".filtered-bottoms" ).css('display', 'inline');
     $( ".filtered-tops" ).css('display', 'none');
     $( ".filtered-shoes" ).css('display', 'none');
@@ -80,7 +80,7 @@ $( document ).on('turbolinks:load', function() {
   });
 
   $("#shoe-filter").click(function() {
-    $( ".wardrobe-item" ).css('display', 'none');
+    $( ".wardrobe-item-container" ).css('display', 'none');
     $( ".filtered-shoes" ).css('display', 'inline');
     $( ".filtered-bottoms" ).css('display', 'none');
     $( ".filtered-tops" ).css('display', 'none');
@@ -88,7 +88,7 @@ $( document ).on('turbolinks:load', function() {
   });
 
   $("#dress-filter").click(function() {
-    $( ".wardrobe-item" ).css('display', 'none');
+    $( ".wardrobe-item-container" ).css('display', 'none');
     $( ".filtered-shoes" ).css('display', 'none');
     $( ".filtered-bottoms" ).css('display', 'none');
     $( ".filtered-tops" ).css('display', 'none');
