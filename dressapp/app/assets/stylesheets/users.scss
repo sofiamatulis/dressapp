@@ -123,10 +123,10 @@ ul, li {
   height: 100%;
   background-color: rgba(30,30,30,0.8);
 }
- #new_wardrobe, #new_suitcase, #modal-form {
+ #modal-form {
   display: block;
   width: 400px;
-  height: 18em;
+  height: 14em;
   padding: 2em;
   background-color: #F2EFE4;
   position: absolute;
@@ -135,6 +135,10 @@ ul, li {
   bottom: 0;
   left: 0;
   right: 0;
+  text-align: center;
+}
+#modal-form {
+  border-radius: 10px;
 }
 
 .close {
