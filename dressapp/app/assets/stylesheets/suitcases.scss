@@ -66,9 +66,17 @@ p, li, a {
   left: 0px;
 }
 
-#sortable1 img {
-  display: none;
+#sortable1 {
+  background-image: url('suitcase1.png');
+  background-size: 400px;
+  background-repeat: no-repeat;
+  height: 300px;
+  background-position-x: 50%;
 }
+
+// #sortable1 img {
+//   display: none;
+// }
 
 #suitcase-side-nav {
   height: 100%;
@@ -103,7 +111,6 @@ p, li, a {
 #open-nav {
   display: block;
   text-align: center;
-  margin-top: 200px;
 }
 
 #close-nav {
@@ -253,14 +260,6 @@ h4 {
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
 }
-
-// #other-items {
-//   position: relative;
-//   display: inline-block;
-//   width: 25%;
-//   text-align: left;
-//   padding-left: 15px;
-// }
 
 #view-all {
   position: relative;
