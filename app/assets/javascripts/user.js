@@ -16,6 +16,22 @@ $( document ).on('turbolinks:load', function() {
         $('.modal-wardrobe').fadeOut();
 
       });
+
+       $('.modal-wardrobe').click( function(){close()});
+       $('#wardrobe_name').click( function(event){notError(event)});
+       $('#create-wardrobe').click( function(event){notError(event)});
+
+        function notError(event){
+          event.stopPropagation();
+          $('input').removeClass('error');
+        }
+
+
+    function close(){
+
+      $('.modal-wardrobe').fadeOut('slow');
+    }
+
     });
 
     $('#new-suitcase').on('click', function(){
@@ -30,8 +46,35 @@ $( document ).on('turbolinks:load', function() {
       })
       $('#new_suitcase').on('submit', function(){
         $('.modal-suitcase').fadeOut();
+
       });
-    });
+
+
+
+      $('.modal-suitcase').click( function(){close1()});
+      $('#suitcase_name').click( function(event){notError1(event)});
+      $('#suitcase_description').click( function(event){notError1(event)});
+      $('#suitcase_duration').click( function(event){notError1(event)});
+      $('#country').click( function(event){notError1(event)});
+      $('#city').click( function(event){notError1(event)});
+      $('#create-suitcase').click( function(event){notError1(event)});
+
+
+      function notError1(event){
+         event.stopPropagation();
+       $('input').removeClass('error');
+      }
+
+      function close1(){
+
+        $('.modal-suitcase').fadeOut('slow');
+      }
+
+
+
+
+  });
+
 
     // js for suitcase form
     var destination = ""
