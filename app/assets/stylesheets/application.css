@@ -173,16 +173,16 @@ body {
 /*position of the boxes*/
 
 #box0 {
-  left:200px;
+  left:100px;
   margin-top:200px;
 }
 
 #box1 {
-  left:250px;
+  left:200px;
   margin-top:200px;
 }
 #box2 {
-  margin-left:300px;
+  margin-left:250px;
   margin-top:200px;
  }
 #box3 {
