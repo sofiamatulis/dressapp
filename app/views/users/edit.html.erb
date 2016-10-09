@@ -23,13 +23,25 @@
   <div class="field">
     <%= f.label :image %><br/>
     <%= f.file_field :image %>
+
+    <div class="fakefield"> Upload photo
+    <%= f.file_field :image, :class => 'submitting' %>
   </div>
 
-  <div class="actions"><%= f.submit %></div>
-<% end %>
+</div> <br>
+
+
+
+  <div class="actions">
+    <%= f.submit 'Update User'%>
+    <% end %>
+  </div>
+
+
   <div class="actions">
     <%= link_to 'Back', user_path(@user) %>
   </div>
+
 </div>
 
 </body>
