@@ -8,10 +8,11 @@
   <div class="home-page">
 
   <!--  here there are boxes and ids were assigned to data photo so i can use it for javascript -->
-
+  <div id="box0" class="box" data-photo="#photo0">Welcome!</div>
     <div id="box1" class="box" data-photo="#photo1">Sign up</div>
     <div id="box2" class="box" data-photo="#photo2">Pack up</div>
     <div id="box3" class="box" data-photo="#photo3">Ready to go!</div>
+
 
 <!-- here there are the ids for the actual pictures! added a class for each photo and a class for all of them -->
 
@@ -30,9 +31,23 @@
     <div id="photo1" class="photo">
 
       <img class="text-logo">  </img>
+      <!-- <p><img class="signingup"></img><p> -->
+    <!-- <%= video_tag "mainpage.mp4", :size => "100%", :controls => true %> -->
 
+    <div class="video-container">
+  <%= video_tag("mainpage.mp4", alt: "Leisure", autoplay: true, loop: true, :class =>'video') %>
+</div>
 
     </div>
+
+
+    <div id="photo0" class="photo">
+
+      <img class="text-logo">  </img>
+
+    </div>
+
+
 
 
   </div>

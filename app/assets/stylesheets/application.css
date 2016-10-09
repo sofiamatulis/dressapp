@@ -150,9 +150,17 @@ body {
 }
 
 /*each picture*/
-#photo1 {
+
+
+#photo0 {
   background-image:url('http://66.media.tumblr.com/0ce0c810c39a0c6bf48a60b324dcb173/tumblr_nhoch8HjT61r9c6lmo1_1280.jpg');
+
 }
+#photo1 {
+  background-image: url('http://images.all-free-download.com/images/graphiclarge/plain_white_background_211387.jpg');
+}
+
+
 
 #photo2 {
   background-image:url('http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg');
@@ -163,6 +171,11 @@ body {
 }
 
 /*position of the boxes*/
+
+#box0 {
+  left:200px;
+  margin-top:200px;
+}
 
 #box1 {
   left:250px;
@@ -182,3 +195,17 @@ body {
    margin-left:20px
 
  }
+
+
+
+
+.video-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: 25%;
+  height: 25%;
+  z-index: -100;
+}
