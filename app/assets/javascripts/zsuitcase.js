@@ -16,7 +16,8 @@ $( document ).on('turbolinks:load', function() {
     $("#open-nav").html("Open Suitcase");
     $('#outfit-checker').fadeOut(100);
     $('.side-nav-buttons').fadeOut(100);
-    $('#suitcase-side-nav').css("overflow-x", "hidden");
+    $('#view-all-in-suitcase-container').fadeOut(100);
+    $('#items-grid-container').fadeOut(100);
     document.getElementById("suitcase-side-nav").style.width = "0";
     document.getElementById("suitcase-main").style.marginLeft= "0";
     $("#sortable1").removeClass("is-open");
@@ -87,6 +88,7 @@ function createSlider() {
     $("#add-items").css("display", "none");
     $("#outfit-checker-button").css("display", "inline-block");
     $("#view-all-in-suitcase-container").css("display", "none");
+    $('#items-grid-container').fadeIn(100);
     $(".suitcase-destination").addClass("small");
     $.ajax({
       url: '/items',
