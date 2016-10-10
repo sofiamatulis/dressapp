@@ -4,6 +4,8 @@ $( document ).on('turbolinks:load', function() {
 // opening suitcase
   $("#open-nav").on('click', function() {
     $(".outfit").trigger("click");
+    $('#outfit-checker').fadeIn(100);
+    $('.side-nav-buttons').fadeIn(100);
     document.getElementById("suitcase-side-nav").style.width = "40%";
     document.getElementById("suitcase-main").style.marginLeft = "40%";
     $("#sortable1").addClass("is-open");
@@ -12,6 +14,8 @@ $( document ).on('turbolinks:load', function() {
 // closing nav
   $("#close-nav").on('click', function() {
     $("#open-nav").html("Open Suitcase");
+    $('#outfit-checker').fadeOut(100);
+    $('.side-nav-buttons').fadeOut(100);
     $('#suitcase-side-nav').css("overflow-x", "hidden");
     document.getElementById("suitcase-side-nav").style.width = "0";
     document.getElementById("suitcase-main").style.marginLeft= "0";
@@ -29,25 +33,33 @@ $( document ).on('turbolinks:load', function() {
 // creates the carousel
 function createSlider() {
     $('.tops-container').slick( {
-      centerMode: true,
+      initialSlide: 0,
+      slidesToShow: 1,
+      slidesToScroll: 1,
       prevArrow: '<span class="arrow-left outfit"><</span>',
       nextArrow: '<span class="arrow-right outfit">></span>',
     });
 
     $('.bottoms-container').slick( {
-      centerMode: true,
+      initialSlide: 0,
+      slidesToShow: 1,
+      slidesToScroll: 1,
       prevArrow: '<span class="arrow-left outfit"><</span>',
       nextArrow: '<span class="arrow-right outfit">></span>',
     });
 
     $('.dresses-container').slick( {
-      centerMode: true,
+      initialSlide: 0,
+      slidesToShow: 1,
+      slidesToScroll: 1,
       prevArrow: '<span class="arrow-left outfit"><</span>',
       nextArrow: '<span class="arrow-right outfit">></span>',
     });
 
     $('.shoes-container').slick( {
-      centerMode: true,
+      initialSlide: 0,
+      slidesToShow: 1,
+      slidesToScroll: 1,
       prevArrow: '<span class="arrow-left outfit"><</span>',
       nextArrow: '<span class="arrow-right outfit">></span>',
     });
@@ -131,7 +143,7 @@ function createSlider() {
 
 // resets the outfit checker when you click "outfit checker" button
   $('#outfit-checker-button').on('click', function() {
-    $(".outfit").trigger("click");
+    // $(".outfit").trigger("click");
     $("#items-grid-container" ).empty();
     $(".outfit-checker-container").css("display", "block");
     $("#outfit-checker-button").css("display", "none");
@@ -160,13 +172,13 @@ function createSlider() {
       $("#tops").css("display", "none");
       $("#bottoms").css("display", "none");
       $("#dresses").css("display", "block");
-      $(".outfit").trigger("click");
+      // $(".outfit").trigger("click");
       // $(this).hide();
       // $(".tops-bottoms").show();
     });
 // tops/bottoms button
     $(".tops-bottoms").on('click', function() {
-      $(".outfit").trigger("click");
+      // $(".outfit").trigger("click");
       $("#dresses").css("display", "none");
       $("#tops").css("display", "block");
       $("#bottoms").css("display", "block");
