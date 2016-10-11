@@ -57,7 +57,31 @@
 <% else %>
   <%= form_tag multi_path, :id => "submit-multi" do %>
 
-  <ul class="wardrobe-item-container">
+
+
+<ul class="wardrobe-item-container">
+
+    <% @wardrobe.items.each_slice(4) do |slice| %>
+    <div class="row">
+      <% slice.each do |item| %>
+      <div class="small-6 large-3 columns">
+      <div class="wardrobe-item">
+      <label class="selectd-item">
+        <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
+        <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
+      </label>
+      <li class="item-details"><%= item.name %></li>
+      <li class="item-details"><%= item.description %></li>
+      <!-- <%# end %> -->
+    </div>
+  </div>
+    <% end %>
+  </div>
+    <% end %>
+</ul>
+
+
+  <!-- <ul class="wardrobe-item-container">
     <% @wardrobe.items.each do |item| %>
     <div class="wardrobe-item">
       <label class="selectd-item">
@@ -68,11 +92,14 @@
       <li class="item-details"><%= item.description %></li>
     </div>
     <% end %>
-  </ul>
+  </ul> -->
 
   <ul class="filtered-tops">
-    <% @wardrobe.items.each do |item| %>
+    <% @wardrobe.items.each_slice(4) do |slice| %>
+    <div class="row">
+      <% slice.each do |item| %>
       <% if item.category.category == "Top" %>
+      <div class="small-6 large-3 columns">
       <div class="wardrobe-item">
         <label class="selectd-item">
         <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
@@ -81,13 +108,19 @@
         <li class="item-details"><%= item.name %></li>
         <li class="item-details"><%= item.description %></li>
       </div>
+    </div>
+    <% end %>
       <% end %>
+    </div>
     <% end %>
    </ul>
 
   <ul class="filtered-bottoms">
-    <% @wardrobe.items.each do |item| %>
+    <% @wardrobe.items.each_slice(4) do |slice| %>
+    <div class="row">
+      <% slice.each do |item| %>
       <% if item.category.category == "Bottom" %>
+      <div class="small-6 large-3 columns">
       <div class="wardrobe-item">
         <label class="selectd-item">
         <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
@@ -96,13 +129,19 @@
         <li class="item-details"><%= item.name %></li>
         <li class="item-details"><%= item.description %></li>
       </div>
+    </div>
       <% end %>
     <% end %>
+  </div>
+  <% end %>
   </ul>
 
   <ul class="filtered-dresses">
-    <% @wardrobe.items.each do |item| %>
+    <% @wardrobe.items.each_slice(4) do |slice| %>
+    <div class="row">
+      <% slice.each do |item| %>
       <% if item.category.category == "Dresses" %>
+      <div class="small-6 large-3 columns">
       <div class="wardrobe-item">
         <label class="selectd-item">
         <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
@@ -111,13 +150,19 @@
         <li class="item-details"><%= item.name %></li>
         <li class="item-details"><%= item.description %></li>
       </div>
+    </div>
       <% end %>
     <% end %>
+  </div>
+  <% end %>
   </ul>
 
   <ul class="filtered-shoes">
-    <% @wardrobe.items.each do |item| %>
+    <% @wardrobe.items.each_slice(4) do |slice| %>
+    <div class="row">
+      <% slice.each do |item| %>
       <% if item.category.category == "Shoes" %>
+      <div class="small-6 large-3 columns">
       <div class="wardrobe-item">
         <label class="selectd-item">
         <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
@@ -126,8 +171,11 @@
         <li class="item-details"><%= item.name %></li>
         <li class="item-details"><%= item.description %></li>
       </div>
+    </div>
       <% end %>
     <% end %>
+  </div>
+  <% end %>
   </ul>
 
 
