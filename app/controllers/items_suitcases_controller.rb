@@ -20,9 +20,17 @@ class ItemsSuitcasesController < ApplicationController
 
     params['items'].each do |item|
       @suitcase.items << Item.find(item)
-  end
+    end
   redirect_to suitcase_path(@suitcase)
-end
+  end
+
+  def destroy
+    @suitcase = Suitcase.find(params[:id])
+    params['items'].each do |item|
+      @suitcase.items.delete(Item.find(item))
+    redirect_to suitcase_path(@suitcase)
+    end
+  end
 
 
 end

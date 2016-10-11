@@ -50,13 +50,19 @@
       </div>
 
       <div id="view-all-in-suitcase-container">
-        <% @suitcase.items.each do |item| %>
-          <div class="view-all-items">
-            <label class="selected-item">
-              <span class="clothes-item"><%= image_tag(item.image) %></span>
-              <span class="clothes-item check-box"><%= check_box_tag "items[#{item.id}]"%></span>
-            </label>
-          </div>
+        <%= form_tag items_suitcases_path do %>
+          <% @suitcase.items.each do |item| %>
+            <div class="view-all-items">
+              <label class="selected-item">
+                <span class="clothes-item"><%= image_tag(item.image) %></span>
+                <span class="clothes-item check-box"><%= check_box_tag "items[#{item.id}]"%></span>
+              </label>
+
+              <div class="remove-items-container">
+               <%= button_to "Delete Item(s)", {:controller => :items_suitcases, :action => 'destroy', :item_id => item.id, :class => 'button remove-item'}, :method => :delete  %>
+              </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
 
