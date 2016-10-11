@@ -23,7 +23,7 @@
   <ul class="allwardrobe">
     <% @user.wardrobes.each do |wardrobe| %>
       <li class="mywardrobe">
-      <a>  <%= link_to wardrobe.name, wardrobe_path(wardrobe), :id =>"name-wardrobe"%></a><br>
+       <%= link_to wardrobe.name, wardrobe_path(wardrobe), :id =>"name-wardrobe"%><br>
       </li>
     <% end %>
   </ul>

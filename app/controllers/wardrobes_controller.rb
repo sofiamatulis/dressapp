@@ -60,7 +60,7 @@ class WardrobesController < ApplicationController
   def destroy
     @wardrobe = Wardrobe.find(params[:id])
     @wardrobe.destroy
-    redirect_to wardrobe_path
+    redirect_to user_path
   end
 
   private
