@@ -50,9 +50,15 @@
       </div>
 
       <div id="view-all-in-suitcase-container">
-          <% @suitcase.items.each_with_index do |item, index| %>
-            <span class="clothes-item"><%= image_tag(item.image) %></span>
-          <% end %>
+        <% @suitcase.items.each do |item| %>
+          <div class="view-all-items">
+            <label class="selected-item">
+              <span class="clothes-item"><%= image_tag(item.image) %></span>
+              <span class="clothes-item check-box"><%= check_box_tag "items[#{item.id}]"%></span>
+            </label>
+          </div>
+        <% end %>
       </div>
+
     </div>
   </div>
