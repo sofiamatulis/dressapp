@@ -22,6 +22,7 @@ $( document ).on('turbolinks:load', function() {
     document.getElementById("suitcase-main").style.marginLeft= "0";
     $("#sortable1").removeClass("is-open");
     $(".suitcase-destination").removeClass("small");
+    // resetting the defaults
     setTimeout( function() {
       $("#items-grid-container" ).empty();
       $(".outfit-checker-container").css("display", "block");
@@ -145,7 +146,7 @@ function createSlider() {
 
 // resets the outfit checker when you click "outfit checker" button
   $('#outfit-checker-button').on('click', function() {
-    // $(".outfit").trigger("click");
+    $(".outfit").trigger("click");
     $("#items-grid-container" ).empty();
     $(".outfit-checker-container").css("display", "block");
     $("#outfit-checker-button").css("display", "none");
@@ -171,16 +172,16 @@ function createSlider() {
 
     // dresses/onesies button
     $(".dress-button").on('click', function() {
+      $(".outfit").trigger("click");
       $("#tops").css("display", "none");
       $("#bottoms").css("display", "none");
       $("#dresses").css("display", "block");
-      // $(".outfit").trigger("click");
       // $(this).hide();
       // $(".tops-bottoms").show();
     });
 // tops/bottoms button
     $(".tops-bottoms").on('click', function() {
-      // $(".outfit").trigger("click");
+      $(".outfit").trigger("click");
       $("#dresses").css("display", "none");
       $("#tops").css("display", "block");
       $("#bottoms").css("display", "block");
