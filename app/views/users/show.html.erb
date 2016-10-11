@@ -23,8 +23,17 @@
   <ul class="allwardrobe">
     <% @user.wardrobes.each do |wardrobe| %>
       <li class="mywardrobe">
-       <%= link_to wardrobe.name, wardrobe_path(wardrobe), :id =>"name-wardrobe"%><br>
+       <%#= link_to wardrobe.name, wardrobe_path(wardrobe), :id =>"name-wardrobe"%>
+
+       <!-- <br> -->
+
+       <!-- PREVIEW  -->
+
+       <%= link_to wardrobe.name, wardrobe_path(wardrobe), :id =>"name-wardrobe"%> <div class="mybox"><iframe src="/wardrobes/<%= wardrobe.id%>/thumbnail/" width = "250px" height = "250px"></iframe></div>
+
       </li>
+
+
     <% end %>
   </ul>
  <button id="new-wardrobe">Create New Wardrobe</button>
@@ -73,9 +82,3 @@
 
   </div>
 </body>
-
-
-
-
-
-<!--  -->

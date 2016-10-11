@@ -8,9 +8,13 @@ root 'users#home'
   post 'items_suitcases/create_multi' => 'items_suitcases#create_multi', as: 'multi'
 
   resources :users
-  resources :wardrobes
+  resources :wardrobes do
+        get 'thumbnail', on: :member
+    end
+    
   resources :items
   resources :suitcases
+
 
 
 

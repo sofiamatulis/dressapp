@@ -63,6 +63,23 @@ class WardrobesController < ApplicationController
     redirect_to user_path(session[:user_id])
   end
 
+  def thumbnail
+
+    @wardrobe = Wardrobe.find(params[:id])
+    unless session[:user_id] == @wardrobe.user_id
+     flash[:notice] = "You don't have access to that wardrobe!"
+     redirect_to user_path(session[:user_id])
+     return
+   end
+  #  @item = Item.new(:wardrobe_id => params[:id])
+   respond_to do |format|
+     format.html
+     format.json { render json: {item: @item.to_json, users: @users,category: @category, wardrobe: @wardrobes.to_json }}
+   end
+   @suitcases = current_user.suitcases
+
+  end
+
   private
 
   def wardrobe_params
