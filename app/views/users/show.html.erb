@@ -46,7 +46,7 @@
     <ul class="allsuitcase">
       <% @user.suitcases.each do |suitcase| %>
         <li class="mysuitcase">
-        <a>  <%= link_to suitcase.name, suitcase_path(suitcase) %></a><br>
+          <%= link_to suitcase.name, suitcase_path(suitcase) %><br>
         </li>
       <% end %>
     </ul>
