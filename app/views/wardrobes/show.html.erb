@@ -8,7 +8,7 @@
 <!-- Filter items -->
 <div class="filter-nav">
   <div id="filter-left">
-    <p class="back-button"><%= link_to "Back", user_path %> | <%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe) %> |
+    <p class="back-button"><%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe) %> |
     <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"} %></p>
   </div>
   <div id="filter-right">
