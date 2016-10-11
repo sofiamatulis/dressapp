@@ -80,7 +80,7 @@ class WardrobesController < ApplicationController
 
   #  @items = Item.find(:all, :order => "id desc", :limit => 5)
 
-   @items = Item.last(2)
+   @items = Item.last(1)
 
 
 
