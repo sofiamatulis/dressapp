@@ -43,10 +43,8 @@
 
 
 <% if @wardrobe.items.length == 0 %>
-  <h3 class="item-details">You don't have any clothes in this wardrobe right now</h3>
-  <%= button_tag :name => 'wardrobe_id', value: @wardrobe.id, :class => 'button add-item' do %>
-    <%= "Add more items" %>
-  <% end %>
+  <h3 class="no-items">You don't have any clothes in this wardrobe right now</h3>
+
   <div class="wardrobe-item-container">
     <ul class="wardrobe-item">
     </ul>

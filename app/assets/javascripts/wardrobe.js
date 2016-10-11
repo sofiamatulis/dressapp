@@ -29,6 +29,7 @@ $( document ).on('turbolinks:load', function() {
       },
 
       done: function (e, data) {
+        $('.no-items').remove();
         // console.log("INSIDE FILE UPLOADED 'DONE'");
         var responseData = data._response.result;
         // console.log(responseData);
