@@ -58,6 +58,8 @@ $( document ).on('turbolinks:load', function() {
       $('#country').click( function(event){notError1(event)});
       $('#city').click( function(event){notError1(event)});
       $('#create-suitcase').click( function(event){notError1(event)});
+      $('.easy-autocomplete-container').click( function(event){notError1(event)});
+
 
 
       function notError1(event){
