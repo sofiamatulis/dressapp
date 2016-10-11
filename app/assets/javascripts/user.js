@@ -146,6 +146,11 @@ $( document ).on('turbolinks:load', function() {
         });
   }
 
+  // $('.name-wardrobe').hover(function() {
+  //     $('.mybox').show();
+  // }, function() {
+  //     $('.mybox').hide();
+  // });
 
 
 

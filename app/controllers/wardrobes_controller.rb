@@ -71,12 +71,19 @@ class WardrobesController < ApplicationController
      redirect_to user_path(session[:user_id])
      return
    end
-  #  @item = Item.new(:wardrobe_id => params[:id])
+   @item = Item.new(:wardrobe_id => params[:id])
    respond_to do |format|
      format.html
      format.json { render json: {item: @item.to_json, users: @users,category: @category, wardrobe: @wardrobes.to_json }}
    end
    @suitcases = current_user.suitcases
+
+  #  @items = Item.find(:all, :order => "id desc", :limit => 5)
+
+   @items = Item.last(2)
+
+
+
 
   end
 
