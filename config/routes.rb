@@ -4,7 +4,11 @@ root 'users#home'
 
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :items_suitcases, only: [:create, :destroy]
+  resources :items_suitcases, only: [:create, :destroy] do
+    collection do
+      delete 'destroy_multiple'
+    end
+  end
   post 'items_suitcases/create_multi' => 'items_suitcases#create_multi', as: 'multi'
 
   resources :users
