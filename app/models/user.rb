@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  attr_accessor: :image_file_name
 
   has_attached_file :image
 
