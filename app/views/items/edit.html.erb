@@ -1,3 +1,45 @@
 <h1>Edit Item</h1>
-<%= render 'form' %>
+<%#= render 'form' %>
+
+<%= form_for @item, :html => {:id => "modal-form"} do |f| %>
+
+<%if @item.errors.any? %>
+  <div id="error explanation">
+    <h2><%= pluralize(@item.errors.count, "error(s)") %> prohibited this item from being saved:</h2>
+
+    <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <%end%>
+    </ul>
+  </div>
+  <% end %>
+  <button type="button" class="close">x</button>
+  <div class="field">
+    <%= f.text_field :name, :placeholder => 'Name'%>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :description, :placeholder => 'Description' %>
+  </div>
+
+  <%= f.label :image, :class => "image-label"%>
+  <div class="field">
+    <%= f.file_field :image, id: 'fileupload' %>
+  </div>
+
+  <%= f.label :category_id, :class => 'category-label' %>
+  <div class="field">
+    <%= collection_select(:item, :category_id, Category.all, :id, :category ) %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :wardrobe_id %>
+  </div>
+
+  <%= f.submit "Update Item", id: "item-create" %>
+  <%#= f.submit "Add Item", id: "create-item" %>
+<% end %>
+
+
 <%= link_to "Back", item_path(@item) %>

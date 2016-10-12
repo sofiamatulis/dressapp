@@ -38,14 +38,15 @@
   padding: 5px 8px;
   cursor: pointer;
   color: #fff;
-  // background-color: lightblue;
   font-family: 'Open Sans', sans-serif;
-  // border: 0.2px solid #fff;
-  // box-shadow: 2px 2px 5px #AFE9FF;
   transition-duration: 0.5s;
   margin-left:28px;
   width:auto;
   height:90px;
+}
+
+#name-wardrobe {
+  color:black;
 }
 
 
@@ -300,4 +301,21 @@ color: #AFE9FF;
   #city{
     position: relative;
     top: -6px;
+  }
+
+
+  
+  .mybox{
+      display: none;
+      position:relative;
+      z-index:10;
+      max-width: 265px;
+
+
+
+  }
+
+  a:hover + .mybox,.mybox:hover{
+      display: block;
+
   }

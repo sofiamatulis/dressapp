@@ -18,18 +18,15 @@
   position: relative;
 }
 
-.filtered-tops {
-  display: inline;
-}
 
 h1 {
   text-align: center;
 }
 
-.item-details img {
-  width: 200px;
-  height: auto;
-}
+// .item-details img {
+//   width: 200px;
+//   height: auto;
+// }
 
 .item-details {
   list-style-type: none;
@@ -92,25 +89,13 @@ h1 {
   width: 50%;
   display: inline-block;
 }
-//
-// .filtered-bottoms {
-//   display: none;
+
+// .wardrobe-item {
+//   // display: inline-block;
+//   width: 25%;
+//   float: left;
+//   padding-top: 25px;
 // }
-//
-// .filtered-shoes {
-//   display: none;
-// }
-
-.wardrobe-item {
-  // display: inline-block;
-  width: 25%;
-  float: left;
-  padding-top: 25px;
-}
-
-.category-dropdown {
-
-}
 
 .filter-header{
   text-align: center;
@@ -180,11 +165,17 @@ h1 {
 
 .filtered-shoes {
  display: none;
+
 }
 
 .filtered-tops {
  display: none;
+   //display: inline;
 }
 // .check-box{
 //   display: none;
 // }
+
+.column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+    float: left;
+}

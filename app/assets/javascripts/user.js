@@ -58,6 +58,8 @@ $( document ).on('turbolinks:load', function() {
       $('#country').click( function(event){notError1(event)});
       $('#city').click( function(event){notError1(event)});
       $('#create-suitcase').click( function(event){notError1(event)});
+      $('.easy-autocomplete-container').click( function(event){notError1(event)});
+
 
 
       function notError1(event){
@@ -143,5 +145,42 @@ $( document ).on('turbolinks:load', function() {
           });
         });
   }
+
+
+//hover function
+
+
+
+
+
+  $('.name-wardrobe').hover(function(){
+
+
+    var mybox = $(this).parent("li.mywardrobe").find('.mybox');
+    // console.log('start');
+
+    $.ajax({
+
+      url:'/wardrobes/' + 32 + '/thumbnail',
+      method:'GET',
+      dataType: "html",
+
+    }).done(function(wardrobe){
+        // console.log('done');
+         mybox.html(wardrobe);
+         mybox.show();
+        // console.log(wardrobe);
+
+
+
+      });
+
+  }, function() {
+    var mybox = $(this).parent("li.mywardrobe").find('.mybox');
+      mybox.hide();
+
+    });
+
+
 
 });

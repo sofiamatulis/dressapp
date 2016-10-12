@@ -60,7 +60,29 @@ class WardrobesController < ApplicationController
   def destroy
     @wardrobe = Wardrobe.find(params[:id])
     @wardrobe.destroy
-    redirect_to wardrobe_path
+    redirect_to user_path(session[:user_id])
+  end
+
+  def thumbnail
+
+    @wardrobe = Wardrobe.find(params[:id])
+    unless session[:user_id] == @wardrobe.user_id
+     flash[:notice] = "You don't have access to that wardrobe!"
+     redirect_to user_path(session[:user_id])
+     return
+   end
+   @items = Item.last(1)
+
+  #  @item = Item.new(:wardrobe_id => params[:id])
+      # render json: {item: @item.to_json, users: @users,category: @category, wardrobe: @wardrobes.to_json}
+   @suitcases = current_user.suitcases
+   render partial: 'thumbnail'
+
+
+
+
+
+
   end
 
   private

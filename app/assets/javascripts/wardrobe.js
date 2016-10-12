@@ -1,5 +1,6 @@
 $( document ).on('turbolinks:load', function() {
 
+
   // function to get modal and form to add item
   $('.add-item').on('click', function(e){
     $('.modal-item').fadeIn();
@@ -26,6 +27,7 @@ $( document ).on('turbolinks:load', function() {
           data.submit();
         });
       },
+
       done: function (e, data) {
         // console.log("INSIDE FILE UPLOADED 'DONE'");
         var responseData = data._response.result;
@@ -40,8 +42,16 @@ $( document ).on('turbolinks:load', function() {
         var checkBoxTag = $('<li class="item-details check-box">').appendTo(label);
         var itemContainer = $('<div class="wardrobe-item">').append(label, name, description);
         $(itemContainer).appendTo('.wardrobe-item-container');
-      }
+        $("#modal-form")[0].reset();
+
+
+    }
+
+
     });
+
+
+
   });
 
   $('#drop-down-show').on('click', function(){
@@ -49,6 +59,7 @@ $( document ).on('turbolinks:load', function() {
     $('.item-link').removeAttr('href');
     $('.selectd-item').find('img').click(function(){
       $(this).toggleClass('item-selected');
+
     });
   });
 
