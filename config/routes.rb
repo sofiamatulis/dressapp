@@ -15,9 +15,10 @@ root 'users#home'
   resources :wardrobes do
         get 'thumbnail', on: :member
     end
-    
+
   resources :items
   resources :suitcases
+  resources :categories, only: [:show]
 
 
 

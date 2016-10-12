@@ -10,7 +10,8 @@ class CategoriesController < ApplicationController
     @users    = User.all
     respond_to do |format|
       format.html
-      format.json { render json: {items: @items, users: @users,category: @category, wardrobe: @wardrobes,suitcase: @suitcases }}
+      format.json {render json: @items}
+      # format.json { render json: {items: @items, users: @users,category: @category, wardrobe: @wardrobes,suitcase: @suitcases }}
     end
   end
 
