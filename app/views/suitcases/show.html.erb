@@ -50,9 +50,20 @@
       </div>
 
       <div id="view-all-in-suitcase-container">
-          <% @suitcase.items.each_with_index do |item, index| %>
-            <span class="clothes-item"><%= image_tag(item.image) %></span>
+        <%= form_tag destroy_multiple_items_suitcases_path, id: "delete-suitcase-item", method: :delete do %>
+          <% @suitcase.items.each do |item| %>
+            <div class="view-all-items">
+              <label class="selected-item">
+                <span><%= image_tag(item.image) %></span>
+                <span class="check-box"><%= check_box_tag "items[]", item.id %></span>
+              </label>
+            </div>
+            <% end %>
+          <%= button_tag(type: 'submit', :name => 'suitcase_id', :value => @suitcase.id, :class => 'delete-button' ) do %>
+            Delete Selected
           <% end %>
+        <% end %>
       </div>
+
     </div>
   </div>
