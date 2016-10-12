@@ -59,13 +59,15 @@
 
   <div class="dropdown">
     <ul class="category-dropdown">
-      <% @suitcases.each do |suitcase| %>
-      <%= collection_select :item, :suitcase_ids, @suitcases, :id, :name, :include_blank => "Select item then suitcase" %>
-      <% end %>
+
+      <%#= collection_select :item, :suitcase_ids, @suitcases, :id, :name, :include_blank => "Select item then suitcase" %>
+      <!-- <%# @suitcases.each do |suitcase| %> -->
+      <!-- <%# end %> -->
+
     </ul>
-    <%= button_tag(type: 'submit', :name => 'suitcase_id', value: @suitcase.id, :class => "suitcases-button") do %>
-    <%= "Add!" %>
-    <% end %>
+    <%#= button_tag(type: 'submit', :name => 'suitcase_id', value: @suitcase.id, :class => "suitcases-button") do %>
+    <%#= "Add!" %>
+    <%# end %>
   </div>
 
 
@@ -203,9 +205,8 @@
   </div>
 </div>
 
-<!-- <<<<<<< HEAD
-=======
-<p class="back-button"><%#= link_to "Back", user_path %> | <%#= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe) %> |
+
+<!-- <p class="back-button"><%#= link_to "Back", user_path %> | <%#= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe) %> |
   <%#= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"} %></p>
   <%#= button_tag :name => 'wardrobe_id', value: @wardrobe.id, :class => 'button add-item' do %>
     <%#= "Add more items" %>
@@ -213,8 +214,7 @@
 
   <%#= button_tag :id => 'drop-down-show' do %>
     <%#= "Add to suitcase" %>
-  <%# end %>
->>>>>>> c41d4a35c920bc7ff1ce93a0059099ba023bab1e -->
+  <%# end %> -->
 
 
 </body>

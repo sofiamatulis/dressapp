@@ -161,7 +161,7 @@ $( document ).on('turbolinks:load', function() {
 
     $.ajax({
 
-      url:'/wardrobes/' + 32 + '/thumbnail',
+      url:'/wardrobes/' + 35 + '/thumbnail',
       method:'GET',
       dataType: "html",
 
