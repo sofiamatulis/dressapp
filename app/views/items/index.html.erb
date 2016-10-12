@@ -4,19 +4,7 @@
 
 <h1 id="searching">Search Results</h1>
 
-
-<ul class="wardrobe-item-container">
-  <% @items.each do |item| %>
-  <div class="wardrobe-item">
-    <label class="selectd-item">
-      <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
-      <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
-    </label>
-    <!-- <li class="item-details"><#%= item.name %></li> -->
-    <!-- <li class="item-details"><#%= item.description %></li> -->
-  </div>
-  <% end %>
-</ul>
+<div id="search-items"><%= render 'wardrobes/items' %></div>
 
 
 <p class="back-button"><%= link_to "Back", wardrobe_path(current_user) %></p>
