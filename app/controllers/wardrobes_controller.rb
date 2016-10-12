@@ -41,7 +41,7 @@ class WardrobesController < ApplicationController
      format.json { render json: {item: @item.to_json, users: @users,category: @category, wardrobe: @wardrobes.to_json }}
    end
    @suitcases = current_user.suitcases
-   @suitcase = Suitcase.find(params[:id])
+  # @suitcase = Suitcase.find(params[:id])
   end
 
   def edit
