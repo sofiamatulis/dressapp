@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
 
-  has_attached_file :image, default_url: 'http://lorempixel.com/g/200/200/'
+  has_attached_file :image
 
 
   has_many :wardrobes
