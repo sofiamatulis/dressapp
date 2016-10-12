@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @suitcases = current_user.suitcases
+    
   end
 
   def new

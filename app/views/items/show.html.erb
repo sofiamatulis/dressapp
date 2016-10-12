@@ -14,7 +14,18 @@
         <div class="dropdown">
         <button class="add-to-suitcase">Add to suitcase</button>
         <ul class="suitcase-dropdown">
-  
+  <%= form_tag items_suitcases_path do %>
+   <!-- <div class="dropdown">
+     <ul class="category-dropdown"> -->
+       <%= collection_select :suitcase_id, :id, @suitcases, :id, :name%>
+       <!-- <%# @suitcases.each do |suitcase| %> -->
+       <!-- <%# end %> -->
+     </ul>
+     <%= button_tag(type: 'submit', :name => 'item_id', value: @item.id ) do %>
+     <%= "Add!" %>
+     <% end %>
+     <% end %>
+   </div>
         <!-- <% @suitcases.each do |suitcase| %>
         <li><%= link_to "Add to #{suitcase.name}", items_suitcases_path(:item => @item.id, :suitcase => suitcase.id), :method => :post, :class => "category-menu" %></li>
         <% end %> -->

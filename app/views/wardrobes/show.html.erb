@@ -61,11 +61,11 @@
     <ul class="category-dropdown">
       <%= collection_select :item, :suitcase_ids, @suitcases, :id, :name, :include_blank => "Select item then suitcase" %>
       <!-- <%# @suitcases.each do |suitcase| %> -->
-      <%= button_tag(type: 'submit', :name => 'suitcase_id', value: @suitcase.id, :class => "suitcases-button") do %>
-      <%= "Add!" %>
-      <% end %>
       <!-- <%# end %> -->
     </ul>
+    <%= button_tag(type: 'submit', :name => 'suitcase_id', value: @suitcase.id, :class => "suitcases-button") do %>
+    <%= "Add!" %>
+    <% end %>
   </div>
 
 
