@@ -134,9 +134,16 @@ function createSlider() {
             $(".outfit-checker").html(response);
             createSlider();
             // appending the response to the view all page
-            var itemsAdded = $(response).find('.clothes-item');
-            console.log(itemsAdded.length);
-            $("#view-all-in-suitcase-container").html(itemsAdded);
+              $.ajax({
+                url: $(this).attr("href"),
+                method: 'GET',
+                data: {},
+                dataType: 'html'
+              }).done(function(response) {
+                console.log(response);
+                var itemsTotal = $(response).find('form');
+                $("#view-all-in-suitcase-container").html(itemsTotal);
+              });
           });
         }
       }).disableSelection();
