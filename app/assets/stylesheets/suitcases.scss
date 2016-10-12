@@ -374,7 +374,7 @@ h4 {
 #view-all-in-suitcase-container {
   display: none;
   width: 100%;
-  margin: 40px 10px;
+  margin: 0 5%;
 }
 
 #view-all-in-suitcase-container img {
@@ -397,7 +397,7 @@ h4 {
 }
 
 .main-buttons {
-  width: 60%;
+  width: 55%;
   display: inline-block;
   position: relative;
   float: right;
@@ -406,4 +406,28 @@ h4 {
 
 .view-all-items {
   display: inline-block;
+}
+
+.delete-button {
+  position: absolute;
+  top: 40px;
+  display: inline-block;
+  left: 46.5%;
+  padding: 3px;
+  border-radius: 3px;
+  font-family: 'Open Sans', SANS-SERIF;
+  font-size: 13px;
+}
+
+.check-box input#items_ {
+  border-radius: 0;
+  font-size: 15px;
+  padding: 5px 8px;
+  cursor: pointer;
+  color: pink;
+  background-color: lightblue;
+  font-family: 'Open Sans', sans-serif;
+  border: 0px solid;
+  transition-duration: 0.5s;
+  box-shadow: 2px;
 }
