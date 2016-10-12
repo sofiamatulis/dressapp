@@ -6,29 +6,28 @@
 
 <!-- Back/edit/delete buttons -->
 <!-- Filter items -->
-<div class="filter-nav">
-  <div id="filter-left">
-    <p class="back-button"><%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe) %> |
-    <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"} %></p>
+<div class="row">
+  <div class="search-bar small-12 large-4 columns">
+    <%= form_tag(items_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
+    <%= submit_tag "Search", :name => nil, :id => "search-button" %>
+    <% end %>
   </div>
-  <div id="filter-right">
+
+<div class="filter-nav small-12 large-4 columns">
+  <!-- <div id="filter-right"> -->
    <a id="all-items">All</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
    <a id="top-filter">Tops</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
    <a id="bottom-filter">Bottoms</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
    <a id="shoe-filter">Shoes</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
    <a id="dress-filter">Dresses</a>
- </div>
+ <!-- </div> -->
+</div>
 </div>
 
 <!-- Search items -->
-<div class="search-bar">
-  <%= form_tag(items_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
-  <%= submit_tag "Search", :name => nil, :id => "search-button" %>
-  <% end %>
-</div>
-
-<div class="adding-items">
+<div class="row">
+<div class="small-12 large-centered columns adding-items">
   <div class="add-more-container">
    <%= button_tag :name => 'wardrobe_id', value: @wardrobe.id, :class => 'button add-item' do %>
      <%= "Add more items" %>
@@ -39,6 +38,7 @@
      <%= "Add to suitcase" %>
    <% end %>
  </div>
+</div>
 </div>
 
 
@@ -55,6 +55,16 @@
 <% else %>
   <%= form_tag multi_path, :id => "submit-multi" do %>
 
+  <div class="dropdown">
+    <ul class="category-dropdown">
+      <%= collection_select :item, :suitcase_ids, @suitcases, :id, :name, :include_blank => "Select item then suitcase" %>
+      <!-- <%# @suitcases.each do |suitcase| %> -->
+      <%= button_tag(type: 'submit', :name => 'suitcase_id', value: @suitcase.id, :class => "suitcases-button") do %>
+      <%= "Add!" %>
+      <% end %>
+      <!-- <%# end %> -->
+    </ul>
+  </div>
 
 
 <ul class="wardrobe-item-container">
@@ -177,15 +187,6 @@
   </ul>
 
 
-  <div class="dropdown">
-    <ul class="category-dropdown">
-      <% @suitcases.each do |suitcase| %>
-      <%= button_tag(type: 'submit', :name => 'suitcase_id', value: suitcase.id) do %>
-        <%= suitcase.name %>
-      <% end %>
-      <% end %>
-    </ul>
-  </div>
   <% end %>
 
   <div class="modal-item">
@@ -193,6 +194,12 @@
   </div>
 
 <% end %>
+<div class="row">
+<div class="modify-buttons large-12 columns">
+  <p class="back-button"><%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe) %> |
+    <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"} %></p>
+  </div>
+</div>
 
 <!-- <<<<<<< HEAD
 =======

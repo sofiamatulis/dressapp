@@ -47,12 +47,7 @@ $( document ).on('turbolinks:load', function() {
 
 
     }
-
-
     });
-
-
-
   });
 
   $('#drop-down-show').on('click', function(){

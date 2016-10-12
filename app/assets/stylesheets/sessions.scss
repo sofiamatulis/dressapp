@@ -4,7 +4,7 @@
 
 
 
-  .log-in-form, #user-form, .wardrobe-name, #search-form {
+  .log-in-form, #user-form{
     font-family: 'Open Sans', sans-serif;
     margin:auto;
     margin-top: 8%;
@@ -139,11 +139,8 @@ position:absolute;
 margin-left:-150px;
 }
 
-.back-button {
-  width:600px;
-}
 
-.fakefield, .add-item, #drop-down-show, .back-button {
+.fakefield, .add-item {
   position:relative;
   border-radius: 1px;
   font-size: 15px;
@@ -166,4 +163,22 @@ margin-left:-150px;
   color: #006398;
   border: 1px solid #006398;
   box-shadow: 2px 2px 20px #AFE9FF;
+}
+
+#drop-down-show {
+  position:relative;
+  border-radius: 1px;
+  font-size: 15px;
+  padding: 5px 8px;
+  cursor: pointer;
+  color: #fff;
+
+  font-family: 'Open Sans', sans-serif;
+  border: 0.2px solid #fff;
+
+  transition-duration: 0.5s;
+
+  margin-left:28px;
+
+
 }
