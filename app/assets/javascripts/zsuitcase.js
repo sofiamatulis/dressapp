@@ -141,7 +141,7 @@ function createSlider() {
                 dataType: 'html'
               }).done(function(response) {
                 console.log(response);
-                var itemsTotal = $(response).find('form');
+                var itemsTotal = $(response).find('#delete-suitcase-item');
                 $("#view-all-in-suitcase-container").html(itemsTotal);
               });
           });
