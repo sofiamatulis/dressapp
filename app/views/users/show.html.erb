@@ -6,6 +6,7 @@
 
 
 
+
     <div class="info">
       <!-- <h4 id="email"> -->
         <!-- E-mail: <#%= @user.email %><br /> -->
@@ -23,8 +24,18 @@
   <ul class="allwardrobe">
     <% @user.wardrobes.each do |wardrobe| %>
       <li class="mywardrobe">
-       <%= link_to wardrobe.name, wardrobe_path(wardrobe), :id =>"name-wardrobe"%><br>
+       <%= link_to wardrobe.name, wardrobe_path(wardrobe), :class =>"name-wardrobe"%>
+
+       <br>
+       <div class="mybox" src="/wardrobes/<%= wardrobe.id%>/thumbnail/" width = "250px" height = "250px"></div>
+
+       <!-- PREVIEW  -->
+
+       <%#= link_to wardrobe.name, wardrobe_path(wardrobe), :id =>"name-wardrobe"%>
+
       </li>
+
+
     <% end %>
   </ul>
  <button id="new-wardrobe">Create New Wardrobe</button>
@@ -73,9 +84,3 @@
 
   </div>
 </body>
-
-
-
-
-
-<!--  -->

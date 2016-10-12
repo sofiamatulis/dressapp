@@ -146,4 +146,41 @@ $( document ).on('turbolinks:load', function() {
         });
   }
 
+
+//hover function
+
+
+
+
+
+  $('.name-wardrobe').hover(function(){
+
+
+    var mybox = $(this).parent("li.mywardrobe").find('.mybox');
+    // console.log('start');
+
+    $.ajax({
+
+      url:'/wardrobes/' + 32 + '/thumbnail',
+      method:'GET',
+      dataType: "html",
+
+    }).done(function(wardrobe){
+        // console.log('done');
+         mybox.html(wardrobe);
+         mybox.show();
+        // console.log(wardrobe);
+
+
+
+      });
+
+  }, function() {
+    var mybox = $(this).parent("li.mywardrobe").find('.mybox');
+      mybox.hide();
+
+    });
+
+
+
 });

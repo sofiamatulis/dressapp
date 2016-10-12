@@ -8,10 +8,11 @@
 <!-- Filter items -->
 <div class="row">
   <div class="search-bar small-12 large-4 columns">
-    <%= form_tag(items_path, :method => "get", id: "search-form") do %>
+    <%= form_tag(items_path, remote: true, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
     <%= submit_tag "Search", :name => nil, :id => "search-button" %>
     <% end %>
+
   </div>
 
 <div class="filter-nav small-12 large-4 columns">
@@ -23,6 +24,7 @@
    <a id="dress-filter">Dresses</a>
  <!-- </div> -->
 </div>
+
 </div>
 
 <!-- Search items -->

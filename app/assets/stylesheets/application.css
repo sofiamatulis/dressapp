@@ -80,8 +80,9 @@ a {
 
  .text-logo {
    content:url('logopackapp.png');
-   margin-left:455px;
-   margin-top:-100px;
+   margin-left:645px;
+   margin-top:-10px;
+   width:50%;
 
  }
 
@@ -195,7 +196,6 @@ body {
    margin-left:20px
 
  }*/
-
 
 
 
