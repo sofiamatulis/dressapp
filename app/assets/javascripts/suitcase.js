@@ -169,17 +169,18 @@ function uncreateSlider() {
 
 // resets the outfit checker when you click "outfit checker" button
   $('#outfit-checker-button').on('click', function() {
+    $("#view-all-in-suitcase-container").css("display", "none");
     $("#items-grid-container" ).empty();
+    document.getElementById("suitcase-side-nav").style.width = "40%";
+    document.getElementById("suitcase-main").style.marginLeft = "40%";
     // $(".outfit-checker-container").css("display", "block");
     $('.outfit-checker-container').fadeIn(100);
     createSlider();
     // $(".outfit").trigger("click");
     $("#outfit-checker-button").css("display", "none");
     $("#add-items").css("display", "inline-block");
-    $("#view-all-in-suitcase-container").css("display", "none");
     $(".suitcase-destination").removeClass("small");
-    document.getElementById("suitcase-side-nav").style.width = "40%";
-    document.getElementById("suitcase-main").style.marginLeft = "40%";
+
   });
 
 

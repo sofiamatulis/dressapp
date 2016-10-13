@@ -4,37 +4,44 @@ $( document ).on('ready', function() {
   // creates the carousel
   function createSlider() {
       $('.tops-container').slick( {
-        initialSlide: 0,
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        // initialSlide: 0,
+        // slidesToShow: 1,
+        // slidesToScroll: 1,
         prevArrow: '<span class="arrow-left outfit"><</span>',
         nextArrow: '<span class="arrow-right outfit">></span>',
       });
 
       $('.bottoms-container').slick( {
-        initialSlide: 0,
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        // initialSlide: 0,
+        // slidesToShow: 1,
+        // slidesToScroll: 1,
         prevArrow: '<span class="arrow-left outfit"><</span>',
         nextArrow: '<span class="arrow-right outfit">></span>',
       });
 
       $('.dresses-container').slick( {
-        initialSlide: 0,
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        // initialSlide: 0,
+        // slidesToShow: 1,
+        // slidesToScroll: 1,
         prevArrow: '<span class="arrow-left outfit"><</span>',
         nextArrow: '<span class="arrow-right outfit">></span>',
       });
 
       $('.shoes-container').slick( {
-        initialSlide: 0,
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        // initialSlide: 0,
+        // slidesToShow: 1,
+        // slidesToScroll: 1,
         prevArrow: '<span class="arrow-left outfit"><</span>',
         nextArrow: '<span class="arrow-right outfit">></span>',
       });
     }
+
+    // function uncreateSlider() {
+    //   $('.tops-container').slick('unslick');
+    //   $('.bottoms-container').slick('unslick');
+    //   $('.dresses-container').slick('unslick');
+    //   $('.shoes-container').slick('unslick');
+    // }
 
   $('#view-all-in-suitcase-container').on('submit', 'form', function() {
     setTimeout( function() {
