@@ -28,7 +28,7 @@
             <div class="dresses-container">
               <% @suitcase.items.each_with_index do |item, index| %>
                 <% if item.category.category == "Dresses" %>
-                  <span class="clothes-item"><%= image_tag(item.image) %></span>
+                  <span class="clothes-item"><%= image_tag(item.image, lazy: true) %></span>
                   <% end %>
                 <% end %>
             </div>

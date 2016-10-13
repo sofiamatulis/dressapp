@@ -176,52 +176,68 @@ p, li, a {
   color: #ef766a;
 }
 
+
+// slick carousel added css
+
+h4 {
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Satisfy', cursive;
+}
+// #dresses img {
+//   height: 200px;
+//   width: auto;
+// }
+
+// .clothes-container p {
+//   text-align: center;
+//   font-family: 'Satisfy', cursive;
+// }
+
+// .clothes-images {
+//   display: inline;
+//   position: relative;
+//   // overflow: hidden;
+// }
+
 .clothes-container {
   height: 175px;
   width: 100%;
   // overflow: hidden;
-  transition: margin-left .5s;
-}
-
-.shoes-container {
-  height: 100px;
-  // width: 100%;
-  // overflow: hidden;
-  transition: margin-left .5s;
-}
-
-#shoes {
-  height: 100px;
-  width: 100%;
-  // overflow: hidden;
-  transition: margin-left .5s;
-}
-
-// other items
-
-#dresses {
-  display: none;
-  height: 200px;
-  width: auto;
-  transition: margin-left .5s;
-  margin-bottom: 50px;
-}
-
-#dresses img {
-  height: 200px;
-  width: auto;
-}
-
-.clothes-container p {
-  text-align: center;
-  font-family: 'Satisfy', cursive;
+  // transition: margin-left .5s;
 }
 
 .clothes-container img {
   height: 150px;
   width: auto;
   display: block;
-  margin: auto;
+  // margin: auto;
+}
+
+
+.clothes-items {
+  display: inline;
+  position: relative;
+}
+
+.tops-container, .bottoms-container, .dresses-container {
+  height: 175px;
+  // transition: margin-left .5s;
+}
+
+// .tops-container {
+//   display: none;
+// }
+
+// .tops-container.slick-initialized {
+//   display: block;
+// }
+
+.shoes-container {
+  height: 100px;
+  // width: 100%;
+  // overflow: hidden;
+  // transition: margin-left .5s;
 }
 
 .shoes-container img {
@@ -231,28 +247,26 @@ p, li, a {
   margin: auto;
 }
 
-.clothes-images {
-  display: inline;
-  position: relative;
+#shoes {
+  height: 100px;
+  width: 100%;
   // overflow: hidden;
+  transition: margin-left .5s;
 }
 
-.clothes-items {
-  display: inline;
-  position: relative;
+#dresses {
+  display: none;
+  height: 175px;
+  width: 100%;
+  // transition: margin-left .5s;
+  margin-bottom: 50px;
 }
 
-h4 {
-  text-align: center;
-  font-size: 20px;
-  font-family: 'Satisfy', cursive;
-}
-
-.inner {
-  width: 40%;
-  margin: 0;
-  float: left;
-}
+// .inner {
+//   width: 40%;
+//   margin: 0;
+//   float: left;
+// }
 
 .arrow-left {
   cursor:pointer;
@@ -278,23 +292,6 @@ h4 {
   font-family: 'Sigmar One', cursive;
 }
 
-
-.inactive {
-  // display: none;
-  width: 0;
-}
-
-.active {
-  height: 150px;
-  width: auto;
-  margin: auto;
-  transition: 0.5s;
-}
-
-.bottoms-item {
-  width: 33%;
-}
-
 .draggable {
   display: inline-block;
   width: 60%;
@@ -308,11 +305,6 @@ h4 {
   margin: 0 90px;
 }
 
-// .connectedSortable > ul {
-//   background-color: none !important;
-//   border: none !important;
-// }
-
 .slick-arrow {
   display: none;
 }
@@ -320,6 +312,38 @@ h4 {
 .slick-next:before {
   display: none;
 }
+
+.slick-track {
+  margin: 0 auto;
+}
+
+
+
+// .inactive {
+//   // display: none;
+//   width: 0;
+// }
+
+// .active {
+//   height: 150px;
+//   width: auto;
+//   margin: auto;
+//   transition: 0.5s;
+// }
+//
+// .bottoms-item {
+//   width: 33%;
+// }
+
+// .tops-container .clothes-item {
+//       visibility: hidden;
+//     }
+// .tops-container .clothes-item:first-child {
+//       visibility: visible;
+//     }
+// .tops-container .slick-initialized .clothes-item {
+//       visibility: visible;
+//     }
 
 .side-nav-buttons {
   height: 55px;

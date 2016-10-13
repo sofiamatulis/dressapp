@@ -35,33 +35,37 @@ $( document ).on('turbolinks:load', function() {
 // creates the carousel
 function createSlider() {
     $('.tops-container').slick( {
-      initialSlide: 0,
-      slidesToShow: 1,
-      slidesToScroll: 1,
+      // initialSlide: 0,
+      // slidesToShow: 1,
+      // slidesToScroll: 1,
+      // lazyLoad: 'ondemand',
       prevArrow: '<span class="arrow-left outfit"><</span>',
       nextArrow: '<span class="arrow-right outfit">></span>',
     });
 
     $('.bottoms-container').slick( {
-      initialSlide: 0,
-      slidesToShow: 1,
-      slidesToScroll: 1,
+      // initialSlide: 0,
+      // slidesToShow: 1,
+      // slidesToScroll: 1,
+      // lazyLoad: 'ondemand',
       prevArrow: '<span class="arrow-left outfit"><</span>',
       nextArrow: '<span class="arrow-right outfit">></span>',
     });
 
     $('.dresses-container').slick( {
-      initialSlide: 0,
-      slidesToShow: 1,
-      slidesToScroll: 1,
+      // initialSlide: 0,
+      // slidesToShow: 1,
+      // slidesToScroll: 1,
+      // lazyLoad: 'ondemand',
       prevArrow: '<span class="arrow-left outfit"><</span>',
       nextArrow: '<span class="arrow-right outfit">></span>',
     });
 
     $('.shoes-container').slick( {
-      initialSlide: 0,
-      slidesToShow: 1,
-      slidesToScroll: 1,
+      // initialSlide: 0,
+      // slidesToShow: 1,
+      // slidesToScroll: 1,
+      // lazyLoad: 'ondemand',
       prevArrow: '<span class="arrow-left outfit"><</span>',
       nextArrow: '<span class="arrow-right outfit">></span>',
     });
@@ -70,6 +74,12 @@ function createSlider() {
 // calls the carousel
   createSlider();
 
+function uncreateSlider() {
+  $('.tops-container').slick('unslick');
+  $('.bottoms-container').slick('unslick');
+  $('.dresses-container').slick('unslick');
+  $('.shoes-container').slick('unslick');
+}
 
 // function to make text appear when item is dragged and added
   function itemAddedBubble() {
@@ -85,6 +95,9 @@ function createSlider() {
   $('#add-items').on('click', function() {
     document.getElementById("suitcase-side-nav").style.width = "60%";
     document.getElementById("suitcase-main").style.marginLeft = "60%";
+
+    uncreateSlider();
+
     $(".outfit-checker-container").css("display", "none");
     $("#add-items").css("display", "none");
     $("#outfit-checker-button").css("display", "inline-block");
@@ -136,7 +149,7 @@ function createSlider() {
             itemAddedBubble();
             // appending the response to the outfit checker page
             $(".outfit-checker").html(response);
-            createSlider();
+            // createSlider();
             // appending the response to the view all page
               $.ajax({
                 url: $(this).attr("href"),
@@ -156,9 +169,11 @@ function createSlider() {
 
 // resets the outfit checker when you click "outfit checker" button
   $('#outfit-checker-button').on('click', function() {
-    $(".outfit").trigger("click");
     $("#items-grid-container" ).empty();
-    $(".outfit-checker-container").css("display", "block");
+    // $(".outfit-checker-container").css("display", "block");
+    $('.outfit-checker-container').fadeIn(100);
+    createSlider();
+    // $(".outfit").trigger("click");
     $("#outfit-checker-button").css("display", "none");
     $("#add-items").css("display", "inline-block");
     $("#view-all-in-suitcase-container").css("display", "none");
@@ -182,21 +197,21 @@ function createSlider() {
 
     // dresses/onesies button
     $(".dress-button").on('click', function() {
-      $(".outfit").trigger("click");
+      // $(".outfit").trigger("click");
       $("#tops").css("display", "none");
       $("#bottoms").css("display", "none");
       $("#dresses").css("display", "block");
-      // $(this).hide();
-      // $(".tops-bottoms").show();
+      uncreateSlider();
+      createSlider();
     });
 // tops/bottoms button
     $(".tops-bottoms").on('click', function() {
-      $(".outfit").trigger("click");
+      // $(".outfit").trigger("click");
       $("#dresses").css("display", "none");
       $("#tops").css("display", "block");
       $("#bottoms").css("display", "block");
-      // $(this).hide();
-      // $(".dress-button").show();
+      uncreateSlider();
+      createSlider();
     });
 
 
