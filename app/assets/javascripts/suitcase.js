@@ -1,6 +1,5 @@
 $( document ).on('turbolinks:load', function() {
 
-
 // opening suitcase
   $("#open-nav").on('click', function() {
     $(".outfit").trigger("click");
@@ -37,46 +36,40 @@ $( document ).on('turbolinks:load', function() {
 
 // creates the carousel
 function createSlider() {
-    $('.tops-container').slick( {
-      // initialSlide: 0,
-      // slidesToShow: 1,
-      // slidesToScroll: 1,
-      // lazyLoad: 'ondemand',
-      prevArrow: '<span class="arrow-left outfit"><</span>',
-      nextArrow: '<span class="arrow-right outfit">></span>',
-    });
 
-    $('.bottoms-container').slick( {
-      // initialSlide: 0,
-      // slidesToShow: 1,
-      // slidesToScroll: 1,
-      // lazyLoad: 'ondemand',
-      prevArrow: '<span class="arrow-left outfit"><</span>',
-      nextArrow: '<span class="arrow-right outfit">></span>',
-    });
+   if ($('.tops-container').find('img').length > 1) {
+      $('.tops-container').slick( {
+        prevArrow: '<span class="arrow-left outfit"><</span>',
+        nextArrow: '<span class="arrow-right outfit">></span>',
+      });
+    }
 
-    $('.dresses-container').slick( {
-      // initialSlide: 0,
-      // slidesToShow: 1,
-      // slidesToScroll: 1,
-      // lazyLoad: 'ondemand',
-      prevArrow: '<span class="arrow-left outfit"><</span>',
-      nextArrow: '<span class="arrow-right outfit">></span>',
-    });
+    if ($('.bottoms-container').find('img').length > 1) {
+      $('.bottoms-container').slick( {
+        prevArrow: '<span class="arrow-left outfit"><</span>',
+        nextArrow: '<span class="arrow-right outfit">></span>',
+      });
+    }
 
-    $('.shoes-container').slick( {
-      // initialSlide: 0,
-      // slidesToShow: 1,
-      // slidesToScroll: 1,
-      // lazyLoad: 'ondemand',
-      prevArrow: '<span class="arrow-left outfit"><</span>',
-      nextArrow: '<span class="arrow-right outfit">></span>',
-    });
+    if ($('.dresses-container').find('img').length > 1) {
+      $('.dresses-container').slick( {
+        prevArrow: '<span class="arrow-left outfit"><</span>',
+        nextArrow: '<span class="arrow-right outfit">></span>',
+      });
+    }
+
+    if ($('.shoes-container').find('img').length > 1) {
+      $('.shoes-container').slick( {
+        prevArrow: '<span class="arrow-left outfit"><</span>',
+        nextArrow: '<span class="arrow-right outfit">></span>',
+      });
+    }
   }
 
 // calls the carousel
   createSlider();
 
+// un-calls the carousel..
 function uncreateSlider() {
   $('.tops-container').slick('unslick');
   $('.bottoms-container').slick('unslick');
@@ -99,7 +92,8 @@ function uncreateSlider() {
     document.getElementById("suitcase-side-nav").style.width = "60%";
     document.getElementById("suitcase-main").style.marginLeft = "60%";
 
-    if ( $(".outfit-checker-container").css('display') == 'block') {
+// only need to disable the slider if the outfit checker is visible"
+    if ( $(".outfit-checker-container").css('display') == 'block' && $('.outfit-checker-container').hasClass('slick') ) {
       uncreateSlider();
     }
 
