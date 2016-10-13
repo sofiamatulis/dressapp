@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
  gem 'open-weather'
  gem "jquery-fileupload-rails"
  gem 'pg'
+ gem "lazyload-rails"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

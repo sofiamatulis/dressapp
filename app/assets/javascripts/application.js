@@ -16,4 +16,5 @@
 //= require turbolinks
 //= require jquery.easy-autocomplete.min
 //= require jquery.city-autocomplete.min
+//= require lazyload-rails
 //= require_tree .
