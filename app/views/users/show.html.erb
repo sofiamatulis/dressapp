@@ -5,7 +5,6 @@
   </head>
 
 
-
 <body class="user-show">
   <div class ="top-of-page">
     <div class="profile">
@@ -14,23 +13,15 @@
     </div>
 
 
-
-
     <div class="info">
-      <!-- <h4 id="email"> -->
-        <!-- E-mail: <#%= @user.email %><br /> -->
         <%= image_tag @user.image.url, id: "imageUploadForm"%>
       </h4>
     </div>
 </div>
 
 
-
 <div class="row small-up-1 medium-up-1 large-up-2">
             <div class="column">
-               <!-- <img class="thumbnail" src="http://placehold.it/550x550"> -->
-              <!-- <h5>My Site</h5> -->
-
               <div class="w">
                <h1 class="hello">My wardrobes</h1>
 
@@ -44,17 +35,7 @@
                   <br>
                   <!--  where the my box class is -->
                   <div class="mybox" data-id ='src="/wardrobes/<%= wardrobe.id%>/thumbnail/"' width = "250px" height = "250px"></div>
-
-                  <!--  added data wardrobe id to the link im getting-->
-
-
-                  <!-- PREVIEW  -->
-
-                  <%#= link_to wardrobe.name, wardrobe_path(wardrobe), :id =>"name-wardrobe"%>
-
                  </li>
-
-
                <% end %>
              </ul>
             <button id="new-wardrobe">Create New Wardrobe</button>
@@ -67,16 +48,11 @@
              <% end %>
 
            </div>
-             </div>
-
-
+         </div>
 
             </div>
 
             <div class="column">
-              <!-- <img class="thumbnail" src="http://placehold.it/550x550"> -->
-              <!-- <h5>My Site</h5> -->
-
               <div class="s">
               <h1 class="bye">My suitcases</h1>
 
@@ -112,8 +88,6 @@
 
             </div>
 </div>
-
-
 
 
 
