@@ -123,7 +123,7 @@ ul, li {
 
 
 
-.modal-wardrobe, .modal-suitcase, .modal-item {
+.modal-wardrobe, .modal-suitcase, .modal-item, .modal-edit {
   display: none;
   position: fixed;
   top: 0;
@@ -304,7 +304,7 @@ color: #AFE9FF;
   }
 
 
-  
+
   .mybox{
       display: none;
       position:relative;

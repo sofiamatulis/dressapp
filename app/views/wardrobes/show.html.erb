@@ -59,15 +59,13 @@
 
   <div class="dropdown">
     <ul class="category-dropdown">
-
       <%#= collection_select :item, :suitcase_ids, @suitcases, :id, :name, :include_blank => "Select item then suitcase" %>
-      <!-- <%# @suitcases.each do |suitcase| %> -->
-      <!-- <%# end %> -->
-
+      <% @suitcases.each do |suitcase| %>
+      <%= button_tag(type: 'submit', :name => 'suitcase_id', value: suitcase.id, :class => "suitcases-button") do %>
+      <%= suitcase.name %>
+      <% end %>
+      <% end %>
     </ul>
-    <%#= button_tag(type: 'submit', :name => 'suitcase_id', value: @suitcase.id, :class => "suitcases-button") do %>
-    <%#= "Add!" %>
-    <%# end %>
   </div>
 
 
@@ -200,9 +198,13 @@
 <% end %>
 <div class="row">
 <div class="modify-buttons large-12 columns">
-  <p class="back-button"><%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe) %> |
+  <p class="back-button"><%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe), :id => "wardrobe-edit-button"%> |
     <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"} %></p>
   </div>
+</div>
+
+<div class="modal-edit">
+  <%= render 'form' %>
 </div>
 
 

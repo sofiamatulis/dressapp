@@ -100,4 +100,25 @@ $( document ).on('turbolinks:load', function() {
     $( ".filtered-tops" ).css('display', 'none');
     $( ".filtered-dresses" ).css('display', 'inline');
   });
+
+  $('#wardrobe-edit-button').on('click', function(e){
+      e.preventDefault();
+      $('.modal-edit').fadeIn();
+
+      $(document).keyup(function(e){
+        if (e.which === 27){
+        $('.modal-edit').fadeOut();
+        }
+      });
+
+      $('.close').on('click', function(){
+        $('.modal-edit').fadeOut();
+      });
+
+      $('.edit-wardrobe').on('submit', function(e){
+        e.preventDefault();
+        $('.modal-edit').fadeOut();
+      });
+
+  });
 })
