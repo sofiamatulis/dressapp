@@ -157,14 +157,17 @@ $( document ).on('turbolinks:load', function() {
 
 // created variable mybox and whatever im hovering on (this), calling the parent my wardrobe and finding the class my box thats inside of this parent too
     var mybox = $(this).parent("li.mywardrobe").find('.mybox');
+    // $(this).attr("data-id");
+
     // console.log('start');
-    //ajax get request to just show the thumnail
+    //ajax get request to just show the thumbnail
 
 
 
     $.ajax({
 
-      url:'/wardrobes/' + 35 + '/thumbnail',
+
+      url:'/wardrobes/' +35 + '/thumbnail',
       method:'GET',
       dataType: "html",
 
@@ -175,6 +178,7 @@ $( document ).on('turbolinks:load', function() {
          mybox.html(wardrobe);
          mybox.show();
         // console.log(wardrobe);
+      
 
 
       });
