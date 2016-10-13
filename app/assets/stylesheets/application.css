@@ -210,3 +210,10 @@ body {
   height: 25%;
   z-index: -100;
 }
+
+
+.top-of-page {
+  background-image: url('stamp.png');
+  background-size: 320px 240px;
+
+}
