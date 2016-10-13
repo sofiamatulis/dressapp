@@ -9,8 +9,11 @@ $( document ).on('turbolinks:load', function() {
     document.getElementById("suitcase-main").style.marginLeft = "40%";
     $("#sortable1").addClass("is-open");
     $(this).html("");
-    createSlider();
+    if ( $(".outfit-checker-container").hasClass('slick') ) {
+      createSlider();
+    }
     $(".outfit").trigger("click");
+    $(".clothes-types").fadeIn(100);
   });
 // closing nav
   $("#close-nav").on('click', function() {
@@ -71,10 +74,18 @@ function createSlider() {
 
 // un-calls the carousel..
 function uncreateSlider() {
-  $('.tops-container').slick('unslick');
-  $('.bottoms-container').slick('unslick');
-  $('.dresses-container').slick('unslick');
-  $('.shoes-container').slick('unslick');
+  if ($('.tops-container').hasClass('slick')) {
+    $('.tops-container').slick('unslick');
+  }
+  if ($('.bottoms-container').hasClass('slick')) {
+    $('.bottoms-container').slick('unslick');
+  }
+  if ($('dresses-container').hasClass('slick')) {
+    $('.dresses-container').slick('unslick');
+  }
+  if ($('.shoes-container').hasClass('slick')) {
+    $('.shoes-container').slick('unslick');
+  }
 }
 
 // function to make text appear when item is dragged and added
