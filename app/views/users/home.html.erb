@@ -1,51 +1,82 @@
-<div class="header-image">
-
-  <head>
+<head>
     <!--  getting the animation CDN-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+<div class="header-image">
 <!-- created a div for the entire home page -->
   <div class="home-page">
-
   <!--  here there are boxes and ids were assigned to data photo so i can use it for javascript -->
-  <div id="box0" class="box" data-photo="#photo0">Welcome!</div>
-    <div id="box1" class="box" data-photo="#photo1">Sign up</div>
-    <div id="box2" class="box" data-photo="#photo2">Pack up</div>
-    <div id="box3" class="box" data-photo="#photo3">Ready to go!</div>
+    <div class="box-container">
 
+      <img class="text-logo">  </img>
+      <div id="box0" class="box" data-photo="#photo0">Welcome!</div>
+
+      <div id="box1" class="box" data-photo="#photo1">SignUp</div>
+
+      <div id="box2" class="box" data-photo="#photo2">PackUp</div>
+
+      <div id="box3" class="box" data-photo="#photo3">Ready&nbsp;To&nbsp;Go!</div>
+   </div>
 
 <!-- here there are the ids for the actual pictures! added a class for each photo and a class for all of them -->
-
-
-
     <div id="photo2" class="photo"></div>
-
-
-
     <div id="photo3" class="photo">
   <!--  animation when you are ready to go!-->
       <p class="animated infinite bounce"><img class="animation"></img><p>
     </div>
-
-
     <div id="photo1" class="photo">
-
-
-    <div class="video-container">
-  <%= video_tag("mainpage.mp4", alt: "Leisure", autoplay: true, loop: true, :class =>'video') %>
-</div>
-
+      <div class="video-container">
+        <%= video_tag("mainpage.mp4", alt: "Leisure", autoplay: true, loop: true, :class =>'video') %>
+      </div>
     </div>
-
 
     <div id="photo0" class="photo">
-
-      <img class="text-logo">  </img>
-
+      <div class="layer">
+      </div>
     </div>
 
+  </div>
 
+  <div class="infocontainer-full">
+    <div class="info1container">
+      <div class="bigwardrobe">
+        <%= image_tag("PackApp Home-02.png", :id => 'bigwardrobe' ) %>
+      </div>
+      <div class="text">
+        <h2>Create your wardrobe</h2>
+        <p>Have a family? Create a wardrobe for each of your
+        family members and help them pack too!</p>
+      </div>
+      <!-- <div class="smallwardrobes">
+        <%= image_tag("PackApp Home-03.png", :id => 'smallwardrobes') %>
+      </div> -->
+    </div>
 
+    <div class="info2container">
+      <div id="">
+        <%= image_tag("PackApp Home-04.png", :id => 'camera' ) %>
+      </div>
+      <div id="">
+        <%= image_tag("PackApp Home-05.png", :id => 'openwardrobe' ) %>
+      </div>
+    </div>
 
+    <div class="info3container">
+      <div id="">
+        <%= image_tag("PackApp Home-06.png", :id => 'suitcases2' ) %>
+      </div>
+    </div>
+
+    <div class="info4container">
+      <div id="">
+        <%= image_tag("PackApp Home-07.png", :id => 'tshirtarrow' ) %>
+      </div>
+      <div id="">
+        <%= image_tag("PackApp Home-08.png", :id => 'open-suitcase-check' ) %>
+      </div>
+      <div id="">
+        <%= image_tag("PackApp Home-09.png", :id => 'outfit-check-icon' ) %>
+      </div>
+    </div>
   </div>
 </div>

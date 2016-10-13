@@ -102,11 +102,11 @@ function createSlider() {
 //iterating through each item and adding the photo to its own container
       $.each(response, function(i, item) {
         var itemContainer = $('<div class="style-one">');
-        //
-        // if (item exists in current suitcase) {
+
+        // if (item.id  exists in current suitcase) {
         //   item.addClass(display none);
         // }
-         // added data type to each object
+        //  added data type to each object
           $('<img>').attr('src', item.image).attr('data-item-id', item.id).attr('data-item-category', item.category_id).appendTo(itemContainer);
           $(itemContainer).appendTo(itemsContainer);
         });

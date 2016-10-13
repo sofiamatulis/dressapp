@@ -1,0 +1,60 @@
+.infocontainer-full {
+  overflow: hidden;
+  position: absolute;
+  top: 500px;
+  margin-left: 0;
+  width: 100%;
+}
+
+.info1container {
+  height: 400px;
+  position: relative;
+  background-color: #D3FFCE;
+  overflow: hidden;
+}
+
+#bigwardrobe {
+  width: 250px;
+  position: relative;
+  margin: 40px 0 40px 20%;
+  float: left;
+}
+
+.info2container, .info3container, .info4container {
+  height: 400px;
+  position: relative;
+}
+
+.text {
+  display: inline-block;
+  width: 30%;
+  text-align: left;
+  float: left;
+  margin-top: 100px;
+}
+
+#camera {
+  width: 200px;
+  float: left;
+  margin-left: 100px;
+}
+
+#openwardrobe {
+  width: 250px;
+}
+
+#suitcases2 {
+  width: 300px;
+}
+
+#tshirtarrow {
+  width: 250px;
+}
+
+#open-suitcase-check {
+  width: 400px;
+}
+
+#outfit-check-icon {
+  width: 300px;
+}
