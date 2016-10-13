@@ -13,7 +13,7 @@ $('.filter-btn').on('click',function(event){
     dataType: 'json'
   }).done(function(data){
     // clear the html within the original show.html.erb
-    $('.row').html('')
+    $('.new-tops').html('')
 
     // loop through the data array that was given
     for(var i = 0, l = data.length; i < l; i++){

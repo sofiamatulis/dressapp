@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930181438) do
+ActiveRecord::Schema.define(version: 20160930180352) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string   "category"
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 20160930181438) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.boolean  "favorited",          default: false
-    t.index ["category_id"], name: "index_items_on_category_id"
-    t.index ["wardrobe_id"], name: "index_items_on_wardrobe_id"
+    t.index ["category_id"], name: "index_items_on_category_id", using: :btree
+    t.index ["wardrobe_id"], name: "index_items_on_wardrobe_id", using: :btree
   end
 
   create_table "items_suitcases", force: :cascade do |t|
@@ -72,7 +75,10 @@ ActiveRecord::Schema.define(version: 20160930181438) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_wardrobes_on_user_id"
+    t.index ["user_id"], name: "index_wardrobes_on_user_id", using: :btree
   end
 
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "wardrobes"
+  add_foreign_key "wardrobes", "users"
 end

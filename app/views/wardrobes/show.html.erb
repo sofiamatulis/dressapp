@@ -106,7 +106,7 @@
 
   <ul class="filtered-tops">
     <% @wardrobe.items.each_slice(4) do |slice| %>
-    <div class="row">
+    <div class="row new-tops">
       <% slice.each do |item| %>
       <% if item.category.category == "Top" %>
       <div class="small-6 large-3 columns">
