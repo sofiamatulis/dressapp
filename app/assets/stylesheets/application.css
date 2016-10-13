@@ -148,6 +148,7 @@ body {
   text-transform:uppercase;
   font-family:Tahoma;
   letter-spacing:1px;
+  background-color: rgba(211, 211, 211, 0.5);
 }
 
 /*each picture*/
