@@ -102,9 +102,13 @@ function createSlider() {
 //iterating through each item and adding the photo to its own container
       $.each(response, function(i, item) {
         var itemContainer = $('<div class="style-one">');
-                  // added data type to each object
-        $('<img>').attr('src', item.image).attr('data-item-id', item.id).attr('data-item-category', item.category_id).appendTo(itemContainer);
-        $(itemContainer).appendTo(itemsContainer);
+        //
+        // if (item exists in current suitcase) {
+        //   item.addClass(display none);
+        // }
+         // added data type to each object
+          $('<img>').attr('src', item.image).attr('data-item-id', item.id).attr('data-item-category', item.category_id).appendTo(itemContainer);
+          $(itemContainer).appendTo(itemsContainer);
         });
 
       $('#items-grid-container').html(itemsContainer);
@@ -149,7 +153,6 @@ function createSlider() {
       }).disableSelection();
     });
   });
-
 
 // resets the outfit checker when you click "outfit checker" button
   $('#outfit-checker-button').on('click', function() {
