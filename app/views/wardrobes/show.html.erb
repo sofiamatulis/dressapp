@@ -1,94 +1,88 @@
 <body class="wardrobe-show">
 
-<div class="wardrobe-header-image">
-  <h1 class="wardrobe-name"><%= @wardrobe.name %></h1>
-</div>
+  <div class="wardrobe-header-image">
+    <h1 class="wardrobe-name"><%= @wardrobe.name %></h1>
+  </div>
 
 <!-- Back/edit/delete buttons -->
 <!-- Filter items -->
-<div class="row">
-  <div class="search-bar small-12 large-4 columns">
-    <%= form_tag(items_path, remote: true, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
-    <%= submit_tag "Search", :name => nil, :id => "search-button" %>
-    <% end %>
-
-  </div>
-
-<div class="filter-nav small-12 large-4 columns">
-  <div id="filter-right">
-   <a id="all-items">All</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-   <a id="top-filter" value= '1' class = 'filter-btn'>Tops</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-   <a id="bottom-filter" value= '2' class = 'filter-btn'>Bottoms</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-   <a id="shoe-filter" value= '3' class = 'filter-btn'>Shoes</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-   <a id="dress-filter" value= '4' class = 'filter-btn'>Dresses</a>
- </div>
-</div>
-
-</div>
-
-<!-- Search items -->
-<div class="row">
-<div class="small-12 large-centered columns adding-items">
-  <div class="add-more-container">
-   <%= button_tag :name => 'wardrobe_id', value: @wardrobe.id, :class => 'button add-item' do %>
-     <%= "Add more items" %>
-     <% end %>
-  </div>
-  <div class="adding-to-suitcase">
-   <%= button_tag :id => 'drop-down-show' do %>
-     <%= "Add to suitcase" %>
-   <% end %>
- </div>
-</div>
-</div>
-
-
-<% if @wardrobe.items.length == 0 %>
-  <h3 class="no-items">You don't have any clothes in this wardrobe right now</h3>
-
-  <div class="wardrobe-item-container">
-    <ul class="wardrobe-item">
-    </ul>
-  </div>
-  <div class="modal-item">
-    <%= render 'items/form' %>
-  </div>
-<% else %>
-  <%= form_tag multi_path  do %>
-
-  <div class="dropdown">
-    <ul class="category-dropdown">
-      <%#= collection_select :item, :suitcase_ids, @suitcases, :id, :name, :include_blank => "Select item then suitcase" %>
-      <% @suitcases.each do |suitcase| %>
-      <%= button_tag(type: 'submit', :name => 'suitcase_id', value: suitcase.id, :class => "suitcases-button") do %>
-      <%= suitcase.name %>
+  <div class="row">
+    <div class="search-bar small-12 large-4 columns">
+      <%= form_tag(items_path, remote: true, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
+      <%= submit_tag "Search", :name => nil, :id => "search-button" %>
       <% end %>
-      <% end %>
-    </ul>
-  </div>
+    </div>
 
-
-<ul class="wardrobe-item-container">
-
-    <% @wardrobe.items.each_slice(4) do |slice| %>
-    <div class="row">
-      <% slice.each do |item| %>
-      <div class="small-6 large-3 columns">
-      <div class="wardrobe-item">
-      <label class="selectd-item">
-        <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
-        <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
-      </label>
-      <li class="item-details"><%= item.name %></li>
-      <li class="item-details"><%= item.description %></li>
-      <!-- <%# end %> -->
+    <div class="filter-nav small-12 large-4 columns">
+      <div id="filter-right">
+        <a id="all-items">All</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+        <a id="top-filter" value= '1' class = 'filter-btn'>Tops</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+        <a id="bottom-filter" value= '2' class = 'filter-btn'>Bottoms</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+        <a id="shoe-filter" value= '3' class = 'filter-btn'>Shoes</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+        <a id="dress-filter" value= '4' class = 'filter-btn'>Dresses</a>
+      </div>
     </div>
   </div>
-    <% end %>
+
+<!-- Search items -->
+  <div class="row">
+    <div class="small-12 large-centered columns adding-items">
+      <div class="add-more-container">
+        <%= button_tag :name => 'wardrobe_id', value: @wardrobe.id, :class => 'button add-item' do %>
+        <%= "Add more items" %>
+        <% end %>
+      </div>
+      <div class="adding-to-suitcase">
+        <%= button_tag :id => 'drop-down-show' do %>
+        <%= "Add to suitcase" %>
+        <% end %>
+      </div>
+    </div>
   </div>
-    <% end %>
-</ul>
+
+
+  <% if @wardrobe.items.length == 0 %>
+    <h3 class="no-items">You don't have any clothes in this wardrobe right now</h3>
+    <div class="wardrobe-item-container">
+      <ul class="wardrobe-item">
+      </ul>
+    </div>
+    <div class="modal-item">
+      <%= render 'items/form' %>
+    </div>
+  <% else %>
+    <%= form_tag multi_path  do %>
+    <div class="dropdown">
+      <ul class="category-dropdown">
+        <%#= collection_select :item, :suitcase_ids, @suitcases, :id, :name, :include_blank => "Select item then suitcase" %>
+        <% @suitcases.each do |suitcase| %>
+        <%= button_tag(type: 'submit', :name => 'suitcase_id', value: suitcase.id, :class => "suitcases-button") do %>
+        <%= suitcase.name %>
+        <% end %>
+        <% end %>
+      </ul>
+    </div>
+
+    <ul class="wardrobe-item-container">
+      <% @wardrobe.items.each_slice(4) do |slice| %>
+      <div class="row">
+        <% slice.each do |item| %>
+        <div class="small-6 large-3 columns">
+          <div class="wardrobe-item">
+            <label class="selectd-item">
+              <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
+              <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
+            </label>
+            <li class="item-details"><%= item.name %></li>
+            <li class="item-details"><%= item.description %></li>
+          <!-- <%# end %> -->
+          </div>
+        </div>
+      <% end %>
+      </div>
+      <% end %>
+    </ul>
 
 
   <!-- <ul class="wardrobe-item-container">
@@ -110,20 +104,20 @@
       <% slice.each do |item| %>
       <% if item.category.category == "Top" %>
       <div class="small-6 large-3 columns">
-      <div class="wardrobe-item">
-        <label class="selectd-item">
-        <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
-        <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
-        </label>
-        <li class="item-details"><%= item.name %></li>
-        <li class="item-details"><%= item.description %></li>
+        <div class="wardrobe-item">
+          <label class="selectd-item">
+            <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
+            <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
+          </label>
+          <li class="item-details"><%= item.name %></li>
+          <li class="item-details"><%= item.description %></li>
+        </div>
       </div>
-    </div>
-    <% end %>
+      <% end %>
       <% end %>
     </div>
     <% end %>
-   </ul>
+  </ul>
 
   <ul class="filtered-bottoms">
     <% @wardrobe.items.each_slice(4) do |slice| %>
@@ -131,19 +125,19 @@
       <% slice.each do |item| %>
       <% if item.category.category == "Bottom" %>
       <div class="small-6 large-3 columns">
-      <div class="wardrobe-item">
-        <label class="selectd-item">
+        <div class="wardrobe-item">
+          <label class="selectd-item">
         <!-- <li class="item-details"><%#= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li> -->
         <!-- <li class="item-details check-box"><%#= check_box_tag "items[#{item.id}]"%></li> -->
-        </label>
+          </label>
         <!-- <li class="item-details"><%#= item.name %></li>
         <li class="item-details"><%#= item.description %></li> -->
+        </div>
       </div>
-    </div>
-      <% end %>
     <% end %>
-  </div>
-  <% end %>
+    <% end %>
+    </div>
+    <% end %>
   </ul>
 
   <ul class="filtered-dresses">
@@ -152,19 +146,19 @@
       <% slice.each do |item| %>
       <% if item.category.category == "Dresses" %>
       <div class="small-6 large-3 columns">
-      <div class="wardrobe-item">
-        <label class="selectd-item">
-        <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
-        <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
-        </label>
-        <li class="item-details"><%= item.name %></li>
-        <li class="item-details"><%= item.description %></li>
+        <div class="wardrobe-item">
+          <label class="selectd-item">
+            <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
+            <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
+          </label>
+          <li class="item-details"><%= item.name %></li>
+          <li class="item-details"><%= item.description %></li>
+        </div>
       </div>
-    </div>
       <% end %>
+      <% end %>
+    </div>
     <% end %>
-  </div>
-  <% end %>
   </ul>
 
   <ul class="filtered-shoes">
@@ -173,21 +167,20 @@
       <% slice.each do |item| %>
       <% if item.category.category == "Shoes" %>
       <div class="small-6 large-3 columns">
-      <div class="wardrobe-item">
-        <label class="selectd-item">
-        <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
-        <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
-        </label>
-        <li class="item-details"><%= item.name %></li>
-        <li class="item-details"><%= item.description %></li>
+        <div class="wardrobe-item">
+          <label class="selectd-item">
+            <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
+            <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
+          </label>
+          <li class="item-details"><%= item.name %></li>
+          <li class="item-details"><%= item.description %></li>
+        </div>
       </div>
-    </div>
       <% end %>
+      <% end %>
+    </div>
     <% end %>
-  </div>
-  <% end %>
   </ul>
-
 
   <% end %>
 
@@ -195,17 +188,17 @@
     <%= render 'items/form' %>
   </div>
 
-<% end %>
-<div class="row">
-<div class="modify-buttons large-12 columns">
-  <p class="back-button"><%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe), :id => "wardrobe-edit-button"%> |
-    <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"} %></p>
+  <% end %>
+  <div class="row">
+    <div class="modify-buttons large-12 columns">
+      <p class="back-button"><%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe), :id => "wardrobe-edit-button"%> |
+        <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"} %></p>
+    </div>
   </div>
-</div>
 
-<div class="modal-edit">
-  <%= render 'form' %>
-</div>
+  <div class="modal-edit">
+    <%= render 'form' %>
+  </div>
 
 
 <!-- <p class="back-button"><%#= link_to "Back", user_path %> | <%#= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe) %> |
