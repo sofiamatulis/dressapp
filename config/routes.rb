@@ -10,6 +10,7 @@ root 'users#home'
     end
   end
   post 'items_suitcases/create_multi' => 'items_suitcases#create_multi', as: 'multi'
+  post 'items_suitcases/create_item_show' => 'items_suitcases#create_item_show', as: 'create-item'
 
   resources :users
   resources :wardrobes do
