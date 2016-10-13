@@ -23,6 +23,7 @@
 .info2container, .info3container, .info4container {
   height: 400px;
   position: relative;
+  overflow: hidden;
 }
 
 .text {
@@ -31,30 +32,38 @@
   text-align: left;
   float: left;
   margin-top: 100px;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #camera {
   width: 200px;
   float: left;
   margin-left: 100px;
+  position: relative;
 }
 
 #openwardrobe {
   width: 250px;
+  position: relative;
 }
 
 #suitcases2 {
   width: 300px;
+  position: relative;
 }
 
 #tshirtarrow {
   width: 250px;
+  position: relative;
 }
 
 #open-suitcase-check {
   width: 400px;
+  position: relative;
 }
 
 #outfit-check-icon {
   width: 300px;
+  position: relative;
 }
