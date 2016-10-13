@@ -9,9 +9,9 @@ $( document ).on('turbolinks:load', function() {
     document.getElementById("suitcase-main").style.marginLeft = "40%";
     $("#sortable1").addClass("is-open");
     $(this).html("");
-    if ( $(".outfit-checker-container").hasClass('slick') ) {
+
       createSlider();
-    }
+
     $(".outfit").trigger("click");
     $(".clothes-types").fadeIn(100);
   });
@@ -34,6 +34,8 @@ $( document ).on('turbolinks:load', function() {
       $("#add-items").css("display", "inline-block");
       $("#view-all-in-suitcase-container").css("display", "none");
     }, 1000 );
+
+    uncreateSlider();
 
   });
 
