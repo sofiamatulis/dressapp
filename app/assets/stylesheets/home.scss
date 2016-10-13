@@ -51,6 +51,9 @@
 #suitcases2 {
   width: 300px;
   position: relative;
+  float: left;
+  top: 50px;
+  left: 100px;
 }
 
 #tshirtarrow {
@@ -66,4 +69,10 @@
 #outfit-check-icon {
   width: 300px;
   position: relative;
+}
+
+.info3container {
+  background-image: url('beach-background-11.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
