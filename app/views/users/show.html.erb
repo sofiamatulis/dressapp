@@ -1,3 +1,11 @@
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+  </head>
+
+
+
 <body class="user-show">
   <div class ="top-of-page">
     <div class="profile">
@@ -17,75 +25,96 @@
 </div>
 
 
-   <div class="w">
-    <h1 class="hello">My wardrobes</h1>
+
+<div class="row small-up-1 medium-up-1 large-up-2">
+            <div class="column">
+               <!-- <img class="thumbnail" src="http://placehold.it/550x550"> -->
+              <!-- <h5>My Site</h5> -->
+
+              <div class="w">
+               <h1 class="hello">My wardrobes</h1>
 
 
 
-  <ul class="allwardrobe">
-    <% @user.wardrobes.each do |wardrobe| %>
-      <li class="mywardrobe">
-       <%= link_to wardrobe.name, wardrobe_path(wardrobe), :class =>"name-wardrobe"%>
+             <ul class="allwardrobe">
+               <% @user.wardrobes.each do |wardrobe| %>
+                 <li class="mywardrobe">
+                  <%= link_to wardrobe.name, wardrobe_path(wardrobe), :class =>"name-wardrobe"%>
 
-       <br>
-       <!--  where the my box class is -->
-       <div class="mybox" data-id ='src="/wardrobes/<%= wardrobe.id%>/thumbnail/"' width = "250px" height = "250px"></div>
+                  <br>
+                  <!--  where the my box class is -->
+                  <div class="mybox" data-id ='src="/wardrobes/<%= wardrobe.id%>/thumbnail/"' width = "250px" height = "250px"></div>
 
-       <!--  added data wardrobe id to the link im getting-->
-
-
-       <!-- PREVIEW  -->
-
-       <%#= link_to wardrobe.name, wardrobe_path(wardrobe), :id =>"name-wardrobe"%>
-
-      </li>
+                  <!--  added data wardrobe id to the link im getting-->
 
 
-    <% end %>
-  </ul>
- <button id="new-wardrobe">Create New Wardrobe</button>
+                  <!-- PREVIEW  -->
 
- <div class="modal-wardrobe">
-  <%= form_for @wardrobe, :id => "wardrobe-from" do |f| %>
-  <button type="button" class="close">X</button>
-    <%= f.text_field :name, placeholder: "Wardrobe name" %> <br>
-    <%= f.submit "New Wardrobe", id: "create-wardrobe" %>
-  <% end %>
+                  <%#= link_to wardrobe.name, wardrobe_path(wardrobe), :id =>"name-wardrobe"%>
 
+                 </li>
+
+
+               <% end %>
+             </ul>
+            <button id="new-wardrobe">Create New Wardrobe</button>
+
+            <div class="modal-wardrobe">
+             <%= form_for @wardrobe, :id => "wardrobe-from" do |f| %>
+             <button type="button" class="close">X</button>
+               <%= f.text_field :name, placeholder: "Wardrobe name" %> <br>
+               <%= f.submit "New Wardrobe", id: "create-wardrobe" %>
+             <% end %>
+
+           </div>
+             </div>
+
+
+
+            </div>
+
+            <div class="column">
+              <!-- <img class="thumbnail" src="http://placehold.it/550x550"> -->
+              <!-- <h5>My Site</h5> -->
+
+              <div class="s">
+              <h1 class="bye">My suitcases</h1>
+
+              <ul class="allsuitcase">
+                <% @user.suitcases.each do |suitcase| %>
+                  <li class="mysuitcase">
+                    <%= link_to suitcase.name, suitcase_path(suitcase) %><br>
+                  </li>
+                <% end %>
+              </ul>
+
+              <button id="new-suitcase">Create New Suitcase</button>
+              <div class="modal-suitcase">
+                <%= form_for @suitcase, :id => "suitcase-form" do |f| %>
+                  <button type="button" class="close">x</button>
+                <%= f.text_field :name, placeholder: "Suitcase name" %> <br>
+                <%= f.text_area :description, placeholder: "Notes" %> <br>
+                <%= f.number_field :duration, placeholder: "Duration (Days)" %> <br>
+                <%= f.hidden_field :destination, :id => "destination" %>
+                <form id="countryForm">
+                  <input id="country" name="country" autocomplete="on" placeholder="Destination Country"><br>
+                  <input id="city" name="city" autocomplete="on" placeholder="Destination City" data-country=""><br>
+                  <%= f.submit "New Suitcase", id: "create-suitcase"%>
+                </form>
+                <div class="destination-form">
+              </div>
+              <% end %>
+
+            <br>
+            <br>
+
+            </div>
+
+            </div>
 </div>
-  </div>
 
 
-    <div class="s">
-    <h1 class="bye">My suitcases</h1>
 
-    <ul class="allsuitcase">
-      <% @user.suitcases.each do |suitcase| %>
-        <li class="mysuitcase">
-          <%= link_to suitcase.name, suitcase_path(suitcase) %><br>
-        </li>
-      <% end %>
-    </ul>
 
-    <button id="new-suitcase">Create New Suitcase</button>
-    <div class="modal-suitcase">
-      <%= form_for @suitcase, :id => "suitcase-form" do |f| %>
-        <button type="button" class="close">x</button>
-      <%= f.text_field :name, placeholder: "Suitcase name" %> <br>
-      <%= f.text_area :description, placeholder: "Notes" %> <br>
-      <%= f.number_field :duration, placeholder: "Duration (Days)" %> <br>
-      <%= f.hidden_field :destination, :id => "destination" %>
-      <form id="countryForm">
-        <input id="country" name="country" autocomplete="on" placeholder="Destination Country"><br>
-        <input id="city" name="city" autocomplete="on" placeholder="Destination City" data-country=""><br>
-        <%= f.submit "New Suitcase", id: "create-suitcase"%>
-      </form>
-      <div class="destination-form">
-    </div>
-    <% end %>
 
-  <br>
-  <br>
-
-  </div>
 </body>
