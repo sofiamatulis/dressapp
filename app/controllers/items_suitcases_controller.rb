@@ -14,6 +14,15 @@ class ItemsSuitcasesController < ApplicationController
 
   end
 
+  def create_item_show
+    @item = Item.find(params[:item_id])
+    @suitcases = current_user.suitcases
+    @suitcase = Suitcase.find(params[:suitcase_id])
+    params['suitcase_id'].each do |id|
+      @item.suitcases << Suitcase.find(id)
+    end
+  end
+
   def create_multi
     @suitcases = current_user.suitcases
     @suitcase = Suitcase.find(params[:suitcase_id])

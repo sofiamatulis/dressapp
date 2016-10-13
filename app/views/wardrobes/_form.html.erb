@@ -1,6 +1,7 @@
 <div class="modal-user">
 
-<%= form_for @wardrobe do |f| %>
+<%= form_for @wardrobe, :html => {:id => "modal-form"} do |f| %>
+<button type="button" class="close">x</button>
 <div class="field">
   <%= f.label :name %>
   <%= f.text_field :name %>

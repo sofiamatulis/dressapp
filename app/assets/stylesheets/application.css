@@ -148,6 +148,7 @@ body {
   text-transform:uppercase;
   font-family:Tahoma;
   letter-spacing:1px;
+  background-color: rgba(211, 211, 211, 0.5);
 }
 
 /*each picture*/
@@ -208,4 +209,11 @@ body {
   width: 25%;
   height: 25%;
   z-index: -100;
+}
+
+
+.top-of-page {
+  background-image: url('stamp.png');
+  background-size: 320px 240px;
+
 }

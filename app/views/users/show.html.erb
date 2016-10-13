@@ -1,4 +1,5 @@
 <body class="user-show">
+  <div class ="top-of-page">
     <div class="profile">
       <h1 id="greeting">Hello, <%= @user.name %>!</h1>
       <div class="editing"><%= link_to "Edit Profile", edit_user_path(@user), id: "myedit" %>
@@ -13,7 +14,7 @@
         <%= image_tag @user.image.url, id: "imageUploadForm"%>
       </h4>
     </div>
-
+</div>
 
 
    <div class="w">
@@ -27,7 +28,11 @@
        <%= link_to wardrobe.name, wardrobe_path(wardrobe), :class =>"name-wardrobe"%>
 
        <br>
-       <div class="mybox" src="/wardrobes/<%= wardrobe.id%>/thumbnail/" width = "250px" height = "250px"></div>
+       <!--  where the my box class is -->
+       <div class="mybox" data-id ='src="/wardrobes/<%= wardrobe.id%>/thumbnail/"' width = "250px" height = "250px"></div>
+
+       <!--  added data wardrobe id to the link im getting-->
+
 
        <!-- PREVIEW  -->
 
