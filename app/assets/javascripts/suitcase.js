@@ -91,6 +91,7 @@ function createSlider() {
     $("#view-all-in-suitcase-container").css("display", "none");
     $('#items-grid-container').fadeIn(100);
     $(".suitcase-destination").addClass("small");
+    //ajax call , get the items
     $.ajax({
       url: '/items',
       method: 'GET',
@@ -98,14 +99,17 @@ function createSlider() {
       dataType: 'JSON'
     }).done(function(response) {
       console.log(response);
+      //create variable with the sortable items that can be dragged
       var itemsContainer = $('<div id="sortable2" class="connectedSortable">');
 //iterating through each item and adding the photo to its own container
       $.each(response, function(i, item) {
         var itemContainer = $('<div class="style-one">');
-                  // added data type to each object
+                  // added data attribute to each object so they are all different
         $('<img>').attr('src', item.image).attr('data-item-id', item.id).attr('data-item-category', item.category_id).appendTo(itemContainer);
         $(itemContainer).appendTo(itemsContainer);
         });
+
+        //creating the drag and drop: connecting them through a class
 
       $('#items-grid-container').html(itemsContainer);
       $( "#sortable1, #sortable2" ).sortable({
@@ -119,6 +123,7 @@ function createSlider() {
         deactivate: function() {
           $("#suitcase-side-nav").removeClass("is-dragging");
         },
+        //saving this to the database! so when you add an item to the suitcase it saves in the suitcase
         receive: function(event,ui){
           $.ajax( {
             url: '/items_suitcases/', // this specific url
