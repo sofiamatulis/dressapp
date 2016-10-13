@@ -36,12 +36,6 @@ $( document ).on('ready', function() {
       });
     }
 
-    // function uncreateSlider() {
-    //   $('.tops-container').slick('unslick');
-    //   $('.bottoms-container').slick('unslick');
-    //   $('.dresses-container').slick('unslick');
-    //   $('.shoes-container').slick('unslick');
-    // }
 
   $('#view-all-in-suitcase-container').on('submit', 'form', function() {
     setTimeout( function() {
@@ -58,7 +52,7 @@ $( document ).on('ready', function() {
         var outfitCheckerNew = $(response).find('.outfit-checker');
         console.log()
         $(".outfit-checker-container").html(outfitCheckerNew);
-        createSlider();
+        // createSlider();
         console.log(outfitCheckerNew);
       });
     }, 1000 );

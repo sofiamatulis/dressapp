@@ -96,7 +96,9 @@ function uncreateSlider() {
     document.getElementById("suitcase-side-nav").style.width = "60%";
     document.getElementById("suitcase-main").style.marginLeft = "60%";
 
-    uncreateSlider();
+    if ( $(".outfit-checker-container").css('display') == 'block') {
+      uncreateSlider();
+    }
 
     $(".outfit-checker-container").css("display", "none");
     $("#add-items").css("display", "none");
@@ -174,12 +176,15 @@ function uncreateSlider() {
     document.getElementById("suitcase-side-nav").style.width = "40%";
     document.getElementById("suitcase-main").style.marginLeft = "40%";
     // $(".outfit-checker-container").css("display", "block");
-    $('.outfit-checker-container').fadeIn(100);
-    createSlider();
     // $(".outfit").trigger("click");
     $("#outfit-checker-button").css("display", "none");
     $("#add-items").css("display", "inline-block");
     $(".suitcase-destination").removeClass("small");
+
+      setTimeout( function() {
+        $('.outfit-checker-container').fadeIn(200);
+        createSlider();
+    }, 300);
 
   });
 
