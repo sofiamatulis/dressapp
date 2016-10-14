@@ -1,20 +1,92 @@
+//create your wardrobe
+
 .parallax_section{
-  height: 600px;
+  top:500px;
+  height: 500px;
     background-repeat: no-repeat;
+    width:100%;
     background-attachment: fixed;
     background-size: cover;
     background-position: 100% auto;
     position:relative;
-
+    background-color: rgba(148, 219, 159, 1);
 
 }
 
 .parallax_image{
- background-image: url("6G1A0292.jpg");
-
+  content:url('colorfulwardrobes.png');
+  top:500px;
+  height:500px;
+  float:right;
 
 }
 
+.image_two {
+  content:url('mainwardrobe.png');
+  top:500px;
+  height:400px;
+  float:left;
+}
+
+.createyourwardrobe {
+  top:500px;
+  height:400px;
+  text-align: center;
+  margin-top: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.wardrobe-paragraph {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin-top:-250px;
+}
+
+
+// fill your warrdrobe
+.parallax_section_two{
+  top:500px;
+  height: 500px;
+    background-repeat: no-repeat;
+    width:100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 100% auto;
+    position:relative;
+    background-color: white;
+
+}
+
+.fill-your-wardrobe {
+  top:500px;
+  height:400px;
+  text-align: center;
+  margin-top: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.fill-paragraph {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin-top:-250px;
+}
+
+.image_camera {
+  content:url('camera.png');
+  top:500px;
+  height:400px;
+  float:left;
+}
+
+.parallax_image_fill_your_wardrobe {
+  content:url('clothes-wardrobe.png');
+  top:500px;
+  height:400px;
+  float:right;
+}
+
+//top part
 
 
  .text-logo {
