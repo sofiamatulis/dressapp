@@ -2,11 +2,11 @@ $( document ).on('turbolinks:load', function() {
 
 // opening suitcase
   $("#open-nav").on('click', function() {
+    document.getElementById("suitcase-side-nav").style.width = "40%";
+    document.getElementById("suitcase-main").style.marginLeft = "40%";
     $(".outfit").trigger("click");
     $('#outfit-checker').fadeIn(200);
     $('.side-nav-buttons').fadeIn(100);
-    document.getElementById("suitcase-side-nav").style.width = "40%";
-    document.getElementById("suitcase-main").style.marginLeft = "40%";
     $("#sortable1").addClass("is-open");
     $(this).html("");
     if ( $(".outfit-checker-container").hasClass('slick') ) {
