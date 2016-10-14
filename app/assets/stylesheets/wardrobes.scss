@@ -115,14 +115,6 @@ h1 {
   float: left;
 }
 
-#drop-down-show {
-  color: black;
-  border-radius: 10px;
-  display: inline-block;
-  margin: auto;
-  float: right;
-}
-
 #search, #search-button {
   background-color: oldlace;
 }
@@ -248,13 +240,28 @@ h1 {
 
 #drop-down-show {
   position:relative;
-  border-radius: 1px;
+  border-radius: 10px;
   font-size: 15px;
-  // padding: 5px 8px;
+  padding: 5px 8px;
   cursor: pointer;
-  color: #fff;
+  color: black;
   font-family: 'Open Sans', sans-serif;
   border: 0.2px solid #fff;
   transition-duration: 0.5s;
   margin-left:28px;
+  background-color: lightblue;
+  //     border: 0.2px solid #fff;
+  box-shadow: 2px 2px 5px #AFE9FF;
+  transition-duration: 0.5s;
+  //     width: 150px;
+  //     margin-left: 28px;
+  //
+}
+
+#drop-down-show {
+
+
+  display: inline-block;
+  margin: auto;
+  float: left;
 }
