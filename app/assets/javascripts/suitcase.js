@@ -219,21 +219,35 @@ function uncreateSlider() {
 
     // dresses/onesies button
     $(".dress-button").on('click', function() {
-      // $(".outfit").trigger("click");
+
       $("#tops").css("display", "none");
       $("#bottoms").css("display", "none");
-      $("#dresses").css("display", "block");
-      uncreateSlider();
-      createSlider();
+      $("#shoes").css("display", "none");
+
+      setTimeout( function() {
+        $("#dresses").fadeIn(200);
+        $("#shoes").fadeIn(200);
+          createSlider();
+          $(".outfit").trigger("click");
+      }, 500);
+
     });
 // tops/bottoms button
     $(".tops-bottoms").on('click', function() {
-      // $(".outfit").trigger("click");
+
       $("#dresses").css("display", "none");
-      $("#tops").css("display", "block");
-      $("#bottoms").css("display", "block");
-      uncreateSlider();
-      createSlider();
+      $("#shoes").css("display", "none");
+      // $("#bottoms").css("display", "block");
+      // uncreateSlider();
+      // createSlider();
+
+      setTimeout( function() {
+        $("#tops").fadeIn(300);
+        $("#bottoms").fadeIn(300);
+        $("#shoes").fadeIn(300);
+          createSlider();
+        $(".outfit").trigger("click");
+      }, 500);
     });
 
 
