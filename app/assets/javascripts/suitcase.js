@@ -56,8 +56,8 @@ function createSlider() {
 
     if ($('.dresses-container').find('img').length > 1) {
       $('.dresses-container').slick( {
-        prevArrow: '<span class="arrow-left outfit"><</span>',
-        nextArrow: '<span class="arrow-right outfit">></span>',
+        prevArrow: '<span class="arrow-left outfit dress"><</span>',
+        nextArrow: '<span class="arrow-right outfit dress">></span>',
       });
     }
 
@@ -226,9 +226,10 @@ function uncreateSlider() {
 
       setTimeout( function() {
         $("#dresses").fadeIn(200);
+        $(".arrow-right.outfit.dress").trigger("click");
         $("#shoes").fadeIn(200);
-          createSlider();
-          $(".outfit").trigger("click");
+          // createSlider();
+
       }, 500);
 
     });
@@ -245,8 +246,8 @@ function uncreateSlider() {
         $("#tops").fadeIn(300);
         $("#bottoms").fadeIn(300);
         $("#shoes").fadeIn(300);
-          createSlider();
-        $(".outfit").trigger("click");
+        //   createSlider();
+        // $(".outfit").trigger("click");
       }, 500);
     });
 
