@@ -1,0 +1,35 @@
+.top-of-page {
+  background-image: url('stamp.png');
+  background-size: 320px 240px;
+  background-repeat-y: no-repeat;
+
+}
+
+.profile {
+  height: 150px;
+}
+
+.info {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+  display: inline-block;
+  float: left;
+  top: 70px;
+  margin-left: 10%;
+}
+
+.info img {
+  position: relative;
+  height: 100%;
+  width: auto;
+  margin: 0, auto;
+}
+
+#greeting {
+  color: grey;
+  margin: 20px 40px;
+  float: right;
+}

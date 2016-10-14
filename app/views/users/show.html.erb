@@ -6,18 +6,20 @@
 
 
 <body class="user-show">
+
   <div class ="top-of-page">
+
     <div class="profile">
-      <h1 id="greeting">Hello, <%= @user.name %>!</h1>
-      <div class="editing"><%= link_to "Edit Profile", edit_user_path(@user), id: "myedit" %>
+      <div class="info">
+          <%= image_tag @user.image.url, id: "imageUploadForm"%>
+      </div>
+      <div class="greeting">
+        <h1 id="greeting">Hello, <%= @user.name %>!</h1>
+        <div class="editing"><%= link_to "Edit Profile", edit_user_path(@user), id: "myedit" %></div>
+      </div>  
     </div>
 
-
-    <div class="info">
-        <%= image_tag @user.image.url, id: "imageUploadForm"%>
-      </h4>
-    </div>
-</div>
+  </div>
 
 
 <div class="row small-up-1 medium-up-1 large-up-2">
