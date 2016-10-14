@@ -6,15 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #
-top = Category.create(category: "Top")
+Category.create(category: "Top")
 Category.create(category: "Bottom")
 Category.create(category: "Shoes")
 Category.create(category: "Dresses")
 
-wardrobe = Wardrobe.create(name: "Winter")
+Wardrobe.create(name: "Winter")
 # Item.create(name:"dress1", description:"a dress", image:"http://www.lindybop.co.uk/images/audrey-red-polka-dot-swing-dress-p41-15865_zoom.jpg", category_id: 4, wardrobe_id: 1)
 
-Item.create(name:"t-shirt", description:"blue t-shirt", image:"https://upload.wikimedia.org/wikipedia/commons/2/24/Blue_Tshirt.jpg", category: top, wardrobe: wardrobe)
+Item.create(name:"t-shirt", description:"blue t-shirt", image:"https://upload.wikimedia.org/wikipedia/commons/2/24/Blue_Tshirt.jpg", category_id: 1, wardrobe_id: 1)
 Item.create(name:"shirt", description:"black dress shirt", image:"http://images.repertoirefashion.co.uk/images/products/zoom/1349795605-58871000.jpg", category_id: 1, wardrobe_id: 1)
 Item.create(name:"sweater", description:"sweater", image:"http://www.atmintlstyle.com/sites/default/files/Knitted-Women-Sweater-for-Winter-2013.jpg", category_id: 1, wardrobe_id: 1)
 Item.create(name:"shirt", description:"white shirt", image:"http://www.atmintlstyle.com/sites/default/files/2.women-shirts.jpg", category_id: 1, wardrobe_id: 1)
