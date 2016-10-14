@@ -43,7 +43,7 @@
 }
 
 
-// fill your warrdrobe
+// fill your wardrobe
 .parallax_section_two{
   top:500px;
   height: 500px;
@@ -84,6 +84,43 @@
   top:500px;
   height:400px;
   float:right;
+}
+
+//create suitcases
+
+.parallax_section_three{
+  top:500px;
+  height: 500px;
+    background-repeat: no-repeat;
+    width:100%;
+    background-size: cover;
+    background-position: 100% auto;
+    position:relative;
+    background-image: url('beach.png');
+
+}
+
+.create-suitcase-main-page {
+  top:500px;
+  height:400px;
+  text-align: center;
+  margin-top: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.suitcase-paragraph {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin-top:-250px;
+}
+
+
+.parallax_image_create_suitcase {
+  content:url('luggage.png');
+  top:500px;
+  height:400px;
+  float:left;
 }
 
 //top part
