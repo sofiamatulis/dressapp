@@ -2,15 +2,18 @@ $( document ).on('turbolinks:load', function() {
 
 // opening suitcase
   $("#open-nav").on('click', function() {
+    document.getElementById("suitcase-side-nav").style.width = "40%";
+    document.getElementById("suitcase-main").style.marginLeft = "40%";
     $(".outfit").trigger("click");
     $('#outfit-checker').fadeIn(200);
     $('.side-nav-buttons').fadeIn(100);
-    document.getElementById("suitcase-side-nav").style.width = "40%";
-    document.getElementById("suitcase-main").style.marginLeft = "40%";
     $("#sortable1").addClass("is-open");
     $(this).html("");
-    createSlider();
+    if ( $(".outfit-checker-container").hasClass('slick') ) {
+      createSlider();
+    }
     $(".outfit").trigger("click");
+    $(".clothes-types").fadeIn(100);
   });
 // closing nav
   $("#close-nav").on('click', function() {
@@ -53,8 +56,8 @@ function createSlider() {
 
     if ($('.dresses-container').find('img').length > 1) {
       $('.dresses-container').slick( {
-        prevArrow: '<span class="arrow-left outfit"><</span>',
-        nextArrow: '<span class="arrow-right outfit">></span>',
+        prevArrow: '<span class="arrow-left outfit dress"><</span>',
+        nextArrow: '<span class="arrow-right outfit dress">></span>',
       });
     }
 
@@ -71,10 +74,18 @@ function createSlider() {
 
 // un-calls the carousel..
 function uncreateSlider() {
-  $('.tops-container').slick('unslick');
-  $('.bottoms-container').slick('unslick');
-  $('.dresses-container').slick('unslick');
-  $('.shoes-container').slick('unslick');
+  if ($('.tops-container').hasClass('slick')) {
+    $('.tops-container').slick('unslick');
+  }
+  if ($('.bottoms-container').hasClass('slick')) {
+    $('.bottoms-container').slick('unslick');
+  }
+  if ($('dresses-container').hasClass('slick')) {
+    $('.dresses-container').slick('unslick');
+  }
+  if ($('.shoes-container').hasClass('slick')) {
+    $('.shoes-container').slick('unslick');
+  }
 }
 
 // function to make text appear when item is dragged and added
@@ -208,21 +219,36 @@ function uncreateSlider() {
 
     // dresses/onesies button
     $(".dress-button").on('click', function() {
-      // $(".outfit").trigger("click");
+
       $("#tops").css("display", "none");
       $("#bottoms").css("display", "none");
-      $("#dresses").css("display", "block");
-      uncreateSlider();
-      createSlider();
+      $("#shoes").css("display", "none");
+
+      setTimeout( function() {
+        $("#dresses").fadeIn(200);
+        $(".arrow-right.outfit.dress").trigger("click");
+        $("#shoes").fadeIn(200);
+          // createSlider();
+
+      }, 500);
+
     });
 // tops/bottoms button
     $(".tops-bottoms").on('click', function() {
-      // $(".outfit").trigger("click");
+
       $("#dresses").css("display", "none");
-      $("#tops").css("display", "block");
-      $("#bottoms").css("display", "block");
-      uncreateSlider();
-      createSlider();
+      $("#shoes").css("display", "none");
+      // $("#bottoms").css("display", "block");
+      // uncreateSlider();
+      // createSlider();
+
+      setTimeout( function() {
+        $("#tops").fadeIn(300);
+        $("#bottoms").fadeIn(300);
+        $("#shoes").fadeIn(300);
+        //   createSlider();
+        // $(".outfit").trigger("click");
+      }, 500);
     });
 
 
