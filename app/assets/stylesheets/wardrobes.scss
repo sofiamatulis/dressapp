@@ -60,14 +60,14 @@ h1 {
   // background-color: #ef766a;
   border-radius: 20px;
   margin-top: 0;
-  margin-bottom: 15px;
-  padding: 30px 30px;
+  // margin-bottom: 15px;
+  // padding: 30px 30px;
 }
 
 .search-bar {
   text-align: right;
-  margin-right: 35px;
-  padding-bottom: 10px;
+  // margin-right: 35px;
+  // padding-bottom: 10px;
 }
 
 
@@ -238,3 +238,23 @@ h1 {
 //   margin: auto;
 //   text-align: center;
 // }
+.float-right {
+  float: right;
+}
+.search-filter {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#drop-down-show {
+  position:relative;
+  border-radius: 1px;
+  font-size: 15px;
+  // padding: 5px 8px;
+  cursor: pointer;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  border: 0.2px solid #fff;
+  transition-duration: 0.5s;
+  margin-left:28px;
+}

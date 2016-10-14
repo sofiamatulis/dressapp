@@ -31,16 +31,21 @@ class WardrobesController < ApplicationController
   def show
     @wardrobe = Wardrobe.find(params[:id])
     unless session[:user_id] == @wardrobe.user_id
-     flash[:notice] = "You don't have access to that wardrobe!"
-     redirect_to user_path(session[:user_id])
-     return
-   end
-   @item = Item.new(:wardrobe_id => params[:id])
-   respond_to do |format|
-     format.html
-     format.json { render json: {item: @item.to_json, users: @users,category: @category, wardrobe: @wardrobes.to_json }}
-   end
-   @suitcases = current_user.suitcases
+      flash[:notice] = "You don't have access to that wardrobe!"
+      redirect_to user_path(session[:user_id])
+      return
+    end
+    @item = Item.new(:wardrobe_id => params[:id])
+    respond_to do |format|
+      format.html
+      format.json { render json: {item: @item.to_json, users: @users,category: @category, wardrobe: @wardrobes.to_json }}
+    end
+    @items = @wardrobe.items
+    @tops = @items.where(category_id: "1")
+    @bottoms = @items.where(category_id: "2")
+    @shoes = @items.where(category_id: "3")
+    @dresses = @items.where(category_id: "4")
+    @suitcases = current_user.suitcases
 
   #  @suitcase = Suitcase.find(params[:id])
 
