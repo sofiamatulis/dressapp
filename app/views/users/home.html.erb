@@ -1,7 +1,9 @@
-  <div class="header-image">
   <head>
+    <div class="header-image">
     <!--  getting the animation CDN-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!--  making it responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   </head>
 <!-- created a div for the entire home page -->
   <div class="home-page">
@@ -18,7 +20,7 @@
     </div>
     <div id="photo1" class="photo">
         <div class="video-container">
-        <%= video_tag("mainpage.mp4", alt: "Leisure", autoplay: true, loop: true, :class =>'video') %> </div>
+        <%= video_tag("mainpage.mp4", alt: "Leisure", autoplay: true, loop: true, :id =>'video') %> </div>
     </div>
     <div id="photo0" class="photo">
       <img class="text-logo">  </img>
@@ -63,12 +65,13 @@
 
 
             <div class="parallax_section_four">
+              <h1 class="text-pack-up"> Pack Up and Check Your Outfits</h1>
+              <p class="pack-up-paragraph"> Select which items you would like to pack, then use our outfit checker. Ensure you’ve got all the matching items your need and enjoy your perfect holiday!</p>
               <div class="parallax_image_select">
               </div>
               <div class="parallax_image_pack_up">
               </div>
               <div class="parallax_image_go">
               </div>
-                <h1 class="text-pack-up"> Pack Up and Check Your Outfits</h1>
-                <p class="pack-up-paragraph"> Select which items you would like to pack, then use our outfit checker. Ensure you’ve got all the matching items your need and enjoy your perfect holiday!</p>
+
               </div>
