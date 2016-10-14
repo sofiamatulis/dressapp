@@ -1,51 +1,74 @@
-<div class="header-image">
-
+  <div class="header-image">
   <head>
     <!--  getting the animation CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   </head>
 <!-- created a div for the entire home page -->
   <div class="home-page">
-
   <!--  here there are boxes and ids were assigned to data photo so i can use it for javascript -->
-  <div id="box0" class="box" data-photo="#photo0">Welcome!</div>
+    <div id="box0" class="box" data-photo="#photo0">Welcome!</div>
     <div id="box1" class="box" data-photo="#photo1">Sign up</div>
     <div id="box2" class="box" data-photo="#photo2">Pack up</div>
     <div id="box3" class="box" data-photo="#photo3">Ready to go!</div>
-
-
 <!-- here there are the ids for the actual pictures! added a class for each photo and a class for all of them -->
-
-
-
     <div id="photo2" class="photo"></div>
-
-
-
     <div id="photo3" class="photo">
   <!--  animation when you are ready to go!-->
       <p class="animated infinite bounce"><img class="animation"></img><p>
     </div>
-
-
     <div id="photo1" class="photo">
-
-
-    <div class="video-container">
-  <%= video_tag("mainpage.mp4", alt: "Leisure", autoplay: true, loop: true, :class =>'video') %>
-</div>
-
+        <div class="video-container">
+        <%= video_tag("mainpage.mp4", alt: "Leisure", autoplay: true, loop: true, :class =>'video') %> </div>
     </div>
-
-
     <div id="photo0" class="photo">
-
       <img class="text-logo">  </img>
-
     </div>
-
-
-
+    </div>
 
   </div>
-</div>
+
+
+  <div class="parallax_section">
+    <div class="parallax_image">
+    </div>
+    <div class="image_two">
+  </div>
+      <h1 class="createyourwardrobe"> Create your wardrobe</h1>
+      <p class="wardrobe-paragraph"> Whether you want to have just one wardrobe, or one per season- PackApp gives you the ability
+          to store your clothes whichever way you’d like!
+          Have a family? Create a wardrobe for each of your
+          family members and help them pack too!</p>
+    </div>
+
+
+    <div class="parallax_section_two">
+      <div class="parallax_image_fill_your_wardrobe">
+      </div>
+      <div class="image_camera">
+    </div>
+        <h1 class="fill-your-wardrobe"> Fill Your Wardrobe</h1>
+        <p class="fill-paragraph">Snap photos of your clothes and upload them to your virtual wardrobe!</p>
+      </div>
+
+
+
+
+          <div class="parallax_section_three">
+            <div class="parallax_image_create_suitcase">
+            </div>
+
+              <h1 class="create-suitcase-main-page"> Create Suitcases and choose your destination</h1>
+              <p class="suitcase-paragraph">For weather updates and packing guides to ensure you pack everything you need!</p>
+            </div>
+
+
+            <div class="parallax_section_four">
+              <div class="parallax_image_select">
+              </div>
+              <div class="parallax_image_pack_up">
+              </div>
+              <div class="parallax_image_go">
+              </div>
+                <h1 class="text-pack-up"> Pack Up and Check Your Outfits</h1>
+                <p class="pack-up-paragraph"> Select which items you would like to pack, then use our outfit checker. Ensure you’ve got all the matching items your need and enjoy your perfect holiday!</p>
+              </div>

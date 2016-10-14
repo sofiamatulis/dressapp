@@ -1,0 +1,323 @@
+//create your wardrobe
+
+.parallax_section{
+  top:500px;
+  height: 500px;
+    background-repeat: no-repeat;
+    width:100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 100% auto;
+    position:relative;
+    background-color: rgba(148, 219, 159, 1);
+
+}
+
+.parallax_image{
+  content:url('colorfulwardrobes.png');
+  top:500px;
+  height:500px;
+  float:right;
+
+}
+
+.image_two {
+  content:url('mainwardrobe.png');
+  top:500px;
+  height:400px;
+  float:left;
+}
+
+.createyourwardrobe {
+  top:500px;
+  height:400px;
+  text-align: center;
+  margin-top: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.wardrobe-paragraph {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin-top:-250px;
+}
+
+
+// fill your wardrobe
+.parallax_section_two{
+  top:500px;
+  height: 500px;
+    background-repeat: no-repeat;
+    width:100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 100% auto;
+    position:relative;
+    background-color: white;
+
+}
+
+.fill-your-wardrobe {
+  top:500px;
+  height:400px;
+  text-align: center;
+  margin-top: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.fill-paragraph {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin-top:-250px;
+}
+
+.image_camera {
+  content:url('camera.png');
+  top:500px;
+  height:400px;
+  float:left;
+}
+
+.parallax_image_fill_your_wardrobe {
+  content:url('clothes-wardrobe.png');
+  top:500px;
+  height:400px;
+  float:right;
+}
+
+//create suitcases
+
+.parallax_section_three{
+  top:500px;
+  height: 500px;
+    background-repeat: no-repeat;
+    width:100%;
+    background-size: cover;
+    background-position: 100% auto;
+    position:relative;
+    background-image: url('beach.png');
+
+}
+
+.create-suitcase-main-page {
+  top:500px;
+  height:400px;
+  text-align: center;
+  margin-top: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.suitcase-paragraph {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin-top:-250px;
+}
+
+
+.parallax_image_create_suitcase {
+  content:url('luggage.png');
+  top:500px;
+  height:400px;
+  float:left;
+}
+
+//pack up and check your outfits
+
+.parallax_section_four{
+  top:500px;
+  height: 500px;
+    background-repeat: no-repeat;
+    width:100%;
+    background-size: cover;
+    background-position: 100% auto;
+    position:relative;
+    background-color: white;
+
+}
+
+.text-pack-up {
+  // top:500px;
+  // height:100px;
+  margin-top: 0px;
+  position:relative;
+  margin-right:200px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.pack-up-paragraph {
+  font-family: 'Open Sans', sans-serif;
+  margin-top:-400px;
+  float:left;
+  position:relative;
+  width:200px;
+}
+
+
+.parallax_image_select {
+  content:url('select.png');
+  top:500px;
+  height:350px;
+  float:left;
+  margin-left:200px;
+}
+
+.parallax_image_pack_up {
+  content:url('pack-up.png');
+  top:500px;
+  height:350px;
+  float:left;
+  margin-left:-100px;
+}
+
+
+.parallax_image_go {
+  content:url('go.png');
+  top:500px;
+  height:350px;
+  float:right;
+  margin-top: -300px;
+
+}
+
+
+//top part of the main page
+
+
+ .text-logo {
+   content:url('logopackapp.png');
+   margin-left:645px;
+   margin-top:-10px;
+   width:50%;
+
+ }
+
+ .animation {
+   content:url('packapp2.png');
+   height:15%;
+   width:15%;
+
+ }
+
+
+
+.arrow-left{
+  color: grey;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+
+
+}
+
+.arrow-right {
+  color: grey;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+
+
+
+body {
+  background:#ccc;
+  margin:0; }
+
+.photo {
+  /*pictures wont be moving, margin is 0 and 0 and it is as big as it can get*/
+  /*the z index is 1 because its behind the boxes*/
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:500px;
+  background-position:50% 50%;
+  background-size:cover;
+  z-index:1;
+}
+/*z- index is two here because it goes on top of the photo when it reveals it */
+.photo.reveal {
+  z-index:2;
+}
+
+/*all boxes are white and this side and z-index is higher because it goes on top of the photo */
+
+.box {
+  width:200px;
+  height:200px;
+  border:15px solid #fff;
+  position:relative;
+  z-index:10;
+  float:left;
+  line-height:200px;
+  text-align:center;
+  color:#fff;
+  font-size:20px;
+  text-transform:uppercase;
+  font-family:Tahoma;
+  letter-spacing:1px;
+  background-color: rgba(211, 211, 211, 0.5);
+}
+
+/*each picture*/
+
+
+#photo0 {
+  background-image:url('http://66.media.tumblr.com/0ce0c810c39a0c6bf48a60b324dcb173/tumblr_nhoch8HjT61r9c6lmo1_1280.jpg');
+
+}
+#photo1 {
+  background-image: url('http://images.all-free-download.com/images/graphiclarge/plain_white_background_211387.jpg');
+}
+
+
+
+#photo2 {
+  background-image:url('http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg');
+}
+
+#photo3 {
+  background-image:url('http://i1.wp.com/8list.ph/wp-content/uploads/2016/01/7-Plan-Your-Travel-Budget-2015.jpg');
+}
+
+/*position of the boxes*/
+
+#box0 {
+  left:100px;
+  margin-top:200px;
+}
+
+#box1 {
+  left:150px;
+  margin-top:200px;
+}
+#box2 {
+  margin-left:200px;
+  margin-top:200px;
+ }
+#box3 {
+  margin-left:70px;
+  margin-top:200px;
+
+ }
+
+ /*.item-details img {
+   margin-left:20px
+
+ }*/
+
+
+.video-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: 20%;
+  height: 500px;
+  z-index: -100;
+}
+
+.video {
+  height:500px;
+}

@@ -44,6 +44,7 @@ $( document ).on('turbolinks:load', function() {
         var itemContainer = $('<div class="wardrobe-item">').append(label, name, description);
         $(itemContainer).appendTo('.wardrobe-item-container');
         $("#modal-form")[0].reset();
+        $('.upload-button').remove();
 
 
     }
