@@ -151,8 +151,6 @@ $( document ).on('turbolinks:load', function() {
 
 
 
-
-
   $('.name-wardrobe').hover(function(){
 
 // created variable mybox and whatever im hovering on (this), calling the parent my wardrobe and finding the class my box thats inside of this parent too
@@ -178,7 +176,7 @@ $( document ).on('turbolinks:load', function() {
          mybox.html(wardrobe);
          mybox.show();
         // console.log(wardrobe);
-      
+
 
 
       });
