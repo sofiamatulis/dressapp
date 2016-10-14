@@ -25,4 +25,4 @@
 /node_modules
 /public/system
 
-config/secrets.yml
+secrets.yml
