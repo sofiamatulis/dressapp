@@ -373,9 +373,9 @@ body {
 
 
 
+//for cell phone
 
-
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     .box {
     display:none;
     }
@@ -427,5 +427,58 @@ body {
         position:relative;
         top:120px;
         width:400px;}
+
+}
+
+
+// for medium screen
+
+@media (max-width: 1000px) {
+  // .box {
+  //   width:100px;
+  //   height:100px;
+  //   border:7.5px solid #fff;
+  //   position:relative;
+  //   z-index:10;
+  //   float:left;
+  //   line-height:100px;
+  //   text-align:center;
+  //   color:#fff;
+  //   font-size:10px;
+  //   text-transform:uppercase;
+  //   font-family:Tahoma;
+  //   letter-spacing:0.5px;
+  //   background-color: rgba(211, 211, 211, 0.5);
+  // }
+
+
+    .text-logo {
+      content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/logopackapp.png');
+     left:320px;
+     position:relative;
+     bottom:10px;
+      width:50%
+    }
+
+    .first_image, .image_go, .image_camera{
+      display: none;
+    }
+
+    .parallax_section_three {
+      background-image:none;
+      background-color: #B6F5B2;
+
+    }
+
+    .text-pack-up {
+      margin-right:0;
+      text-align: center;
+    }
+
+    .pack-up-paragraph {
+      width: auto;
+      left:0;}
+
+
 
 }
