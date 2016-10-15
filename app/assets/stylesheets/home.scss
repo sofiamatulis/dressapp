@@ -14,7 +14,7 @@
 }
 
 .parallax_image{
-  content:url('colorfulwardrobes.png');
+  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/colorfulwardrobes.png');
   top:500px;
   height:500px;
   float:right;
@@ -22,7 +22,7 @@
 }
 
 .image_two {
-  content:url('mainwardrobe.png');
+  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/mainwardrobe.png');
   top:500px;
   height:400px;
   float:left;
@@ -80,14 +80,14 @@
 }
 
 .image_camera {
-  content:url('camera.png');
+  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/camera.png');
   top:500px;
   height:400px;
   float:left;
 }
 
 .parallax_image_fill_your_wardrobe {
-  content:url('clothes-wardrobe.png');
+  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/clothes-wardrobe.png');
   top:500px;
   height:400px;
   float:right;
@@ -103,7 +103,7 @@
     background-size: cover;
     background-position: 100% auto;
     position:relative;
-    background-image: url('beach.png');
+    background-image: url('https://s3-us-west-2.amazonaws.com/packapp/assets/beach.png');
 
 }
 
@@ -131,7 +131,7 @@
 
 
 .parallax_image_create_suitcase {
-  content:url('luggage.png');
+  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/luggage.png');
   height:400px;
   float:left;
   position:relative;
@@ -175,7 +175,7 @@
 
 
 .parallax_image_select {
-  content:url('select.png');
+  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/select.png');
   top:500px;
   height:350px;
   float:left;
@@ -183,7 +183,7 @@
 }
 
 .parallax_image_pack_up {
-  content:url('pack-up.png');
+  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/pack-up.png');
   top:500px;
   height:350px;
   float:left;
@@ -192,7 +192,7 @@
 
 
 .parallax_image_go {
-  content:url('go.png');
+  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/go.png');
   top:500px;
   height:350px;
   float:right;
