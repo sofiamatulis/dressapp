@@ -6,9 +6,20 @@ $( document ).on('ready turbolinks:load', function() {
 
   $('.box').hover(function(){
   $($(this).data('photo')).addClass('reveal');
+  // $('.photo').animate({ 'opacity': 0.2 });
+  // $('.photo').animate({ 'opacity': 'toggle'});
+
+  // $(".photo").fadeIn(1000);
+
 }, function(){
   $($(this).data('photo')).removeClass('reveal');
+
 });
+
+
+// $("#loader").fadeIn("slow", function() {
+//     $(this).addClass("loader");
+// });
 
 
 //when document is complete loading
@@ -18,7 +29,7 @@ $( document ).on('ready turbolinks:load', function() {
 //     }
 // });
 
-//make hover function fade in
+// make hover function fade in
 
 // $(function() {
 //     $(".box").hover(function() {
@@ -30,10 +41,8 @@ $( document ).on('ready turbolinks:load', function() {
 //             backgroundColor: "red"
 //         }, 800);
 //     });
-
-
-
-// 
+//
+//
 // });
 
 
