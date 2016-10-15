@@ -35,12 +35,12 @@
         <ul class="allwardrobe">
           <% @user.wardrobes.each do |wardrobe| %>
             <li class="mywardrobe">
+              <!--  where the my box class is -->
+              <div class="mybox" data-id ='src="/wardrobes/<%= wardrobe.id%>/thumbnail/"' width = "150px" height = "150px"></div>
               <%= link_to image_tag("mainwardrobe.png"), wardrobe_path(wardrobe), :class =>"name-wardrobe"%><br>
               <p class="wardrobename"><%= wardrobe.name %></p>
-                  <!--  where the my box class is -->
-                <div class="mybox" data-id ='src="/wardrobes/<%= wardrobe.id%>/thumbnail/"' width = "250px" height = "250px"></div>
-            </li>
                <% end %>
+            </li>
         </ul>
 
           <div class="modal-wardrobe">

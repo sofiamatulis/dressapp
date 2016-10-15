@@ -79,7 +79,7 @@ class WardrobesController < ApplicationController
      redirect_to user_path(session[:user_id])
      return
    end
-   @items = Item.last(1)
+   @items = @wardrobe.items.last(1)
 
   #  @item = Item.new(:wardrobe_id => params[:id])
       # render json: {item: @item.to_json, users: @users,category: @category, wardrobe: @wardrobes.to_json}

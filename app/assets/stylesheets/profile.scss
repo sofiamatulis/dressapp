@@ -80,6 +80,19 @@
     display: block;
     margin: auto;
 }
+
+// for the hover function
+  .mybox {
+      display: none;
+      position: absolute;
+      z-index:10;
+      bottom: 10px;
+      right: 10px;
+  }
+
+  // a:hover + .mybox,.mybox:hover{
+  //     display: block;
+
 // css for creating the tabs:
 .mytabs {
     width:100%;

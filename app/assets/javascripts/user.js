@@ -158,32 +158,21 @@ $( document ).on('turbolinks:load', function() {
     var mybox = $(this).parent("li.mywardrobe").find('.mybox');
     var mywardrobe = $(this).attr("href");
     console.log(mywardrobe);
-    // var number = parseInt(mywardrobetext, 10);
-    // console.log(number);
-    // $(this).attr("data-id");
 
     // console.log('start');
     //ajax get request to just show the thumbnail
 
-
-
     $.ajax({
-
-
       url: mywardrobe + '/thumbnail',
       method:'GET',
       dataType: "html",
 
       //show the my box variable
-
-    }).done(function(wardrobe){
+      }).done(function(wardrobe){
         // console.log('done');
          mybox.html(wardrobe);
          mybox.show();
         // console.log(wardrobe);
-
-
-
       });
 // hide when not hovering!
   }, function() {

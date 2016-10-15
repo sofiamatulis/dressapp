@@ -264,20 +264,3 @@ color: #AFE9FF;
     position: relative;
     top: -6px;
   }
-
-
-
-  .mybox{
-      display: none;
-      position:relative;
-      z-index:10;
-      max-width: 265px;
-
-
-
-  }
-
-  a:hover + .mybox,.mybox:hover{
-      display: block;
-
-  }
