@@ -41,13 +41,20 @@
   margin-bottom: 0;
 }
 
+
+
 #myedit {
   float: right;
   margin: 20px;
 }
 
 .name-wardrobe img {
-  width: 270px;
+  width: 220px;
+}
+
+.wardrobename {
+  color: black;
+  font-size: 30px;
 }
 
 .mywardrobe {
@@ -58,6 +65,21 @@
   text-align: center;
 }
 
+#new-wardrobe, #new-suitcase {
+    font-size:20px;
+    border-radius: 1px;
+    font-size: 15px;
+    padding: 5px 8px;
+    cursor: pointer;
+    color: black;
+    background-color: lightblue;
+    font-family: 'Open Sans', sans-serif;
+    border: 0.2px solid #fff;
+    box-shadow: 2px 2px 5px #AFE9FF;
+    transition-duration: 0.5s;
+    display: block;
+    margin: auto;
+}
 // css for creating the tabs:
 .mytabs {
     width:100%;
