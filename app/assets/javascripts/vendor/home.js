@@ -19,33 +19,6 @@ $( document ).on('ready turbolinks:load', function() {
 });
 
 
-// $("#loader").fadeIn("slow", function() {
-//     $(this).addClass("loader");
-// });
-
-
-//when document is complete loading
-// $(document).ajaxComplete(function(){
-//     if($('.mywardrobe').length != 0) {
-//         $('.mywardrobe').css('font-size', '70px');
-//     }
-// });
-
-// make hover function fade in
-
-// $(function() {
-//     $(".box").hover(function() {
-//         $(this).stop().animate({
-//             backgroundColor: "red"
-//         }, 800);
-//     }, function() {
-//         $(this).stop().animate({
-//             backgroundColor: "red"
-//         }, 800);
-//     });
-//
-//
-// });
 
 
 });
