@@ -29,11 +29,15 @@
 }
 
 .createyourwardrobe {
-  top:500px;
+  top:50px;
   height:400px;
   text-align: center;
   margin-top: 0;
   font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+  position: relative;
+
+
 }
 
 .wardrobe-paragraph {
@@ -58,11 +62,14 @@
 }
 
 .fill-your-wardrobe {
-  top:500px;
+  top:50px;
   height:400px;
   text-align: center;
   margin-top: 0;
   font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+  position: relative;
+
 }
 
 
@@ -101,11 +108,14 @@
 }
 
 .create-suitcase-main-page {
-  top:500px;
   height:400px;
   text-align: center;
   margin-top: 0;
   font-family: 'Open Sans', sans-serif;
+  position:relative;
+  top:150px;
+  font-size: 32px;
+
 }
 
 
@@ -113,14 +123,20 @@
   font-family: 'Open Sans', sans-serif;
   text-align: center;
   margin-top:-250px;
+  position:relative;
+  top:150px;
+
+
 }
 
 
 .parallax_image_create_suitcase {
   content:url('luggage.png');
-  top:500px;
   height:400px;
   float:left;
+  position:relative;
+  top:70px;
+
 }
 
 //pack up and check your outfits
@@ -138,23 +154,23 @@
 }
 
 .text-pack-up {
-  // top:500px;
-  // height:100px;
   margin-top: 0px;
   position:relative;
   margin-right:200px;
   font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+  top:50px;
+
 }
 
 
 .pack-up-paragraph {
   font-family: 'Open Sans', sans-serif;
-  // margin-top:-300px;
-  // margin-left:-200px;
   float:left;
   position:relative;
-  width:200px;
+  width:150px;
   left:100px;
+  top:100px;
 }
 
 
@@ -385,6 +401,10 @@ body {
       margin-left:200px;
       margin-top:-10px;
       width:50%;
+    }
+
+    .parallax_image, .parallax_image_fill_your_wardrobe, .image_two {
+      display: none;
     }
 
 }
