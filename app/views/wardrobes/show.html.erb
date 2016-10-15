@@ -182,8 +182,8 @@
   <% end %>
   <div class="row">
     <div class="modify-buttons large-12 columns">
-      <p class="back-button"><%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe), :id => "wardrobe-edit-button"%> |
-        <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"} %></p>
+      <p class="back-button"><%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe), :id => "wardrobe-edit-button", :class => "back-button"%> |
+        <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"}, :class => "back-button" %></p>
     </div>
   </div>
 

@@ -93,7 +93,7 @@ ul, li {
 }
 
 // HERE
-#new-wardrobe, #new-suitcase, #new-item {
+#new-wardrobe, #new-suitcase, #new-item, .upload-button{
     font-size:20px;
     border-radius: 1px;
     font-size: 15px;
@@ -128,7 +128,7 @@ ul, li {
  #modal-form {
   display: block;
   width: 400px;
-  height: 14em;
+  height: 16em;
   padding: 2em;
   background-color: #F2EFE4;
   position: absolute;
