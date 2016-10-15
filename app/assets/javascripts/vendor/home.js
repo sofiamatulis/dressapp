@@ -7,14 +7,18 @@ $( document ).on('ready turbolinks:load', function() {
   $('.box').hover(function(){
   $($(this).data('photo')).addClass('reveal');
   $('.photo').css("display", "none");
-  $('.photo').stop().fadeTo("fadein", 0.8);
+  $('.photo').stop().fadeTo("slow", 0.33);
   $('.photo').css("display", "");
-  $('.photo').stop().fadeTo("fadeout", 1)
+  $('.photo').stop().fadeTo("slow", 1)
 
 //fade in for the background
 
 }, function(){
   $($(this).data('photo')).removeClass('reveal');
+  $('.photo').css("display", "none");
+  $('.photo').stop().fadeTo("slow", 0.33);
+  $('.photo').css("display", "");
+  $('.photo').stop().fadeTo("slow", 1)
 
 });
 
