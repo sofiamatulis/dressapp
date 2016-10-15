@@ -62,6 +62,7 @@
 
 .mytab-links {
   background-color: #ff8265;
+  margin-bottom: 0;
 }
 
 .mytab-links li {
@@ -95,8 +96,9 @@ li.active a, li.active a:hover {
 .mytab-content {
   padding:15px;
   border-radius:3px;
-  box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+  // box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
   background:#fff;
+  box-shadow: 0 -5px 7px -7px black;
 }
 
   .mytab {
