@@ -14,7 +14,7 @@ $( document ).on('turbolinks:load', function() {
       });
       $('#new_wardrobe').on('submit', function(){
         $('.modal-wardrobe').fadeOut();
-        $('#allwardrobe').append('<img src="/clothes-wardrobe.png" height="100px" width="auto">');
+        // $('#allwardrobe').append('<img src="/clothes-wardrobe.png" height="100px" width="auto">');
 
       });
 
@@ -156,6 +156,10 @@ $( document ).on('turbolinks:load', function() {
 
 // created variable mybox and whatever im hovering on (this), calling the parent my wardrobe and finding the class my box thats inside of this parent too
     var mybox = $(this).parent("li.mywardrobe").find('.mybox');
+    var mywardrobe = $(this).attr("href");
+    console.log(mywardrobe);
+    // var number = parseInt(mywardrobetext, 10);
+    // console.log(number);
     // $(this).attr("data-id");
 
     // console.log('start');
@@ -166,7 +170,7 @@ $( document ).on('turbolinks:load', function() {
     $.ajax({
 
 
-      url:'/wardrobes/' +35 + '/thumbnail',
+      url: mywardrobe + '/thumbnail',
       method:'GET',
       dataType: "html",
 
