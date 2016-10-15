@@ -11,3 +11,6 @@ class Suitcase < ApplicationRecord
     end
   end
 end
+
+
+#suitcase needs the open weather API

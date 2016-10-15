@@ -14,3 +14,6 @@ class User < ApplicationRecord
 
 
 end
+
+
+# USER HAS AN ATTACHED FILE WHICH IS THE PROFILE PHOTO

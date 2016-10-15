@@ -9,6 +9,7 @@ $( document ).on('turbolinks:load', function() {
         $('.modal-wardrobe').fadeOut();
         }
       });
+      //fade in and out when clicking
       $('.close').on('click', function(){
         $('.modal-wardrobe').fadeOut();
       });
@@ -16,6 +17,8 @@ $( document ).on('turbolinks:load', function() {
         $('.modal-wardrobe').fadeOut();
 
       });
+      //when you click outside of the form it fades out
+      //it doesnt propagate to the input
 
        $('.modal-wardrobe').click( function(){close()});
        $('#wardrobe_name').click( function(event){notError(event)});

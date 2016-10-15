@@ -9,6 +9,7 @@ $( document ).on('turbolinks:load', function() {
       $('.modal-item').fadeOut();
       }
     });
+    //fade in and out when creating item
 
     $('.close').on('click', function(){
       $('.modal-item').fadeOut();
@@ -45,6 +46,8 @@ $( document ).on('turbolinks:load', function() {
         $(itemContainer).appendTo('.wardrobe-item-container');
         $("#modal-form")[0].reset();
         $('.upload-button').remove();
+
+        // reset the form and remove the extra upload buttons
 
 
     }
