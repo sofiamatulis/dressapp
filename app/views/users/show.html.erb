@@ -15,8 +15,8 @@
       </div>
       <div class="greeting">
         <h1 id="greeting">Hello, <%= @user.name %>!</h1>
-        <div class="editing"><%= link_to "Edit Profile", edit_user_path(@user), id: "myedit" %></div>
-      </div>  
+        <%= link_to "Edit Profile", edit_user_path(@user), id: "myedit" %>
+      </div>
     </div>
 
   </div>

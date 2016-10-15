@@ -1,3 +1,17 @@
+.user-show {
+  // background-color: #ff8265;
+}
+
+// .user-show {
+//   background-color: white;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+//   background-attachment: fixed;
+//   background-size: cover;
+//
+// }
+
+
 .top-of-page {
   background-image: url('stamp.png');
   background-size: 320px 240px;
@@ -6,7 +20,8 @@
 }
 
 .profile {
-  height: 150px;
+  height: 220px;
+  background-color: #ff8265;
 }
 
 .info {
@@ -29,7 +44,23 @@
 }
 
 #greeting {
-  color: grey;
-  margin: 20px 40px;
+  color: white;
+  float: left;
+  margin-top: 150px;
+  margin-left: 20px;
+}
+
+#myedit {
   float: right;
+  margin: 20px;
+  // border-radius: 1px;
+  // font-size: 15px !important;
+  // padding: 5px 8px;
+  // cursor: pointer;
+  // color: #fff;
+  // background-color: lightblue !important;
+  // font-family: 'Open Sans', sans-serif;
+  // border: 0.2px solid #fff !important;
+  // box-shadow: 2px 2px 5px #AFE9FF;
+  // transition-duration: 0.5s;
 }
