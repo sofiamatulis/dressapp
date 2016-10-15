@@ -21,52 +21,48 @@
 
   </div>
 
+<div class="mytabs">
+  <ul class="mytab-links">
+    <li class="active"><a href="#mytab1">My Wardrobes</a></li>
+    <li><a href="#mytab2">My Suitcases</a><li>
+  </ul>
+<!-- <div class="row small-up-1 medium-up-1 large-up-2">             -->
 
-<div class="row small-up-1 medium-up-1 large-up-2">
-            <div class="column">
-              <div class="w">
-               <h1 class="hello">My wardrobes</h1>
-
-
-
-             <ul class="allwardrobe">
-               <% @user.wardrobes.each do |wardrobe| %>
-                 <li class="mywardrobe">
-                  <%= link_to wardrobe.name, wardrobe_path(wardrobe), :class =>"name-wardrobe"%>
-
-                  <br>
+  <div class="mytab-content">
+    <div id="mytab1" class="mytab active">
+      <h1 class="profile-tabtitle">My wardrobes</h1>
+        <ul class="allwardrobe">
+          <% @user.wardrobes.each do |wardrobe| %>
+            <li class="mywardrobe">
+              <%= link_to wardrobe.name, wardrobe_path(wardrobe), :class =>"name-wardrobe"%><br>
                   <!--  where the my box class is -->
-                  <div class="mybox" data-id ='src="/wardrobes/<%= wardrobe.id%>/thumbnail/"' width = "250px" height = "250px"></div>
-                 </li>
+                <div class="mybox" data-id ='src="/wardrobes/<%= wardrobe.id%>/thumbnail/"' width = "250px" height = "250px"></div>
+            </li>
                <% end %>
-             </ul>
-            <button id="new-wardrobe">Create New Wardrobe</button>
+        </ul>
+          <button id="new-wardrobe">Create New Wardrobe</button>
 
-            <div class="modal-wardrobe">
+          <div class="modal-wardrobe">
              <%= form_for @wardrobe, :id => "wardrobe-from" do |f| %>
              <button type="button" class="close">X</button>
                <%= f.text_field :name, placeholder: "Wardrobe name" %> <br>
                <%= f.submit "New Wardrobe", id: "create-wardrobe" %>
              <% end %>
-
            </div>
-         </div>
 
-            </div>
+      </div>
 
-            <div class="column">
-              <div class="s">
-              <h1 class="bye">My suitcases</h1>
-
-              <ul class="allsuitcase">
-                <% @user.suitcases.each do |suitcase| %>
-                  <li class="mysuitcase">
-                    <%= link_to suitcase.name, suitcase_path(suitcase) %><br>
-                  </li>
+      <div id="mytab2" class="mytab">
+        <h1 class="profile-tabtitle">My suitcases</h1>
+          <ul class="allsuitcase">
+            <% @user.suitcases.each do |suitcase| %>
+              <li class="mysuitcase">
+                <%= link_to suitcase.name, suitcase_path(suitcase) %><br>
+              </li>
                 <% end %>
-              </ul>
+          </ul>
+            <button id="new-suitcase">Create New Suitcase</button>
 
-              <button id="new-suitcase">Create New Suitcase</button>
               <div class="modal-suitcase">
                 <%= form_for @suitcase, :id => "suitcase-form" do |f| %>
                   <button type="button" class="close">x</button>
@@ -80,16 +76,13 @@
                   <%= f.submit "New Suitcase", id: "create-suitcase"%>
                 </form>
                 <div class="destination-form">
-              </div>
+                </div>
               <% end %>
-
-            <br>
-            <br>
-
-            </div>
-
-            </div>
-</div>
+                <br>
+                <br>
+              </div>
+      </div>
+    </div>
 
 
 

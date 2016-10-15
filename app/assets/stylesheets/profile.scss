@@ -2,16 +2,6 @@
   // background-color: #ff8265;
 }
 
-// .user-show {
-//   background-color: white;
-//   background-position: center center;
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
-//   background-size: cover;
-//
-// }
-
-
 .top-of-page {
   background-image: url('stamp.png');
   background-size: 320px 240px;
@@ -32,8 +22,8 @@
   border-radius: 50%;
   display: inline-block;
   float: left;
-  top: 70px;
-  margin-left: 10%;
+  top: 30px;
+  margin-left: 30%;
 }
 
 .info img {
@@ -46,21 +36,73 @@
 #greeting {
   color: white;
   float: left;
-  margin-top: 150px;
-  margin-left: 20px;
+  margin-top: 90px;
+  margin-left: 15px;
+  margin-bottom: 0;
 }
 
 #myedit {
   float: right;
   margin: 20px;
-  // border-radius: 1px;
-  // font-size: 15px !important;
-  // padding: 5px 8px;
-  // cursor: pointer;
-  // color: #fff;
-  // background-color: lightblue !important;
-  // font-family: 'Open Sans', sans-serif;
-  // border: 0.2px solid #fff !important;
-  // box-shadow: 2px 2px 5px #AFE9FF;
-  // transition-duration: 0.5s;
 }
+
+// css for creating the tabs:
+.mytabs {
+    width:100%;
+    display:inline-block;
+}
+
+/*----- Tab Links -----*/
+/* Clearfix */
+.mytab-links:after {
+  display:block;
+  clear:both;
+  content:'';
+}
+
+.mytab-links {
+  background-color: #ff8265;
+}
+
+.mytab-links li {
+  margin:0px 5px;
+  float:left;
+  list-style:none;
+}
+
+  .mytab-links a {
+      padding:9px 15px;
+      display:inline-block;
+      border-radius:3px 3px 0px 0px;
+      background:#7FB5DA;
+      font-size:16px;
+      font-weight:600;
+      color:#4c4c4c;
+      transition:all linear 0.15s;
+  }
+
+  .mytab-links a:hover {
+      background:#a7cce5;
+      text-decoration:none;
+  }
+
+li.active a, li.active a:hover {
+  background:#fff;
+  color:#4c4c4c;
+}
+
+/*----- Content of Tabs -----*/
+.mytab-content {
+  padding:15px;
+  border-radius:3px;
+  box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+  background:#fff;
+}
+
+  .mytab {
+      display:none;
+  }
+
+  .mytab.active {
+      display:block;
+  }
