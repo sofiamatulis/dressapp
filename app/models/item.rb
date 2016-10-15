@@ -14,4 +14,6 @@ class Item < ApplicationRecord
     where("name LIKE ?", "%#{search}%")
   end
 
+  # search method
+
 end
