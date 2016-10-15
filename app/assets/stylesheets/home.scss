@@ -13,7 +13,7 @@
 
 }
 
-.parallax_image{
+.first_image{
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/colorfulwardrobes.png');
   top:500px;
   height:500px;
@@ -86,7 +86,7 @@
   float:left;
 }
 
-.parallax_image_fill_your_wardrobe {
+.image_fill_your_wardrobe {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/clothes-wardrobe.png');
   top:500px;
   height:400px;
@@ -130,7 +130,7 @@
 }
 
 
-.parallax_image_create_suitcase {
+.image_create_suitcase {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/luggage.png');
   height:400px;
   float:left;
@@ -174,7 +174,7 @@
 }
 
 
-.parallax_image_select {
+.image_select {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/select.png');
   top:500px;
   height:350px;
@@ -182,7 +182,7 @@
   margin-left:50px;
 }
 
-.parallax_image_pack_up {
+.image_pack_up {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/pack-up.png');
   top:500px;
   height:350px;
@@ -191,7 +191,7 @@
 }
 
 
-.parallax_image_go {
+.image_go {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/go.png');
   top:500px;
   height:350px;
@@ -252,9 +252,7 @@ body {
   background-position:50% 50%;
   background-size:cover;
   z-index:1;
-  // -webkit-transition: all 0.9s ease-in-out;
-  //  -moz-transition: all 0.9s ease-in-out;
-  //  transition: all 0.9s ease-in-out;
+
 }
 /*z- index is two here because it goes on top of the photo when it reveals it */
 .photo.reveal {
@@ -408,8 +406,24 @@ body {
       width:50%;
     }
 
-    .parallax_image, .parallax_image_fill_your_wardrobe, .image_two {
+    .first_image, .image_fill_your_wardrobe, .image_two, .image_camera, .video-container, .parallax_image_fill_your_wardrobe, .image_create_suitcase, .image_select, .image_go, .image_pack_up{
       display: none;
+    }
+
+    .parallax_section_three {
+      background-image:none;
+      background-color: #B6F5B2;
+
+    }
+
+    .text-pack-up {
+      margin-right:0;
+      text-align: center;
+    }
+
+    .pack-up-paragraph {
+      width: auto;
+      left:0;
     }
 
 }
