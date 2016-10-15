@@ -14,6 +14,7 @@ $( document ).on('turbolinks:load', function() {
       });
       $('#new_wardrobe').on('submit', function(){
         $('.modal-wardrobe').fadeOut();
+        $('#allwardrobe').append('<img src="/clothes-wardrobe.png" height="100px" width="auto">');
 
       });
 
