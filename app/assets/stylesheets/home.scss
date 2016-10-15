@@ -113,8 +113,9 @@
   margin-top: 0;
   font-family: 'Open Sans', sans-serif;
   position:relative;
-  top:150px;
+  top:110px;
   font-size: 32px;
+  width:900px;
 
 }
 
@@ -125,6 +126,7 @@
   margin-top:-250px;
   position:relative;
   top:120px;
+  width:900px;
 
 
 }
@@ -171,6 +173,7 @@
   width:150px;
   left:100px;
   top:100px;
+  text-align: center;
 }
 
 
@@ -206,8 +209,9 @@
 
  .text-logo {
    content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/logopackapp.png');
-   margin-left:645px;
-   margin-top:-10px;
+  left:300px;
+  position:relative;
+  bottom:85px;
    width:50%;
 
  }
@@ -366,32 +370,9 @@ body {
 }
 
 
-@media (max-width: 950px) {
-    .text-logo {
-      content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/logopackapp.png');
-      margin-left:345px;
-      margin-top:-10px;
-      width:50%;
-    }
-}
 
-@media (max-width: 1000px) {
-    .text-logo {
-      content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/logopackapp.png');
-      margin-left:550px;
-      margin-top:-10px;
-      width:50%;
-    }
-}
 
-@media (max-width: 700px) {
-    .text-logo {
-      content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/logopackapp.png');
-      margin-left:800px;
-      margin-top:-10px;
-      width:50%;
-    }
-}
+
 
 
 @media (max-width: 500px) {
@@ -401,9 +382,10 @@ body {
 
     .text-logo {
       content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/logopackapp.png');
-      margin-left:200px;
-      margin-top:-10px;
-      width:50%;
+     left:100px;
+     position:relative;
+     bottom:10px;
+      width:50%
     }
 
     .first_image, .image_fill_your_wardrobe, .image_two, .image_camera, .video-container, .parallax_image_fill_your_wardrobe, .image_create_suitcase, .image_select, .image_go, .image_pack_up{
@@ -423,7 +405,27 @@ body {
 
     .pack-up-paragraph {
       width: auto;
-      left:0;
-    }
+      left:0;}
+
+      .create-suitcase-main-page {
+        height:400px;
+        text-align: center;
+        margin-top: 0;
+        font-family: 'Open Sans', sans-serif;
+        position:relative;
+        top:110px;
+        font-size: 32px;
+        width:400px;
+
+      }
+
+
+      .suitcase-paragraph {
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        margin-top:-250px;
+        position:relative;
+        top:120px;
+        width:400px;}
 
 }
