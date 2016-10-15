@@ -6,10 +6,12 @@ $( document ).on('ready turbolinks:load', function() {
 
   $('.box').hover(function(){
   $($(this).data('photo')).addClass('reveal');
-  // $('.photo').animate({ 'opacity': 0.2 });
-  // $('.photo').animate({ 'opacity': 'toggle'});
+  $('.photo').css("display", "none");
+  $('.photo').fadeTo("fast", 0.8);
+  $('.photo').css("display", "");
+  $('.photo').fadeTo("10", 1)
 
-  // $(".photo").fadeIn(1000);
+//fade in for the background 
 
 }, function(){
   $($(this).data('photo')).removeClass('reveal');

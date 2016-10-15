@@ -252,13 +252,14 @@ body {
   background-position:50% 50%;
   background-size:cover;
   z-index:1;
-  -webkit-transition: all 0.9s ease-in-out;
-   -moz-transition: all 0.9s ease-in-out;
-   transition: all 0.9s ease-in-out;
+  // -webkit-transition: all 0.9s ease-in-out;
+  //  -moz-transition: all 0.9s ease-in-out;
+  //  transition: all 0.9s ease-in-out;
 }
 /*z- index is two here because it goes on top of the photo when it reveals it */
 .photo.reveal {
   z-index:2;
+
 
 }
 
