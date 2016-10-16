@@ -104,7 +104,7 @@ p, li, a {
 }
 
 #sortable1 {
-  background-image: url('suitcase1.png');
+  background-image: url('https://s3-us-west-2.amazonaws.com/packapp/assets/suitcase1.png');
   background-size: 400px;
   background-repeat: no-repeat;
   height: 300px;
@@ -112,7 +112,7 @@ p, li, a {
   border: none;
 
     &.is-open {
-      background-image: url("suitcase2.png");
+      background-image: url("https://s3-us-west-2.amazonaws.com/packapp/assets/suitcase2.png");
       background-size: 600px;
       height: 350px;
     }
