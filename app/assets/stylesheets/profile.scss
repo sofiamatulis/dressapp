@@ -10,9 +10,34 @@
 }
 
 .profile {
-  height: 220px;
-  background-color: #ff8265;
+  height: 200px;
+  background-color: navajowhite;
+  background-image: url('paperairplane.png');
+  background-size: 25%;
+  background-repeat-y: no-repeat;
+  background-position: -10px;
+  // overflow: hidden;
 }
+
+// .profile:before {
+//     content: ' ';
+//     display: block;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     width: 100%;
+//     height: 220px;
+//     // z-index: 1;
+//     opacity: 0.6;
+//     background-image: url('polaroids.jpeg');
+//     background-repeat: no-repeat;
+//     background-position: 50% 0;
+//     -ms-background-size: cover;
+//     -o-background-size: cover;
+//     -moz-background-size: cover;
+//     -webkit-background-size: cover;
+//     background-size: cover;
+// }
 
 .info {
   width: 200px;
@@ -22,7 +47,7 @@
   border-radius: 50%;
   display: inline-block;
   float: left;
-  top: 30px;
+  top: 20px;
   margin-left: 30%;
 }
 
@@ -34,11 +59,13 @@
 }
 
 #greeting {
-  color: white;
+  color: rosybrown;
   float: left;
   margin-top: 90px;
-  margin-left: 15px;
+  margin-left: 30px;
   margin-bottom: 0;
+  font-family: 'Satisfy', cursive;
+  font-size: 60px;
 }
 
 
@@ -61,8 +88,14 @@
   display: inline-block;
 }
 
+
 .allwardrobe {
   text-align: center;
+}
+
+.profile-tabtitle {
+  color: gray;
+  font-family: 'Satisfy', cursive;
 }
 
 #new-wardrobe, #new-suitcase {
@@ -72,7 +105,7 @@
     padding: 5px 8px;
     cursor: pointer;
     color: black;
-    background-color: lightblue;
+    background-color: white;
     font-family: 'Open Sans', sans-serif;
     border: 0.2px solid #fff;
     box-shadow: 2px 2px 5px #AFE9FF;
@@ -85,9 +118,10 @@
   .mybox {
       display: none;
       position: absolute;
-      z-index:10;
       bottom: 10px;
       right: 10px;
+      border: 3px dashed rosybrown;
+      background-color: white;
   }
 
   // a:hover + .mybox,.mybox:hover{
@@ -108,8 +142,10 @@
 }
 
 .mytab-links {
-  background-color: #ff8265;
+  background-color: navajowhite;
   margin-bottom: 0;
+  // margin-top:10px;
+  margin-left: 10px;
 }
 
 .mytab-links li {
@@ -122,7 +158,7 @@
       padding:9px 15px;
       display:inline-block;
       border-radius:3px 3px 0px 0px;
-      background:#7FB5DA;
+      background: #7FB5DA;
       font-size:16px;
       font-weight:600;
       color:#4c4c4c;
@@ -135,7 +171,7 @@
   }
 
 li.active a, li.active a:hover {
-  background:#fff;
+  background: white;
   color:#4c4c4c;
 }
 
@@ -144,7 +180,7 @@ li.active a, li.active a:hover {
   padding:15px;
   border-radius:3px;
   // box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
-  background:#fff;
+  background: white;
   box-shadow: 0 -5px 7px -7px black;
 }
 
