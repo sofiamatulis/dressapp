@@ -38,3 +38,19 @@ ul {
 .item-page {
 background-color: white;
 }
+
+.suitcase-dropdown select{
+  width: 20%;
+}
+
+#item-added-suitcase {
+  display: block;
+  width: 100%;
+  margin: auto;
+  font-size: 25px;
+  text-align: center;
+  color: black;
+  position: absolute;
+  font-family: 'Satisfy', cursive;
+
+}
