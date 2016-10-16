@@ -30,7 +30,7 @@
 
   <div class="mytab-content">
     <div id="mytab1" class="mytab active">
-      <h1 class="profile-tabtitle">My wardrobes</h1>
+      <h1 class="profile-tabtitle">My Wardrobes</h1>
       <button id="new-wardrobe">Create New Wardrobe</button>
         <ul class="allwardrobe">
           <% @user.wardrobes.each do |wardrobe| %>
@@ -54,15 +54,16 @@
       </div>
 
       <div id="mytab2" class="mytab">
-        <h1 class="profile-tabtitle">My suitcases</h1>
+        <h1 class="profile-tabtitle">My Suitcases</h1>
+        <button id="new-suitcase">Create New Suitcase</button>
           <ul class="allsuitcase">
             <% @user.suitcases.each do |suitcase| %>
               <li class="mysuitcase">
-                <%= link_to suitcase.name, suitcase_path(suitcase) %><br>
+                <%= link_to image_tag("suitcase1.png"), suitcase_path(suitcase), :class =>"each-suitcase"%><br>
+                <p class="suitcasename"><%= suitcase.name %></p>
               </li>
                 <% end %>
           </ul>
-            <button id="new-suitcase">Create New Suitcase</button>
 
               <div class="modal-suitcase">
                 <%= form_for @suitcase, :id => "suitcase-form" do |f| %>
