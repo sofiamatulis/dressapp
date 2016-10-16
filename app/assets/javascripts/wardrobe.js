@@ -1,6 +1,5 @@
 $( document ).on('turbolinks:load', function() {
 
-
   // function to get modal and form to add item
   $('.add-item').on('click', function(e){
     $('.modal-item').fadeIn();

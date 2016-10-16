@@ -1,10 +1,9 @@
 <body class="item-page">
 <br>
-<%= link_to "Back to Wardrobe", wardrobe_path(@item.wardrobe) %>
 <h1><%= @item.name %></h1>
 
-<div>
-    <ul>
+<div class="item-container">
+    <ul class="item-info">
       <li class="item-details"><%= image_tag @item.image.url %></li>
       <li class="item-details"><%= @item.name %></li>
       <li class="item-details"><%= @item.description %></li>
@@ -15,17 +14,15 @@
         <div class="dropdown">
         <button class="add-to-suitcase">Add to suitcase</button>
         <ul class="suitcase-dropdown">
-  <%= form_tag create_item_path do %>
-       <%= collection_select :suitcase_id, @suitcase, @suitcases, :id, :name%>
+  <%= form_tag create_item_path, :id => "item-to-suitcase" do %>
+       <%= collection_select :suitcase_id, @suitcase, @suitcases, :id, :name, :html => {:class => "suitcase-select"}%></br>
+       <%= button_tag(type: 'submit', :name => 'item_id', value: @item.id ) do %>
+       <%= "Add!" %>
+       <% end %>
      </ul>
-     <%= button_tag(type: 'submit', :name => 'item_id', value: @item.id ) do %>
-     <%= "Add!" %>
-     <% end %>
      <% end %>
    </div>
-        <!-- <% @suitcases.each do |suitcase| %>
-        <li><%= link_to "Add to #{suitcase.name}", items_suitcases_path(:item => @item.id, :suitcase => suitcase.id), :method => :post, :class => "category-menu" %></li>
-        <% end %> -->
+
       </ul>
       </div>
     </ul>
