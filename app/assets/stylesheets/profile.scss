@@ -1,0 +1,199 @@
+.user-show {
+  background-color: navajowhite;
+}
+
+.top-of-page {
+  background-image: url('https://s3-us-west-2.amazonaws.com/packapp/assets/stamp.png');
+  background-size: 320px 240px;
+  background-repeat-y: no-repeat;
+
+}
+
+.profile {
+  height: 200px;
+  background-color: navajowhite;
+  background-image: url('paperairplane.png');
+  background-size: 25%;
+  background-repeat-y: no-repeat;
+  background-position: -10px;
+  // overflow: hidden;
+}
+
+
+.info {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+  display: inline-block;
+  float: left;
+  top: 20px;
+  margin-left: 30%;
+}
+
+.info img {
+  position: relative;
+  height: 100%;
+  width: auto;
+  margin: 0, auto;
+}
+
+#greeting {
+  color: rosybrown;
+  float: left;
+  margin-top: 90px;
+  margin-left: 30px;
+  margin-bottom: 0;
+  font-family: 'Satisfy', cursive;
+  font-size: 60px;
+}
+
+
+
+#myedit {
+  float: right;
+  margin: 20px;
+}
+
+#myedit:hover {
+  background-color: white;
+  border-radius: 2px;
+  border:none;
+}
+
+.name-wardrobe img {
+  width: 220px;
+}
+
+.wardrobename {
+  color: black;
+  font-size: 30px;
+}
+
+.mywardrobe {
+  display: inline-block;
+}
+
+
+.allwardrobe {
+  text-align: center;
+}
+
+.profile-tabtitle {
+  color: gray;
+  font-family: 'Satisfy', cursive;
+}
+
+#new-wardrobe, #new-suitcase {
+    font-size:20px;
+    border-radius: 1px;
+    font-size: 15px;
+    padding: 5px 8px;
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+    border: 0.2px solid #fff;
+    box-shadow: 2px 2px 5px #AFE9FF;
+    transition-duration: 0.5s;
+    display: block;
+    margin: auto;
+}
+
+// for the hover function
+  .mybox {
+      display: none;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      border: 3px dashed rosybrown;
+      background-color: white;
+  }
+
+  // a:hover + .mybox,.mybox:hover{
+  //     display: block;
+
+// css for suitcase page:
+.allsuitcase {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.mysuitcase {
+  display: inline-block;
+}
+
+.each-suitcase img {
+  width: 220px;
+}
+
+.suitcasename {
+  color: black;
+}
+
+
+// css for creating the tabs:
+.mytabs {
+    width:100%;
+    display:inline-block;
+}
+
+/*----- Tab Links -----*/
+/* Clearfix */
+.mytab-links:after {
+  display:block;
+  clear:both;
+  content:'';
+}
+
+.mytab-links {
+  background-color: navajowhite;
+  margin-bottom: 0;
+  // margin-top:10px;
+  margin-left: 10px;
+}
+
+.mytab-links li {
+  margin:0px 5px;
+  float:left;
+  list-style:none;
+}
+
+  .mytab-links a {
+      padding:9px 15px;
+      display:inline-block;
+      border-radius:3px 3px 0px 0px;
+      background: #7FB5DA;
+      font-size:16px;
+      font-weight:600;
+      color:#4c4c4c;
+      transition:all linear 0.15s;
+  }
+
+  .mytab-links a:hover {
+      background:#a7cce5;
+      text-decoration:none;
+  }
+
+li.active a, li.active a:hover {
+  background: white;
+  color:#4c4c4c;
+}
+
+/*----- Content of Tabs -----*/
+.mytab-content {
+  padding:15px;
+  border-radius:3px;
+  // box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+  background: white;
+  box-shadow: 0 -5px 7px -7px black;
+}
+
+  .mytab {
+      display:none;
+  }
+
+  .mytab.active {
+      display:block;
+  }

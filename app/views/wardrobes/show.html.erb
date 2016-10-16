@@ -7,15 +7,15 @@
 <!-- Back/edit/delete buttons -->
 <!-- Filter items -->
   <div class="row search-filter">
-    <div class="search-bar small-12 large-6 columns">
+    <div class="search-bar small-12 medium-6 large-6 columns">
       <%= form_tag(items_path, remote: true, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
       <%= submit_tag "Search", :name => nil, :id => "search-button" %>
       <% end %>
     </div>
 
-    <div class="small-12 large-6 columns">
-      <ul class="vertical medium-horizontal menu float-right">
+    <div class="small-12 medium-6 large-6 columns">
+      <ul class="vertical medium-horizontal menu float-right category-filter">
         <li><a id="all-items">All</a></li>
         <li><a id="top-filter" value= '1' class = 'filter-btn'>Tops</a></li>
         <li><a id="bottom-filter" value= '2' class = 'filter-btn'>Bottoms</a></li>
@@ -26,7 +26,7 @@
   </div>
 
 <!-- Search items -->
-  <div class="row">
+  <div class="row button-row">
     <div class="small-12 large-centered large-6 columns add-more-container adding-items">
       <%= button_tag :name => 'wardrobe_id', value: @wardrobe.id, :class => 'button add-item' do %>
       <%= "Add more items" %>
@@ -75,7 +75,7 @@
             </label>
             <li class="item-details"><%= item.name %></li>
             <li class="item-details"><%= item.description %></li>
-          <!-- <%# end %> -->
+          <%# end %>
           </div>
         </div>
       <% end %>
@@ -182,8 +182,8 @@
   <% end %>
   <div class="row">
     <div class="modify-buttons large-12 columns">
-      <p class="back-button"><%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe), :id => "wardrobe-edit-button"%> |
-        <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"} %></p>
+      <p class="back-button"><%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe), :id => "wardrobe-edit-button", :class => "back-button"%> |
+        <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"}, :class => "back-button" %></p>
     </div>
   </div>
 

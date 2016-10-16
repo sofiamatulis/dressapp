@@ -6,65 +6,65 @@
 
 
 <body class="user-show">
+
   <div class ="top-of-page">
+
     <div class="profile">
-      <h1 id="greeting">Hello, <%= @user.name %>!</h1>
-      <div class="editing"><%= link_to "Edit Profile", edit_user_path(@user), id: "myedit" %>
+      <div class="info">
+          <%= image_tag @user.image.url, id: "imageUploadForm"%>
+      </div>
+      <div class="greeting">
+        <h1 id="greeting">Hello, <%= @user.name %>!</h1>
+        <%= link_to "Edit Profile", edit_user_path(@user), id: "myedit" %>
+      </div>
     </div>
 
+  </div>
 
-    <div class="info">
-        <%= image_tag @user.image.url, id: "imageUploadForm"%>
-      </h4>
-    </div>
-</div>
+<div class="mytabs">
+  <ul class="mytab-links">
+    <li class="active"><a href="#mytab1">My Wardrobes</a></li>
+    <li><a href="#mytab2">My Suitcases</a><li>
+  </ul>
+<!-- <div class="row small-up-1 medium-up-1 large-up-2">             -->
 
-
-<div class="row small-up-1 medium-up-1 large-up-2">
-            <div class="column">
-              <div class="w">
-               <h1 class="hello">My wardrobes</h1>
-
-
-
-             <ul class="allwardrobe">
-               <% @user.wardrobes.each do |wardrobe| %>
-                 <li class="mywardrobe">
-                  <%= link_to wardrobe.name, wardrobe_path(wardrobe), :class =>"name-wardrobe"%>
-
-                  <br>
-                  <!--  where the my box class is -->
-                  <div class="mybox" data-id ='src="/wardrobes/<%= wardrobe.id%>/thumbnail/"' width = "250px" height = "250px"></div>
-                 </li>
+  <div class="mytab-content">
+    <div id="mytab1" class="mytab active">
+      <h1 class="profile-tabtitle">My Wardrobes</h1>
+      <button id="new-wardrobe">Create New Wardrobe</button>
+        <ul class="allwardrobe">
+          <% @user.wardrobes.each do |wardrobe| %>
+            <li class="mywardrobe">
+              <!--  where the my box class is -->
+              <div class="mybox" data-id ='src="/wardrobes/<%= wardrobe.id%>/thumbnail/"' width = "150px" height = "150px"></div>
+              <%= link_to image_tag("mainwardrobe.png"), wardrobe_path(wardrobe), :class =>"name-wardrobe"%><br>
+              <p class="wardrobename"><%= wardrobe.name %></p>
                <% end %>
-             </ul>
-            <button id="new-wardrobe">Create New Wardrobe</button>
+            </li>
+        </ul>
 
-            <div class="modal-wardrobe">
+          <div class="modal-wardrobe">
              <%= form_for @wardrobe, :id => "wardrobe-from" do |f| %>
              <button type="button" class="close">X</button>
                <%= f.text_field :name, placeholder: "Wardrobe name" %> <br>
                <%= f.submit "New Wardrobe", id: "create-wardrobe" %>
              <% end %>
-
            </div>
-         </div>
 
-            </div>
+      </div>
 
-            <div class="column">
-              <div class="s">
-              <h1 class="bye">My suitcases</h1>
-
-              <ul class="allsuitcase">
-                <% @user.suitcases.each do |suitcase| %>
-                  <li class="mysuitcase">
-                    <%= link_to suitcase.name, suitcase_path(suitcase) %><br>
-                  </li>
+      <div id="mytab2" class="mytab">
+        <h1 class="profile-tabtitle">My Suitcases</h1>
+        <button id="new-suitcase">Create New Suitcase</button>
+          <ul class="allsuitcase">
+            <% @user.suitcases.each do |suitcase| %>
+              <li class="mysuitcase">
+                <%= link_to image_tag("suitcase1.png"), suitcase_path(suitcase), :class =>"each-suitcase"%><br>
+                <p class="suitcasename"><%= suitcase.name %></p>
+              </li>
                 <% end %>
-              </ul>
+          </ul>
 
-              <button id="new-suitcase">Create New Suitcase</button>
               <div class="modal-suitcase">
                 <%= form_for @suitcase, :id => "suitcase-form" do |f| %>
                   <button type="button" class="close">x</button>
@@ -78,16 +78,13 @@
                   <%= f.submit "New Suitcase", id: "create-suitcase"%>
                 </form>
                 <div class="destination-form">
-              </div>
+                </div>
               <% end %>
-
-            <br>
-            <br>
-
-            </div>
-
-            </div>
-</div>
+                <br>
+                <br>
+              </div>
+      </div>
+    </div>
 
 
 

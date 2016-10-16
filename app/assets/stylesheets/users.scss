@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .header-image {
   height: 500px;
-  background-image: url('packapp.png'), no-repeat;
+  background-image: url('https://s3-us-west-2.amazonaws.com/packapp/assets/packapp.png'), no-repeat;
   width:100%;
   text-align: center;
   padding-top: 3px;
@@ -21,16 +21,6 @@
 }
 
 
-
-#imageUploadForm {
-  height:9%;
-  width:9%;
-  border-radius: 50%;
-  margin-left:-300px;
-  margin-top:-100px;
-
-}
-
 .mywardrobe, .mysuitcase {
   position:relative;
   border-radius: 1px;
@@ -45,9 +35,6 @@
   height:90px;
 }
 
-#name-wardrobe {
-  color:black;
-}
 
 
 #create-wardrobe, #wardrobe_name, #suitcase_name, #suitcase_duration, #suitcase_destination, #suitcase_description, #create-suitcase {
@@ -100,7 +87,8 @@ ul, li {
 }
 
 // HERE
-#new-wardrobe, #new-suitcase, #new-item {
+
+#new-item, .upload-button{
     font-size:20px;
     border-radius: 1px;
     font-size: 15px;
@@ -135,7 +123,7 @@ ul, li {
  #modal-form {
   display: block;
   width: 400px;
-  height: 14em;
+  height: 16em;
   padding: 2em;
   background-color: #F2EFE4;
   position: absolute;
@@ -180,31 +168,11 @@ ul, li {
 
 }
 
-.user-show {
-  background-color: white;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-
-}
 
 #editing, #searching {
 font-size:20px;
 }
 
-#myedit {
-  border-radius: 1px;
-  font-size: 15px !important;
-  padding: 5px 8px;
-  cursor: pointer;
-  color: #fff;
-  background-color: lightblue !important;
-  font-family: 'Open Sans', sans-serif;
-  border: 0.2px solid #fff !important;
-  box-shadow: 2px 2px 5px #AFE9FF;
-  transition-duration: 0.5s;
-}
 #create-wardrobe {
 
   border-radius: 1px;
@@ -236,14 +204,6 @@ color: #AFE9FF;
 // box-shadow: 2px 2px 20px #AFE9FF;
 }
 
-
-#greeting {
-
-  text-align: center;
-  padding-bottom: 10px;
-  color: #006398;
-
-}
 
 #new_wardrobe {
  display: block;
@@ -301,21 +261,4 @@ color: #AFE9FF;
   #city{
     position: relative;
     top: -6px;
-  }
-
-
-
-  .mybox{
-      display: none;
-      position:relative;
-      z-index:10;
-      max-width: 265px;
-
-
-
-  }
-
-  a:hover + .mybox,.mybox:hover{
-      display: block;
-
   }

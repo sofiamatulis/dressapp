@@ -28,9 +28,10 @@
 .weather .draggable {
   width: 150px;
   text-align: center;
-  background-color: #cceeff;
+  background-color: lightcoral;
+  border: 2px dashed oldlace;
   border-radius: 25px;
-  padding: 18px 0px;
+  padding: 18px 0px 18px 0px;
   font-family: 'Open Sans', 'sans-serif';
   margin: 5px;
 }
@@ -46,5 +47,5 @@
 .weather {
   bottom: 200px;
   float: right;
-  margin: 20px;
+  margin-right: 20px;
 }

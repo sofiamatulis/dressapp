@@ -1,5 +1,6 @@
 $( document ).on('turbolinks:load', function() {
-  if($('body').is('.user-show')) {
+  if($('body').is('.user-show')){
+
 
     //js for working with modals
     $('#new-wardrobe').on('click', function(){
@@ -9,13 +10,17 @@ $( document ).on('turbolinks:load', function() {
         $('.modal-wardrobe').fadeOut();
         }
       });
+      //fade in and out when clicking
       $('.close').on('click', function(){
         $('.modal-wardrobe').fadeOut();
       });
       $('#new_wardrobe').on('submit', function(){
         $('.modal-wardrobe').fadeOut();
+        // $('#allwardrobe').append('<img src="/clothes-wardrobe.png" height="100px" width="auto">');
 
       });
+      //when you click outside of the form it fades out
+      //it doesnt propagate to the input
 
        $('.modal-wardrobe').click( function(){close()});
        $('#wardrobe_name').click( function(event){notError(event)});
@@ -72,9 +77,6 @@ $( document ).on('turbolinks:load', function() {
         $('.modal-suitcase').fadeOut('slow');
       }
 
-
-
-
   });
 
 
@@ -126,27 +128,28 @@ $( document ).on('turbolinks:load', function() {
         console.log(cityCountryChoice);
         $('#destination').val(cityCountryChoice);
   // making ajax call for post after city/country choice is defined
-        $.ajax({
-
-          url:'/suitcases',
-          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-          method:'POST',
-          dataType: "json",
-          data:  $('#new_suitcase').serialize()
-
-          }).done(function(suitcase){
-            var one = $('<a href="http://localhost:3000/suitcases/' + suitcase.id +  '" >' + suitcase.name + '</a>');
-            var two = $ ('.allsuitcase').append("<li class='mysuitcase'>").append(one);
-            $( "#create-suitcase").prop( "disabled", false );
-
-            $("#new_suitcase")[0].reset();
-            $("#countryForm")[0].reset();
-            $("#city").attr("data-country", "");
-          });
-        });
-  }
+    // if ('#suitcase_duration' && '#country' && '#city'){
+            $.ajax({
+              url:'/suitcases',
+              beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+              method:'POST',
+              dataType: "json",
+              data:  $('#new_suitcase').serialize()
+            }).done(function(suitcase){
+              var one = $('<a class="each-suitcase" href="http://localhost:3000/suitcases/' + suitcase.id +  '" >' + '<img src="/assets/suitcase1.png">' + '</a>');
+              var two = $("<li class='mysuitcase'>").append(one).append('<p class="suitcasename">' + suitcase.name + '</p>').appendTo('.allsuitcase');
+              $( "#create-suitcase").prop( "disabled", false );
+              $("#new_suitcase")[0].reset();
+              $("#countryForm")[0].reset();
+              $("#city").attr("data-country", "");
 
 
+           });
+        //  }
+      });
+
+
+}
 //hover function
 
 
@@ -155,38 +158,29 @@ $( document ).on('turbolinks:load', function() {
 
 // created variable mybox and whatever im hovering on (this), calling the parent my wardrobe and finding the class my box thats inside of this parent too
     var mybox = $(this).parent("li.mywardrobe").find('.mybox');
-    // $(this).attr("data-id");
+    var mywardrobe = $(this).attr("href");
+    console.log(mywardrobe);
 
     // console.log('start');
     //ajax get request to just show the thumbnail
 
-
-
     $.ajax({
-
-
-      url:'/wardrobes/' +35 + '/thumbnail',
+      url: mywardrobe + '/thumbnail',
       method:'GET',
       dataType: "html",
 
       //show the my box variable
-
-    }).done(function(wardrobe){
+      }).done(function(wardrobe){
         // console.log('done');
          mybox.html(wardrobe);
          mybox.show();
         // console.log(wardrobe);
-
-
-
       });
 // hide when not hovering!
-  }, function() {
+    }, function() {
     var mybox = $(this).parent("li.mywardrobe").find('.mybox');
       mybox.hide();
 
     });
 
-
-
-});
+  });

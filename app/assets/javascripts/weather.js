@@ -40,6 +40,8 @@ $.ajax({
 
     };
 
+    //created weather carousel 
+
     $('.weather').slick( {
       variableWidth: true,
       prevArrow: '<span class="arrow-left white"><</span>',

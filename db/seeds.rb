@@ -7,14 +7,17 @@
 #   Character.create!(name: 'Luke', movie: movies.first)
 #
 puts "starting seeds"
-barry = User.create!(name: 'Barry', email: 'barry@gmail.com', password: 'passpass')
+
+user = User.create!(name: 'User1', email: 'user1@gmail.com', password: '1234')
+
 
 top = Category.create!(category: "Top")
 bottom = Category.create!(category: "Bottom")
 shoe = Category.create!(category: "Shoes")
 dress = Category.create!(category: "Dresses")
 
-winter = Wardrobe.create!(name: "Winter", user: barry)
+winter = Wardrobe.create!(name: "Winter", user: user)
+
 # Item.create!(name:"dress1", description:"a dress", image:"http://www.lindybop.co.uk/images/audrey-red-polka-dot-swing-dress-p41-15865_zoom.jpg", category: dress, wardrobe: winter)
 
 Item.create!(name:"t-shirt", description:"blue t-shirt", image:"https://upload.wikimedia.org/wikipedia/commons/2/24/Blue_Tshirt.jpg", category: top, wardrobe: winter)
