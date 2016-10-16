@@ -140,7 +140,7 @@ margin-left:-150px;
 }
 
 
-.fakefield, .add-item {
+.fakefield {
   position:relative;
   border-radius: 1px;
   font-size: 15px;
@@ -160,7 +160,7 @@ margin-left:-150px;
 
 
 
-.fakefield:hover, .add-item:hover, #drop-down-show:hover, .back-button:hover {
+.fakefield:hover, .add-item:hover, #drop-down-show:hover{
   color: #006398;
   border: 1px solid #006398;
   box-shadow: 2px 2px 20px #AFE9FF;

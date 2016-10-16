@@ -26,7 +26,7 @@
   </div>
 
 <!-- Search items -->
-  <div class="row">
+  <div class="row button-row">
     <div class="small-12 large-centered large-6 columns add-more-container adding-items">
       <%= button_tag :name => 'wardrobe_id', value: @wardrobe.id, :class => 'button add-item' do %>
       <%= "Add more items" %>
@@ -75,7 +75,7 @@
             </label>
             <li class="item-details"><%= item.name %></li>
             <li class="item-details"><%= item.description %></li>
-          <!-- <%# end %> -->
+          <%# end %>
           </div>
         </div>
       <% end %>
@@ -182,8 +182,8 @@
   <% end %>
   <div class="row">
     <div class="modify-buttons large-12 columns">
-      <p class="back-button"><%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe), :id => "wardrobe-edit-button"%> |
-        <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"} %></p>
+      <p class="back-button"><%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe), :id => "wardrobe-edit-button", :class => "back-button"%> |
+        <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"}, :class => "back-button" %></p>
     </div>
   </div>
 
