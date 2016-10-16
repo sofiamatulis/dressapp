@@ -382,10 +382,10 @@ body {
 
     .text-logo {
       content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/logopackapp.png');
-     left:100px;
+      right:200px;
      position:relative;
      bottom:10px;
-      width:50%
+      width:50%;
     }
 
     .first_image, .image_fill_your_wardrobe, .image_two, .image_camera, .video-container, .parallax_image_fill_your_wardrobe, .image_create_suitcase, .image_select, .image_go, .image_pack_up{
@@ -434,22 +434,7 @@ body {
 // for medium screen
 
 @media (max-width: 1000px) {
-  // .box {
-  //   width:100px;
-  //   height:100px;
-  //   border:7.5px solid #fff;
-  //   position:relative;
-  //   z-index:10;
-  //   float:left;
-  //   line-height:100px;
-  //   text-align:center;
-  //   color:#fff;
-  //   font-size:10px;
-  //   text-transform:uppercase;
-  //   font-family:Tahoma;
-  //   letter-spacing:0.5px;
-  //   background-color: rgba(211, 211, 211, 0.5);
-  // }
+
 
 
     .text-logo {
