@@ -11,12 +11,15 @@
 
   <div class="field">
     <%= f.label :duration %><br>
-    <%= f.number_field :duration %>
+    <%= f.number_field :duration, :required => true %>
   </div>
+
+
+
 
   <div class="field">
     <%= f.label :destination %><br>
-    <%= f.text_field :destination %>
+    <%= f.text_field :destination, :required => true %>
   </div>
 
   <div class="field">
