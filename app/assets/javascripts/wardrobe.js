@@ -41,9 +41,12 @@ $( document ).on('turbolinks:load', function() {
         var imageappend = $('<li class="item-details">').append(imagelink);
         var label = $('<label class="selectd-item">').append(imageappend);
         var checkBox = $('<input type="checkbox">').attr('name', 'items[' + responseData.id + ']');
-        var checkBoxTag = $('<li class="item-details check-box">').appendTo(label);
+        var checkBoxTag = $('<li class="item-details check-box">').append(checkBox).appendTo(label);
         var itemContainer = $('<div class="wardrobe-item">').append(label, name, description);
-        $(itemContainer).appendTo('.wardrobe-item-container');
+        var column = $('<div class="small-6 large-3 columns">').append(itemContainer);
+        $('.wardrobe-item-container').find('.row:last').append(column);
+
+        // $(itemContainer).appendTo('.wardrobe-item-container');
         $("#modal-form")[0].reset();
         $('.upload-button').remove();
 
