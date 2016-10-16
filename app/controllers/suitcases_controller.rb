@@ -60,7 +60,7 @@ require 'open_weather'
   def destroy
     @suitcase = Suitcase.find(params[:id])
     @suitcase.destroy
-    redirect_to suitcases_url
+    redirect_to current_user
   end
 
   private
