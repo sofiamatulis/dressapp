@@ -137,7 +137,7 @@ $( document ).on('turbolinks:load', function() {
               data:  $('#new_suitcase').serialize()
             }).done(function(suitcase){
               var one = $('<a class="each-suitcase" href="http://localhost:3000/suitcases/' + suitcase.id +  '" >' + '<img src="/assets/suitcase1.png">' + '</a>');
-              var two = $ ('.allsuitcase').append("<li class='mysuitcase'>").append(one).append('<p class="suitcasename">' + suitcase.name + '</p>');
+              var two = $("<li class='mysuitcase'>").append(one).append('<p class="suitcasename">' + suitcase.name + '</p>').appendTo('.allsuitcase');
               $( "#create-suitcase").prop( "disabled", false );
               $("#new_suitcase")[0].reset();
               $("#countryForm")[0].reset();

@@ -12,7 +12,7 @@ $( document ).on('turbolinks:load', function() {
         data:  $('#new_wardrobe').serialize()
       }).done(function(wardrobe){
         var link = $('<a class="name-wardrobe" href="http://localhost:3000/wardrobes/' + wardrobe.id +  '" >' + '<img src="/assets/mainwardrobe.png">' + '</a>');
-        var name = $('.allwardrobe').append("<li class='mywardrobe'>").append(link).append('<p class="wardrobename">' + wardrobe.name + '</p>');
+        var name = $("<li class='mywardrobe'>").append(link).append('<p class="wardrobename">' + wardrobe.name + '</p>').appendTo('.allwardrobe');
 
         //styling the result
 
