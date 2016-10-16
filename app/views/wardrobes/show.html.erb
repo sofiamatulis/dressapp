@@ -109,7 +109,7 @@
       <div class="small-6 large-3 columns">
         <div class="wardrobe-item">
           <label class="selectd-item">
-            <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
+        <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link", "data-toggle" => "modal", "data-target" => "item-show-modal"%></li>
             <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
           </label>
           <li class="item-details"><%= item.name %></li>
