@@ -78,9 +78,134 @@ a {
    text-align: center;
  }
 
+ .text-logo {
+   content:url('logopackapp.png');
+   margin-left:645px;
+   margin-top:-10px;
+   width:50%;
 
-.top-of-page {
-  background-image: url('https://s3-us-west-2.amazonaws.com/packapp/assets/stamp.png');
-  background-size: 320px 240px;
 
+ .animation {
+   content:url('packapp2.png');
+   height:15%;
+   width:15%;
+
+ }
+
+
+
+.arrow-left{
+  color: grey;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+
+
+}
+
+.arrow-right {
+  color: grey;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+
+
+
+body {
+  background:#ccc;
+  margin:0; }
+
+.photo {
+  /*pictures wont be moving, margin is 0 and 0 and it is as big as it can get*/
+  /*the z index is 1 because its behind the boxes*/
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-position:50% 50%;
+  background-size:cover;
+  z-index:1;
+}
+/*z- index is two here because it goes on top of the photo when it reveals it */
+.photo.reveal {
+  z-index:2;
+}
+
+/*all boxes are white and this side and z-index is higher because it goes on top of the photo */
+
+.box {
+  width:200px;
+  height:200px;
+  border:15px solid #fff;
+  position:relative;
+  z-index:10;
+  float:left;
+  line-height:200px;
+  text-align:center;
+  color:#fff;
+  font-size:20px;
+  text-transform:uppercase;
+  font-family:Tahoma;
+  letter-spacing:1px;
+  background-color: rgba(211, 211, 211, 0.5);
+}
+
+/*each picture*/
+
+
+#photo0 {
+  background-image:url('http://66.media.tumblr.com/0ce0c810c39a0c6bf48a60b324dcb173/tumblr_nhoch8HjT61r9c6lmo1_1280.jpg');
+
+}
+#photo1 {
+  background-image: url('http://images.all-free-download.com/images/graphiclarge/plain_white_background_211387.jpg');
+}
+
+
+
+#photo2 {
+  background-image:url('http://i.huffpost.com/gen/1808722/images/o-PACKING-BAG-facebook.jpg');
+}
+
+#photo3 {
+  background-image:url('http://i1.wp.com/8list.ph/wp-content/uploads/2016/01/7-Plan-Your-Travel-Budget-2015.jpg');
+}
+
+/*position of the boxes*/
+
+#box0 {
+  left:100px;
+  margin-top:200px;
+}
+
+#box1 {
+  left:150px;
+  margin-top:200px;
+}
+#box2 {
+  margin-left:200px;
+  margin-top:200px;
+ }
+#box3 {
+  margin-left:70px;
+  margin-top:200px;
+
+ }
+
+ /*.item-details img {
+   margin-left:20px
+
+ }*/
+
+
+
+.video-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: 25%;
+  height: 25%;
+  z-index: -100;
 }
