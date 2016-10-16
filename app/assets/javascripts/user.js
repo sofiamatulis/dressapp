@@ -1,5 +1,6 @@
 $( document ).on('turbolinks:load', function() {
-  if($('body').is('.user-show')) {
+  if($('body').is('.user-show')){
+
 
     //js for working with modals
     $('#new-wardrobe').on('click', function(){
@@ -127,6 +128,7 @@ $( document ).on('turbolinks:load', function() {
         console.log(cityCountryChoice);
         $('#destination').val(cityCountryChoice);
   // making ajax call for post after city/country choice is defined
+    // if ('#suitcase_duration' && '#country' && '#city'){
             $.ajax({
               url:'/suitcases',
               beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
@@ -140,8 +142,12 @@ $( document ).on('turbolinks:load', function() {
               $("#new_suitcase")[0].reset();
               $("#countryForm")[0].reset();
               $("#city").attr("data-country", "");
+
+
            });
+        //  }
       });
+
 
 }
 //hover function
