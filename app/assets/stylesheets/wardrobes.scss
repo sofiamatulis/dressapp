@@ -296,8 +296,25 @@ h1 {
   text-align: center;
   float: none;
 }
-#search-form
-{margin: auto;
+#search-form{
+  margin: auto;
 padding-left: 2rem;
 }
+.wardrobe-header-image{
+  height: 250px;
+}
+}
+
+@media only screen and (max-width: 460px){
+.category-filter {
+  text-align: center;
+  float: none;
+  font-size: 12px;
+}
+
+.item-details img {
+  height: 125px;
+  width: auto;
+}
+
 }
