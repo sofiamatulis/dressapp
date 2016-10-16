@@ -132,19 +132,20 @@ ul, li {
   left: 0;
   right: 0;
   text-align: center;
-}
-#modal-form {
   border-radius: 10px;
 }
 
+
 .close {
-  display: block;
+  position: absolute;
+  right: 5px;
+  top: 5px;
   border: none;
   width: 1em;
   height: 1em;
-  background-color: white;
+  // background-color: white;
   color: black;
-  border-radius: 0.5em;
+  // border-radius: 0;
   line-height: 0;
 }
 
@@ -174,7 +175,7 @@ font-size:20px;
 
 #create-wardrobe {
 
-  border-radius: 1px;
+  border-radius: 10px;
   font-size: 15px;
   padding: 5px 8px;
   cursor: pointer;
@@ -234,7 +235,7 @@ color: #AFE9FF;
  right: 0;
 }
 
-#new_suitcase input {
+#new_suitcase input{
   background-color: rgba(255, 255, 255, 0.8);
   border: none;
   font-size: 13px;
@@ -243,6 +244,12 @@ color: #AFE9FF;
   width: 300px;
   height: 50px;
   border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 0;
+}
+#new_suitcase textarea {
+  display: inline-block;
+  margin-bottom: 0;
 }
 
 #create-suitcase {
@@ -261,3 +268,19 @@ color: #AFE9FF;
     position: relative;
     top: -6px;
   }
+
+  #modal-edit-form {
+   display: block;
+   width: 400px;
+   height: 8em;
+   padding: 2em;
+   background-color: #F2EFE4;
+   position: absolute;
+   margin: auto;
+   top: 2rem;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   text-align: center;
+   border-radius: 10px;
+ }

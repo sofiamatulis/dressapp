@@ -44,10 +44,12 @@
         </ul>
 
           <div class="modal-wardrobe">
-             <%= form_for @wardrobe, :id => "wardrobe-from" do |f| %>
+             <%= form_for @wardrobe, :id => "wardrobe-form" do |f| %>
              <button type="button" class="close">X</button>
+             <div class="field">
                <%= f.text_field :name, placeholder: "Wardrobe name" %> <br>
                <%= f.submit "New Wardrobe", id: "create-wardrobe" %>
+             </div>
              <% end %>
            </div>
 
