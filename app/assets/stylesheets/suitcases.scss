@@ -176,6 +176,10 @@ p, li, a {
   color: #ef766a;
 }
 
+#open-nav-full {
+  display: none;
+}
+
 #close-nav {
   position: relative;
   top: 0;
@@ -191,7 +195,9 @@ p, li, a {
 
 #what-you-packed {
   text-align: center;
-  color: rosybrown;
+  color: #ef766a;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
 }
 
 
@@ -447,3 +453,14 @@ h4 {
   box-shadow: 2px;
 
 }
+
+
+// responsiveness
+// @media (max-width: 1000px) {
+//   #open-nav {
+//     display: none;
+//   }
+//   #open-nav-full {
+//     display: block;
+//   }
+// }
