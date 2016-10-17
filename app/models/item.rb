@@ -11,7 +11,8 @@ class Item < ApplicationRecord
 
 
   def self.search(search)
-    where("name LIKE ?", "%#{search}%")
+    where("name iLIKE ?", "%#{search}%")
+    where("description iLIKE ?", "%#{search}%")
   end
 
   # search method
