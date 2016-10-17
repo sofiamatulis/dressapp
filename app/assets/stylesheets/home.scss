@@ -497,7 +497,6 @@ body {
         position:relative;
         font-size: 32px;
         width:400px;
-        left:-650px;
 
       }
 
@@ -505,12 +504,10 @@ body {
       .suitcase-paragraph {
         font-family: 'Open Sans', sans-serif;
         text-align: center;
-        margin-top:-250px;
         position:relative;
-        bottom:0;
+        bottom:200px;
         width:300px;
-        left:-600px;
-        top:50px;
+        left:11%;
       }
       .createyourwardrobe {
          top:50px;
@@ -520,6 +517,7 @@ body {
         font-family: 'Open Sans', sans-serif;
         font-size: 32px;
         position: relative;
+        left:30%;
 
       }
 
@@ -534,10 +532,12 @@ body {
         .fill-your-wardrobe {
           bottom:0;
           top:50px;
+          left:20%;
         }
 
         .fill-paragraph{
-          bottom:200px;
+          top:100px;
+          left:0;
         }
 
         .text-pack-up {
