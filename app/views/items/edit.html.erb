@@ -1,7 +1,7 @@
 <h1>Edit Item</h1>
 <%#= render 'form' %>
 
-<%= form_for @item, :html => {:id => "modal-form"} do |f| %>
+<%= form_for @item, :html => {:id => "modal-form" } do |f| %>
 
 <%if @item.errors.any? %>
   <div id="error explanation">

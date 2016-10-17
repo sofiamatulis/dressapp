@@ -49,10 +49,10 @@ p, li, a {
 }
 
 .links {
-  text-align: left;
-  position: absolute;
-  top: 0;
-  left: 10px;
+  text-align: center;
+
+
+
   color: grey;
 }
 
@@ -104,7 +104,7 @@ p, li, a {
 }
 
 #sortable1 {
-  background-image: url('suitcase1.png');
+  background-image: url('https://s3-us-west-2.amazonaws.com/packapp/assets/suitcase1.png');
   background-size: 400px;
   background-repeat: no-repeat;
   height: 300px;
@@ -112,7 +112,7 @@ p, li, a {
   border: none;
 
     &.is-open {
-      background-image: url("suitcase2.png");
+      background-image: url("https://s3-us-west-2.amazonaws.com/packapp/assets/suitcase2.png");
       background-size: 600px;
       height: 350px;
     }
@@ -176,6 +176,10 @@ p, li, a {
   color: #ef766a;
 }
 
+#open-nav-full {
+  display: none;
+}
+
 #close-nav {
   position: relative;
   top: 0;
@@ -187,6 +191,13 @@ p, li, a {
 
 .main-buttons a:hover {
   color: #ef766a;
+}
+
+#what-you-packed {
+  text-align: center;
+  color: #ef766a;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
 }
 
 
@@ -349,6 +360,13 @@ h4 {
   text-align: left;
 }
 
+#add-items-small {
+  position: relative;
+  display: none;
+  text-align: left;
+  text-decoration: none;
+}
+
 #outfit-checker-button {
   display: none;
   position: relative;
@@ -442,3 +460,14 @@ h4 {
   box-shadow: 2px;
 
 }
+
+
+// responsiveness
+// @media (max-width: 1000px) {
+//   #open-nav {
+//     display: none;
+//   }
+//   #open-nav-full {
+//     display: block;
+//   }
+// }

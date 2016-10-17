@@ -111,11 +111,19 @@ $( document ).on('turbolinks:load', function() {
     $("#country").easyAutocomplete(options);
 
   // calling the function for the city drop down.
-    $('#city').cityAutocomplete();
-    var left = $('#city').css('left')
-    var top = $('#city').css('top')
-    $('.city-autocomplete').css('left', left);
-    $('.city-autocomplete').css('top', top);
+    // $('#city').cityAutocomplete();
+    // var left = $('#city').css('left')
+    // var top = $('#city').css('top')
+    // $('.city-autocomplete').css('left', left);
+    // $('.city-autocomplete').css('top', top);
+    $('#city').on('click', function() {
+      var offset = $('#city').offset();
+      $('#city').cityAutocomplete();
+      console.log(offset);
+    $('.city-autocomplete').css('top', offset.top);
+    $('.city-autocomplete').css('left', offset.left);
+  });
+
     $('.easy-autocomplete').css('width', '')
     $('.easy-autocomplete').css('right', '2px')
     $('.easy-autocomplete').css('top', '6px')

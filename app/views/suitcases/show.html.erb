@@ -2,7 +2,7 @@
 
     <div id="suitcase-main">
 
-      <h1 class="suitcase-destination"><%= @suitcase.destination %></h1>
+      <h1 class="suitcase-destination"><%= @suitcase.destination[/[^,]+/] %></h1>
       <h3 class="suitcase-title"><%= @suitcase.name %></h3>
       <ul class="suitcase">
         <li class="suitcase-details">Duration: <%= @suitcase.duration %> days</li>
@@ -19,18 +19,18 @@
       <li class="ui-state-default"></li>
     </ul>
 
-    <p><%= @weather %></p>
+    <!-- <p><%= @weather %></p> -->
 
-      <div class="links">
-        <p><%= link_to 'Edit Suitcase', edit_suitcase_url(@suitcase) %></p>
-        <p><%= link_to 'Delete Suitcase', @suitcase, method: :delete, data: {confirm: "Are you sure?"} %></p>
-      </div>
 
     <div class="notes">
     </div>
-
       <a id="open-nav">Open Suitcase</a>
+      <div class="links">
+        <!-- <p><%#= link_to 'Edit Suitcase', edit_suitcase_url(@suitcase) %></p> -->
+        <p><%= link_to 'Delete Suitcase', @suitcase, method: :delete, data: {confirm: "Are you sure?"} %></p>
+      </div>
     </div>
+
   <!-- side nav pops out when clicking suitcase  -->
     <div id="suitcase-side-nav" class="sideNav">
       <div class="side-nav-buttons">
@@ -41,6 +41,7 @@
         <div class="main-buttons">
           <a id="view-all">View All &nbsp;&nbsp;&nbsp;|</a>
           <a id="add-items">&nbsp;&nbsp; Add&nbsp;Items</a>
+          <a> <%= link_to "Add Items", user_path(@user), :id => "add-items-small"%></a>
           <a id="outfit-checker-button">&nbsp;&nbsp; Outfit&nbsp;Checker</a>
           <a id="close-nav">X</a>
         </div>
@@ -55,6 +56,7 @@
 
       <div id="view-all-in-suitcase-container">
         <%= form_tag destroy_multiple_items_suitcases_path, id: "delete-suitcase-item", method: :delete do %>
+        <h2 id="what-you-packed">What you're bringing to <%= @suitcase.destination[/[^,]+/] %>:</h2>
           <% @suitcase.items.each do |item| %>
             <div class="view-all-items">
               <label class="selected-item">

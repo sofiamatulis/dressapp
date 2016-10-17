@@ -1,7 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
 
-  has_attached_file :image, styles: {medium: "300x300>", thumb: "100x100>" }
+
+  has_attached_file :image, default_url: 'https://tracker.moodle.org/secure/attachment/30912/f3.png'
+
 
 
   has_many :wardrobes

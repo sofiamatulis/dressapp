@@ -10,7 +10,8 @@
     <div class="search-bar small-12 medium-6 large-6 columns">
       <%= form_tag(items_path, remote: true, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
-      <%= submit_tag "Search", :name => nil, :id => "search-button" %>
+      <%#= submit_tag "Search", :name => nil, :id => "search-button"  %>
+      <input type="submit" value="Search" id="search-button" data-disable-with="">
       <% end %>
     </div>
 
@@ -80,7 +81,6 @@
             </label>
             <li class="item-details"><%= item.name %></li>
             <li class="item-details"><%= item.description %></li>
-          <%# end %>
           </div>
         </div>
       <% end %>
@@ -88,19 +88,9 @@
       <% end %>
     </ul>
 
+    <ul class="search-form-results">
 
-  <!-- <ul class="wardrobe-item-container">
-    <% @wardrobe.items.each do |item| %>
-    <div class="wardrobe-item">
-      <label class="selectd-item">
-        <li class="item-details"><%= link_to image_tag(item.image), item_path(item), :class => "item-link"%></li>
-        <li class="item-details check-box"><%= check_box_tag "items[#{item.id}]"%></li>
-      </label>
-      <li class="item-details"><%= item.name %></li>
-      <li class="item-details"><%= item.description %></li>
-    </div>
-    <% end %>
-  </ul> -->
+    </ul>
 
   <ul class="filtered-tops">
     <% @tops.each_slice(4) do |slice| %>
@@ -187,8 +177,12 @@
   <% end %>
   <div class="row">
     <div class="modify-buttons large-12 columns">
+      <% if @wardrobe.items.length == 0 %>
       <p class="back-button"><%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe), :id => "wardrobe-edit-button", :class => "back-button"%> |
         <%= link_to 'Delete Wardrobe', @wardrobe, method: :delete, data: {confirm: "Are you sure?"}, :class => "back-button" %></p>
+        <% else %>
+        <p class="back-button"><%= link_to 'Edit Wardrobe', edit_wardrobe_url(@wardrobe), :id => "wardrobe-edit-button", :class => "back-button"%>
+          <% end %>
     </div>
   </div>
 
