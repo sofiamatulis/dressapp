@@ -5,9 +5,7 @@
 
 
 
-.everything {
-  z-index: -20;
-}
+
 
 //create your wardrobe
 
@@ -29,6 +27,7 @@
   position:relative;
   display:inline-block;
   top:350px;
+  right:20%;
 
 }
 
@@ -38,8 +37,8 @@
   overflow:visible;
   position:relative;
   display:inline-block;
-  right:90%;
   top:290px;
+  left:20%;
 
 
 }
