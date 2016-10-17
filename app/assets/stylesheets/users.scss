@@ -143,8 +143,9 @@ ul, li {
   border: none;
   width: 1em;
   height: 1em;
+  text-shadow: -1px 0 lightgrey,0 1px lightgrey,1px 0 lightgrey,0 -1px lightgrey;
   // background-color: white;
-  color: black;
+  color: white;
   // border-radius: 0;
   line-height: 0;
 }
