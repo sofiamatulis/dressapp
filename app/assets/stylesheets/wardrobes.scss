@@ -23,11 +23,6 @@ h1 {
   text-align: center;
 }
 
-// .item-details img {
-//   width: 200px;
-//   height: auto;
-// }
-
 .item-details {
   list-style-type: none;
   text-align: center;
@@ -56,20 +51,6 @@ h1 {
   text-align: center;
 }
 
-#search-form {
-  // background-color: #ef766a;
-  border-radius: 20px;
-  margin-top: 0;
-  // margin-bottom: 15px;
-  // padding: 30px 30px;
-}
-
-.search-bar {
-  // text-align: right;
-  // margin-right: 35px;
-  // padding-bottom: 10px;
-}
-
 
 #filter-right {
   position: relative;
@@ -81,13 +62,6 @@ h1 {
   width: 50%;
   display: inline-block;
 }
-
-// .wardrobe-item {
-//   // display: inline-block;
-//   width: 25%;
-//   float: left;
-//   padding-top: 25px;
-// }
 
 .filter-header{
   text-align: center;
@@ -121,7 +95,6 @@ h1 {
 
 .adding-items {
   position: relative;
-  // overflow: hidden;
   border-radius: 10px;
 }
 
@@ -154,8 +127,8 @@ h1 {
 
 .filtered-tops {
  display: none;
-   //display: inline;
 }
+
 // .check-box{
 //   display: none;
 // }
@@ -176,17 +149,14 @@ h1 {
   padding: 10px;
   background-color:oldlace;
   opacity: 0.8;
-
 }
+
 #search-form {
   font-family: 'Open Sans', sans-serif;
-
-
   width: 300px;
-  // padding: 50px 30px;
-  // background-color:oldlace;
   opacity: 0.8;
-
+  border-radius: 20px;
+  margin-top: 0;
 }
 
 .filter-nav {
@@ -194,7 +164,6 @@ h1 {
   margin-right: 35px;
   color: black;
   margin-top: 40px;
-  // overflow: hidden;
   position: relative;
   float: right !important;
   width: 50%;
@@ -208,27 +177,7 @@ h1 {
   display: none;
 }
 
-// .suitcases-button {
-//     // position: relative;
-//     border-radius: 1px;
-//     font-size: 15px;
-//     padding: 5px 8px;
-//     cursor: pointer;
-//     color: #fff;
-//     background-color: lightblue;
-//     font-family: 'Open Sans', sans-serif;
-//     border: 0.2px solid #fff;
-//     box-shadow: 2px 2px 5px #AFE9FF;
-//     transition-duration: 0.5s;
-//     width: 150px;
-//     margin-left: 28px;
-//
-//
-// }
-// .modify-buttons{
-//   margin: auto;
-//   text-align: center;
-// }
+
 .float-right {
   float: right;
 }
@@ -238,46 +187,22 @@ h1 {
 }
 
 #drop-down-show {
-  position:relative;
-
-  font-size: 15px;
-  padding: 5px 8px;
-  cursor: pointer;
-  color: white;
-  font-family: 'Open Sans', sans-serif;
-  border: 0.2px solid #fff;
-  transition-duration: 0.5s;
-  margin-left:28px;
-  background-color: lightblue;
-  //     border: 0.2px solid #fff;
-  box-shadow: 2px 2px 5px #AFE9FF;
-  transition-duration: 0.5s;
-  //     width: 150px;
-  //     margin-left: 28px;
-  //
-}
-
-#drop-down-show {
   display: inline-block;
-  // margin: auto;
   float: left;
 }
 
-.add-item, .suitcases-button{
+.add-item, .suitcases-button, #drop-down-show, #create-wardrobe, #create-suitcase, #new-item, .upload-button {
   position:relative;
   border-radius: 1px;
   font-size: 15px;
   padding: 5px 8px;
   cursor: pointer;
   color: #fff;
-  background-color: lightblue;
+  background-color: lightblue !important;
   font-family: 'Open Sans', sans-serif;
   border: 0.2px solid #fff;
   box-shadow: 2px 2px 5px #AFE9FF;
   transition-duration: 0.5s;
-  // width:250px;
-  margin-left:28px;
-  // width:180px;
 
 }
 
@@ -291,33 +216,32 @@ h1 {
 
 
 @media only screen and (max-width: 640px){
-.category-filter {
-  text-align: center;
-  float: none;
-}
-#search-form{
-  margin: auto;
-padding-left: 2rem;
-}
-.wardrobe-header-image{
-  height: 200px;
-}
+  .category-filter {
+    text-align: center;
+    float: none;
+  }
+  #search-form{
+    margin: auto;
+    padding-left: 2rem;
+  }
+  .wardrobe-header-image{
+    height: 200px;
+  }
 
-h1 {
-  font-size: 25px;
-}
+  h1 {
+    font-size: 25px;
+  }
 }
 
 @media only screen and (max-width: 460px){
-.category-filter {
-  text-align: center;
-  float: none;
-  font-size: 12px;
-}
+  .category-filter {
+    text-align: center;
+    float: none;
+    font-size: 12px;
+  }
 
-.item-details img {
-  height: 125px;
-  width: auto;
-}
-
+  .item-details img {
+    height: 125px;
+    width: auto;
+  }
 }
