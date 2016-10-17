@@ -14,6 +14,7 @@ class Suitcase < ApplicationRecord
       format.json {render json: @weather.to_json}
     end
   end
+
 end
 
 
