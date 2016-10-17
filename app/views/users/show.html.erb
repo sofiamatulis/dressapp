@@ -8,6 +8,7 @@
 <body class="user-show">
 
   <div class ="top-of-page">
+    <%= link_to "Edit Profile", edit_user_path(@user), id: "myedit" %>
 
     <div class="profile">
       <div class="info">
@@ -15,7 +16,9 @@
       </div>
       <div class="greeting">
         <h1 id="greeting">Hello, <%= @user.name %>!</h1>
-        <%= link_to "Edit Profile", edit_user_path(@user), id: "myedit" %>
+        <div class="quote">
+          <p>“It's opener, out there, in the wide, open air.” ― Dr. Seuss</p>
+        </div>
       </div>
     </div>
 
