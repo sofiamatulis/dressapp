@@ -192,7 +192,7 @@ h1 {
 }
 //button for "add more item", suitcase button in wardrobe#show, "add to suitcase", New wardrobe modal
 // New suitcase modal, New item modal, upload button for items photo
-.add-item, .suitcases-button, #drop-down-show, #create-wardrobe, #create-suitcase, #new-item, .upload-button {
+.add-item, .suitcases-button, #drop-down-show, #create-wardrobe, #create-suitcase, #new-item, .upload-button, .delete-button {
   position:relative;
   border-radius: 1px;
   font-size: 15px;
@@ -205,6 +205,10 @@ h1 {
   box-shadow: 2px 2px 5px #AFE9FF;
   transition-duration: 0.5s;
 
+}
+
+.delete-button {
+  position: absolute;
 }
 
 .back-button:hover {
