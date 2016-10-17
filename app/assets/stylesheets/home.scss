@@ -741,3 +741,15 @@ body {
 }
 
 }
+
+@media (max-width: 2560px) and (min-width: 1200px) {
+  .both {
+    left:700px;
+  }
+
+  .text-logo {
+    left:435px;
+    width:35%;
+    bottom:50px;
+  }
+}
