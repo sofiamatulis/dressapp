@@ -10,7 +10,8 @@
     <div class="search-bar small-12 medium-6 large-6 columns">
       <%= form_tag(items_path, remote: true, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
-      <%= submit_tag "Search", :name => nil, :id => "search-button" %>
+      <%#= submit_tag "Search", :name => nil, :id => "search-button"  %>
+      <input type="submit" value="Search" id="search-button" data-disable-with="">
       <% end %>
     </div>
 
@@ -87,6 +88,9 @@
       <% end %>
     </ul>
 
+    <ul class="search-form-results">
+
+    </ul>
 
   <ul class="filtered-tops">
     <% @tops.each_slice(4) do |slice| %>

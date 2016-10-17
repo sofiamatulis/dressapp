@@ -67,12 +67,19 @@ $( document ).on('turbolinks:load', function() {
 
 
   // Filter items on wardrobe show view
+
+  $("#search-button").click(function() {
+    $( ".wardrobe-item-container" ).css('display', 'none');
+    $( ".search-form-results" ).css('display', 'inline');
+  })
+
   $( "#all-items" ).click(function() {
     $( ".wardrobe-item-container" ).css('display', 'initial');
     $( ".filtered-tops" ).css('display', 'none');
     $( ".filtered-bottoms" ).css('display', 'none');
     $( ".filtered-shoes" ).css('display', 'none');
     $( ".filtered-dresses" ).css('display', 'none');
+    $( ".search-form-results" ).css('display', 'none');
   });
 
   $("#top-filter").click(function() {
