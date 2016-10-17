@@ -44,10 +44,12 @@
         </ul>
 
           <div class="modal-wardrobe">
-             <%= form_for @wardrobe, :id => "wardrobe-from" do |f| %>
+             <%= form_for @wardrobe, :id => "wardrobe-form" do |f| %>
              <button type="button" class="close">X</button>
+             <div class="field">
                <%= f.text_field :name, placeholder: "Wardrobe name" %> <br>
                <%= f.submit "New Wardrobe", id: "create-wardrobe" %>
+             </div>
              <% end %>
            </div>
 
@@ -77,8 +79,8 @@
                   <input id="city" name="city" autocomplete="on" placeholder="Destination City" data-country=""><br>
                   <%= f.submit "New Suitcase", id: "create-suitcase"%>
                 </form>
-                <div class="destination-form">
-                </div>
+                <!-- <div class="destination-form">
+                </div> -->
               <% end %>
                 <br>
                 <br>

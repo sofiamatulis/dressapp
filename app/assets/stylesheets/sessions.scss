@@ -4,25 +4,23 @@
 
 
 
-  .log-in-form, #user-form{
-    font-family: 'Open Sans', sans-serif;
-    margin:auto;
-    margin-top: 8%;
-    margin-bottom: 70px;
-    width: 300px;
-    padding: 50px 30px;
-    background-color:oldlace;
-    opacity: 0.8;
+.log-in-form, #user-form{
+  font-family: 'Open Sans', sans-serif;
+  margin:auto;
+  margin-top: 8%;
+  margin-bottom: 70px;
+  width: 300px;
+  padding: 50px 30px;
+  background-color:oldlace;
+  opacity: 0.8;
+}
 
-  }
-
-  .log-in, .sign-up{
+.log-in, .sign-up{
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-image: url('https://static.pexels.com/photos/6675/flight-mountains-sky-flying-large.jpeg');
-
 }
 
 .arrow {
@@ -30,7 +28,6 @@
   margin-left:500px;
   margin-top:-300px;
 }
-
 
 .field input{
   background-color: rgba(255, 255, 255, 0.8);
@@ -44,14 +41,12 @@
   text-align:center;
 }
 
-
 .header{
   font-size: 30px;
   color:gray;
   text-align: center;
   padding-bottom: 10px;
 }
-
 
 .actions {
   text-align: center;
@@ -61,12 +56,10 @@
 
 #user_image {
   font-family: 'Open Sans', sans-serif;
-
 }
 
 .field input {
   font-family: 'Open Sans', sans-serif;
-
 }
 
 
@@ -80,7 +73,6 @@
   padding: 50px 30px;
   background-color:oldlace;
   opacity: 0.8;
-
 }
 
 .sign-up{
@@ -88,9 +80,7 @@ background-position: center center;
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;
-
 }
-
 
 .submitting {
   border-radius: 1px;
@@ -103,7 +93,6 @@ background-size: cover;
   border: 0.2px solid #fff;
   box-shadow: 2px 2px 5px #AFE9FF;
   transition-duration: 0.5s;
-
 }
 
 .submitting:hover {
@@ -112,13 +101,12 @@ background-size: cover;
   box-shadow: 2px 2px 20px #AFE9FF;
 }
 
-
 input {
-  border-radius: 1px;
+  border-radius: 3px;
   font-size: 15px;
   padding: 5px 8px;
   cursor: pointer;
-  color: #006398;
+  color: white;
   background-color: lightblue;
   font-family: 'Open Sans', sans-serif;
   border: 0.2px solid #fff;
@@ -131,7 +119,6 @@ input:hover {
   border: 1px solid #006398;
   box-shadow: 2px 2px 20px #AFE9FF;
 }
-
 
 #user_image {
 opacity:0;
@@ -157,8 +144,6 @@ margin-left:-150px;
   width:180px;
 
 }
-
-
 
 .fakefield:hover, .add-item:hover, #drop-down-show:hover{
   color: #006398;
