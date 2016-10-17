@@ -3,6 +3,10 @@
   left:15%;
 }
 
+.everything {
+  // overflow: hidden;
+}
+
 //create your wardrobe
 
 .parallax_section{
@@ -288,21 +292,6 @@
 
  }
 
-
-
-.arrow-left{
-  color: grey;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
-
-
-}
-
-.arrow-right {
-  color: grey;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
-}
 
 
 
@@ -785,8 +774,12 @@ body {
 
 @media (max-width: 2560px) and (min-width: 1200px) {
   .both {
-    left:700px;
   }
+
+  .everything {
+    // overflow: hidden;
+  }
+
 
   .text-logo {
     left:435px;
