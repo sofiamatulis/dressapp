@@ -104,14 +104,19 @@ function uncreateSlider() {
   }, 2000 );
 
 }
+if ($(window).width() <= 1000) {
+
+  $('#add-items').css("display", "none");
+  $('#add-items-small').css("display", "inline-block");
+};
 
 // when you click add-items button
   $('#add-items').on('click', function() {
     // if device is smaller than laptop, redirect to wardrobe page
-    if ($(window).width() <= 1000) {
+    // if ($(window).width() <= 1000) {
       // var current_user = suitcase.user.id
-      window.location.href= '/users/';
-    }
+      // window.location.href= '/users/';
+    // }
     // if device is full laptop size or desktop, allow drag and drop
     if ($(window).width() > 1000) {
      document.getElementById("suitcase-side-nav").style.width = "60%";
