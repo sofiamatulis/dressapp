@@ -8,6 +8,7 @@
 <body class="user-show">
 
   <div class ="top-of-page">
+    <%= link_to "Edit Profile", edit_user_path(@user), id: "myedit" %>
 
     <div class="profile">
       <div class="info">
@@ -15,7 +16,9 @@
       </div>
       <div class="greeting">
         <h1 id="greeting">Hello, <%= @user.name %>!</h1>
-        <%= link_to "Edit Profile", edit_user_path(@user), id: "myedit" %>
+        <div class="quote">
+          <p>“It's opener, out there, in the wide, open air.” ― Dr. Seuss</p>
+        </div>
       </div>
     </div>
 
@@ -31,6 +34,7 @@
   <div class="mytab-content">
     <div id="mytab1" class="mytab active">
       <h1 class="profile-tabtitle">My Wardrobes</h1>
+      <p class="desc">You can add multiple wardrobes if you like to seperate your clothes by season. Alternatively, you can keep all of your clothes together!</p>
       <button id="new-wardrobe">Create New Wardrobe</button>
         <ul class="allwardrobe">
           <% @user.wardrobes.each do |wardrobe| %>
@@ -57,6 +61,7 @@
 
       <div id="mytab2" class="mytab">
         <h1 class="profile-tabtitle">My Suitcases</h1>
+        <p class="desc">Hey world traveller, time to pack your bags! Keep track of all your trips here.</p>
         <button id="new-suitcase">Create New Suitcase</button>
           <ul class="allsuitcase">
             <% @user.suitcases.each do |suitcase| %>
