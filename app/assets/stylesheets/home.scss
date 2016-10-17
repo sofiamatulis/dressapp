@@ -31,6 +31,10 @@
 
 }
 
+html {
+  overflow-x: hidden;
+}
+
 .image_two {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/mainwardrobe.png');
   height:400px;
