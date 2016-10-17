@@ -122,7 +122,7 @@ function uncreateSlider() {
       data: {},
       dataType: 'JSON'
     }).done(function(response) {
-      console.log(response);
+      // console.log(response);
       //create variable with the sortable items that can be dragged
       var itemsContainer = $('<div id="sortable2" class="connectedSortable">');
 //iterating through each item and adding the photo to its own container
@@ -161,7 +161,7 @@ function uncreateSlider() {
             data: {item_id : ui.item.find('img').attr('data-item-id'), suitcase_id : $(event.target).attr('data-suitcase-id'), category_id: ui.item.find('img').attr('data-item-category') }, // 1) figure out data type for input/output 2) how to add the item you are trying to add into the collection of the suitcase
             dataType: 'html'
           }).done(function(response) {
-            console.log(response);
+            // console.log(response);
             // item added text appears
             itemAddedBubble();
             // appending the response to the outfit checker page
@@ -169,14 +169,15 @@ function uncreateSlider() {
             // createSlider();
             // appending the response to the view all page
               $.ajax({
-                url: $(this).attr("href"),
+                url: window.location.href,
                 method: 'GET',
                 data: {},
                 dataType: 'html'
               }).done(function(response) {
-                console.log(response);
+                console.log('it reached the end!');
                 var itemsTotal = $(response).find('#delete-suitcase-item');
                 $("#view-all-in-suitcase-container").html(itemsTotal);
+                console.log(itemsTotal);
               });
           });
         }
