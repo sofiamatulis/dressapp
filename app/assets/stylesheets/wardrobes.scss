@@ -10,7 +10,7 @@
   height: 400px;
   background-image: url('http://notable.ca/wp-content/uploads/2016/04/packing.jpg');
   background-repeat: no-repeat;
-  background-size: 1500px;
+  background-size: cover;
   overflow: hidden;
 }
 
@@ -102,8 +102,7 @@ h1 {
 }
 
 .button.add-item {
-  color: black;
-  border-radius: 10px;
+
   display: inline-block;
   margin: auto;
   float: right;
@@ -115,8 +114,8 @@ h1 {
   float: left;
 }
 
-#search, #search-button {
-  background-color: oldlace;
+#search {
+  background-color: white;
 }
 
 
@@ -240,11 +239,11 @@ h1 {
 
 #drop-down-show {
   position:relative;
-  border-radius: 10px;
+
   font-size: 15px;
   padding: 5px 8px;
   cursor: pointer;
-  color: black;
+  color: white;
   font-family: 'Open Sans', sans-serif;
   border: 0.2px solid #fff;
   transition-duration: 0.5s;
@@ -301,7 +300,11 @@ h1 {
 padding-left: 2rem;
 }
 .wardrobe-header-image{
-  height: 250px;
+  height: 200px;
+}
+
+h1 {
+  font-size: 25px;
 }
 }
 
