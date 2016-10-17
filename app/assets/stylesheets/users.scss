@@ -93,7 +93,7 @@ ul, li {
     font-size: 15px;
     padding: 5px 8px;
     cursor: pointer;
-    color: black;
+    color: white;
     background-color: lightblue;
     font-family: 'Open Sans', sans-serif;
     border: 0.2px solid #fff;
@@ -132,7 +132,7 @@ ul, li {
   left: 0;
   right: 0;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 1px;
 }
 
 
@@ -143,8 +143,9 @@ ul, li {
   border: none;
   width: 1em;
   height: 1em;
+  text-shadow: -1px 0 lightgrey,0 1px lightgrey,1px 0 lightgrey,0 -1px lightgrey;
   // background-color: white;
-  color: black;
+  color: white;
   // border-radius: 0;
   line-height: 0;
 }
@@ -152,6 +153,8 @@ ul, li {
 
 //css for wardrobe modal
 #wardrobe_name {
+  display: inline;
+  margin-bottom: 10px;
   background-color: rgba(255, 255, 255, 0.8);
   border: none;
   font-size: 13px;
@@ -175,11 +178,11 @@ font-size:20px;
 
 #create-wardrobe {
 
-  border-radius: 10px;
+  border-radius: 3px;
   font-size: 15px;
   padding: 5px 8px;
   cursor: pointer;
-  color: black;
+  color: white;
   background-color: lightblue;
   font-family: 'Open Sans', sans-serif;
   border: 0.2px solid #fff;
@@ -208,7 +211,7 @@ color: #AFE9FF;
 #new_wardrobe {
  display: block;
  width: 400px;
- height: 12em;
+ height: 10em;
  padding: 2em;
  background-color: #F2EFE4;
  position: absolute;
@@ -223,7 +226,7 @@ color: #AFE9FF;
 
 #new_suitcase {
  display: block;
- width: 400px;
+ width: 365px;
  height: 26em;
  padding: 2em;
  background-color: #F2EFE4;
@@ -243,7 +246,7 @@ color: #AFE9FF;
   text-align: center;
   width: 100%;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 1px;
   display: inline-block;
   margin-bottom: 0;
 }
@@ -282,5 +285,5 @@ color: #AFE9FF;
    left: 0;
    right: 0;
    text-align: center;
-   border-radius: 10px;
+   border-radius: 1px;
  }
