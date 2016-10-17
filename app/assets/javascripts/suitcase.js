@@ -9,7 +9,7 @@ $( document ).on('turbolinks:load', function() {
     $('.side-nav-buttons').fadeIn(100);
     $("#sortable1").addClass("is-open");
     $(this).html("");
-    if ( $(".outfit-checker-container").hasClass('slick') ) {
+    if ( !$(".clothes-container").children().hasClass('slick-slider') ) {
       createSlider();
     }
     $(".outfit").trigger("click");
@@ -70,7 +70,7 @@ function createSlider() {
   }
 
 // calls the carousel
-  createSlider();
+  // createSlider();
 
 // un-calls the carousel..
 function uncreateSlider() {
@@ -104,9 +104,9 @@ function uncreateSlider() {
     document.getElementById("suitcase-main").style.marginLeft = "60%";
 
 // only need to disable the slider if the outfit checker is visible"
-    if ( $(".outfit-checker-container").css('display') == 'block' && $('.outfit-checker-container').hasClass('slick') ) {
-      uncreateSlider();
-    }
+    // if ( $(".outfit-checker-container").css('display') == 'block' && $('.outfit-checker-container').hasClass('slick') ) {
+    //   uncreateSlider();
+    // }
 
     $(".outfit-checker-container").css("display", "none");
     $("#add-items").css("display", "none");
@@ -199,7 +199,9 @@ function uncreateSlider() {
 
       setTimeout( function() {
         $('.outfit-checker-container').fadeIn(200);
-        createSlider();
+        if ( !$(".clothes-container").children().hasClass('slick-slider') ) {
+          createSlider();
+        }
     }, 300);
 
   });
