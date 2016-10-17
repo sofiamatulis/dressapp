@@ -2,7 +2,7 @@
 
     <div id="suitcase-main">
 
-      <h1 class="suitcase-destination"><%= @suitcase.destination %></h1>
+      <h1 class="suitcase-destination"><%= @suitcase.destination[/[^,]+/] %></h1>
       <h3 class="suitcase-title"><%= @suitcase.name %></h3>
       <ul class="suitcase">
         <li class="suitcase-details">Duration: <%= @suitcase.duration %> days</li>
@@ -41,6 +41,7 @@
         <div class="main-buttons">
           <a id="view-all">View All &nbsp;&nbsp;&nbsp;|</a>
           <a id="add-items">&nbsp;&nbsp; Add&nbsp;Items</a>
+          <a> <%= link_to "Add Items", user_path(@user), :id => "add-items-small"%></a>
           <a id="outfit-checker-button">&nbsp;&nbsp; Outfit&nbsp;Checker</a>
           <a id="close-nav">X</a>
         </div>

@@ -17,7 +17,7 @@ require 'open_weather'
      format.html
      format.json {render json: @suitcase.to_json}
      end
-
+     @user = current_user.id
   end
 
   def new
