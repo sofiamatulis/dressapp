@@ -34,7 +34,8 @@
 
 .info img {
   position: relative;
-  height: auto;
+  display: inline;
+  height: 100%;
   width: auto;
   margin: 0, auto;
 }
@@ -231,8 +232,29 @@ li.active a, li.active a:hover {
 
 // responsiveness:
 
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     .quote {
       display: none;
+    }
+  }
+
+  @media (max-width: 850px) {
+    .info {
+      height: 150px;
+      width: 150px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    #greeting {
+      font-size: 45px;
+      margin-left: 10px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    #greeting {
+      font-size: 30px;
+      margin-left: 5px;
     }
   }
