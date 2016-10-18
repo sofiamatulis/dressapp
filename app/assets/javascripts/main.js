@@ -11,7 +11,7 @@ $( document ).on('turbolinks:load', function() {
         dataType: "json",
         data:  $('#new_wardrobe').serialize()
       }).done(function(wardrobe){
-        var link = $('<a class="name-wardrobe" href="http://localhost:3000/wardrobes/' + wardrobe.id +  '" >' + '<img src="/assets/mainwardrobe.png">' + '</a>');
+        var link = $('<a class="name-wardrobe" href="http://localhost:3000/wardrobes/' + wardrobe.id +  '" >' + '<img src="https://s3-us-west-2.amazonaws.com/packapp/assets/mainwardrobe.png">' + '</a>');
         var name = $("<li class='mywardrobe'>").append(link).append('<p class="wardrobename">' + wardrobe.name + '</p>').appendTo('.allwardrobe');
 
         //styling the result
