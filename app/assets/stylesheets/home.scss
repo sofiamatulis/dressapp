@@ -2,9 +2,7 @@
   position:relative;
   left:15%;
 }
-
 //create your wardrobe
-
 .parallax_section{
   top:500px;
   height: 500px;
@@ -22,8 +20,7 @@
   height:500px;
   position:relative;
   display:inline-block;
-  top:350px;
-  right:20%;
+  left:55%;
 
 }
 
@@ -37,8 +34,8 @@ html {
   overflow:visible;
   position:relative;
   display:inline-block;
-  top:290px;
-  left:20%;
+  bottom:50px;
+  right:35%;
 
 
 }
@@ -47,36 +44,41 @@ html {
   bottom:500px;
   position:relative;
   text-align:center;
-  // left:700px;
 
 }
-
 .createyourwardrobe {
   text-align: center;
   margin-top: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 32px;
   position: relative;
-  display:inline;
-  left:50%;
+  display: inline-block;
+  margin: auto;
+  width: 100%;
+  bottom: 450px;
+}
 
+.wardrobe-paragraph  {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    position: relative;
+    width: 600px;
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+    width: 280px;
+}
+
+.wardrobe-paragraph-container {
+  bottom:400px;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
 
 
 }
-
-.wardrobe-paragraph {
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-  position: relative;
-  width:600px;
-  left:25%;
-  display:inline-block;
-  top:150px
-
-
-
-}
-
 
 // fill your wardrobe
 .parallax_section_two{
@@ -98,38 +100,53 @@ html {
   font-family: 'Open Sans', sans-serif;
   font-size: 32px;
   position: relative;
-  bottom:250px;
-  display:inline-block;
-  right:5%;
+  bottom: 250px;
+  display: inline-block;
+  width: 100%;
+  margin: auto;
 
 
 }
 
 
 .fill-paragraph {
+
+  bottom:0px;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
-  position:relative;
-  display:inline-block;
-  left:40%;
-  bottom:250px;
+  position: relative;
+  width: 500px;
+  display: inline-block;
+  width: 100%;
+  margin: auto;
+
+}
+
+.fill-paragraph-container {
+  bottom:200px;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+
 
 }
 
 .image_camera {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/camera.png');
-  height:400px;
+  height:300px;
   position:relative;
   display:inline-block;
-  right:20%;
+  right:38%;
 
 }
 
 .image_fill_your_wardrobe {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/clothes-wardrobe.png');
-  top:0px;
-  height:400px;
-  left:75%;
+  top:25px;
+  height:350px;
+  left:68%;
   position:relative;
   display:inline-block  ;
 
@@ -151,32 +168,40 @@ html {
 }
 
 .create-suitcase-main-page {
-  height:400px;
   text-align: center;
   margin-top: 0;
   font-family: 'Open Sans', sans-serif;
-  position:relative;
-  top:110px;
   font-size: 32px;
-  width:900px;
-  display:inline-block;
+  position: relative;
+  bottom: 250px;
+  display: inline-block;
+  width: 100%;
+  margin: auto;
 
 
 }
 
 
 .suitcase-paragraph {
+
+  bottom:0px;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
-  position:relative;
-  bottom:180px;
-  left:36%;
-  display:inline-block;
-
-
+  position: relative;
+  width: 400px;
+  display: inline-block;
+  margin: auto;
 
 }
 
+.suitcase-paragraph-container {
+  bottom:200px;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
 
 .image_create_suitcase {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/luggage.png');
@@ -184,14 +209,15 @@ html {
   float:left;
   position:relative;
   top:70px;
-  display:inline;
+  display:inline-block;
+  left:10%;
+
 
 
 }
 
 .everything_suitcase {
   position:relative;
-  // left:650px;
   display:inline;
 
 }
@@ -211,38 +237,55 @@ html {
 }
 
 .text-pack-up {
-  margin-top: 0px;
-  position:relative;
+
+
+  text-align: center;
+  margin-top: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 32px;
-  top:50px;
-  display:inline-block;
-  left:15%;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: auto;
+  top:100px;
 
 
 }
 
 
 .pack-up-paragraph {
+
+
+  bottom:0px;
   font-family: 'Open Sans', sans-serif;
-  position:relative;
-  top:100px;
   text-align: center;
-  display:inline-block  ;
-  right:15%;
+  position: relative;
+  width: 400px;
+  display: inline-block;
+  margin: auto;
+  top:340px;
 
 
+}
+
+.pack-up-paragraph-container {
+  bottom:200px;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
 }
 
 
 .image_select {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/select.png');
-  top:80px;
+  top:100px;
   height:350px;
   float:left;
   display:inline-block;
   position:relative;
-  left:20%;
+  left:30%;
 
 }
 
@@ -250,8 +293,9 @@ html {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/pack-up.png');
   height:350px;
   display:inline-block;
-  left:15%;
+  left:25%;
   position: relative;
+  top:100px;
 
 }
 
@@ -260,9 +304,9 @@ html {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/go.png');
   height:350px;
   position:relative;
-  left:10%;
+  left:20%;
   display:inline-block;
-  top:8%;
+  top:120px;
 
 
 }
@@ -383,7 +427,6 @@ body {
 
  /*.item-details img {
    margin-left:20px
-
  }*/
 
 
