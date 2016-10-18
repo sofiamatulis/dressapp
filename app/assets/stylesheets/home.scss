@@ -3,10 +3,6 @@
   left:15%;
 }
 
-.everything {
-  // overflow: hidden;
-}
-
 //create your wardrobe
 
 .parallax_section{
@@ -27,7 +23,12 @@
   position:relative;
   display:inline-block;
   top:350px;
+  right:20%;
 
+}
+
+html {
+  overflow-x: hidden;
 }
 
 .image_two {
@@ -36,8 +37,8 @@
   overflow:visible;
   position:relative;
   display:inline-block;
-  right:90%;
   top:290px;
+  left:20%;
 
 
 }

@@ -12,7 +12,18 @@
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+  filter: brightness(98%);
+  -webkit-filter: brightness(70%);
+  -moz-filter: brightness(98%);
+  -ms-filter: brightness(98%);
 }
+
+// .wardrobe-header-image img {
+//   filter: brightness(98%);
+//   -webkit-filter: brightness(98%);
+//   -moz-filter: brightness(98%);
+//   -ms-filter: brightness(98%);
+// }
 
 #wardrobe-name {
   position: relative;
@@ -51,6 +62,13 @@ h1 {
   text-align: center;
 }
 
+.filter-btn:hover {
+  color: #006398;
+}
+
+#all-items:hover {
+  color: #006398;
+}
 
 #filter-right {
   position: relative;
@@ -142,13 +160,20 @@ h1 {
 }
 
 .wardrobe-name {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Rancho', cursive;
   margin:auto;
-  margin-top: 8%;
+  margin-top: 10%;
   margin-bottom: 70px;
   padding: 10px;
-  background-color:oldlace;
-  opacity: 0.8;
+  // background-color:oldlace;
+  // opacity: 0.8;
+  position: absolute;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  font-size: 80px;
+  display: inline-block;
+  width: 100%;
 }
 
 #search-form {
@@ -192,7 +217,7 @@ h1 {
 }
 //button for "add more item", suitcase button in wardrobe#show, "add to suitcase", New wardrobe modal
 // New suitcase modal, New item modal, upload button for items photo
-.add-item, .suitcases-button, #drop-down-show, #create-wardrobe, #create-suitcase, #new-item, .upload-button {
+.add-item, .suitcases-button, #drop-down-show, #create-wardrobe, #create-suitcase, #new-item, .upload-button, .delete-button {
   position:relative;
   border-radius: 1px;
   font-size: 15px;
@@ -205,6 +230,10 @@ h1 {
   box-shadow: 2px 2px 5px #AFE9FF;
   transition-duration: 0.5s;
 
+}
+
+.delete-button {
+  position: absolute;
 }
 
 .back-button:hover {
