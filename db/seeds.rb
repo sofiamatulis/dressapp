@@ -63,10 +63,10 @@ Item.create!(name:"Black High Top Converse", description:"Sneakers for everyday"
 Item.create!(name:"Black Toms", description:"Black canvas Toms", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/black-canvas-toms.jpg", category: shoe, wardrobe: summer)
 Item.create!(name:"White Sandals", description:"Birkenstock Madrid", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/birkenstocksmadrid.jpg", category: shoe, wardrobe: summer)
 Item.create!(name:"Black Louboutins", description:"Red bottoms!", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/louboutins.jpg", category: shoe, wardrobe: summer)
-Item.create!(name:"Nude Heels", description:"Nude Louboutins", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/nudeheels.jpg", category: shoe, wardrobe: summer)
+Item.create!(name:"Nude Heels", description:"Nude Louboutins", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/nudeeheels.jpg", category: shoe, wardrobe: summer)
 # Dresses for summer
 Item.create!(name:"Red Spotted Dress", description:"Cute little red dress", image:"http://www.lindybop.co.uk/images/audrey-red-polka-dot-swing-dress-p41-15865_zoom.jpg", category: dress, wardrobe: summer)
-Item.create!(name:"Grey Dress", description:"Just a basic dress", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/ribbed-jersey-dress.jpeg", category: dress, wardrobe: summer)
+Item.create!(name:"Grey Dress", description:"Just a basic dress", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/ribbed-jersey+dress.jpeg", category: dress, wardrobe: summer)
 Item.create!(name:"Floral Dress", description:"Cute floral dress", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/floral-frill-tea-dress.jpg", category: dress, wardrobe: summer)
 Item.create!(name:"Short Dress", description:"Short dress with straps", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/short-dress.jpeg", category: dress, wardrobe: summer)
 
