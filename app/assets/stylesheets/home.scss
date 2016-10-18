@@ -484,6 +484,10 @@ body {
     display:none;
     }
 
+    html {
+      overflow-x: hidden;
+    }
+
     .text-logo {
       content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/logopackapp.png');
      position:relative;
@@ -527,13 +531,13 @@ body {
       left:0;}
 
       .create-suitcase-main-page {
-        height:400px;
         text-align: center;
         margin-top: 0;
         font-family: 'Open Sans', sans-serif;
         position:relative;
         font-size: 32px;
         width:400px;
+        top:100px;
 
       }
 
@@ -542,9 +546,8 @@ body {
         font-family: 'Open Sans', sans-serif;
         text-align: center;
         position:relative;
-        bottom:200px;
         width:300px;
-        left:11%;
+        top:350px;
       }
       .createyourwardrobe {
          top:50px;
@@ -554,26 +557,28 @@ body {
         font-family: 'Open Sans', sans-serif;
         font-size: 32px;
         position: relative;
-        left:30%;
+        left:0;
 
       }
 
       .wardrobe-paragraph {
         font-family: 'Open Sans', sans-serif;
         text-align: center;
-        bottom:300px;
+        bottom:0px;
         position: relative;
         width:300px;
-        left:30px; }
+        left:0px;
+        top:150px;
+      }
 
         .fill-your-wardrobe {
           bottom:0;
           top:50px;
-          left:20%;
+          left:0px;
         }
 
         .fill-paragraph{
-          top:100px;
+          top:300px;
           left:0;
         }
 
