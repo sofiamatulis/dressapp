@@ -31,7 +31,7 @@ Item.create!(name:"Cat Sweater", description:"Meow", image:"https://s3-us-west-2
 
 # Bottoms for winter
 Item.create!(name:"Blue Jeans", description:"Basic jeans", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/indigojeans.jpg", category: bottom, wardrobe: winter)
-Item.create!(name:"Grey Sweat Pants", description:"Sweat pants for those lazy days", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/grey-sweat-pants.jpg", category: bottom, wardrobe: winter)
+Item.create!(name:"Grey Sweat Pants", description:"Sweat pants for those lazy days", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/grey-sweat+pants.jpg", category: bottom, wardrobe: winter)
 Item.create!(name:"Leather Leggings", description:"Faux leather leggings", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/faux-leather-leggings.jpg", category: bottom, wardrobe: winter)
 Item.create!(name:"Fur Lined Jean", description:"These jeans are super warm", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/super-skinny+jeans.jpeg", category: bottom, wardrobe: winter)
 
