@@ -17,7 +17,7 @@
   margin-bottom: 0;
 
     &.small {
-      font-size: 20px;
+      font-size: 40px;
       padding-bottom: 60px;
       padding-right: 20px;
     }
@@ -50,10 +50,8 @@ p, li, a {
 
 .links {
   text-align: center;
-
-
-
   color: grey;
+  display: none;
 }
 
 .links a {
@@ -62,7 +60,7 @@ p, li, a {
 }
 
 .links a:hover {
-  color: #ef766a;
+  color: #006398;
 }
 
 
@@ -101,6 +99,9 @@ p, li, a {
   opacity: .4;
   z-index: -1;
   background-image: url('http://livehdwallpaper.com/wp-content/uploads/2016/02/Beautiful-Beach-Wallpapers-HD-Pictures.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 #sortable1 {
@@ -174,7 +175,7 @@ p, li, a {
   font-size: 30px;
 }
 
-#open-nav a:hover {
+#open-nav:hover {
   color: #ef766a;
 }
 
@@ -192,7 +193,7 @@ p, li, a {
 }
 
 .main-buttons a:hover {
-  color: #ef766a;
+  color: #006398;
 }
 
 #what-you-packed {
@@ -377,12 +378,12 @@ h4 {
 }
 
 
-.dress-button a:hover {
-  color: #ef766a;
+.dress-button:hover {
+  color: #006398;
 }
 
-.tops-bottoms a:hover {
-  color: #ef766a;
+.tops-bottoms:hover {
+  color: #006398;
 }
 
 

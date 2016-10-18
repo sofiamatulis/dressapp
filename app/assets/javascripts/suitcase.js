@@ -20,6 +20,7 @@ $( document ).on('turbolinks:load', function() {
     }
     $(".outfit").trigger("click");
     $(".clothes-types").fadeIn(100);
+    $(".weather").fadeOut(100);
   });
 
 // closing nav
@@ -33,6 +34,7 @@ $( document ).on('turbolinks:load', function() {
     document.getElementById("suitcase-main").style.marginLeft= "0";
     $("#sortable1").removeClass("is-open");
     $(".suitcase-destination").removeClass("small");
+    $(".weather").fadeIn(100);
     // resetting the defaults
     setTimeout( function() {
       $("#items-grid-container" ).empty();
