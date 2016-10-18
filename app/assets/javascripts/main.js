@@ -30,20 +30,6 @@ $( document ).on('turbolinks:load', function() {
       });
 
 
-    //   $('#new_suitcase').on('submit',function(event){
-    //     event.preventDefault();
-    //     $.ajax({
-    //       url:'/suitcases',
-    //       beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-    //       method:'POST',
-    //       dataType: "json",
-    //       data:  $('#new_suitcase').serialize()
-    //     }).done(function(suitcase){
-    //       var one = $('<a class="each-suitcase" href="http://localhost:3000/suitcases/' + suitcase.id +  '" >' + '<img src="/assets/suitcase1.png">' + '</a>');
-    //       var two = $ ('.allsuitcase').append("<li class='mysuitcase'>").append(one).append('<p class="suitcasename">' + suitcase.name + '</p>');
-    //       $( "#create-suitcase").prop( "disabled", false );
-    //       $("#new_suitcase")[0].reset();
-    //    });
-    //  });
+
    });
  });
