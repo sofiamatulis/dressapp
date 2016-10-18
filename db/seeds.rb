@@ -56,7 +56,7 @@ Item.create!(name:"Olive Pants", description:"Just a regular pair of pants", ima
 Item.create!(name:"Pencil Skirt", description:"Black pencil skirt", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/jersey-skirt.jpeg", category: bottom, wardrobe: summer)
 Item.create!(name:"Leather Skirt", description:"Faux leather skirt", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/short-faux-leather-skirt.jpeg", category: bottom, wardrobe: summer)
 Item.create!(name:"Light Blue Jeans", description:"Ripped jeans", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/lightbluerippedjeans.jpg", category: bottom, wardrobe: summer)
-Item.create!(name:"Skinny Dark Jeans", description:"Skinny jeans", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/super-skinny-jeans.jpeg", category: bottom, wardrobe: summer)
+Item.create!(name:"Skinny Dark Jeans", description:"Skinny jeans", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/super-skinny+jeans.jpeg", category: bottom, wardrobe: summer)
 Item.create!(name:"Black Leggings", description:"Basic leggings", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/leggings.jpg", category: bottom, wardrobe: summer)
 # Shoes for summer
 Item.create!(name:"Black High Top Converse", description:"Sneakers for everyday", image:"http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=146587788", category: shoe, wardrobe: summer)
