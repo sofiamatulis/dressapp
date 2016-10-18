@@ -30,7 +30,7 @@ Item.create!(name:"Fox Sweater", description:"This is soo cute!", image:"https:/
 Item.create!(name:"Cat Sweater", description:"Meow", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/catsweater.jpeg", category: top, wardrobe: winter)
 
 # Bottoms for winter
-Item.create!(name:"Stone Washed Jeans", description:"Light and faded colour skinny jeans", image:"http://lp.hm.com/hmprod?set=key[source],value[/model/2016/D00%200412707%20004%2085%204634.jpg]&set=key[rotate],value[]&set=key[width],value[]&set=key[height],value[]&set=key[x],value[]&set=key[y],value[]&set=key[type],value[STILL_LIFE_FRONT]&set=key[hmver],value[2]&set=key[quality],value[80]&set=key[size],value[346x405]&call=url[file:/mobile/v2/product]", category: bottom, wardrobe: winter)
+Item.create!(name:"Blue Jeans", description:"Basic jeans", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/indigojeans.jpg", category: bottom, wardrobe: winter)
 Item.create!(name:"Grey Sweat Pants", description:"Sweat pants for those lazy days", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/grey-sweat-pants.jpg", category: bottom, wardrobe: winter)
 Item.create!(name:"Leather Leggings", description:"Faux leather leggings", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/faux-leather-leggings.jpg", category: bottom, wardrobe: winter)
 Item.create!(name:"Fur Lined Jean", description:"These jeans are super warm", image:"https://s3-us-west-2.amazonaws.com/packapp/assets/super-skinny+jeans.jpeg", category: bottom, wardrobe: winter)
