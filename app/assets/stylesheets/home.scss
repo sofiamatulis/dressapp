@@ -1,6 +1,10 @@
 .boxes {
   position:relative;
-  left:15%;
+  overflow: hidden;
+  margin: auto;
+  display: block;
+  width: 90%;
+  bottom: 80px;
 }
 //create your wardrobe
 .parallax_section{
@@ -12,7 +16,7 @@
     background-size: cover;
     background-position: 100% auto;
     position:relative;
-    background-color: #B6F5B2;
+    background-color: #AFE9FF;
 }
 
 .first_image{
@@ -56,28 +60,29 @@ html {
   display: inline-block;
   margin: auto;
   width: 100%;
-  bottom: 450px;
+  bottom: 400px;
+  right: 70px;
 }
 
 .wardrobe-paragraph  {
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    position: relative;
-    width: 600px;
-    display: inline-block;
-    width: 100%;
-    margin: auto;
-    width: 280px;
+  font-family: 'Open Sans', sans-serif;
+  text-align: left;
+  position: relative;
+  width: 600px;
+  display: inline-block;
+  width: 100%;
+  margin: auto;
+  width: 350px;
+  right: 70px;
 }
 
 .wardrobe-paragraph-container {
-  bottom:400px;
-    position: relative;
-    margin: auto;
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-
+  bottom: 370px;
+  position: relative;
+  margin: auto;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
 
 }
 
@@ -97,6 +102,7 @@ html {
 
 .fill-your-wardrobe {
   text-align: center;
+  padding-left: 20px;
   margin-top: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 32px;
@@ -117,10 +123,11 @@ html {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
   position: relative;
-  width: 500px;
+  width: 400px;
   display: inline-block;
-  width: 100%;
+  // width: 100%;
   margin: auto;
+  padding-left: 20px;
 
 }
 
@@ -140,7 +147,7 @@ html {
   height:300px;
   position:relative;
   display:inline-block;
-  right:38%;
+  right: 20%;
 
 }
 
@@ -148,7 +155,7 @@ html {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/clothes-wardrobe.png');
   top:25px;
   height:350px;
-  left:68%;
+  left:63%;
   position:relative;
   display:inline-block  ;
 
@@ -171,39 +178,38 @@ html {
 
 .create-suitcase-main-page {
   text-align: center;
+  padding-left: 365px;
   margin-top: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 32px;
   letter-spacing: 3px;
   position: relative;
-  bottom: 250px;
+  bottom: 320px;
   display: inline-block;
   width: 100%;
   margin: auto;
-
-
 }
 
 
 .suitcase-paragraph {
-
-  bottom:0px;
+  bottom: 0px;
   font-family: 'Open Sans', sans-serif;
-  text-align: center;
+  text-align: right;
   position: relative;
   width: 400px;
   display: inline-block;
   margin: auto;
-
+  padding-left: 77px;
 }
 
 .suitcase-paragraph-container {
-  bottom:200px;
-    position: relative;
-    margin: auto;
-    width: 100%;
-    display: inline-block;
-    text-align: center;
+  padding-left: 290px;
+  bottom: 300px;
+  position: relative;
+  margin: auto;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
 }
 
 .image_create_suitcase {
@@ -229,13 +235,13 @@ html {
 
 .parallax_section_four{
   top:500px;
-  height: 900px;
-    background-repeat: no-repeat;
-    width:100%;
-    background-size: cover;
-    background-position: 100% auto;
-    position:relative;
-    background-color: white;
+  height: 630px;
+  background-repeat: no-repeat;
+  width:100%;
+  background-size: cover;
+  background-position: 100% auto;
+  position:relative;
+  background-color: white;
 
 }
 
@@ -267,7 +273,7 @@ html {
   width: 400px;
   display: inline-block;
   margin: auto;
-  top:340px;
+  top:320px;
 
 
 }
@@ -284,35 +290,31 @@ html {
 
 .image_select {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/select.png');
-  top:100px;
-  height:350px;
-  float:left;
-  display:inline-block;
-  position:relative;
-  left:30%;
-
+  top: 100px;
+  height: 350px;
+  float: left;
+  display: inline-block;
+  position: relative;
+  left: 15%;
 }
 
 .image_pack_up {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/pack-up.png');
-  height:350px;
-  display:inline-block;
-  left:25%;
+  height: 350px;
+  display: inline-block;
+  left: 6%;
   position: relative;
-  top:100px;
-
+  top: 100px;
 }
 
 
 .image_go {
   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/go.png');
-  height:350px;
-  position:relative;
-  left:20%;
-  display:inline-block;
-  top:120px;
-
-
+  height: 300px;
+  position: relative;
+  left: 0%;
+  display: inline-block;
+  top: 80px;
 }
 
 .everything {
@@ -413,20 +415,23 @@ body {
 #box0 {
   left:100px;
   margin-top:200px;
+  position: relative;
 }
 
 #box1 {
   left:150px;
   margin-top:200px;
+  position: relative;
 }
 #box2 {
   margin-left:200px;
   margin-top:200px;
+  position: relative;
  }
 #box3 {
   margin-left:70px;
   margin-top:200px;
-
+  position: relative;
  }
 
  /*.item-details img {
@@ -451,392 +456,392 @@ body {
 
 
 // how to make it responsive yay!
-
-@media (max-width: 1000px) {
-    .box {
-      width:100px;
-      height:100px;
-      border:7.5px solid #fff;
-      position:relative;
-      z-index:10;
-      float:left;
-      line-height:100px;
-      text-align:center;
-      color:#fff;
-      font-size:10px;
-      text-transform:uppercase;
-      font-family:Tahoma;
-      letter-spacing:0.5px;
-      background-color: rgba(211, 211, 211, 0.5);
-    }
-}
-
+//
+// @media (max-width: 1000px) {
+//     .box {
+//       width:100px;
+//       height:100px;
+//       border:7.5px solid #fff;
+//       position:relative;
+//       z-index:10;
+//       float:left;
+//       line-height:100px;
+//       text-align:center;
+//       color:#fff;
+//       font-size:10px;
+//       text-transform:uppercase;
+//       font-family:Tahoma;
+//       letter-spacing:0.5px;
+//       background-color: rgba(211, 211, 211, 0.5);
+//     }
+// }
+//
 
 
 
 
 //for cell phone
-
-
-
-@media (max-width: 667px) {
-    .box {
-    display:none;
-    }
-
-    html {
-      overflow-x: hidden;
-    }
-
-    .text-logo {
-      content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/logopackapp.png');
-     position:relative;
-     bottom:0px;
-      width:66%;
-      left:90px;
-      top:0px;
-    }
-
-    .first_image, .image_fill_your_wardrobe, .image_two, .image_camera, .video-container, .parallax_image_fill_your_wardrobe, .image_create_suitcase, .image_select, .image_go, .image_pack_up{
-      display: none;
-    }
-
-    .parallax_section_three {
-      background-image:none;
-      background-color: #B6F5B2;
-
-    }
-
-    .text-pack-up {
-      margin-right:0;
-      text-align: center;
-      left:-300px;
-      position: relative;
-    }
-
-    #photo0{
-      // background-size: 0 0;
-      // background-size: 200px 200px;
-
-        height: 500px;
-        background-repeat: no-repeat;
-        width:100%;
-        background-size: cover;
-        background-position: 100% auto;
-        position:relative;
-    }
-
-    .pack-up-paragraph {
-      width: auto;
-      left:0;}
-
-      .create-suitcase-main-page {
-        text-align: center;
-        margin-top: 0;
-        font-family: 'Open Sans', sans-serif;
-        position:relative;
-        font-size: 32px;
-        width:400px;
-        top:100px;
-
-      }
-
-
-      .suitcase-paragraph {
-        font-family: 'Open Sans', sans-serif;
-        text-align: center;
-        position:relative;
-        width:300px;
-        top:350px;
-      }
-      .createyourwardrobe {
-         top:50px;
-        height:400px;
-        text-align: center;
-        margin-top: 0;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 32px;
-        position: relative;
-        left:0;
-
-      }
-
-      .wardrobe-paragraph {
-        font-family: 'Open Sans', sans-serif;
-        text-align: center;
-        bottom:0px;
-        position: relative;
-        width:300px;
-        left:0px;
-        top:150px;
-      }
-
-        .fill-your-wardrobe {
-          bottom:0;
-          top:50px;
-          left:0px;
-        }
-
-        .fill-paragraph{
-          top:300px;
-          left:0;
-        }
-
-        .text-pack-up {
-          left:0;
-        }
-
-}
-
+//
+//
+//
+// @media (max-width: 667px) {
+//     .box {
+//     display:none;
+//     }
+//
+//     html {
+//       overflow-x: hidden;
+//     }
+//
+//     .text-logo {
+//       content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/logopackapp.png');
+//      position:relative;
+//      bottom:0px;
+//       width:66%;
+//       left:90px;
+//       top:0px;
+//     }
+//
+//     .first_image, .image_fill_your_wardrobe, .image_two, .image_camera, .video-container, .parallax_image_fill_your_wardrobe, .image_create_suitcase, .image_select, .image_go, .image_pack_up{
+//       display: none;
+//     }
+//
+//     .parallax_section_three {
+//       background-image:none;
+//       background-color: #B6F5B2;
+//
+//     }
+//
+//     .text-pack-up {
+//       margin-right:0;
+//       text-align: center;
+//       left:-300px;
+//       position: relative;
+//     }
+//
+//     #photo0{
+//       // background-size: 0 0;
+//       // background-size: 200px 200px;
+//
+//         height: 500px;
+//         background-repeat: no-repeat;
+//         width:100%;
+//         background-size: cover;
+//         background-position: 100% auto;
+//         position:relative;
+//     }
+//
+//     .pack-up-paragraph {
+//       width: auto;
+//       left:0;}
+//
+//       .create-suitcase-main-page {
+//         text-align: center;
+//         margin-top: 0;
+//         font-family: 'Open Sans', sans-serif;
+//         position:relative;
+//         font-size: 32px;
+//         width:400px;
+//         top:100px;
+//
+//       }
+//
+//
+//       .suitcase-paragraph {
+//         font-family: 'Open Sans', sans-serif;
+//         text-align: center;
+//         position:relative;
+//         width:300px;
+//         top:350px;
+//       }
+//       .createyourwardrobe {
+//          top:50px;
+//         height:400px;
+//         text-align: center;
+//         margin-top: 0;
+//         font-family: 'Open Sans', sans-serif;
+//         font-size: 32px;
+//         position: relative;
+//         left:0;
+//
+//       }
+//
+//       .wardrobe-paragraph {
+//         font-family: 'Open Sans', sans-serif;
+//         text-align: center;
+//         bottom:0px;
+//         position: relative;
+//         width:300px;
+//         left:0px;
+//         top:150px;
+//       }
+//
+//         .fill-your-wardrobe {
+//           bottom:0;
+//           top:50px;
+//           left:0px;
+//         }
+//
+//         .fill-paragraph{
+//           top:300px;
+//           left:0;
+//         }
+//
+//         .text-pack-up {
+//           left:0;
+//         }
+//
+// }
+//
 
 // mac screen for my computer (Sofia)
 
+//
+// @media (max-width: 1200px) and (min-width: 666px)
+// {
+//   .parallax_section{
+//     top:500px;
+//     height: 500px;
+//       background-repeat: no-repeat;
+//       width:100%;
+//       background-attachment: fixed;
+//       background-size: cover;
+//       background-position: 100% auto;
+//       position:relative;
+//       background-color: #B6F5B2;
+//   }
+//
+//   .first_image{
+//     content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/colorfulwardrobes.png');
+//     height:500px;
+//     position:relative;
+//     left:700px;
+//
+//   }
+//
+//   .image_two {
+//     content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/mainwardrobe.png');
+//     height:400px;
+//     overflow:visible;
+//     position:relative;
+//     bottom:500px;
+//   }
+//
+//   .both {
+//     bottom:500px;
+//     position:relative;
+//     text-align:center;
+//     left:0;
+//
+//   }
+//
+//   .createyourwardrobe {
+//      top:50px;
+//     height:400px;
+//     text-align: center;
+//     margin-top: 0;
+//     font-family: 'Open Sans', sans-serif;
+//     font-size: 32px;
+//     position: relative;
+//
+//   }
+//
+//   .wardrobe-paragraph {
+//     font-family: 'Open Sans', sans-serif;
+//     text-align: center;
+//     bottom:300px;
+//     position: relative;
+//     width:500px;
+//     left:350px; }
+//
+//     .text-logo {
+//       content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/logopackapp.png');
+//      left:350px;
+//      position:relative;
+//      bottom:85px;
+//       width:50%;
+//
+//   }
+//
+//   .boxes {
+//     left:0;
+//   }
+//
+//   // fill your wardrobe
+// .parallax_section_two{
+//   top:500px;
+//   height: 500px;
+//     background-repeat: no-repeat;
+//     width:100%;
+//     background-attachment: fixed;
+//     background-size: cover;
+//     background-position: 100% auto;
+//     position:relative;
+//     background-color: white;
+//
+// }
+//
+// .fill-your-wardrobe {
+//   height:400px;
+//   text-align: center;
+//   margin-top: 0;
+//   font-family: 'Open Sans', sans-serif;
+//   font-size: 32px;
+//   position: relative;
+//
+// }
+//
+//
+// .fill-paragraph {
+//   font-family: 'Open Sans', sans-serif;
+//   text-align: center;
+//   position:relative;
+//   width:300px;
+//   left:440px;
+// }
+//
+// .image_camera {
+//   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/camera.png');
+//   height:400px;
+//   left:0;
+//   position:relative;
+// }
+//
+// .image_fill_your_wardrobe {
+//   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/clothes-wardrobe.png');
+//   bottom:500px;
+//   height:400px;
+//   left:700px;
+//   position:relative;
+// }
+//
+// //create suitcases
+//
+// .parallax_section_three{
+//   top:500px;
+//   height: 500px;
+//     background-repeat: no-repeat;
+//     width:100%;
+//     background-size: cover;
+//     background-position: 100% auto;
+//     position:relative;
+//     background-image: url('https://s3-us-west-2.amazonaws.com/packapp/assets/beach.png');
+//
+// }
+//
+// .create-suitcase-main-page {
+//   height:400px;
+//   text-align: center;
+//   margin-top: 0;
+//   font-family: 'Open Sans', sans-serif;
+//   position:relative;
+//   font-size: 32px;
+//   width:900px;
+//   right:700px;
+//   top:50px;
+//
+// }
+//
+//
+// .suitcase-paragraph {
+//   font-family: 'Open Sans', sans-serif;
+//   text-align: center;
+//   position:relative;
+//   width:900px;
+//   left:-510px;
+//   bottom:300px;
+//
+//
+// }
+//
+//
+// .image_create_suitcase {
+//   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/luggage.png');
+//   height:400px;
+//   float:left;
+//   position:relative;
+//   top:70px;
+//
+// }
+//
+// //pack up and check your outfits
+//
+// .parallax_section_four{
+//   top:500px;
+//   height: 800px;
+//   background-repeat: no-repeat;
+//   width:100%;
+//   background-size: cover;
+//   background-position: 100% auto;
+//   position:relative;
+//   background-color: white;
+//
+// }
+//
+// .text-pack-up {
+//   margin-top: 0px;
+//   position:relative;
+//   font-family: 'Open Sans', sans-serif;
+//   font-size: 32px;
+//   top:50px;
+//
+// }
+//
+//
+// .pack-up-paragraph {
+//   font-family: 'Open Sans', sans-serif;
+//   float:left;
+//   position:relative;
+//   width:150px;
+//   left:100px;
+//   top:100px;
+//   text-align: center;
+// }
+//
+//
+// .image_select {
+//   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/select.png');
+//   height:350px;
+//   left:50px;
+//   top:0px;
+//   position: relative;
+// }
+//
+// .image_pack_up {
+//   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/pack-up.png');
+//   height:350px;
+//   left:-100px;
+//   top:0px;
+//   position:relative;
+// }
+//
+//
+// .image_go {
+//   content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/go.png');
+//   height:350px;
+//   position:relative;
+//   left:750px;
+//
+// }
+//
+// .everything {
+//   left:0;
+// }
+//
+// }
 
-@media (max-width: 1200px) and (min-width: 666px)
-{
-  .parallax_section{
-    top:500px;
-    height: 500px;
-      background-repeat: no-repeat;
-      width:100%;
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: 100% auto;
-      position:relative;
-      background-color: #B6F5B2;
-  }
-
-  .first_image{
-    content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/colorfulwardrobes.png');
-    height:500px;
-    position:relative;
-    left:700px;
-
-  }
-
-  .image_two {
-    content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/mainwardrobe.png');
-    height:400px;
-    overflow:visible;
-    position:relative;
-    bottom:500px;
-  }
-
-  .both {
-    bottom:500px;
-    position:relative;
-    text-align:center;
-    left:0;
-
-  }
-
-  .createyourwardrobe {
-     top:50px;
-    height:400px;
-    text-align: center;
-    margin-top: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 32px;
-    position: relative;
-
-  }
-
-  .wardrobe-paragraph {
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    bottom:300px;
-    position: relative;
-    width:500px;
-    left:350px; }
-
-    .text-logo {
-      content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/logopackapp.png');
-     left:350px;
-     position:relative;
-     bottom:85px;
-      width:50%;
-
-  }
-
-  .boxes {
-    left:0;
-  }
-
-  // fill your wardrobe
-.parallax_section_two{
-  top:500px;
-  height: 500px;
-    background-repeat: no-repeat;
-    width:100%;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: 100% auto;
-    position:relative;
-    background-color: white;
-
-}
-
-.fill-your-wardrobe {
-  height:400px;
-  text-align: center;
-  margin-top: 0;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 32px;
-  position: relative;
-
-}
-
-
-.fill-paragraph {
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-  position:relative;
-  width:300px;
-  left:440px;
-}
-
-.image_camera {
-  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/camera.png');
-  height:400px;
-  left:0;
-  position:relative;
-}
-
-.image_fill_your_wardrobe {
-  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/clothes-wardrobe.png');
-  bottom:500px;
-  height:400px;
-  left:700px;
-  position:relative;
-}
-
-//create suitcases
-
-.parallax_section_three{
-  top:500px;
-  height: 500px;
-    background-repeat: no-repeat;
-    width:100%;
-    background-size: cover;
-    background-position: 100% auto;
-    position:relative;
-    background-image: url('https://s3-us-west-2.amazonaws.com/packapp/assets/beach.png');
-
-}
-
-.create-suitcase-main-page {
-  height:400px;
-  text-align: center;
-  margin-top: 0;
-  font-family: 'Open Sans', sans-serif;
-  position:relative;
-  font-size: 32px;
-  width:900px;
-  right:700px;
-  top:50px;
-
-}
-
-
-.suitcase-paragraph {
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-  position:relative;
-  width:900px;
-  left:-510px;
-  bottom:300px;
-
-
-}
-
-
-.image_create_suitcase {
-  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/luggage.png');
-  height:400px;
-  float:left;
-  position:relative;
-  top:70px;
-
-}
-
-//pack up and check your outfits
-
-.parallax_section_four{
-  top:500px;
-  height: 800px;
-    background-repeat: no-repeat;
-    width:100%;
-    background-size: cover;
-    background-position: 100% auto;
-    position:relative;
-    background-color: white;
-
-}
-
-.text-pack-up {
-  margin-top: 0px;
-  position:relative;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 32px;
-  top:50px;
-
-}
-
-
-.pack-up-paragraph {
-  font-family: 'Open Sans', sans-serif;
-  float:left;
-  position:relative;
-  width:150px;
-  left:100px;
-  top:100px;
-  text-align: center;
-}
-
-
-.image_select {
-  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/select.png');
-  height:350px;
-  left:50px;
-  top:0px;
-  position: relative;
-}
-
-.image_pack_up {
-  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/pack-up.png');
-  height:350px;
-  left:-100px;
-  top:0px;
-  position:relative;
-}
-
-
-.image_go {
-  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/go.png');
-  height:350px;
-  position:relative;
-  left:750px;
-
-}
-
-.everything {
-  left:0;
-}
-
-}
-
-@media (max-width: 2560px) and (min-width: 1200px) {
-  .both {
-  }
-
-  .everything {
-    // overflow: hidden;
-  }
-
-
-  .text-logo {
-    left:435px;
-    width:35%;
-    bottom:50px;
-  }
-}
+// @media (max-width: 2560px) and (min-width: 1200px) {
+//   .both {
+//   }
+//
+//   .everything {
+//     // overflow: hidden;
+//   }
+//
+//
+//   .text-logo {
+//     left:435px;
+//     width:35%;
+//     bottom:50px;
+//   }
+// }
