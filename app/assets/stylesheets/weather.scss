@@ -43,9 +43,10 @@
 
 .weather {
   display: inline;
-  bottom: 250px;
+  bottom: 230px;
   float: right;
-  margin-right: 20px;
+  margin-right: 27px;
+  position: relative;
 }
 
 @media (max-width: 700px) {
