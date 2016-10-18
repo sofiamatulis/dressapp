@@ -16,7 +16,7 @@
         <ul class="suitcase-dropdown">
   <%= form_tag create_item_path, :id => "item-to-suitcase" do %>
        <%= collection_select :suitcase_id, @suitcase, @suitcases, :id, :name, :html => {:class => "suitcase-select"}%></br>
-       <%= button_tag(type: 'submit', :name => 'item_id', value: @item.id ) do %>
+       <%= button_tag(type: 'submit', :name => 'item_id', value: @item.id, :id => "one-item-suitcase" ) do %>
        <%= "Add!" %>
        <% end %>
      </ul>

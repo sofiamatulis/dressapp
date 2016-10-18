@@ -216,8 +216,8 @@ h1 {
   float: left;
 }
 //button for "add more item", suitcase button in wardrobe#show, "add to suitcase", New wardrobe modal
-// New suitcase modal, New item modal, upload button for items photo
-.add-item, .suitcases-button, #drop-down-show, #create-wardrobe, #create-suitcase, #new-item, .upload-button, .delete-button {
+// New suitcase modal, New item modal, upload button for items photo, add! button in item#show
+.add-item, .suitcases-button, #drop-down-show, #create-wardrobe, #create-suitcase, #new-item, .upload-button, .delete-button, #one-item-suitcase{
   position:relative;
   border-radius: 1px;
   font-size: 15px;

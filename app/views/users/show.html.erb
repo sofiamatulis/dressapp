@@ -41,7 +41,7 @@
             <li class="mywardrobe">
               <!--  where the my box class is -->
               <div class="mybox" data-id ='src="/wardrobes/<%= wardrobe.id%>/thumbnail/"' width = "150px" height = "150px"></div>
-              <%= link_to image_tag("mainwardrobe.png"), wardrobe_path(wardrobe), :class =>"name-wardrobe"%><br>
+              <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/packapp/assets/mainwardrobe.png"), wardrobe_path(wardrobe), :class =>"name-wardrobe"%><br>
               <p class="wardrobename"><%= wardrobe.name %></p>
                <% end %>
             </li>
