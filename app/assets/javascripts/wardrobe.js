@@ -36,7 +36,7 @@ $( document ).on('turbolinks:load', function() {
         var name = $('<li class="item-details">').append(responseData.name);
         var description = $('<li class="item-details">').append(responseData.description);
         var image = $('<img>').attr("src", responseData.image);
-        var imagelink = $('<a href="http://localhost:3000/items/' + responseData.id + '">').append(image);
+        var imagelink = $('<a href="http://pack-app.herokuapp.com/items/' + responseData.id + '">').append(image);
         var imageappend = $('<li class="item-details">').append(imagelink);
         var label = $('<label class="selectd-item">').append(imageappend);
         var checkBox = $('<input type="checkbox">').attr('name', 'items[' + responseData.id + ']');
