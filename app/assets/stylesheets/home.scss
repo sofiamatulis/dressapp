@@ -479,7 +479,7 @@ body {
 
 
 
-@media (max-width: 667px) {
+@media (max-width: 900px) {
     .box {
     display:none;
     }
@@ -588,12 +588,39 @@ body {
 
 }
 
+@media (max-width:1120px) and (min-width:668px) {
+  .image_go , .image_select, .image_pack_up {
+    height:300px;
+  }
+  .image_select {
+    left:6%;
+  }
+  .image_pack_up {
+    left:3%;
+  }
+  .image_go {
+    left:0%;
+  }
 
+  .create-suitcase-main-page {
+    left:10%;
+  }
+  .suitcase-paragraph {
+    left:10%;
+  }
+
+  .fill-paragraph-container {
+    width:50%;
+    left:25%;
+  }
+  .boxes {
+    left:0;
+  }
+}
 // mac screen for my computer (Sofia)
 
 
-@media (max-width: 1200px) and (min-width: 666px)
-{
+@media  (max-width: 1296px) and (min-width:1119px){
   .parallax_section{
     top:500px;
     height: 500px;
@@ -616,10 +643,7 @@ body {
 
   .image_two {
     content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/mainwardrobe.png');
-    height:400px;
-    overflow:visible;
-    position:relative;
-    bottom:500px;
+    right:40%;
   }
 
   .both {
@@ -630,24 +654,13 @@ body {
 
   }
 
-  .createyourwardrobe {
-     top:50px;
-    height:400px;
-    text-align: center;
-    margin-top: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 32px;
-    position: relative;
-
-  }
 
   .wardrobe-paragraph {
     font-family: 'Open Sans', sans-serif;
     text-align: center;
-    bottom:300px;
     position: relative;
-    width:500px;
-    left:350px; }
+    width:300px;
+    right:2%; }
 
     .text-logo {
       content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/logopackapp.png');
@@ -660,6 +673,10 @@ body {
 
   .boxes {
     left:0;
+  }
+
+  .fill-paragraph {
+    width:400px;
   }
 
   // fill your wardrobe
@@ -676,38 +693,10 @@ body {
 
 }
 
-.fill-your-wardrobe {
-  height:400px;
-  text-align: center;
-  margin-top: 0;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 32px;
-  position: relative;
 
-}
-
-
-.fill-paragraph {
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-  position:relative;
-  width:300px;
-  left:440px;
-}
 
 .image_camera {
-  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/camera.png');
-  height:400px;
-  left:0;
-  position:relative;
-}
-
-.image_fill_your_wardrobe {
-  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/clothes-wardrobe.png');
-  bottom:500px;
-  height:400px;
-  left:700px;
-  position:relative;
+  right:28%;
 }
 
 //create suitcases
@@ -724,39 +713,8 @@ body {
 
 }
 
-.create-suitcase-main-page {
-  height:400px;
-  text-align: center;
-  margin-top: 0;
-  font-family: 'Open Sans', sans-serif;
-  position:relative;
-  font-size: 32px;
-  width:900px;
-  right:700px;
-  top:50px;
-
-}
-
-
-.suitcase-paragraph {
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-  position:relative;
-  width:900px;
-  left:-510px;
-  bottom:300px;
-
-
-}
-
-
-.image_create_suitcase {
-  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/luggage.png');
-  height:400px;
-  float:left;
-  position:relative;
-  top:70px;
-
+.suitcase-paragraph-container, .create-suitcase-main-page {
+  left:10%;
 }
 
 //pack up and check your outfits
@@ -773,54 +731,19 @@ body {
 
 }
 
-.text-pack-up {
-  margin-top: 0px;
-  position:relative;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 32px;
-  top:50px;
-
-}
-
-
-.pack-up-paragraph {
-  font-family: 'Open Sans', sans-serif;
-  float:left;
-  position:relative;
-  width:150px;
-  left:100px;
-  top:100px;
-  text-align: center;
-}
-
-
 .image_select {
-  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/select.png');
-  height:350px;
-  left:50px;
-  top:0px;
-  position: relative;
+  left:8%;
 }
-
 .image_pack_up {
-  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/pack-up.png');
-  height:350px;
-  left:-100px;
-  top:0px;
-  position:relative;
+  left:3%;
 }
-
 
 .image_go {
-  content:url('https://s3-us-west-2.amazonaws.com/packapp/assets/go.png');
-  height:350px;
-  position:relative;
-  left:750px;
-
+  left:0;
 }
 
 .everything {
-  left:0;
+  left:-2%;
 }
 
 }
