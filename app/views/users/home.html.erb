@@ -97,6 +97,7 @@
 
 <!--  THIS ONE WORKS-->
 
+
 <head>
    <div class="header-image">
    <!--  getting the animation CDN-->
@@ -108,10 +109,13 @@
  <div class="home-page">
  <!--  here there are boxes and ids were assigned to data photo so i can use it for javascript -->
 <div class="boxes">
-   <div id="box0" class="box" data-photo="#photo0">Welcome!</div>
-   <div id="box1" class="box" data-photo="#photo1">Sign up</div>
-   <div id="box2" class="box" data-photo="#photo2">Pack up</div>
-   <div id="box3" class="box" data-photo="#photo3">Ready to go!</div>
+   <div id="box0" class="box" data-photo="#photo0"><a class="not-purple" href="#welcome">Welcome!</a></div>
+   <div id="box1" class="box" data-photo="#photo1"><%= link_to "Sign Up", new_user_path, :id =>'sign-up-box' %></div>
+
+   <div id="box2" class="box" data-photo="#photo2"><a class="not-purple" href="#secondsection">Pack up</a></div>
+
+
+   <div id="box3" class="box" data-photo="#photo3"><a class="not-purple" href="#ready">Ready to go!</a></div>
  </div>
 <!-- here there are the ids for the actual pictures! added a class for each photo and a class for all of them -->
    <div id="photo2" class="photo"></div>
@@ -131,7 +135,7 @@
  </div>
 
 
- <div class="parallax_section">
+ <div class="parallax_section", id="welcome">
    <div class="first_image">
    </div>
    <div class="image_two">
@@ -145,7 +149,7 @@
    </div>
 
 
-   <div class="parallax_section_two">
+   <div class="parallax_section_two", id="secondsection">
      <div class="image_fill_your_wardrobe">
      </div>
      <div class="image_camera">
@@ -170,7 +174,7 @@
            </div>
 
 
-           <div class="parallax_section_four">
+           <div class="parallax_section_four", id="ready">
              <h1 class="text-pack-up"> Good to go!</h1>
              <div class="pack-up-paragraph-container">
              <p class="pack-up-paragraph"> Drag and drop items into your suitcase. Mix and match your clothes with our outfit browser!</p>
