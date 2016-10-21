@@ -781,11 +781,25 @@ a#sign-up-box:link,a.not-purple:visited, a.not-purple:visited, a.not-purple:visi
   .everything {
     // overflow: hidden;
   }
+  .image_two {
+    right:25%;
+  }
 
 
   .text-logo {
     left:435px;
     width:35%;
     bottom:50px;
+  }
+
+  .image_camera {
+    right:20%;
+  }
+
+  .image_select {
+    left:10%;
+  }
+  .image_pack_up, .image_go {
+    left:10%;
   }
 }
