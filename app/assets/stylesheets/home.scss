@@ -421,19 +421,21 @@ body {
   margin-top:200px;
 }
 
-a#sign-up-box:visited {
+a#sign-up-box:visited, a.not-purple:visited, a.not-purple:visited, a.not-purple:visited {
+
+
   color:white;
   font-weight: bold;
 
 }
 
-a#sign-up-box:active {
+a#sign-up-box:active,a.not-purple:visited, a.not-purple:visited, a.not-purple:visited {
   color:white;
   font-weight: bold;
 
 }
 
-a#sign-up-box:link {
+a#sign-up-box:link,a.not-purple:visited, a.not-purple:visited, a.not-purple:visited {
   color:white;
   font-weight: bold;
 
