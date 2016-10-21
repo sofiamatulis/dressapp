@@ -415,9 +415,28 @@ body {
   margin-top:200px;
 }
 
+
 #box1 {
   left:150px;
   margin-top:200px;
+}
+
+a#sign-up-box:visited {
+  color:white;
+  font-weight: bold;
+
+}
+
+a#sign-up-box:active {
+  color:white;
+  font-weight: bold;
+
+}
+
+a#sign-up-box:link {
+  color:white;
+  font-weight: bold;
+
 }
 #box2 {
   margin-left:200px;
@@ -470,8 +489,6 @@ body {
       background-color: rgba(211, 211, 211, 0.5);
     }
 }
-
-
 
 
 

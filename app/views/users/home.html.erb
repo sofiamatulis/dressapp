@@ -97,6 +97,7 @@
 
 <!--  THIS ONE WORKS-->
 
+
 <head>
    <div class="header-image">
    <!--  getting the animation CDN-->
@@ -109,7 +110,8 @@
  <!--  here there are boxes and ids were assigned to data photo so i can use it for javascript -->
 <div class="boxes">
    <div id="box0" class="box" data-photo="#photo0">Welcome!</div>
-   <div id="box1" class="box" data-photo="#photo1">Sign up</div>
+   <div id="box1" class="box" data-photo="#photo1"><%= link_to "Sign Up", new_user_path, :id =>'sign-up-box' %></div>
+
    <div id="box2" class="box" data-photo="#photo2">Pack up</div>
    <div id="box3" class="box" data-photo="#photo3">Ready to go!</div>
  </div>
