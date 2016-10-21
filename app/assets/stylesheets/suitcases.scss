@@ -184,12 +184,11 @@ p, li, a {
 }
 
 #close-nav {
-  position: relative;
-  top: 0;
-  text-align: right;
-  font-size: 20px;
+  position: absolute;
   display: inline-block;
   float: right;
+  right: 0;
+  margin-right: 15px;
 }
 
 .main-buttons a:hover {
@@ -325,26 +324,8 @@ h4 {
 }
 
 
-
-// .inactive {
-//   // display: none;
-//   width: 0;
-// }
-
-// .active {
-//   height: 150px;
-//   width: auto;
-//   margin: auto;
-//   transition: 0.5s;
-// }
-//
-// .bottoms-item {
-//   width: 33%;
-// }
-
-
 .side-nav-buttons {
-  height: 55px;
+  height: 60px;
   position: relative;
   padding-top: 10px;
   overflow: hidden;
@@ -371,12 +352,32 @@ h4 {
 }
 
 #outfit-checker-button {
-  display: none;
+  display: inline-block;
   position: relative;
-  width: 27%;
+  // width: 27%;
   text-align: left;
 }
 
+
+.clothes-types {
+  margin-left: 10px;
+  // width: 30%;
+  // display: inline-block;
+  // position: relative;
+  position: absolute;
+  z-index: 1000;
+}
+
+.clothes-types a {
+  display: block;
+}
+
+.main-buttons {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
 
 .dress-button:hover {
   color: #006398;
@@ -414,24 +415,6 @@ h4 {
 }
 
 
-.clothes-types {
-  margin-left: 10px;
-  width: 30%;
-  display: inline-block;
-  position: relative;
-}
-
-.clothes-types a {
-  display: block;
-}
-
-.main-buttons {
-  width: 55%;
-  display: inline-block;
-  position: relative;
-  float: right;
-  margin-right: 15px;
-}
 
 .view-all-items {
   display: inline-block;

@@ -33,43 +33,44 @@
 
   <!-- side nav pops out when clicking suitcase  -->
     <div id="suitcase-side-nav" class="sideNav">
-      <div class="side-nav-buttons">
-        <div class="clothes-types">
-          <a class="dress-button">Dresses/Onesies</a>
-          <a class="tops-bottoms">Tops/Bottoms</a>
+      <div class="side-nav-contents">
+        <div class="side-nav-buttons">
+          <div class="clothes-types">
+            <a class="dress-button">Dresses/Onesies</a>
+            <a class="tops-bottoms">Tops/Bottoms</a>
+          </div>
+          <div class="main-buttons">
+            <a id="view-all">View All &nbsp;&nbsp;&nbsp;|</a>
+            <a id="add-items">&nbsp;&nbsp; Add&nbsp;Items &nbsp;&nbsp;&nbsp;|</a>
+            <a> <%= link_to "Add Items", user_path(@user), :id => "add-items-small"%></a>
+            <a id="outfit-checker-button">&nbsp;&nbsp; Outfit&nbsp;Checker</a>
+            <a id="close-nav">X</a>
+          </div>
         </div>
-        <div class="main-buttons">
-          <a id="view-all">View All &nbsp;&nbsp;&nbsp;|</a>
-          <a id="add-items">&nbsp;&nbsp; Add&nbsp;Items</a>
-          <a> <%= link_to "Add Items", user_path(@user), :id => "add-items-small"%></a>
-          <a id="outfit-checker-button">&nbsp;&nbsp; Outfit&nbsp;Checker</a>
-          <a id="close-nav">X</a>
+
+        <div class="outfit-checker-container">
+          <%= render 'outfitchecker' %>
         </div>
-      </div>
 
-      <div class="outfit-checker-container">
-        <%= render 'outfitchecker' %>
-      </div>
+        <div id="items-grid-container">
+        </div>
 
-      <div id="items-grid-container">
-      </div>
-
-      <div id="view-all-in-suitcase-container">
-        <%= form_tag destroy_multiple_items_suitcases_path, id: "delete-suitcase-item", method: :delete do %>
-        <h2 id="what-you-packed">What you're bringing to <%= @suitcase.destination[/[^,]+/] %>:</h2>
-          <% @suitcase.items.each do |item| %>
-            <div class="view-all-items">
-              <label class="selected-item">
-                <span><%= image_tag(item.image) %></span>
-                <span class="check-box"><%= check_box_tag "items[]", item.id %></span>
-              </label>
-            </div>
+        <div id="view-all-in-suitcase-container">
+          <%= form_tag destroy_multiple_items_suitcases_path, id: "delete-suitcase-item", method: :delete do %>
+          <h2 id="what-you-packed">What you're bringing to <%= @suitcase.destination[/[^,]+/] %>:</h2>
+            <% @suitcase.items.each do |item| %>
+              <div class="view-all-items">
+                <label class="selected-item">
+                  <span><%= image_tag(item.image) %></span>
+                  <span class="check-box"><%= check_box_tag "items[]", item.id %></span>
+                </label>
+              </div>
+              <% end %>
+            <%= button_tag(type: 'submit', :name => 'suitcase_id', :value => @suitcase.id, :class => 'delete-button' ) do %>
+              Delete Selected
             <% end %>
-          <%= button_tag(type: 'submit', :name => 'suitcase_id', :value => @suitcase.id, :class => 'delete-button' ) do %>
-            Delete Selected
           <% end %>
-        <% end %>
+        </div>
       </div>
-
     </div>
   </div>

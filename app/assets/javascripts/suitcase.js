@@ -7,29 +7,22 @@ $( document ).on('turbolinks:load', function() {
         document.getElementById("suitcase-main").style.marginLeft = "100%";
     	 }
        if ($(window).width() > 1000) {
-        document.getElementById("suitcase-side-nav").style.width = "40%";
-        document.getElementById("suitcase-main").style.marginLeft = "40%";
+        document.getElementById("suitcase-side-nav").style.width = "60%";
+        document.getElementById("suitcase-main").style.marginLeft = "60%";
        }
-    $(".outfit").trigger("click");
-    $('#outfit-checker').fadeIn(200);
-    $('.side-nav-buttons').fadeIn(100);
+    $('.side-nav-contents').fadeIn(100);
     $("#sortable1").addClass("is-open");
     $(this).html("");
-    if ( !$(".clothes-container").children().hasClass('slick-slider') ) {
-      createSlider();
-    }
-    $(".outfit").trigger("click");
-    $(".clothes-types").fadeIn(100);
+      if ( !$(".clothes-container").children().hasClass('slick-slider') ) {
+        createSlider();
+      }
     $(".weather").fadeOut(100);
   });
 
 // closing nav
   $("#close-nav").on('click', function() {
     $("#open-nav").html("Open Suitcase");
-    $('#outfit-checker').fadeOut(100);
-    $('.side-nav-buttons').fadeOut(100);
-    $('#view-all-in-suitcase-container').fadeOut(100);
-    $('#items-grid-container').fadeOut(100);
+    $('.side-nav-contents').fadeOut(100);
     document.getElementById("suitcase-side-nav").style.width = "0";
     document.getElementById("suitcase-main").style.marginLeft= "0";
     $("#sortable1").removeClass("is-open");
@@ -38,10 +31,6 @@ $( document ).on('turbolinks:load', function() {
     // resetting the defaults
     setTimeout( function() {
       $("#items-grid-container" ).empty();
-      $(".outfit-checker-container").css("display", "block");
-      $("#outfit-checker-button").css("display", "none");
-      $("#add-items").css("display", "inline-block");
-      $("#view-all-in-suitcase-container").css("display", "none");
     }, 1000 );
 
   });
@@ -107,25 +96,19 @@ function uncreateSlider() {
 
 }
 if ($(window).width() <= 1000) {
-
   $('#add-items').css("display", "none");
   $('#add-items-small').css("display", "inline-block");
 };
 
 // when you click add-items button
   $('#add-items').on('click', function() {
-    // if device is smaller than laptop, redirect to wardrobe page
-    // if ($(window).width() <= 1000) {
-      // var current_user = suitcase.user.id
-      // window.location.href= '/users/';
-    // }
     // if device is full laptop size or desktop, allow drag and drop
     if ($(window).width() > 1000) {
-     document.getElementById("suitcase-side-nav").style.width = "60%";
-     document.getElementById("suitcase-main").style.marginLeft = "60%";
+    //  document.getElementById("suitcase-side-nav").style.width = "60%";
+    //  document.getElementById("suitcase-main").style.marginLeft = "60%";
      $(".outfit-checker-container").css("display", "none");
-     $("#add-items").css("display", "none");
-     $("#outfit-checker-button").css("display", "inline-block");
+    //  $("#add-items").css("display", "none");
+    //  $("#outfit-checker-button").css("display", "inline-block");
      $(".clothes-types").fadeOut(100);
      $("#view-all-in-suitcase-container").css("display", "none");
      $('#items-grid-container').fadeIn(100);
@@ -212,16 +195,16 @@ if ($(window).width() <= 1000) {
     $("#view-all-in-suitcase-container").css("display", "none");
     $("#items-grid-container" ).empty();
 
-    if ($(window).width() > 1000) {
-     document.getElementById("suitcase-side-nav").style.width = "40%";
-     document.getElementById("suitcase-main").style.marginLeft = "40%";
-    }
+    // if ($(window).width() > 1000) {
+    //  document.getElementById("suitcase-side-nav").style.width = "60%";
+    //  document.getElementById("suitcase-main").style.marginLeft = "60%";
+    // }
 
     // $(".outfit-checker-container").css("display", "block");
     // $(".outfit").trigger("click");
-    $("#outfit-checker-button").css("display", "none");
+    // $("#outfit-checker-button").css("display", "none");
     $(".clothes-types").fadeIn(100);
-    $("#add-items").css("display", "inline-block");
+    // $("#add-items").css("display", "inline-block");
     $(".suitcase-destination").removeClass("small");
 
       setTimeout( function() {
@@ -240,10 +223,10 @@ if ($(window).width() <= 1000) {
     $(".outfit-checker-container").css("display", "none");
     $(".suitcase-destination").addClass("small");
 
-    if ($(window).width() > 1000) {
-     document.getElementById("suitcase-side-nav").style.width = "60%";
-     document.getElementById("suitcase-main").style.marginLeft = "60%";
-    }
+    // if ($(window).width() > 1000) {
+    //  document.getElementById("suitcase-side-nav").style.width = "60%";
+    //  document.getElementById("suitcase-main").style.marginLeft = "60%";
+    // }
 
     $("#view-all-in-suitcase-container").fadeIn(100);
     $(".clothes-types").fadeOut(100);
@@ -259,7 +242,7 @@ if ($(window).width() <= 1000) {
 
       setTimeout( function() {
         $("#dresses").fadeIn(200);
-        $(".arrow-right.outfit.dress").trigger("click");
+        // $(".arrow-right.outfit.dress").trigger("click");
         $("#shoes").fadeIn(200);
           // createSlider();
 
