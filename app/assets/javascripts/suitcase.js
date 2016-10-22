@@ -204,7 +204,15 @@ if ($(window).width() <= 1000) {
         if ( !$(".clothes-container").children().hasClass('slick-slider') ) {
           createSlider();
         }
-        $(".outfit").trigger("click");
+
+        $('.tops-container').get(0).slick.setPosition();
+        $('.bottoms-container').get(0).slick.setPosition();
+        $('.shoes-container').get(0).slick.setPosition();
+
+        if ( $('.dresses-container').hasClass('active') ) {
+          $('.dresses-container').get(0).slick.setPosition();
+        }
+        // $(".outfit").trigger("click");
     }, 300);
 
   });
@@ -231,6 +239,7 @@ if ($(window).width() <= 1000) {
       $("#tops").css("display", "none");
       $("#bottoms").css("display", "none");
       $("#shoes").css("display", "none");
+      $('.dresses-container').addClass('active');
 
       setTimeout( function() {
         $("#dresses").fadeIn(200);
@@ -255,12 +264,20 @@ if ($(window).width() <= 1000) {
     $(".tops-bottoms").on('click', function() {
       $("#dresses").css("display", "none");
       $("#shoes").css("display", "none");
+      $('.dresses-container').removeClass('active');
 
       setTimeout( function() {
         $("#tops").fadeIn(300);
         $("#bottoms").fadeIn(300);
         $("#shoes").fadeIn(300);
-        $(".outfit").trigger("click");
+        //
+        // if ( !$(".clothes-container").children().hasClass('slick-slider') ) {
+        //   createSlider();
+        // }
+        $('.tops-container').get(0).slick.setPosition();
+        $('.bottoms-container').get(0).slick.setPosition();
+        $('.shoes-container').get(0).slick.setPosition();
+        // $(".outfit").trigger("click");
       }, 500);
     });
 
