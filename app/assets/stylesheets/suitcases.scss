@@ -307,9 +307,9 @@ h4 {
   margin: 0 130px;
 }
 
-// #dresses .slick-slider {
-//   margin: 0 90px;
-// }
+#dresses .slick-slider {
+  margin: 0 90px;
+}
 
 .slick-arrow {
   display: none;
@@ -323,6 +323,13 @@ h4 {
   margin: 0 auto;
 }
 
+.slick-prev:before, .slick-next:before {
+  color: black;
+}
+
+.slick-prev, .slick-next {
+  left:0;
+}
 
 .side-nav-buttons {
   height: 60px;

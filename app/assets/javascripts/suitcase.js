@@ -2,6 +2,7 @@ $( document ).on('turbolinks:load', function() {
 
 // opening suitcase
   $("#open-nav").on('click', function() {
+    // if the user is not on a computer, open nav all the way
 	     if ($(window).width() <= 1000) {
         document.getElementById("suitcase-side-nav").style.width = "100%";
         document.getElementById("suitcase-main").style.marginLeft = "100%";
@@ -10,11 +11,17 @@ $( document ).on('turbolinks:load', function() {
         document.getElementById("suitcase-side-nav").style.width = "60%";
         document.getElementById("suitcase-main").style.marginLeft = "60%";
        }
+
     $('.side-nav-contents').fadeIn(100);
+    if ( $('#add-items').hasClass('button-active') ) {
+      $('#add-items').trigger('click');
+    }
     $("#sortable1").addClass("is-open");
     $(this).html("");
+    // $(".outfit-checker-container").css("display", "block");
       if ( !$(".clothes-container").children().hasClass('slick-slider') ) {
         createSlider();
+        $(".outfit").trigger("click");
       }
     $(".weather").fadeOut(100);
   });
@@ -31,6 +38,9 @@ $( document ).on('turbolinks:load', function() {
     // resetting the defaults
     setTimeout( function() {
       $("#items-grid-container" ).empty();
+      // if ( $(".clothes-container").children().hasClass('slick-slider') ) {
+      //   uncreateSlider();
+      // }
     }, 1000 );
 
   });
@@ -42,6 +52,7 @@ function createSlider() {
       $('.tops-container').slick( {
         prevArrow: '<span class="arrow-left outfit"><</span>',
         nextArrow: '<span class="arrow-right outfit">></span>',
+
       });
     }
 
@@ -52,12 +63,12 @@ function createSlider() {
       });
     }
 
-    if ($('.dresses-container').find('img').length > 1) {
-      $('.dresses-container').slick( {
-        prevArrow: '<span class="arrow-left outfit dress"><</span>',
-        nextArrow: '<span class="arrow-right outfit dress">></span>',
-      });
-    }
+    // if ($('.dresses-container').find('img').length > 1) {
+    //   $('.dresses-container').slick( {
+    //     prevArrow: '<span class="arrow-left outfit dress"><</span>',
+    //     nextArrow: '<span class="arrow-right outfit dress">></span>',
+    //   });
+    // }
 
     if ($('.shoes-container').find('img').length > 1) {
       $('.shoes-container').slick( {
@@ -67,21 +78,19 @@ function createSlider() {
     }
   }
 
-// calls the carousel
-  // createSlider();
 
-// un-calls the carousel..
+// not sure if this is needed, but can be used incase
 function uncreateSlider() {
-  if ($('.tops-container').hasClass('slick')) {
+  if ($('.tops-container').hasClass('slick-slider')) {
     $('.tops-container').slick('unslick');
   }
-  if ($('.bottoms-container').hasClass('slick')) {
+  if ($('.bottoms-container').hasClass('slick-slider')) {
     $('.bottoms-container').slick('unslick');
   }
-  if ($('dresses-container').hasClass('slick')) {
+  if ($('dresses-container').hasClass('slick-slider')) {
     $('.dresses-container').slick('unslick');
   }
-  if ($('.shoes-container').hasClass('slick')) {
+  if ($('.shoes-container').hasClass('slick-slider')) {
     $('.shoes-container').slick('unslick');
   }
 }
@@ -95,6 +104,8 @@ function uncreateSlider() {
   }, 2000 );
 
 }
+// if the user is on device smaller than desktop, add items button will direct to
+// wardrobe page
 if ($(window).width() <= 1000) {
   $('#add-items').css("display", "none");
   $('#add-items-small').css("display", "inline-block");
@@ -104,23 +115,16 @@ if ($(window).width() <= 1000) {
   $('#add-items').on('click', function() {
     // if device is full laptop size or desktop, allow drag and drop
     if ($(window).width() > 1000) {
-    //  document.getElementById("suitcase-side-nav").style.width = "60%";
-    //  document.getElementById("suitcase-main").style.marginLeft = "60%";
      $(".outfit-checker-container").css("display", "none");
-    //  $("#add-items").css("display", "none");
-    //  $("#outfit-checker-button").css("display", "inline-block");
      $(".clothes-types").fadeOut(100);
      $("#view-all-in-suitcase-container").css("display", "none");
      $('#items-grid-container').fadeIn(100);
      $(".suitcase-destination").addClass("small");
     }
-// only need to disable the slider if the outfit checker is visible"
-    // if ( $(".outfit-checker-container").css('display') == 'block' && $('.outfit-checker-container').hasClass('slick') ) {
-    //   uncreateSlider();
-    // }
+// showing that the view all is active
+    $('#add-items').addClass('button-active');
 
-
-    //ajax call , get the items
+//ajax call , get the items
     $.ajax({
       url: '/items',
       method: 'GET',
@@ -133,10 +137,6 @@ if ($(window).width() <= 1000) {
 //iterating through each item and adding the photo to its own container
       $.each(response, function(i, item) {
         var itemContainer = $('<div class="style-one">');
-        //
-        // if (item exists in current suitcase) {
-        //   item.addClass(display none);
-        // }
         // added data attribute to each object so they are all different
         $('<img>').attr('src', item.image).attr('data-item-id', item.id).attr('data-item-category', item.category_id).appendTo(itemContainer);
         $(itemContainer).appendTo(itemsContainer);
@@ -171,7 +171,6 @@ if ($(window).width() <= 1000) {
             itemAddedBubble();
             // appending the response to the outfit checker page
             $(".outfit-checker").html(response);
-            // createSlider();
             // appending the response to the view all page
               $.ajax({
                 url: window.location.href,
@@ -194,24 +193,18 @@ if ($(window).width() <= 1000) {
   $('#outfit-checker-button').on('click', function() {
     $("#view-all-in-suitcase-container").css("display", "none");
     $("#items-grid-container" ).empty();
-
-    // if ($(window).width() > 1000) {
-    //  document.getElementById("suitcase-side-nav").style.width = "60%";
-    //  document.getElementById("suitcase-main").style.marginLeft = "60%";
-    // }
-
-    // $(".outfit-checker-container").css("display", "block");
-    // $(".outfit").trigger("click");
-    // $("#outfit-checker-button").css("display", "none");
     $(".clothes-types").fadeIn(100);
-    // $("#add-items").css("display", "inline-block");
     $(".suitcase-destination").removeClass("small");
+    if ( $('#add-items').hasClass('button-active') ) {
+      $('#add-items').removeClass('button-active');
+    }
 
       setTimeout( function() {
         $('.outfit-checker-container').fadeIn(200);
         if ( !$(".clothes-container").children().hasClass('slick-slider') ) {
           createSlider();
         }
+        $(".outfit").trigger("click");
     }, 300);
 
   });
@@ -222,48 +215,52 @@ if ($(window).width() <= 1000) {
     $("#items-grid-container" ).empty();
     $(".outfit-checker-container").css("display", "none");
     $(".suitcase-destination").addClass("small");
-
-    // if ($(window).width() > 1000) {
-    //  document.getElementById("suitcase-side-nav").style.width = "60%";
-    //  document.getElementById("suitcase-main").style.marginLeft = "60%";
-    // }
-
     $("#view-all-in-suitcase-container").fadeIn(100);
     $(".clothes-types").fadeOut(100);
+    // if ( $(".clothes-container").children().hasClass('slick-slider') ) {
+    //   uncreateSlider();
+    // }
+    if ( $('#add-items').hasClass('button-active') ) {
+      $('#add-items').removeClass('button-active');
+    }
 
     });
 
     // dresses/onesies button
     $(".dress-button").on('click', function() {
-
       $("#tops").css("display", "none");
       $("#bottoms").css("display", "none");
       $("#shoes").css("display", "none");
 
       setTimeout( function() {
         $("#dresses").fadeIn(200);
-        // $(".arrow-right.outfit.dress").trigger("click");
+        $(".arrow-right.outfit.dress").trigger("click");
         $("#shoes").fadeIn(200);
-          // createSlider();
-
+          if ($('.dresses-container').find('img').length > 1) {
+            $('.dresses-container').slick( {
+              prevArrow: '<span class="arrow-left outfit dress"><</span>',
+              nextArrow: '<span class="arrow-right outfit dress">></span>',
+            });
+          }
+          if ($('.shoes-container').find('img').length > 1 & !$('.shoes-container').hasClass('slick-slider') ) {
+            $('.shoes-container').slick( {
+              prevArrow: '<span class="arrow-left outfit"><</span>',
+              nextArrow: '<span class="arrow-right outfit">></span>',
+            });
+          }
       }, 500);
 
     });
 // tops/bottoms button
     $(".tops-bottoms").on('click', function() {
-
       $("#dresses").css("display", "none");
       $("#shoes").css("display", "none");
-      // $("#bottoms").css("display", "block");
-      // uncreateSlider();
-      // createSlider();
 
       setTimeout( function() {
         $("#tops").fadeIn(300);
         $("#bottoms").fadeIn(300);
         $("#shoes").fadeIn(300);
-        //   createSlider();
-        // $(".outfit").trigger("click");
+        $(".outfit").trigger("click");
       }, 500);
     });
 
