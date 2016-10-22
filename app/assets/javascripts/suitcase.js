@@ -239,7 +239,7 @@ if ($(window).width() <= 1000) {
 
       setTimeout( function() {
         $("#dresses").fadeIn(200);
-        $(".arrow-right.outfit.dress").trigger("click");
+        // $(".arrow-right.outfit.dress").trigger("click");
         $("#shoes").fadeIn(200);
           if ($('.dresses-container').find('img').length > 1) {
             $('.dresses-container').slick( {
