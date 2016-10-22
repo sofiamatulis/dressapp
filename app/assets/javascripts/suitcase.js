@@ -38,9 +38,6 @@ $( document ).on('turbolinks:load', function() {
     // resetting the defaults
     setTimeout( function() {
       $("#items-grid-container" ).empty();
-      // if ( $(".clothes-container").children().hasClass('slick-slider') ) {
-      //   uncreateSlider();
-      // }
     }, 1000 );
 
   });
@@ -189,7 +186,7 @@ if ($(window).width() <= 1000) {
     });
   });
 
-// resets the outfit checker when you click "outfit checker" button
+// when outfit checker is clicked
   $('#outfit-checker-button').on('click', function() {
     $("#view-all-in-suitcase-container").css("display", "none");
     $("#items-grid-container" ).empty();
@@ -204,7 +201,7 @@ if ($(window).width() <= 1000) {
         if ( !$(".clothes-container").children().hasClass('slick-slider') ) {
           createSlider();
         }
-
+    // allows slick to calculate size for carousel when checker is displayed
         $('.tops-container').get(0).slick.setPosition();
         $('.bottoms-container').get(0).slick.setPosition();
         $('.shoes-container').get(0).slick.setPosition();
@@ -225,9 +222,8 @@ if ($(window).width() <= 1000) {
     $(".suitcase-destination").addClass("small");
     $("#view-all-in-suitcase-container").fadeIn(100);
     $(".clothes-types").fadeOut(100);
-    // if ( $(".clothes-container").children().hasClass('slick-slider') ) {
-    //   uncreateSlider();
-    // }
+
+    // adds active class to the add items window incase the nav bar is closed
     if ( $('#add-items').hasClass('button-active') ) {
       $('#add-items').removeClass('button-active');
     }
@@ -270,10 +266,8 @@ if ($(window).width() <= 1000) {
         $("#tops").fadeIn(300);
         $("#bottoms").fadeIn(300);
         $("#shoes").fadeIn(300);
-        //
-        // if ( !$(".clothes-container").children().hasClass('slick-slider') ) {
-        //   createSlider();
-        // }
+
+      // allows slick to calculate size for carousel when checker is displayed
         $('.tops-container').get(0).slick.setPosition();
         $('.bottoms-container').get(0).slick.setPosition();
         $('.shoes-container').get(0).slick.setPosition();
