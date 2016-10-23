@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
  gem "jquery-fileupload-rails"
  gem 'pg'
  gem "lazyload-rails"
+ gem 'rack-cors', :require => 'rack/cors'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
