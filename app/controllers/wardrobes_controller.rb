@@ -45,6 +45,7 @@ class WardrobesController < ApplicationController
     @bottoms = @items.where(category_id: "2")
     @shoes = @items.where(category_id: "3")
     @dresses = @items.where(category_id: "4")
+    @others = @items.where(category_id: "5")
     @suitcases = current_user.suitcases
 
   #  @suitcase = Suitcase.find(params[:id])

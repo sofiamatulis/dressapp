@@ -88,6 +88,7 @@ $( document ).on('turbolinks:load', function() {
     $( ".filtered-bottoms" ).css('display', 'none');
     $( ".filtered-shoes" ).css('display', 'none');
     $( ".filtered-dresses" ).css('display', 'none');
+    $( ".filtered-others" ).css('display', 'none');
   });
 
   $("#bottom-filter").click(function() {
@@ -96,6 +97,7 @@ $( document ).on('turbolinks:load', function() {
     $( ".filtered-tops" ).css('display', 'none');
     $( ".filtered-shoes" ).css('display', 'none');
     $( ".filtered-dresses" ).css('display', 'none');
+    $( ".filtered-others" ).css('display', 'none');
   });
 
   $("#shoe-filter").click(function() {
@@ -104,6 +106,7 @@ $( document ).on('turbolinks:load', function() {
     $( ".filtered-bottoms" ).css('display', 'none');
     $( ".filtered-tops" ).css('display', 'none');
     $( ".filtered-dresses" ).css('display', 'none');
+    $( ".filtered-others" ).css('display', 'none');
   });
 
   $("#dress-filter").click(function() {
@@ -112,7 +115,17 @@ $( document ).on('turbolinks:load', function() {
     $( ".filtered-bottoms" ).css('display', 'none');
     $( ".filtered-tops" ).css('display', 'none');
     $( ".filtered-dresses" ).css('display', 'inline');
+    $( ".filtered-others" ).css('display', 'none');
   });
+  $("#other-filter").click(function() {
+    $( ".wardrobe-item-container" ).css('display', 'none');
+    $( ".filtered-shoes" ).css('display', 'none');
+    $( ".filtered-bottoms" ).css('display', 'none');
+    $( ".filtered-tops" ).css('display', 'none');
+    $( ".filtered-dresses" ).css('display', 'none');
+    $( ".filtered-others" ).css('display', 'inline');
+  });
+
 
   $('#wardrobe-edit-button').on('click', function(e){
       e.preventDefault();

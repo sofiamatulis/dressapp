@@ -16,6 +16,7 @@ top = Category.create!(category: "Top")
 bottom = Category.create!(category: "Bottom")
 shoe = Category.create!(category: "Shoes")
 dress = Category.create!(category: "Dresses")
+other = Category.create!(category: "Others")
 
 # Wardrobes
 winter = Wardrobe.create!(name: "Winter", user: jane)
