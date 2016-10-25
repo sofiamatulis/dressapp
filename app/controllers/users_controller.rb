@@ -38,11 +38,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user= User.find(params[:id])
+    @user = User.find_by_username(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.find_by_username(params[:id])
     if @user.update_attributes(user_edit_params)
       redirect_to user_url(@user)
     else
