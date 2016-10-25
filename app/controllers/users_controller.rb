@@ -7,10 +7,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by_username(params[:id])
     @user_wardrobes = @user.wardrobes
+    wardrobes = Wardrobe.all
 
-     wardrobes = Wardrobe.all
 
      unless session[:user_id] == @user.id
       flash[:notice] = "You don't have access to this!"

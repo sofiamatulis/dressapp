@@ -13,6 +13,7 @@ root 'users#home'
   post 'items_suitcases/create_item_show' => 'items_suitcases#create_item_show', as: 'create-item'
 
   resources :users
+  
   resources :wardrobes do
         get 'thumbnail', on: :member
     end

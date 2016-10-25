@@ -7,10 +7,12 @@ class User < ApplicationRecord
   has_many :wardrobes
   has_many :suitcases
 
-  validates :name, :password_digest, presence: true
-  validates :email, uniqueness: true
+  validates :name, :username, :password_digest, presence: true
+  validates :email, :username, uniqueness: true
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-
+def to_param
+  username
+end
 
 
 end

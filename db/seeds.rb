@@ -9,7 +9,7 @@
 puts "starting seeds"
 
 # Users
-jane = User.create!(name: 'Jane Foster', email: 'jfoster@gmail.com', password: '123456', image: 'https://s3-us-west-2.amazonaws.com/packapp/assets/jane.jpg')
+jane = User.create!(name: 'Jane Foster', username: 'jfoster', email: 'jfoster@gmail.com', password: '123456', image: 'https://s3-us-west-2.amazonaws.com/packapp/assets/jane.jpg')
 
 # Category for clothes
 top = Category.create!(category: "Top")
