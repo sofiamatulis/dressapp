@@ -24,6 +24,21 @@ $( document ).on('turbolinks:load', function() {
         $(".outfit").trigger("click");
       }
     $(".weather").fadeOut(100);
+    // Closes suitcase when clicked
+    $("#sortable1").on('click', function() {
+      $("#open-nav").html("Open Suitcase");
+      $('.side-nav-contents').fadeOut(100);
+      document.getElementById("suitcase-side-nav").style.width = "0";
+      document.getElementById("suitcase-main").style.marginLeft= "0";
+      $("#sortable1").removeClass("is-open");
+      $(".suitcase-destination").removeClass("small");
+      $(".weather").fadeIn(100);
+      // resetting the defaults
+      setTimeout( function() {
+        $("#items-grid-container" ).empty();
+      }, 1000 );
+
+    });
   });
 
 // closing nav
