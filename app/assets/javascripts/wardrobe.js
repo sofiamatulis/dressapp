@@ -55,14 +55,23 @@ $( document ).on('turbolinks:load', function() {
     }
     });
   });
+  $('#select-all').on('click', function(){
+    console.log("clicked");
+    $(this).val( ($(this).val() == 'Check' ? 'Uncheck' : 'Check') );
+    $('input:checkbox').prop('checked', ($(this).val() == 'Check'));
+    $('#select-all').html( ($(this).html() == 'Deselect All' ? 'Select All' : 'Deselect All') );
+    $('.category-dropdown').fadeIn();
 
-  $('#drop-down-show').on('click', function(){
+  });
+
+  $('input:checkbox').change(function(){
     $('.category-dropdown').fadeIn();
     $('.item-link').removeAttr('href');
     $('.selectd-item').find('img').click(function(){
       $(this).toggleClass('item-selected');
 
     });
+
   });
 
 
